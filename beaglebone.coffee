@@ -61,7 +61,7 @@ module.exports =
 		machine: 'beaglebone'
 		image: 'resin-image-flasher'
 		fstype: 'resin-sdcard'
-		version: 'yocto-fido'
+		version: 'yocto-jethro'
 		deployArtifact: 'resin-image-flasher-beaglebone.resin-sdcard'
 
 	options: [ networkOptions.group ]
