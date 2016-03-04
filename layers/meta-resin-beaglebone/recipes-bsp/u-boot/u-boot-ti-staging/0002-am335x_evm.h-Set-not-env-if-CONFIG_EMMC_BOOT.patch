@@ -1,0 +1,35 @@
+From e612511199d3d64cd013b49561f880a2be0c636a Mon Sep 17 00:00:00 2001
+From: Andrei Gherzan <andrei@resin.io>
+Date: Fri, 4 Mar 2016 15:34:16 +0100
+Subject: [PATCH 2/2] am335x_evm.h: Set not env if CONFIG_EMMC_BOOT
+
+Signed-off-by: Andrei Gherzan <andrei@resin.io>
+
+Upstream-Status: Inappropriate [disable feature]
+
+---
+ include/configs/am335x_evm.h | 8 +-------
+ 1 file changed, 1 insertion(+), 7 deletions(-)
+
+diff --git a/include/configs/am335x_evm.h b/include/configs/am335x_evm.h
+index 8dccefa..41b11f7 100644
+--- a/include/configs/am335x_evm.h
++++ b/include/configs/am335x_evm.h
+@@ -388,13 +388,7 @@
+ 					"128k(u-boot-env2),3464k(kernel)," \
+ 					"-(rootfs)"
+ #elif defined(CONFIG_EMMC_BOOT)
+-#define CONFIG_ENV_IS_IN_MMC
+-#define CONFIG_SPL_ENV_SUPPORT
+-#define CONFIG_SYS_MMC_ENV_DEV		1
+-#define CONFIG_SYS_MMC_ENV_PART		2
+-#define CONFIG_ENV_OFFSET		0x0
+-#define CONFIG_ENV_OFFSET_REDUND	(CONFIG_ENV_OFFSET + CONFIG_ENV_SIZE)
+-#define CONFIG_SYS_REDUNDAND_ENVIRONMENT
++#define CONFIG_ENV_IS_NOWHERE
+ #elif defined(CONFIG_NOR_BOOT)
+ #define CONFIG_ENV_IS_IN_FLASH
+ #define CONFIG_ENV_SECT_SIZE		(128 << 10)	/* 128 KiB */
+-- 
+2.7.0
+
