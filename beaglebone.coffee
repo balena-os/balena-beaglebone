@@ -20,7 +20,7 @@ module.exports =
 
 	instructions:
 		windows: [
-			instructions.WINDOWS_DISK_IMAGER_SD
+			instructions.WINDOWS_ETCHER_SD
 			instructions.EJECT_SD
 			instructions.FLASHER_WARNING
 			BBB_FLASH
@@ -29,9 +29,7 @@ module.exports =
 			instructions.BOARD_REPOWER
 		]
 		osx: [
-			instructions.OSX_PLUG_SD
-			instructions.OSX_UNMOUNT_SD
-			instructions.DD_BURN_IMAGE_SD
+			instructions.OSX_ETCHER_SD
 			instructions.EJECT_SD
 			instructions.FLASHER_WARNING
 			BBB_FLASH
@@ -40,8 +38,7 @@ module.exports =
 			instructions.BOARD_REPOWER
 		]
 		linux: [
-			instructions.LINUX_DF_SD
-			instructions.DD_BURN_IMAGE_SD
+			instructions.LINUX_ETCHER_SD
 			instructions.EJECT_SD
 			instructions.FLASHER_WARNING
 			BBB_FLASH
