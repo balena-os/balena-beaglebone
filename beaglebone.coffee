@@ -4,7 +4,7 @@ deviceTypesCommon = require 'resin-device-types/common'
 BBB_FLASH = 'Power up the <%= TYPE_NAME %> while holding down the small button near the SD slot.
 You need to keep it pressed until the blue LEDs start flashing wildly.'
 
-postProvisioningInstruction = [
+postProvisioningInstructions = [
 	instructions.BOARD_SHUTDOWN
 	instructions.REMOVE_INSTALL_MEDIA
 	instructions.BOARD_REPOWER
@@ -18,14 +18,14 @@ module.exports =
 	state: 'released'
 
 	stateInstructions:
-		postProvisioning: postProvisioningInstruction
+		postProvisioning: postProvisioningInstructions
 
 	instructions: [
 		instructions.ETCHER_SD
 		instructions.EJECT_SD
 		instructions.FLASHER_WARNING
 		BBB_FLASH
-	].concat(postProvisioningInstruction)
+	].concat(postProvisioningInstructions)
 
 	gettingStartedLink:
 		windows: 'http://docs.resin.io/#/pages/installing/gettingStarted-BBB.md#windows'
