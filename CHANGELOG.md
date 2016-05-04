@@ -1,6 +1,7 @@
 Change log
 -----------
 
+* Allow users to use UART5 [Theodor]
 * Bump meta-resin to include switch from rce to docker [Andrei]
 
 # v1.4.0 - 2016-04-16
