@@ -1,6 +1,7 @@
 Change log
 -----------
 
+* Allow users to use UART5 [Theodor]
 
 # v1.4.0 - 2016-04-16
 
