@@ -1,0 +1,29 @@
+From c55e9cb4d0fd5ebbbc2389b85c12e2f21fc775dd Mon Sep 17 00:00:00 2001
+From: Theodor Gherzan <theodor@resin.io>
+Date: Wed, 18 May 2016 14:43:57 +0200
+Subject: [PATCH] am33x_evm.h: Change default dtb for the Beaglebone Green Wireless
+
+Signed-off-by: Theodor Gherzan <theodor@resin.io>
+
+Upstream-Status: Configuration
+
+---
+ include/configs/am335x_evm.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/include/configs/am335x_evm.h b/include/configs/am335x_evm.h
+index 41b11f7..6adaec3 100644
+--- a/include/configs/am335x_evm.h
++++ b/include/configs/am335x_evm.h
+@@ -133,7 +133,7 @@
+ 		"if test $board_name = A335BONE; then " \
+ 			"setenv fdtfile am335x-bone.dtb; fi; " \
+ 		"if test $board_name = A335BNLT; then " \
+-			"setenv fdtfile am335x-boneblack.dtb; fi; " \
++			"setenv fdtfile am335x-bonegreen-wireless.dtb; fi; " \
+ 		"if test $board_name = A33515BB; then " \
+ 			"setenv fdtfile am335x-evm.dtb; fi; " \
+ 		"if test $board_name = A335X_SK; then " \
+--
+2.1.4
+
