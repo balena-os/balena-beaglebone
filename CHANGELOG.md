@@ -1,6 +1,8 @@
 Change log
 -----------
 
+# v1.4.1 - 2016-05-19
+
 * New machine support: BeagleBone Green Wireless [Theodor]
 * Provide dtb to control on-board wireless for the BeagleBone Green [Theodor]
 * Allow users to use UART5 [Theodor]
