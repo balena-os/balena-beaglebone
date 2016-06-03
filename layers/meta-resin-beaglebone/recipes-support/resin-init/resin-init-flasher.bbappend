@@ -1,11 +1,9 @@
-# the type of bootloader the target board uses
-BOARD_BOOTLOADER_beaglebone = "u-boot"
-
 # Flash to internal eMMC - kernel enumerates this, when SD card is in, as mmcblk1
 INTERNAL_DEVICE_KERNEL_beaglebone = "mmcblk1"
 
-# uBoot knows eMMC as mmc dev 1
-INTERNAL_DEVICE_UBOOT_beaglebone = "1"
+# the name of the bootloader config file to be written to internal media
+INTERNAL_DEVICE_BOOTLOADER_CONFIG_beaglebone = "uEnv.txt_internal"
 
-# uBoot knows SD as mmc dev 0
-EXTERNAL_DEVICE_UBOOT_beaglebone = "0"
+# the pathname (relative to /boot/) where the internal bootloader config file should reside in
+# (currently assuming this is on partition 1 of the internal media)
+INTERNAL_DEVICE_BOOTLOADER_CONFIG_PATH_beaglebone = "/uEnv.txt"
