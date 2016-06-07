@@ -6,6 +6,7 @@ Change log
 * Update meta-resin submodule for including bootloader specific removal changes [Florin]
 * Bump yocto-resin-scripts to bring in improvements for in-docker builds [Andrei]
 * Configure builds with RM_OLD_IMAGE [Theodor]
+
 # v1.4.1 - 2016-05-19
 
 * New machine support: BeagleBone Green Wireless [Theodor]
