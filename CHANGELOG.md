@@ -1,6 +1,7 @@
 Change log
 -----------
 
+* Custom docker images in connectable builds [Andrei]
 * Add support for optional supervisor image [Andrei]
 * Update meta-resin to include kernel modules compress support [Andrei]
 * Compress kernel modules [Andrei]
