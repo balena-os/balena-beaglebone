@@ -1,6 +1,7 @@
 Change log
 -----------
 
+* Update meta-resin to include kernel modules compress support [Andrei]
 * Compress kernel modules [Andrei]
 * Replace SUPERVISOR_TAG by TARGET_TAG [Andrei]
 * Update meta-resin to v1.2 [Andrei]
