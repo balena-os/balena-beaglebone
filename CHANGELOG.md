@@ -1,6 +1,9 @@
 Change log
 -----------
 
+# v1.3.0 - 2016-06-24
+
+* Update meta-resin to v1.3 [Florin]
 * Custom docker images in connectable builds [Andrei]
 * Add support for optional supervisor image [Andrei]
 * Update meta-resin to include kernel modules compress support [Andrei]
