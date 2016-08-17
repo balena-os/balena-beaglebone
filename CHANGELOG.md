@@ -1,6 +1,7 @@
 Change log
 -----------
 
+* Add support for the beaglebone green board [Florin]
 * Update yocto-resin-scripts for host nodejs detection improvements [Florin]
 
 # v1.8.0 - 2016-08-02
