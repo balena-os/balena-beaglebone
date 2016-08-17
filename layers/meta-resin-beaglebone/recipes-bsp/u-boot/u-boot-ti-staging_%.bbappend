@@ -8,6 +8,9 @@ SRC_URI_append = " \
 SRC_URI_append_beaglebone-green-wifi = " \
     file://0003-am335x_evm.h-Change-default-dtb-for-Beaglebone-Green-Wireless.patch"
 
+SRC_URI_append_beaglebone-green = " \
+    file://0004-am335x_evm.h-Change-default-dtb-for-Beaglebone-Green.patch"
+
 do_deploy_append () {
     install ${WORKDIR}/uEnv.txt_internal ${DEPLOYDIR}
 }
