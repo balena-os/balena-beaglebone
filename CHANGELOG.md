@@ -1,6 +1,7 @@
 Change log
 -----------
 
+* Update resin-yocto-scripts for including kernel modules headers deploy [Florin]
 * Add support for the beaglebone green board [Florin]
 * Update yocto-resin-scripts for host nodejs detection improvements [Florin]
 
