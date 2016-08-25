@@ -1,5 +1,7 @@
 # Supported machines
-MACHINE ?= "beaglebone"
+#MACHINE ?= "beaglebone"
+#MACHINE ?= "beaglebone-green"
+#MACHINE ?= "beaglebone-green-wifi"
 
 # Set this to 1 if debug image is desired
 #DEBUG_IMAGE = "1"
