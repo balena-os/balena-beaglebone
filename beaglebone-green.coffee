@@ -11,6 +11,7 @@ postProvisioningInstructions = [
 ]
 
 module.exports =
+	version: 1
 	slug: 'beaglebone-green'
 	name: 'BeagleBone Green'
 	arch: 'armv7hf'
@@ -46,8 +47,7 @@ module.exports =
 	configuration:
 		config:
 			partition:
-				primary: 4
-				logical: 1
+				primary: 1
 			path: '/config.json'
 
 	initialization: commonImg.initialization
