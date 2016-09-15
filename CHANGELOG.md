@@ -1,6 +1,7 @@
 Change log
 -----------
 
+* Update kernel to tag 4.4.20-ti-rt-r44 [Florin]
 * Update meta-resin [Florin]
 * Change .coffee to announce partition 1 now holds config.json and also introduce versioning (v1) [Florin]
 * Update kernel to version 4.4.19 [Florin]
