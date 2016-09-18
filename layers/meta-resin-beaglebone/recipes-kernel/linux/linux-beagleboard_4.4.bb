@@ -29,9 +29,9 @@ COMPATIBLE_MACHINE = "beaglebone"
 
 S = "${WORKDIR}/git"
 
-TAG = "4.4.20-ti-rt-r44"
+TAG = "4.4.21-ti-rt-r45"
 
-PV = "4.4.20+git${SRCPV}"
+PV = "4.4.21+git${SRCPV}"
 
 # Append to the MACHINE_KERNEL_PR so that a new SRCREV will cause a rebuild
 MACHINE_KERNEL_PR_append = "b"
