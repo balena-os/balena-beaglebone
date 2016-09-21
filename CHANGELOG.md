@@ -1,6 +1,7 @@
 Change log
 -----------
 
+* Update resin-yocto-scripts to include resinhup upload to dockerhub [Florin]
 * Update kernel to tag 4.4.21-ti-rt-r45 [Florin]
 * Update kernel to tag 4.4.20-ti-rt-r44 [Florin]
 * Update meta-resin [Florin]
