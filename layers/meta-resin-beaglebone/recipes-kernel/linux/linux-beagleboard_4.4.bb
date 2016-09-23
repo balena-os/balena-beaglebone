@@ -29,7 +29,7 @@ COMPATIBLE_MACHINE = "beaglebone"
 
 S = "${WORKDIR}/git"
 
-TAG = "4.4.21-ti-rt-r45"
+TAG = "4.4.21-ti-rt-r46"
 
 PV = "4.4.21+git${SRCPV}"
 
