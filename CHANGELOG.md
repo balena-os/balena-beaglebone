@@ -1,6 +1,9 @@
 Change log
 -----------
 
+# v1.13.0 - 2016-09-23
+
+* Update meta-resin to v1.13 [Florin]
 * Update kernel to tag 4.4.21-ti-rt-r46 [Florin]
 
 # v1.12.0 - 2016-09-21
