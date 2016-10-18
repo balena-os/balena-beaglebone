@@ -1,6 +1,8 @@
 Change log
 -----------
 
+* Apply the mmc fix (set vm.vfs_cache_pressure=400) [Michal]
+
 # v1.17.0 - 2016-10-21
 
 * Update meta-resin to v1.17 [Florin]
