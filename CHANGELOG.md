@@ -1,6 +1,10 @@
 Change log
 -----------
 
+# v1.17.0 - 2016-10-21
+
+* Update meta-resin to v1.17 [Florin]
+
 # v1.16.0 - 2016-09-27
 
 * Update meta-resin to v1.16 [Florin]
