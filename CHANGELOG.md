@@ -1,6 +1,8 @@
 Change log
 -----------
 
+# v1.17.1 - 2016-10-24
+
 * Apply the mmc fix (set vm.vfs_cache_pressure=400) [Michal]
 
 # v1.17.0 - 2016-10-21
