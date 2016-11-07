@@ -1,6 +1,7 @@
 Change log
 -----------
 
+* Cleanup docker-resin-supervisor-disk of unneeded variables [Andrei]
 * Update resin-yocto-scripts to fix logging in container builds
 * Apply the mmc fix (set vm.vfs_cache_pressure=400) [Michal]
 * Don't compress kernel modules [Michal]
