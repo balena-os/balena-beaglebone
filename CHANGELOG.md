@@ -1,6 +1,8 @@
 Change log
 -----------
 
+* Set a predefined sequence to abort or delay booting [Michal]
+
 # v1.20.0 - 2016-11-15
 
 * Update meta-resin to v1.20 [Florin]
