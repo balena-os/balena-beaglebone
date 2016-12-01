@@ -1,6 +1,8 @@
 Change log
 -----------
 
+# v1.22.1 - 2016-12-01
+
 * Update resin-yocto-scripts to include latest bits [Andrei]
 
 # v1.22.0 - 2016-12-01
