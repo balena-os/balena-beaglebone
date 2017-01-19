@@ -1,6 +1,7 @@
 Change log
 -----------
 
+* Tune memory to prevent higher-order allocation failures [petrosagg]
 * Update resin-yocto-scripts to HEAD of the master branch [Florin]
 
 # v2.0.0-beta.7 - 2016-12-05
