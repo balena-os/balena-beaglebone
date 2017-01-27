@@ -1,6 +1,9 @@
 Change log
 -----------
 
+# v2.0.0-beta.8 - 2017-01-27
+
+* Update meta-resin to v2.0-beta.8 [Andrei]
 * Tune memory to prevent higher-order allocation failures [petrosagg]
 * Update resin-yocto-scripts to HEAD of the master branch [Florin]
 
