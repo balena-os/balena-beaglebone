@@ -38,7 +38,7 @@ module.exports =
 		machine: 'beaglebone-green'
 		image: 'resin-image-flasher'
 		fstype: 'resin-sdcard'
-		version: 'yocto-jethro'
+		version: 'yocto-morty'
 		deployArtifact: 'resin-image-flasher-beaglebone-green.resin-sdcard'
 		compressed: true
 
