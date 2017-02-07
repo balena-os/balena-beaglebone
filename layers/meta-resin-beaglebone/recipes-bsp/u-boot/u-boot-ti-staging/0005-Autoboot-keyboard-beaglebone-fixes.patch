@@ -4,18 +4,14 @@ Date: Fri, 2 Oct 2015 17:54:45 -0700
 Subject: [PATCH] Adding autoboot for BBB as described in
  http://www.mikini.dk/index.php/category/beaglebone-black/boot-issue
 
-Signed-off-by: Michal Mazurek <michal@resin.io>
-
 Upstream-Status: Configuration
 
----
- include/configs/ti_am335x_common.h | 10 ++++++++++
- 1 file changed, 10 insertions(+)
+Signed-off-by: Michal Mazurek <michal@resin.io>
 
-diff --git a/include/configs/ti_am335x_common.h b/include/configs/ti_am335x_common.h
-index 9697431..aa6c572 100644
---- a/include/configs/ti_am335x_common.h
-+++ b/include/configs/ti_am335x_common.h
+Index: git/include/configs/ti_am335x_common.h
+===================================================================
+--- git.orig/include/configs/ti_am335x_common.h
++++ git/include/configs/ti_am335x_common.h
 @@ -12,6 +12,13 @@
  #ifndef __CONFIG_TI_AM335X_COMMON_H__
  #define __CONFIG_TI_AM335X_COMMON_H__
@@ -27,10 +23,10 @@ index 9697431..aa6c572 100644
 +#define CONFIG_BOOT_RETRY_TIME 15
 +#define CONFIG_RESET_TO_RETRY
 +
- #define CONFIG_AM33XX
  #define CONFIG_ARCH_CPU_INIT
  #define CONFIG_SYS_CACHELINE_SIZE       64
-@@ -96,4 +103,7 @@
+ #define CONFIG_MAX_RAM_BANK_SIZE	(1024 << 20)	/* 1GB */
+@@ -88,4 +95,7 @@
  /* Now bring in the rest of the common code. */
  #include <configs/ti_armv7_omap.h>
  
@@ -38,6 +34,3 @@ index 9697431..aa6c572 100644
 +#define CONFIG_BOOTDELAY               1
 +
  #endif	/* __CONFIG_TI_AM335X_COMMON_H__ */
--- 
-1.9.1
-
