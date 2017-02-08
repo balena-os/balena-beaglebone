@@ -1,6 +1,8 @@
 Change log
 -----------
 
+* Switch beaglebone-black, beaglebone-green and beaglebone-green-wifi to using poky morty [Florin]
+
 # v2.0.0-beta11.rev1 - 2017-02-15
 
 * Update meta-resin to v2.0.0-beta.11 [Andrei]
