@@ -7,7 +7,6 @@ inherit kernel kernel-resin
 
 require recipes-kernel/linux/linux-dtb.inc
 require recipes-kernel/linux/setup-defconfig.inc
-require recipes-kernel/linux/multi-kernel.inc
 
 DEPENDS += "lzop-native"
 
@@ -16,10 +15,6 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}-4.4:"
 
 # Pull in the devicetree files into the rootfs
 RDEPENDS_kernel-base += "kernel-devicetree"
-
-# Add a run-time dependency for the PM firmware to be installed
-# on the target file system.
-RDEPENDS_kernel-base_append = " am33x-cm3"
 
 KERNEL_DEVICETREE_beaglebone = "am335x-bone.dtb am335x-boneblack.dtb am335x-boneblack-emmc-overlay.dtb am335x-bonegreen.dtb am335x-bonegreen-wireless.dtb"
 
