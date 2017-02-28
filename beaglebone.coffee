@@ -38,9 +38,9 @@ module.exports =
 	yocto:
 		machine: 'beaglebone'
 		image: 'resin-image-flasher'
-		fstype: 'resin-sdcard'
+		fstype: 'resinos-img'
 		version: 'yocto-jethro'
-		deployArtifact: 'resin-image-flasher-beaglebone.resin-sdcard'
+		deployArtifact: 'resin-image-flasher-beaglebone.resinos-img'
 		compressed: true
 
 	options: [ networkOptions.group ]
