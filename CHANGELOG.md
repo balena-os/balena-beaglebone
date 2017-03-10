@@ -1,6 +1,8 @@
 Change log
 -----------
 
+# v2.0.0-rc1.rev1 - 2017-03-10
+
 * Adapt for using initramfs kernel images [Andrei]
 * Implement resin-uboot specification 2.0 for beaglebone [Andrei]
 
