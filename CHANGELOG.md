@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.0.0-rc1.rev1 - 2017-03-10
+
+* Adapt for using initramfs kernel images [Andrei]
+* Implement resin-uboot specification 2.0 for beaglebone [Andrei]
+
 # v2.0.0-beta12.rev2 - 2017-02-27
 
 * Switch beaglebone-black, beaglebone-green and beaglebone-green-wifi to using Poky Morty [Florin]
