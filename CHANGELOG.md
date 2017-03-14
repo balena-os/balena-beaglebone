@@ -1,6 +1,10 @@
 Change log
 -----------
 
+# v2.0.0-rc3.rev1 - 2017-03-14
+
+* Update meta-resin submodule to version v2.0.0-rc3 [Florin]
+
 # v2.0.0-rc1.rev1 - 2017-03-10
 
 * Adapt for using initramfs kernel images [Andrei]
