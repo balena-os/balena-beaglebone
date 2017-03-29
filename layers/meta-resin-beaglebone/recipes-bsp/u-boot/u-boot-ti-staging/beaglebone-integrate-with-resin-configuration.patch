@@ -1,6 +1,6 @@
-From 3e4294678099510ca978bd0e01f8f6132615def7 Mon Sep 17 00:00:00 2001
-From: Andrei Gherzan <andrei@resin.io>
-Date: Thu, 2 Mar 2017 00:45:56 +0100
+From d08fca8d4b5c71beb5fc253f451026781ebbea29 Mon Sep 17 00:00:00 2001
+From: Will Newton <willn@resin.io>
+Date: Tue, 28 Mar 2017 16:26:45 +0200
 Subject: [PATCH] am335x_evm.h: Integrate with resin environment configuration
 
 Beaglebone machine specific integration of resin environment configuration.
@@ -9,45 +9,46 @@ Signed-off-by: Andrei Gherzan <andrei@resin.io>
 
 Upstream-Status: Inappropriate [configuration]
 ---
- include/configs/am335x_evm.h      | 6 ++++--
+ include/configs/am335x_evm.h      | 6 +++++-
  include/configs/ti_armv7_common.h | 4 ++--
- 2 files changed, 6 insertions(+), 4 deletions(-)
+ 2 files changed, 7 insertions(+), 3 deletions(-)
 
 diff --git a/include/configs/am335x_evm.h b/include/configs/am335x_evm.h
-index e1e89c4..b7af3ad 100644
+index c3d0b32..e22ddd3 100644
 --- a/include/configs/am335x_evm.h
 +++ b/include/configs/am335x_evm.h
-@@ -96,8 +96,12 @@
+@@ -101,8 +101,12 @@
  	"fi;"	\
  	"run findfdt; " \
  	"run init_console; " \
--	"run envboot; " \
--	"run distro_bootcmd"
 +	"setenv resin_kernel_load_addr ${loadaddr}; "\
 +	"run resin_set_kernel_root; "\
 +	"setenv mmcdev ${resin_mmcdev}; "\
 +	"setenv bootpart ${resin_mmcdev}:${resin_root_part}; "\
-+	"run envboot; " \
+ 	"run envboot; " \
+-	"run distro_bootcmd"
 +	"run mmcboot"
  
  #include <config_distro_bootcmd.h>
  
 diff --git a/include/configs/ti_armv7_common.h b/include/configs/ti_armv7_common.h
-index 905e1ef..945d4aa 100644
+index be65490..f43e1e4 100644
 --- a/include/configs/ti_armv7_common.h
 +++ b/include/configs/ti_armv7_common.h
-@@ -61,9 +61,9 @@
+@@ -61,11 +61,11 @@
  	"mmcdev=0\0" \
  	"mmcrootfstype=ext4 rootwait\0" \
- 	"finduuid=part uuid mmc ${bootpart} uuid\0" \
+ 	"finduuid=part uuid ${devtype} ${bootpart} uuid\0" \
 -	"args_mmc=run finduuid;setenv bootargs console=${console} " \
 +	"args_mmc=setenv bootargs console=${console} " \
- 		"${optargs} " \
--		"root=PARTUUID=${uuid} rw " \
+ 		"${cape_disable} " \
+ 		"${cape_enable} " \
+ 		"${cape_uboot} " \
+-		"root=PARTUUID=${uuid} ro " \
 +		"${resin_kernel_root} " \
- 		"rootfstype=${mmcrootfstype}\0" \
- 	"loadbootscript=load mmc ${mmcdev} ${loadaddr} boot.scr\0" \
- 	"bootscript=echo Running bootscript from mmc${mmcdev} ...; " \
+ 		"rootfstype=${mmcrootfstype} " \
+ 		"${cmdline}\0" \
+ 	"args_mmc_old=setenv bootargs console=${console} " \
 -- 
 2.7.4
 
