@@ -1,0 +1,68 @@
+From patchwork Thu Mar 30 19:29:52 2017
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: [U-Boot,1/3] config: am335x_evm: detect Black Wireless using BWA
+From: robertcnelson@gmail.com
+X-Patchwork-Id: 745389
+Message-Id: <20170330192954.22673-1-robertcnelson@gmail.com>
+To: u-boot@lists.denx.de
+Cc: Tom Rini <trini@konsulko.com>, Jason Kridner <jkridner@beagleboard.org>, 
+ Will Newton <willn@resin.io>
+Date: Thu, 30 Mar 2017 14:29:52 -0500
+
+BeagleBone Black Wireless is clone of the BeagleBone Black (BBB) with
+the Ethernet replaced by a TI wl1835 wireless module.
+
+This board can be indentified by the BWAx value after A335BNLT (BBB)
+in the at24 eeprom:
+BWAx [aa 55 33 ee 41 33 33 35  42 4e 4c 54 42 57 41 35  |.U3.A335BNLTBWA5|]
+
+http://beagleboard.org/black-wireless
+https://github.com/beagleboard/beaglebone-black-wireless
+
+firmware: https://github.com/beagleboard/beaglebone-black-wireless/tree/master/firmware
+wl18xx mac address: /proc/device-tree/ocp/ethernet@4a100000/slave@4a100200/mac-address
+
+Upstream-Status: Pending
+
+Signed-off-by: Robert Nelson <robertcnelson@gmail.com>
+CC: Tom Rini <trini@konsulko.com>
+CC: Jason Kridner <jkridner@beagleboard.org>
+CC: Will Newton <willn@resin.io>
+---
+ board/ti/am335x/board.c      | 7 +++++++
+ include/configs/am335x_evm.h | 2 ++
+ 2 files changed, 9 insertions(+)
+
+diff --git a/board/ti/am335x/board.c b/board/ti/am335x/board.c
+index 8eaf3e9a5c..304ae34fb7 100644
+--- a/board/ti/am335x/board.c
++++ b/board/ti/am335x/board.c
+@@ -651,6 +651,13 @@ int board_late_init(void)
+ #ifdef CONFIG_ENV_VARS_UBOOT_RUNTIME_CONFIG
+ 	char *name = NULL;
+ 
++	if (board_is_bone_lt()) {
++		/* BeagleBoard.org BeagleBone Black Wireless: */
++		if (!strncmp(board_ti_get_rev(), "BWA", 3)) {
++			name = "BBBW";
++		}
++	}
++
+ 	if (board_is_bbg1())
+ 		name = "BBG1";
+ 	set_board_info_env(name);
+diff --git a/include/configs/am335x_evm.h b/include/configs/am335x_evm.h
+index 27126871f7..dcac2f5816 100644
+--- a/include/configs/am335x_evm.h
++++ b/include/configs/am335x_evm.h
+@@ -138,6 +138,8 @@
+ 			"setenv fdtfile am335x-bone.dtb; fi; " \
+ 		"if test $board_name = A335BNLT; then " \
+ 			"setenv fdtfile am335x-boneblack.dtb; fi; " \
++		"if test $board_name = BBBW; then " \
++			"setenv fdtfile am335x-boneblack-wireless.dtb; fi; " \
+ 		"if test $board_name = BBG1; then " \
+ 			"setenv fdtfile am335x-bonegreen.dtb; fi; " \
+ 		"if test $board_name = A33515BB; then " \
