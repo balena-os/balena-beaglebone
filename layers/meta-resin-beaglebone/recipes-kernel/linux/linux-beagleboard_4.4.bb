@@ -42,4 +42,5 @@ KERNEL_GIT_PROTOCOL = "git"
 SRC_URI += " \
     ${KERNEL_GIT_URI};protocol=${KERNEL_GIT_PROTOCOL};tag=${TAG};nobranch=1 \
     file://defconfig \
+    file://0001-Revert-bbgw-use-led-for-wl18xx_wl_en-wl18xx_bt_en.patch \
     "

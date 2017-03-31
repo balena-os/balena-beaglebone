@@ -1,6 +1,8 @@
 Change log
 -----------
 
+* Revert kernel patch "bbgw: use led for wl18xx_wl_en/wl18xx_bt_en" [Florin]
+
 # v2.0.0-rc5.rev1 - 2017-03-26
 
 * Update meta-resin submodule to version v2.0.0-rc5 [Andrei]

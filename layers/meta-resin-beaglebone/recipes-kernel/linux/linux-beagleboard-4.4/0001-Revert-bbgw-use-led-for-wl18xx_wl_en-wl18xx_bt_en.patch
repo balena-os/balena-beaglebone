@@ -1,0 +1,102 @@
+From c7bc8da72a88ca77206fd530d441898135c52301 Mon Sep 17 00:00:00 2001
+From: Florin Sarbu <florin@resin.io>
+Date: Wed, 29 Mar 2017 10:02:48 +0200
+Subject: [PATCH] Revert "bbgw: use led for wl18xx_wl_en/wl18xx_bt_en"
+
+This reverts commit 84ea21e84e825ba61ca25f481f2cb8b1db0aeec0.
+---
+ arch/arm/boot/dts/am335x-bonegreen-wl1835.dtsi | 50 +++++++-------------------
+ 1 file changed, 12 insertions(+), 38 deletions(-)
+
+diff --git a/arch/arm/boot/dts/am335x-bonegreen-wl1835.dtsi b/arch/arm/boot/dts/am335x-bonegreen-wl1835.dtsi
+index a0b7503..643785c 100644
+--- a/arch/arm/boot/dts/am335x-bonegreen-wl1835.dtsi
++++ b/arch/arm/boot/dts/am335x-bonegreen-wl1835.dtsi
+@@ -2,33 +2,15 @@
+ #include <dt-bindings/interrupt-controller/irq.h>
+ 
+ / {
+-//	wlan_en_reg: fixedregulator@2 {
+-//		compatible = "regulator-fixed";
+-//		regulator-name = "wlan-en-regulator";
+-//		regulator-min-microvolt = <1800000>;
+-//		regulator-max-microvolt = <1800000>;
+-//
+-//		/* WL_EN */
+-//		gpio = <&gpio0 26 0>;
+-//		enable-active-high;
+-//	};
+-
+-	leds {
+-		pinctrl-names = "default";
+-		pinctrl-0 = <&wl18xx_pins>;
+-		compatible = "gpio-leds";
+-
+-		wl18xx_wl_en {
+-                        label = "wl18xx_wl_en";
+-                        gpios = <&gpio0 26 GPIO_ACTIVE_HIGH>;
+-                        default-state = "on";
+-		};
+-
+-		wl18xx_bt_en {
+-			label = "wl18xx_bt_en";
+-			gpios = <&gpio1 28 GPIO_ACTIVE_HIGH>;
+-			default-state = "off";
+-		};
++	wlan_en_reg: fixedregulator@2 {
++		compatible = "regulator-fixed";
++		regulator-name = "wlan-en-regulator";
++		regulator-min-microvolt = <1800000>;
++		regulator-max-microvolt = <1800000>;
++
++		/* WL_EN */
++		gpio = <&gpio0 26 0>;
++		enable-active-high;
+ 	};
+ 
+ 	tibt {
+@@ -58,13 +40,6 @@
+ };
+ 
+ &am33xx_pinmux {
+-	wl18xx_pins: pinmux_wl18xx_pins {
+-		pinctrl-single,pins = <
+-			0x78 (PIN_OUTPUT_PULLUP | MUX_MODE7)    /* gpmc_ad12.gpio1_28 BT_EN*/
+-			0x28 (PIN_OUTPUT_PULLDOWN | MUX_MODE7)  /* gpmc_ad10.gpio0_26 WL_EN*/
+-		>;
+-	};
+-
+ 	bt_pins: pinmux_bt_pins {
+ 		pinctrl-single,pins = <
+ 			0x78 (PIN_OUTPUT_PULLUP | MUX_MODE7)	/* gpmc_ad12.gpio1_28 BT_EN*/
+@@ -96,7 +71,7 @@
+ 	/* wl18xx card enable/irq GPIOs. */
+ 	wlan_pins: pinmux_wlan_pins {
+ 		pinctrl-single,pins = <
+-//			0x28 (PIN_OUTPUT_PULLDOWN | MUX_MODE7)	/* gpmc_ad10.gpio0_26 WL_EN*/
++			0x28 (PIN_OUTPUT_PULLDOWN | MUX_MODE7)	/* gpmc_ad10.gpio0_26 WL_EN*/
+ 			0x2C (PIN_INPUT_PULLUP | MUX_MODE7)	    /* gpmc_ad11.gpio0_27 WL_IRQ*/
+ 			0x7C  (PIN_OUTPUT_PULLUP   | MUX_MODE0) /* gpmc_csn0.gpio1_29 Cape_Buffer_EN*/
+ 		>;
+@@ -105,7 +80,7 @@
+ 	/* wl18xx card enable/irq GPIOs. */
+ 	wlan_pins_sleep: pinmux_wlan_pins_sleep {
+ 		pinctrl-single,pins = <
+-//			0x28 (PIN_OUTPUT_PULLUP | MUX_MODE7)	/* gpmc_ad10.gpio0_26 WL_EN*/
++			0x28 (PIN_OUTPUT_PULLUP | MUX_MODE7)	/* gpmc_ad10.gpio0_26 WL_EN*/
+ 			0x2C (PIN_INPUT_PULLUP | MUX_MODE7)	    /* gpmc_ad11.gpio0_27 WL_IRQ*/
+ 			0x7C  (PIN_OUTPUT_PULLUP   | MUX_MODE0) /* gpmc_csn0.gpio1_29 Cape_Buffer_EN*/
+ 		>;
+@@ -153,8 +128,7 @@
+ 		&edma_xbar 13 0 2>;
+ 	dma-names = "tx", "rx";
+ 	status = "okay";
+-	//vmmc-supply = <&wlan_en_reg>;
+-	vmmc-supply = <&vmmcsd_fixed>;
++	vmmc-supply = <&wlan_en_reg>;
+ 	bus-width = <4>;
+ 	pinctrl-names = "default", "sleep";
+ 	pinctrl-0 = <&mmc3_pins &wlan_pins>;
+-- 
+2.7.4
+
