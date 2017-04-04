@@ -1,4 +1,4 @@
-IMAGE_FSTYPES_append_beaglebone = " resinos-img"
+IMAGE_FSTYPES_append_beaglebone = " resinos-img resinos-img.bmap"
 
 # Customize resinos-img
 RESIN_BOOT_PARTITION_FILES_beaglebone = " \
