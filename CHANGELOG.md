@@ -1,6 +1,8 @@
 Change log
 -----------
 
+* Generate a bmap file for the resinos-img image [Michal]
+
 # v2.0.0+rev4 - 2017-04-13
 
 * Bump resin-yocto-scripts to include compressed images in deployment too [Andrei]
