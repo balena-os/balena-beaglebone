@@ -11,7 +11,6 @@ SRC_URI_append = " \
     file://U-Boot-2-3-config-am335x_evm-detect-Green-Wireless-using-GW1.patch \
     file://U-Boot-3-3-config-am335x_evm-detect-BeagleBone-Blue-using-BLA.patch \
     file://0005-Autoboot-keyboard-beaglebone-fixes.patch \
-    file://nonexistent.patch \
     file://uEnv.txt_internal \
     "
 
