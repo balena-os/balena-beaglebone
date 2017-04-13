@@ -1,6 +1,7 @@
 Change log
 -----------
 
+* Bump resin-yocto-scripts to include deployment routine [Andrei]
 * Add support for Beaglebone Blue [Will]
 
 # v2.0.0+rev2 - 2017-04-04
