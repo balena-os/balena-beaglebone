@@ -1,6 +1,9 @@
 Change log
 -----------
 
+# v2.0.2+rev1 - 2017-04-24
+
+* Update the meta-resin submodule to version v2.0.2 [Andrei]
 * Generate a bmap file for the resinos-img image [Michal]
 
 # v2.0.0+rev4 - 2017-04-13
