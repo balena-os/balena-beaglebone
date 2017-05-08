@@ -1,3 +1,3 @@
 include resin-image.inc
 
-IMAGE_INSTALL_append_beaglebone = " bb-org-overlays fix-mmc-bbb"
+IMAGE_INSTALL_append_beaglebone = " bb-org-overlays fix-mmc-bbb bb-wl18xx-wlan0"
