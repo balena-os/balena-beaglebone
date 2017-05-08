@@ -1,0 +1,12 @@
+[Unit]
+Description=BB WL18xx wlan0 Service
+Before=network-pre.target
+Wants=network-pre.target
+After=local-fs.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/bb-wl18xx-wlan0
+
+[Install]
+WantedBy=multi-user.target
