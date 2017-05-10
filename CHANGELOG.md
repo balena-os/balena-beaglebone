@@ -1,6 +1,7 @@
 Change log
 -----------
 
+* Fix serial console [Theodor]
 * Set wlan0 MAC address to EEPROM value [Will]
 
 # v2.0.2+rev2 - 2017-05-01

@@ -10,7 +10,7 @@ Signed-off-by: Andrei Gherzan <andrei@resin.io>
 Upstream-Status: Inappropriate [configuration]
 ---
  include/configs/am335x_evm.h      | 6 ++++--
- include/configs/ti_armv7_common.h | 4 ++--
+ include/environment/ti/mmc.h      | 4 ++--
  2 files changed, 6 insertions(+), 4 deletions(-)
 
 diff --git a/include/configs/am335x_evm.h b/include/configs/am335x_evm.h
@@ -32,11 +32,11 @@ index e1e89c4..b7af3ad 100644
  
  #include <config_distro_bootcmd.h>
  
-diff --git a/include/configs/ti_armv7_common.h b/include/configs/ti_armv7_common.h
-index 905e1ef..945d4aa 100644
---- a/include/configs/ti_armv7_common.h
-+++ b/include/configs/ti_armv7_common.h
-@@ -61,9 +61,9 @@
+diff --git a/include/environment/ti/mmc.h b/include/environment/ti/mmc.h
+index b987f71..9f662a6 100644
+--- a/include/environment/ti/mmc.h
++++ b/include/environment/ti/mmc.h
+@@ -10,9 +10,9 @@
  	"mmcdev=0\0" \
  	"mmcrootfstype=ext4 rootwait\0" \
  	"finduuid=part uuid mmc ${bootpart} uuid\0" \
