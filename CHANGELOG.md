@@ -1,6 +1,9 @@
 Change log
 -----------
 
+# v2.0.3+rev1 - 2017-05-12
+
+* Update the meta-resin submodule to version v2.0.3 [Florin]
 * Fix serial console [Theodor]
 * Set wlan0 MAC address to EEPROM value [Will]
 
