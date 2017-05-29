@@ -1,6 +1,7 @@
 Change log
 -----------
 
+* Update kernel for the beagleboard family from 4.4 to 4.9 [Theodor]
 * Update the resin-yocto-scripts submodule [Florin]
 * Update resin-yocto-scripts to master [Will]
 
