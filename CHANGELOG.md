@@ -1,6 +1,8 @@
 Change log
 -----------
 
+* Adapt the u-boot patch for integration with resin-uboot [Florin]
+
 # v2.0.6+rev1 - 2017-06-15
 
 * Update the meta-resin submodule to version v2.0.6+a, for hotfix release [Florin]
