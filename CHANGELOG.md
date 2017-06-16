@@ -1,6 +1,7 @@
 Change log
 -----------
 
+* Add a fix for mmc page alloc failures under load [Will]
 * Update resin-yocto-scripts to master [Will]
 
 # v1.26.0-rc0 - 2017-01-27
