@@ -1,6 +1,8 @@
 Change log
 -----------
 
+# v2.0.6+rev2 - 2017-06-16
+
 * Adapt the u-boot patch for integration with resin-uboot [Florin]
 
 # v2.0.6+rev1 - 2017-06-15
