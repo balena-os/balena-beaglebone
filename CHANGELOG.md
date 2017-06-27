@@ -1,6 +1,7 @@
 Change log
 -----------
 
+* Update kernel to version 4.9.34-ti-r43 [Florin]
 * Update resin-yocto-scripts to master [Will]
 
 # v1.26.0-rc0 - 2017-01-27
