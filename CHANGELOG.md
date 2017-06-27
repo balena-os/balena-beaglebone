@@ -1,6 +1,7 @@
 Change log
 -----------
 
+* Change bbg and bbgw .coffee files to point to the bbb yocto machine and also change the getting started links [Florin]
 * Update kernel to version 4.9.34-ti-r43 [Florin]
 * Adapt the u-boot patch for integration with resin-uboot [Florin]
 * Update kernel for the beagleboard family from 4.4 to 4.9 [Theodor]
