@@ -29,9 +29,9 @@ module.exports =
 	].concat(postProvisioningInstructions)
 
 	gettingStartedLink:
-		windows: 'http://docs.resin.io/#/pages/installing/gettingStarted-BBB.md#windows'
-		osx: 'http://docs.resin.io/#/pages/installing/gettingStarted-BBB.md#on-mac-and-linux'
-		linux: 'http://docs.resin.io/#/pages/installing/gettingStarted-BBB.md#on-mac-and-linux'
+		windows: 'https://docs.resin.io/beaglebone/nodejs/getting-started/#adding-your-first-device'
+		osx: 'https://docs.resin.io/beaglebone/nodejs/getting-started/#adding-your-first-device'
+		linux: 'https://docs.resin.io/beaglebone/nodejs/getting-started/#adding-your-first-device'
 
 	supportsBlink: true
 
