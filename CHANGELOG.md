@@ -1,6 +1,7 @@
 Change log
 -----------
 
+* Update kernel to version 4.9.34-ti-r43 [Florin]
 * Adapt the u-boot patch for integration with resin-uboot [Florin]
 * Update kernel for the beagleboard family from 4.4 to 4.9 [Theodor]
 * Update the resin-yocto-scripts submodule [Florin]
