@@ -12,7 +12,7 @@ require recipes-kernel/linux/multi-kernel.inc
 DEPENDS += "lzop-native"
 
 # Look in the generic major.minor directory for files
-FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}-4.4:"
+FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}-4.9:"
 
 # Pull in the devicetree files into the rootfs
 RDEPENDS_kernel-base += "kernel-devicetree"
@@ -29,9 +29,9 @@ COMPATIBLE_MACHINE = "beaglebone"
 
 S = "${WORKDIR}/git"
 
-TAG = "4.4.21-ti-rt-r46"
+TAG = "4.9.34-ti-r43"
 
-PV = "4.4.21+git${SRCPV}"
+PV = "4.9.34+git${SRCPV}"
 
 # Append to the MACHINE_KERNEL_PR so that a new SRCREV will cause a rebuild
 MACHINE_KERNEL_PR_append = "b"
