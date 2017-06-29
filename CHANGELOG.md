@@ -1,6 +1,8 @@
 Change log
 -----------
 
+* Revert beaglebone-green and beaglebone-green-wifi .coffee files to point to their respective yocto machines [Florin]
+
 # v2.0.7+rev1 - 2017-06-29
 
 * Update the meta-resin submodule to version v2.0.7 [Florin]
