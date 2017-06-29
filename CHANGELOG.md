@@ -1,6 +1,9 @@
 Change log
 -----------
 
+# v2.0.7+rev1 - 2017-06-29
+
+* Update the meta-resin submodule to version v2.0.7 [Florin]
 * Update the resin-yocto-scripts submodule to HEAD of master [Florin]
 * Change bbg and bbgw .coffee files to point to the bbb yocto machine and also change the getting started links [Florin]
 * Update kernel to version 4.9.34-ti-r43 [Florin]
