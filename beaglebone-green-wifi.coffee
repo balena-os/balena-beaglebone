@@ -35,11 +35,11 @@ module.exports =
 	supportsBlink: true
 
 	yocto:
-		machine: 'beaglebone'
+		machine: 'beaglebone-green-wifi'
 		image: 'resin-image-flasher'
 		fstype: 'resinos-img'
 		version: 'yocto-morty'
-		deployArtifact: 'resin-image-flasher-beaglebone.resinos-img'
+		deployArtifact: 'resin-image-flasher-beaglebone-green-wifi.resinos-img'
 		compressed: true
 
 	options: [ networkOptions.group ]
