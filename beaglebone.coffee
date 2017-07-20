@@ -40,7 +40,8 @@ module.exports =
 		image: 'resin-image-flasher'
 		fstype: 'resinos-img'
 		version: 'yocto-morty'
-		deployArtifact: 'resin-image-flasher-beaglebone.resinos-img'
+		deployArtifact: 'resin-image-beaglebone.resinos-img'
+		deployFlasherArtifact: 'resin-image-flasher-beaglebone.resinos-img'
 		compressed: true
 
 	options: [ networkOptions.group ]

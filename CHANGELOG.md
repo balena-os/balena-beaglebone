@@ -1,6 +1,8 @@
 Change log
 -----------
 
+* Define a new attribute to denote the yocto flasher image [Michal]
+
 # v2.0.7+rev2 - 2017-06-29
 
 * Revert beaglebone-green and beaglebone-green-wifi .coffee files to point to their respective yocto machines [Florin]
