@@ -1,6 +1,7 @@
 Change log
 -----------
 
+* Update the resin-yocto-scripts submodule to HEAD of master [Michal]
 * Define a new attribute to denote the yocto flasher image [Michal]
 
 # v2.0.7+rev2 - 2017-06-29
