@@ -11,6 +11,7 @@ SRCREV = "182736724ae41f87d4fee0f76b9072135ae328a1"
 SRC_URI = " \
     git://github.com/beagleboard/bb.org-overlays.git \
     file://0001-Install-to-DESTDIR.patch \
+    file://SDS-CAPE-00A0.dts \
     "
 
 S = "${WORKDIR}/git"
@@ -19,6 +20,10 @@ inherit autotools-brokensep
 
 PACKAGES = "${PN}"
 FILES_${PN} += "/lib/firmware"
+
+do_compile_prepend () {
+    cp ${WORKDIR}/SDS-CAPE-00A0.dts ${S}/src/arm/
+}
 
 do_install_prepend () {
     mkdir -p ${D}/lib/firmware
