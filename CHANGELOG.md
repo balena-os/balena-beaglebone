@@ -1,6 +1,9 @@
 Change log
 -----------
 
+# v2.2.0+rev1 - 2017-07-30
+
+* Update the meta-resin submodule to version v2.2.0 [Florin]
 * Update the resin-yocto-scripts submodule to HEAD of master [Florin]
 * Revert Define a new attribute to denote the yocto flasher image [Florin]
 * Add device tree overlay for Nimbelinks Skywire Beaglebone Black Cape [Florin]
