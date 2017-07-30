@@ -1,6 +1,7 @@
 Change log
 -----------
 
+* Revert Define a new attribute to denote the yocto flasher image [Florin]
 * Add device tree overlay for Nimbelinks Skywire Beaglebone Black Cape [Florin]
 
 # v2.1.0+rev1 - 2017-07-21
