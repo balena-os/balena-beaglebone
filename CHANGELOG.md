@@ -1,6 +1,7 @@
 Change log
 -----------
 
+* Update resin-yocto-scripts to HEAD of the 1.X branch [Florin]
 * Update kernel to version 4.9.34-ti-r43 [Florin]
 * Update resin-yocto-scripts to master [Will]
 
