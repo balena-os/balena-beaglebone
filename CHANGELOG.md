@@ -1,6 +1,9 @@
 Change log
 -----------
 
+# v1.30.0 - 2017-08-23
+
+* Update meta-resin to v1.30 [Florin]
 * Update resin-yocto-scripts to HEAD of the 1.X branch [Florin]
 * Update kernel to version 4.9.34-ti-r43 [Florin]
 * Update resin-yocto-scripts to master [Will]
