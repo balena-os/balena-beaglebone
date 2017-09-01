@@ -1,6 +1,8 @@
 Change log
 -----------
 
+* Add bb-wl18xx-bluetooth recipe for enabling bluetooth [Florin]
+
 # v2.3.0+rev1 - 2017-08-17
 
 * Update the meta-resin submodule to version v2.3.0 [Florin]
