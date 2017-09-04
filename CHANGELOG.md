@@ -1,6 +1,7 @@
 Change log
 -----------
 
+* Update the resin-yocto-scripts submodule to HEAD of master [Florin]
 * Add bb-wl18xx-bluetooth recipe for enabling bluetooth [Florin]
 
 # v2.3.0+rev1
