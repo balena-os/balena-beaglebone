@@ -1,6 +1,10 @@
 Change log
 -----------
 
+# v2.4.2+rev1
+## (2017-09-04)
+
+* Update the meta-resin submodule to version v2.4.2 [Florin]
 * Update the resin-yocto-scripts submodule to HEAD of master [Florin]
 * Add bb-wl18xx-bluetooth recipe for enabling bluetooth [Florin]
 
