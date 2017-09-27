@@ -1,6 +1,8 @@
 Change log
 -----------
 
+* Add meta-rust layer [Will]
+
 # v2.4.2+rev1
 ## (2017-09-04)
 
