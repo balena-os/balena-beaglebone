@@ -1,6 +1,7 @@
 Change log
 -----------
 
+* Include meta-rust layer [Will]
 * Add meta-rust layer [Will]
 
 # v2.4.2+rev1
