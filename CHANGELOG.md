@@ -1,6 +1,8 @@
 Change log
 -----------
 
+* Update resin-yocto-scripts to HEAD of the 1.X branch [Florin]
+
 # v1.30.0 - 2017-08-23
 
 * Update meta-resin to v1.30 [Florin]
