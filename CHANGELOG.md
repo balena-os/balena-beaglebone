@@ -1,6 +1,7 @@
 Change log
 -----------
 
+* Update the resin-yocto-scripts submodule to HEAD of master [Florin]
 * Update to Yocto Pyro [Will]
 * Include meta-rust layer [Will]
 * Add meta-rust layer [Will]
