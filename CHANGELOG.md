@@ -1,6 +1,10 @@
 Change log
 -----------
 
+# v2.7.2+rev1
+## (2017-10-08)
+
+* Update the meta-resin submodule to version v2.7.2 [Florin]
 * Update the resin-yocto-scripts submodule to HEAD of master [Florin]
 * Update to Yocto Pyro [Will]
 * Include meta-rust layer [Will]
