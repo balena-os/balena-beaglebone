@@ -1,6 +1,9 @@
 Change log
 -----------
 
+# v2.7.2+rev2
+## (2017-10-12)
+
 * Install in the rootfs the 99-resin-uboot hostapp hook needed for u-boot to switch the root partition when doing host OS updates [Florin]
 
 # v2.7.2+rev1
