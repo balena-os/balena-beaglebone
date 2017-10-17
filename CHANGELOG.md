@@ -1,6 +1,8 @@
 Change log
 -----------
 
+* Update poky to latest pyro branch [Will]
+
 # v2.7.2+rev2
 ## (2017-10-12)
 
