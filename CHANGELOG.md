@@ -1,6 +1,8 @@
 Change log
 -----------
 
+* Add to rootfs the device tree overlays needed for the PWM pins [Florin]
+
 # v2.7.4+rev1
 ## (2017-10-27)
 
