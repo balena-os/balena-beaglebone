@@ -6,11 +6,11 @@ LIC_FILES_CHKSUM = "file://debian/copyright;md5=9682d76c70523c172282bb78caa39cdd
 
 DEPENDS = "dtc-native"
 
-SRCREV = "182736724ae41f87d4fee0f76b9072135ae328a1"
+SRCREV = "b5846ff2b7c903e2d702b8b9bd7106961baee6dd"
 
 SRC_URI = " \
     git://github.com/beagleboard/bb.org-overlays.git \
-    file://0001-Install-to-DESTDIR.patch \
+    file://0001-Do-not-use-absolute-path-for-the-dtc-binary.patch \
     file://SDS-CAPE-00A0.dts \
     "
 

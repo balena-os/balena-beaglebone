@@ -1,0 +1,28 @@
+From 4c32edadeb4cadb6c4a0d0f3fc34526ade8f1fb6 Mon Sep 17 00:00:00 2001
+From: Florin Sarbu <florin@resin.io>
+Date: Wed, 1 Nov 2017 13:04:17 +0100
+Subject: [PATCH] Do not use absolute path for the dtc binary
+
+Just call the dtc binary by name and yocto will resolve the path
+
+Upstream-Status: Inappropriate [configuration]
+
+Signed-off-by: Florin Sarbu <florin@resin.io>
+---
+ Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Makefile b/Makefile
+index c723aa7..db29797 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1,5 +1,5 @@
+ 
+-DTC ?= /usr/bin/dtc
++DTC ?= dtc
+ CPP ?= cpp
+ DESTDIR ?=
+ 
+-- 
+2.7.4
+
