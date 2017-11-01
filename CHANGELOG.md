@@ -1,6 +1,10 @@
 Change log
 -----------
 
+# v2.7.5+rev1
+## (2017-11-01)
+
+* Update the meta-resin submodule to version v2.7.5 [Florin]
 * Add to rootfs the device tree overlays needed for the PWM pins [Florin]
 
 # v2.7.4+rev1
