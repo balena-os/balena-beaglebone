@@ -11,6 +11,8 @@ SRCREV = "b5846ff2b7c903e2d702b8b9bd7106961baee6dd"
 SRC_URI = " \
     git://github.com/beagleboard/bb.org-overlays.git \
     file://0001-Do-not-use-absolute-path-for-the-dtc-binary.patch \
+    file://BB-CAN0-00A0.dts \
+    file://BB-I2C2N-00A0.dts \
     file://SDS-CAPE-00A0.dts \
     "
 
@@ -22,6 +24,8 @@ PACKAGES = "${PN}"
 FILES_${PN} += "/lib/firmware"
 
 do_compile_prepend () {
+    cp ${WORKDIR}/BB-CAN0-00A0.dts ${S}/src/arm/
+    cp ${WORKDIR}/BB-I2C2N-00A0.dts ${S}/src/arm/
     cp ${WORKDIR}/SDS-CAPE-00A0.dts ${S}/src/arm/
 }
 

@@ -1,6 +1,8 @@
 Change log
 -----------
 
+* Add overlays for being able to use the CAN interface on P9 pins 19 and 20 (CAN0) [Florin]
+
 # v2.7.5+rev1
 ## (2017-11-01)
 
