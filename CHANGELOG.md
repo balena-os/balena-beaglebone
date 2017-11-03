@@ -1,6 +1,7 @@
 Change log
 -----------
 
+* Update the resin-yocto-scripts submodule to c4db082fd2d5a3b4857035264c1e726962d7b826 (on master branch) [Florin]
 * Add overlays for being able to use the CAN interface on P9 pins 19 and 20 (CAN0) [Florin]
 
 # v2.7.5+rev1
