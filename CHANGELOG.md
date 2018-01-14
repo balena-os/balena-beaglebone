@@ -1,6 +1,8 @@
 Change log
 -----------
 
+* Add wl18xx-conf.bin firmware from https://github.com/beagleboard/beaglebone-black-wireless [Minh]
+
 # v2.7.8+rev1
 ## (2017-11-17)
 
