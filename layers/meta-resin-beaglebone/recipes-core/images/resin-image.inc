@@ -7,4 +7,4 @@ RESIN_BOOT_PARTITION_FILES_beaglebone = " \
     "
 
 # Beaglebone expects the kernel and dtbs on rootfs
-IMAGE_INSTALL_append = " kernel-image-initramfs kernel-devicetree"
+IMAGE_INSTALL_append = " kernel-image-initramfs kernel-devicetree wlconf"
