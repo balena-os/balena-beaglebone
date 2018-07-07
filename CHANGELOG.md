@@ -1,6 +1,8 @@
 Change log
 -----------
 
+* Update the pyro branch for meta-rust submodule [Andrei]
+
 # v2.12.7+rev1
 ## (2018-05-07)
 
