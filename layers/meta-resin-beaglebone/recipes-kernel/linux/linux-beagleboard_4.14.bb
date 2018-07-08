@@ -11,9 +11,9 @@ require recipes-kernel/linux/setup-defconfig.inc
 DEPENDS += "lzop-native"
 
 # Look in the generic major.minor directory for files
-FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}-4.9:"
+FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}-4.14:"
 
-KERNEL_DEVICETREE_beaglebone = "am335x-bone.dtb am335x-boneblack.dtb am335x-boneblack-emmc-overlay.dtb am335x-boneblack-wireless.dtb am335x-boneblue.dtb am335x-bonegreen.dtb am335x-bonegreen-wireless.dtb"
+KERNEL_DEVICETREE_beaglebone = "am335x-bone.dtb am335x-boneblack.dtb am335x-boneblack-wireless.dtb am335x-boneblue.dtb am335x-bonegreen.dtb am335x-bonegreen-wireless.dtb"
 
 KERNEL_EXTRA_ARGS += "LOADADDR=${UBOOT_ENTRYPOINT}"
 
@@ -21,9 +21,9 @@ COMPATIBLE_MACHINE = "beaglebone"
 
 S = "${WORKDIR}/git"
 
-TAG = "4.9.34-ti-r43"
+TAG = "4.14.53-ti-r62"
 
-PV = "4.9.34+git${SRCPV}"
+PV = "4.14.53+git${SRCPV}"
 
 # Append to the MACHINE_KERNEL_PR so that a new SRCREV will cause a rebuild
 MACHINE_KERNEL_PR_append = "b"

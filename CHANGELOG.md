@@ -1,6 +1,7 @@
 Change log
 -----------
 
+* Update the beaglebone kernel to version 4.14.53-ti-r62 [Florin]
 * Update the pyro branch for meta-rust submodule [Andrei]
 
 # v2.12.7+rev1
