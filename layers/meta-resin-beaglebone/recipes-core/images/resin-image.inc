@@ -1,4 +1,5 @@
 IMAGE_FSTYPES_append_beaglebone = " resinos-img resinos-img.bmap"
+IMAGE_FSTYPES_append_beaglebone-pocket = " resinos-img"
 
 # Customize resinos-img
 RESIN_BOOT_PARTITION_FILES_beaglebone = " \
@@ -8,3 +9,5 @@ RESIN_BOOT_PARTITION_FILES_beaglebone = " \
 
 # Beaglebone expects the kernel and dtbs on rootfs
 IMAGE_INSTALL_append = " kernel-image-initramfs kernel-devicetree wlconf"
+
+RESIN_BOOT_PARTITION_FILES_append_beaglebone-pocket = " uEnv.txt_internal:"
