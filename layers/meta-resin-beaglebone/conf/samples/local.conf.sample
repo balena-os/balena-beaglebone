@@ -2,6 +2,7 @@
 #MACHINE ?= "beaglebone"
 #MACHINE ?= "beaglebone-green"
 #MACHINE ?= "beaglebone-green-wifi"
+#MACHINE ?= "beaglebone-pocket"
 
 # More info meta-resin/README.md
 #TARGET_REPOSITORY ?= ""
