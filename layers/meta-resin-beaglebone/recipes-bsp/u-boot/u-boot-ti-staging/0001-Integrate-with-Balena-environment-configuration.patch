@@ -1,0 +1,54 @@
+From 64ce5f8f1967e124a97ed6f751bb9f329cb3839a Mon Sep 17 00:00:00 2001
+From: Florin Sarbu <florin@balena.io>
+Date: Fri, 23 Nov 2018 09:40:37 +0100
+Subject: [PATCH] Integrate with Balena environment configuration
+
+Upstream-Status: Inappropriate [configuration]
+Signed-off-by: Florin Sarbu <florin@balena.io>
+---
+ configs/am335x_boneblack_defconfig | 5 +++--
+ include/environment/ti/mmc.h       | 4 ++--
+ 2 files changed, 5 insertions(+), 4 deletions(-)
+
+diff --git a/configs/am335x_boneblack_defconfig b/configs/am335x_boneblack_defconfig
+index 50093cd..217d197 100644
+--- a/configs/am335x_boneblack_defconfig
++++ b/configs/am335x_boneblack_defconfig
+@@ -5,7 +5,7 @@ CONFIG_AM33XX=y
+ # CONFIG_SPL_NAND_SUPPORT is not set
+ CONFIG_DISTRO_DEFAULTS=y
+ CONFIG_SYS_EXTRA_OPTIONS="EMMC_BOOT"
+-CONFIG_BOOTCOMMAND="if test ${boot_fit} -eq 1; then run update_to_fit; fi; run findfdt; run init_console; run envboot; run distro_bootcmd"
++CONFIG_BOOTCOMMAND="if test ${boot_fit} -eq 1; then run update_to_fit; fi; run findfdt; run init_console; setenv resin_kernel_load_addr ${loadaddr}; run resin_set_kernel_root; setenv mmcdev ${resin_dev_index}; setenv bootpart ${resin_dev_index}:${resin_root_part}; run envboot; run mmcboot"
+ CONFIG_SYS_CONSOLE_INFO_QUIET=y
+ CONFIG_VERSION_VARIABLE=y
+ CONFIG_ARCH_MISC_INIT=y
+@@ -20,7 +20,8 @@ CONFIG_FASTBOOT=y
+ CONFIG_CMD_SPL=y
+ # CONFIG_CMD_FLASH is not set
+ # CONFIG_CMD_SETEXPR is not set
+-CONFIG_ENV_IS_IN_MMC=y
++# CONFIG_ENV_IS_IN_MMC is not set
++CONFIG_ENV_IS_NOWHERE=y
+ CONFIG_DFU_TFTP=y
+ CONFIG_DFU_MMC=y
+ CONFIG_DFU_RAM=y
+diff --git a/include/environment/ti/mmc.h b/include/environment/ti/mmc.h
+index 4305ebd..8cd6305 100644
+--- a/include/environment/ti/mmc.h
++++ b/include/environment/ti/mmc.h
+@@ -13,9 +13,9 @@
+ 	"mmcdev=0\0" \
+ 	"mmcrootfstype=ext4 rootwait\0" \
+ 	"finduuid=part uuid mmc ${bootpart} uuid\0" \
+-	"args_mmc=run finduuid;setenv bootargs console=${console} " \
++	"args_mmc=setenv bootargs console=${console} " \
+ 		"${optargs} " \
+-		"root=PARTUUID=${uuid} rw " \
++		"${resin_kernel_root} " \
+ 		"rootfstype=${mmcrootfstype}\0" \
+ 	"loadbootscript=load mmc ${mmcdev} ${loadaddr} boot.scr\0" \
+ 	"bootscript=echo Running bootscript from mmc${mmcdev} ...; " \
+-- 
+2.7.4
+
