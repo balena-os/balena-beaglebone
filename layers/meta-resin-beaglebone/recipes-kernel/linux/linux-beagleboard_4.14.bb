@@ -1,7 +1,7 @@
 SECTION = "kernel"
 DESCRIPTION = "Linux kernel for beaglebone boards"
 LICENSE = "GPLv2"
-LIC_FILES_CHKSUM = "file://COPYING;md5=d7810fab7487fb0aad327b76f1be7cd7"
+LIC_FILES_CHKSUM = "file://COPYING;md5=bbea815ee2795b2f4230826c0c6b8814"
 
 inherit kernel kernel-resin
 
@@ -20,9 +20,9 @@ COMPATIBLE_MACHINE = "beaglebone"
 
 S = "${WORKDIR}/git"
 
-TAG = "4.14.53-ti-r62"
+TAG = "4.19-ti-r2"
 
-PV = "4.14.53+git${SRCPV}"
+PV = "4.19+git${SRCPV}"
 
 # Append to the MACHINE_KERNEL_PR so that a new SRCREV will cause a rebuild
 MACHINE_KERNEL_PR_append = "b"

@@ -1,6 +1,8 @@
 Change log
 -----------
 
+* Update the beaglebone kernel to version 4.19-ti-r2 [Alexandru Costache]
+
 # v2.26.0+rev1
 ## (2018-11-23)
 
