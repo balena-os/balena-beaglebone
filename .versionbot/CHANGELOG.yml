@@ -1,4 +1,17 @@
 - commits:
+    - subject: 'beaglebone-pocket: Added machine for PocketBeagle device'
+      hash: cdd4298d90cb35ed71e6e9aed2ca8a86d06621b6
+      body: |
+        Added machine files for the PocketBeagle device
+      footer:
+        Changelog-entry: 'beaglebone-pocket: Added machine for PocketBeagle device'
+        changelog-entry: 'beaglebone-pocket: Added machine for PocketBeagle device'
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+  version: 2.26.0+rev2
+  date: 2018-11-27T13:18:39.317Z
+- commits:
     - subject: Update meta-resin from v2.15.1 to v2.26.0
       hash: 909258b9884f9d2e392158bd7b1c21f48aaf7b0c
       body: |
