@@ -1,0 +1,75 @@
+From 56dce6462e60e2aa5b87c97c5a2c43a4d834e251 Mon Sep 17 00:00:00 2001
+From: "Kemal R. Shakir" <kemal@ti.com>
+Date: Wed, 3 Oct 2018 15:56:37 +0300
+Subject: [PATCH 1/1] am335x_evm_defconfig: Reduce SPL `.rodata' size
+
+Upstream-Status: Pending
+Signed-off-by: Florin Sarbu <florin@balena.io>
+---
+ configs/am335x_evm_defconfig | 54 ++++++++++++++++++++++++++++++++++++
+ 1 file changed, 54 insertions(+)
+
+diff --git a/configs/am335x_evm_defconfig b/configs/am335x_evm_defconfig
+index 4908099431..568a4f535e 100644
+--- a/configs/am335x_evm_defconfig
++++ b/configs/am335x_evm_defconfig
+@@ -63,3 +63,57 @@ CONFIG_DYNAMIC_CRC_TABLE=y
+ CONFIG_SPL_TINY_MEMSET=y
+ CONFIG_RSA=y
+ CONFIG_LZO=y
++
++#
++# SPL / TPL
++#
++CONFIG_SUPPORT_SPL=y
++CONFIG_SPL=y
++CONFIG_SPL_BOARD_INIT=y
++# CONFIG_SPL_BOOTROM_SUPPORT is not set
++CONFIG_SPL_RAW_IMAGE_SUPPORT=y
++CONFIG_SPL_LEGACY_IMAGE_SUPPORT=y
++CONFIG_SPL_SYS_MALLOC_SIMPLE=y
++# CONFIG_TPL_SYS_MALLOC_SIMPLE is not set
++CONFIG_SPL_STACK_R=y
++CONFIG_SPL_STACK_R_MALLOC_SIMPLE_LEN=0x100000
++CONFIG_SPL_SEPARATE_BSS=y
++# CONFIG_SPL_DISPLAY_PRINT is not set
++CONFIG_SYS_MMCSD_RAW_MODE_U_BOOT_USE_SECTOR=y
++CONFIG_SYS_MMCSD_RAW_MODE_U_BOOT_SECTOR=0x300
++# CONFIG_SYS_MMCSD_RAW_MODE_U_BOOT_USE_PARTITION is not set
++# CONFIG_SPL_CRC32_SUPPORT is not set
++# CONFIG_SPL_MD5_SUPPORT is not set
++# CONFIG_SPL_SHA1_SUPPORT is not set
++# CONFIG_SPL_SHA256_SUPPORT is not set
++# CONFIG_SPL_FIT_IMAGE_TINY is not set
++# CONFIG_SPL_CPU_SUPPORT is not set
++# CONFIG_SPL_CRYPTO_SUPPORT is not set
++# CONFIG_SPL_HASH_SUPPORT is not set
++# CONFIG_SPL_DMA_SUPPORT is not set
++# CONFIG_SPL_ENV_SUPPORT is not set
++CONFIG_SPL_EXT_SUPPORT=y
++# CONFIG_SPL_FPGA_SUPPORT is not set
++CONFIG_SPL_I2C_SUPPORT=y
++# CONFIG_SPL_MMC_WRITE is not set
++# CONFIG_SPL_MPC8XXX_INIT_DDR_SUPPORT is not set
++CONFIG_SPL_MTD_SUPPORT=y
++CONFIG_SPL_MUSB_NEW_SUPPORT=y
++CONFIG_SPL_NET_SUPPORT=y
++CONFIG_SPL_NET_VCI_STRING="AM335x U-Boot SPL"
++# CONFIG_SPL_NO_CPU_SUPPORT is not set
++# CONFIG_SPL_NOR_SUPPORT is not set
++# CONFIG_SPL_XIP_SUPPORT is not set
++# CONFIG_SPL_ONENAND_SUPPORT is not set
++CONFIG_SPL_OS_BOOT=y
++# CONFIG_SPL_PCI_SUPPORT is not set
++# CONFIG_SPL_PCH_SUPPORT is not set
++# CONFIG_SPL_POST_MEM_SUPPORT is not set
++CONFIG_SPL_POWER_SUPPORT=y
++# CONFIG_SPL_RAM_SUPPORT is not set
++# CONFIG_SPL_RTC_SUPPORT is not set
++# CONFIG_SPL_SATA_SUPPORT is not set
++# CONFIG_SPL_THERMAL is not set
++# CONFIG_SPL_USB_HOST_SUPPORT is not set
++# CONFIG_SPL_USB_GADGET_SUPPORT is not set
++# CONFIG_SPL_YMODEM_SUPPORT is not set
+--
+2.17.1
