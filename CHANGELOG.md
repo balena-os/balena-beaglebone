@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.26.0+rev3
+## (2018-11-27)
+
+* Fix boot loop hang when switched to meta-ti rocko [Florin Sarbu]
+
 # v2.26.0+rev2
 ## (2018-11-27)
 

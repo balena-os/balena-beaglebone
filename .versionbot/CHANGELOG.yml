@@ -1,4 +1,23 @@
 - commits:
+    - subject: Fix boot loop hang when switched to meta-ti rocko
+      hash: 3ebe74c6bfa82c74524f9a26a805aa823b23a398
+      body: |
+        The BSP layer at the rocko branch has an issue with the boot
+        stuck in a loop. See details here:
+        https://lists.yoctoproject.org/pipermail/meta-ti/2018-October
+        /011363.html
+        Also, when using the am335x_evm_config defconfig, the resulted
+        SPL is bigger than the available SRAM so we also need to shrink
+        the SPL size.
+      footer:
+        Changelog-entry: Fix boot loop hang when switched to meta-ti rocko
+        changelog-entry: Fix boot loop hang when switched to meta-ti rocko
+        Signed-off-by: Florin Sarbu <florin@balena.io>
+        signed-off-by: Florin Sarbu <florin@balena.io>
+      author: Florin Sarbu
+  version: 2.26.0+rev3
+  date: 2018-11-27T14:07:22.933Z
+- commits:
     - subject: 'beaglebone-pocket: Added machine for PocketBeagle device'
       hash: cdd4298d90cb35ed71e6e9aed2ca8a86d06621b6
       body: |
