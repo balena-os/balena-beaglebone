@@ -1,0 +1,21 @@
+## Uncomment usb0 related options
+## if leases should be provided
+## trough usb0.
+##interface=usb0
+interface=usb1
+port=53
+##dhcp-authoritative
+domain-needed
+bogus-priv
+expand-hosts
+cache-size=2048
+##dhcp-range=usb0,192.168.7.1,192.168.7.1,2m
+dhcp-range=usb1,192.168.6.1,192.168.6.1,2m
+listen-address=127.0.0.1
+##listen-address=192.168.7.2
+listen-address=192.168.6.2
+##dhcp-option=usb0,3
+##dhcp-option=usb0,6
+##dhcp-option=usb1,3
+##dhcp-option=usb1,6
+dhcp-leasefile=/tmp/dnsmasq.leases

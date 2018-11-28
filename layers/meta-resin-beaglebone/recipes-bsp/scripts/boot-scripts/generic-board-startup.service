@@ -1,0 +1,12 @@
+[Unit]
+Description=Generic Board Startup
+After=dnsmasq.service
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh /opt/scripts/boot/generic-startup.sh
+ExecStartPost=/bin/sh /opt/scripts/boot/autoconfigure_usb0.sh
+
+[Install]
+WantedBy=multi-user.target
+

@@ -1,0 +1,349 @@
+From 60e7436abf2d3c31ee584a6378577a4696f425ad Mon Sep 17 00:00:00 2001
+From: Alexandru Costache <alexandru@balena.io>
+Date: Wed, 28 Nov 2018 18:37:04 +0200
+Subject: [PATCH] Adapted scripts for Balena usage
+
+Removed configuration that is not necessary on
+the Balena platform for now and was triggering
+warnings and errors at startup.
+Moved dnsmasq configuration path from /etc to /tmp
+because / is read only.
+
+Upstream-status: Inaproppriate[configuration]
+Signed-off-by: Alexandru Costache <alexandru@balena.io>
+---
+ boot/am335x_evm.sh         | 156 +++++++++++++++------------------------------
+ boot/autoconfigure_usb0.sh |   2 +-
+ boot/generic-startup.sh    |   4 +-
+ 3 files changed, 54 insertions(+), 108 deletions(-)
+
+diff --git a/boot/am335x_evm.sh b/boot/am335x_evm.sh
+index b124105..bb64b05 100755
+--- a/boot/am335x_evm.sh
++++ b/boot/am335x_evm.sh
+@@ -41,10 +41,10 @@ if [ -f /etc/rcn-ee.conf ] ; then
+ 	. /etc/rcn-ee.conf
+ fi
+ 
+-if [ -f /etc/default/bb-boot ] ; then
+-	unset USB_NETWORK_DISABLED
+-	. /etc/default/bb-boot
+-fi
++#if [ -f /etc/default/bb-boot ] ; then
++#	unset USB_NETWORK_DISABLED
++#	. /etc/default/bb-boot
++#fi
+ 
+ log="am335x_evm:"
+ 
+@@ -80,11 +80,6 @@ usb_ms_stall=0
+ usb_ms_removable=1
+ usb_ms_nofua=1
+ 
+-#legacy support of: 2014-05-14 (now taken care by the init flasher)
+-if [ "x${abi}" = "x" ] ; then
+-	$(dirname $0)/legacy/write_eeprom.sh || true
+-fi
+-
+ cleanup_extra_docs () {
+ 	#recovers 82MB of space
+ 	if [ -d /var/cache/doc-beaglebonegreen-getting-started ] ; then
+@@ -264,20 +259,20 @@ else
+ fi
+ 
+ unset use_cached_cpsw_mac
+-if [ -f /etc/cpsw_0_mac ] ; then
++if [ -f /tmp/cpsw_0_mac ] ; then
+ 	unset test_cpsw_0_mac
+-	test_cpsw_0_mac=$(cat /etc/cpsw_0_mac)
++	test_cpsw_0_mac=$(cat /tmp/cpsw_0_mac)
+ 	if [ "x${cpsw_0_mac}" = "x${test_cpsw_0_mac}" ] ; then
+ 		use_cached_cpsw_mac="true"
+ 	else
+-		echo "${cpsw_0_mac}" > /etc/cpsw_0_mac || true
++		echo "${cpsw_0_mac}" > /tmp/cpsw_0_mac || true
+ 	fi
+ else
+-	echo "${cpsw_0_mac}" > /etc/cpsw_0_mac || true
++	echo "${cpsw_0_mac}" > /tmp/cpsw_0_mac || true
+ fi
+ 
+-if [ "x${use_cached_cpsw_mac}" = "xtrue" ] && [ -f /etc/cpsw_1_mac ] ; then
+-	cpsw_1_mac=$(cat /etc/cpsw_1_mac)
++if [ "x${use_cached_cpsw_mac}" = "xtrue" ] && [ -f /tmp/cpsw_1_mac ] ; then
++	cpsw_1_mac=$(cat /tmp/cpsw_1_mac)
+ else
+ 	mac_address="/proc/device-tree/ocp/ethernet@4a100000/slave@4a100300/mac-address"
+ 	if [ -f ${mac_address} ] && [ -f /usr/bin/hexdump ] ; then
+@@ -297,16 +292,16 @@ else
+ 				cpsw_1_mac="1C:BA:8C:A2:ED:70"
+ 			fi
+ 		fi
+-		echo "${cpsw_1_mac}" > /etc/cpsw_1_mac || true
++		echo "${cpsw_1_mac}" > /tmp/cpsw_1_mac || true
+ 	else
+ 		#todo: generate random mac...
+ 		cpsw_1_mac="1C:BA:8C:A2:ED:70"
+-		echo "${cpsw_1_mac}" > /etc/cpsw_1_mac || true
++		echo "${cpsw_1_mac}" > /tmp/cpsw_1_mac || true
+ 	fi
+ fi
+ 
+-if [ "x${use_cached_cpsw_mac}" = "xtrue" ] && [ -f /etc/cpsw_2_mac ] ; then
+-	cpsw_2_mac=$(cat /etc/cpsw_2_mac)
++if [ "x${use_cached_cpsw_mac}" = "xtrue" ] && [ -f /tmp/cpsw_2_mac ] ; then
++	cpsw_2_mac=$(cat /tmp/cpsw_2_mac)
+ else
+ 	if [ -f /usr/bin/bc ] ; then
+ 		mac_0_prefix=$(echo ${cpsw_0_mac} | cut -c 1-14)
+@@ -387,11 +382,11 @@ else
+ 			;;
+ 		esac
+ 	fi
+-	echo "${cpsw_2_mac}" > /etc/cpsw_2_mac || true
++	echo "${cpsw_2_mac}" > /tmp/cpsw_2_mac || true
+ fi
+ 
+-if [ "x${use_cached_cpsw_mac}" = "xtrue" ] && [ -f /etc/cpsw_3_mac ] ; then
+-	cpsw_3_mac=$(cat /etc/cpsw_3_mac)
++if [ "x${use_cached_cpsw_mac}" = "xtrue" ] && [ -f /tmp/cpsw_3_mac ] ; then
++	cpsw_3_mac=$(cat /tmp/cpsw_3_mac)
+ else
+ 	if [ -f /usr/bin/bc ] ; then
+ 		mac_0_prefix=$(echo ${cpsw_0_mac} | cut -c 1-14)
+@@ -404,11 +399,11 @@ else
+ 	else
+ 		cpsw_3_mac="1C:BA:8C:A2:ED:71"
+ 	fi
+-	echo "${cpsw_3_mac}" > /etc/cpsw_3_mac || true
++	echo "${cpsw_3_mac}" > /tmp/cpsw_3_mac || true
+ fi
+ 
+-if [ "x${use_cached_cpsw_mac}" = "xtrue" ] && [ -f /etc/cpsw_4_mac ] ; then
+-	cpsw_4_mac=$(cat /etc/cpsw_4_mac)
++if [ "x${use_cached_cpsw_mac}" = "xtrue" ] && [ -f /tmp/cpsw_4_mac ] ; then
++	cpsw_4_mac=$(cat /tmp/cpsw_4_mac)
+ else
+ 	if [ -f /usr/bin/bc ] ; then
+ 		mac_0_prefix=$(echo ${cpsw_0_mac} | cut -c 1-14)
+@@ -421,11 +416,11 @@ else
+ 	else
+ 		cpsw_4_mac="1C:BA:8C:A2:ED:72"
+ 	fi
+-	echo "${cpsw_4_mac}" > /etc/cpsw_4_mac || true
++	echo "${cpsw_4_mac}" > /tmp/cpsw_4_mac || true
+ fi
+ 
+-if [ "x${use_cached_cpsw_mac}" = "xtrue" ] && [ -f /etc/cpsw_5_mac ] ; then
+-	cpsw_5_mac=$(cat /etc/cpsw_5_mac)
++if [ "x${use_cached_cpsw_mac}" = "xtrue" ] && [ -f /tmp/cpsw_5_mac ] ; then
++	cpsw_5_mac=$(cat /tmp/cpsw_5_mac)
+ else
+ 	if [ -f /usr/bin/bc ] ; then
+ 		mac_0_prefix=$(echo ${cpsw_0_mac} | cut -c 1-14)
+@@ -438,7 +433,7 @@ else
+ 	else
+ 		cpsw_5_mac="1C:BA:8C:A2:ED:73"
+ 	fi
+-	echo "${cpsw_5_mac}" > /etc/cpsw_5_mac || true
++	echo "${cpsw_5_mac}" > /tmp/cpsw_5_mac || true
+ fi
+ 
+ echo "${log} cpsw_0_mac: [${cpsw_0_mac}]"
+@@ -469,15 +464,9 @@ if [ -f /var/lib/connman/settings ] ; then
+ 	fi
+ fi
+ 
+-#udhcpd gets started at bootup, but we need to wait till g_multi is loaded, and we run it manually...
+-if [ -f /var/run/udhcpd.pid ] ; then
+-	echo "${log} [/etc/init.d/udhcpd stop]"
+-	/etc/init.d/udhcpd stop || true
+-fi
+-
+-if [ ! -f /etc/systemd/system/getty.target.wants/serial-getty@ttyGS0.service ] ; then
+-	ln -s /lib/systemd/system/serial-getty@.service /etc/systemd/system/getty.target.wants/serial-getty@ttyGS0.service
+-fi
++#if [ ! -f /etc/systemd/system/getty.target.wants/serial-getty@ttyGS0.service ] ; then
++#	ln -s /lib/systemd/system/serial-getty@.service /etc/systemd/system/getty.target.wants/serial-getty@ttyGS0.service
++#fi
+ 
+ run_libcomposite () {
+ 	if [ ! -d /sys/kernel/config/usb_gadget/g_multi/ ] ; then
+@@ -516,7 +505,7 @@ run_libcomposite () {
+ 			# https://answers.microsoft.com/en-us/windows/forum/windows_10-networking-winpc/windows-10-vs-remote-ndis-ethernet-usbgadget-not/cb30520a-753c-4219-b908-ad3d45590447
+ 			# https://www.spinics.net/lists/linux-usb/msg107185.html
+ 			echo 1 > os_desc/use
+-			echo CD > os_desc/b_vendor_code
++			echo 0xCD > os_desc/b_vendor_code
+ 			echo MSFT100 > os_desc/qw_sign
+ 			echo "RNDIS" > functions/rndis.usb0/os_desc/interface.rndis/compatible_id
+ 			echo "5162001" > functions/rndis.usb0/os_desc/interface.rndis/sub_compatible_id
+@@ -701,7 +690,7 @@ use_old_g_multi () {
+ 
+ 		if [ "x${root_drive}" = "x/dev/mmcblk0p1" ] || [ "x${root_drive}" = "x/dev/mmcblk1p1" ] ; then
+ 			#g_ether: Do we have udhcpd/dnsmasq?
+-			if [ -f /usr/sbin/udhcpd ] || [ -f /usr/sbin/dnsmasq ] ; then
++			if [ -f /usr/sbin/dnsmasq ] ; then
+ 				modprobe g_ether ${g_network} || g_ether_retry
+ 				usb0="enable"
+ 			else
+@@ -717,7 +706,6 @@ use_old_g_multi () {
+ }
+ 
+ unset usb0 usb1
+-
+ #use libcomposite with v4.4.x+ kernel's...
+ kernel_major=$(uname -r | cut -d. -f1 || true)
+ kernel_minor=$(uname -r | cut -d. -f2 || true)
+@@ -737,9 +725,9 @@ else
+ fi
+ 
+ if [ ! "x${USB_NETWORK_DISABLED}" = "xyes" ]; then
++
+ 	if [ -f /var/lib/misc/dnsmasq.leases ] ; then
+ 		systemctl stop dnsmasq || true
+-		rm -rf /var/lib/misc/dnsmasq.leases || true
+ 	fi
+ 
+ 	if [ "x${usb0}" = "xenable" ] ; then
+@@ -754,42 +742,7 @@ if [ ! "x${USB_NETWORK_DISABLED}" = "xyes" ]; then
+ 		$(dirname $0)/autoconfigure_usb1.sh || true
+ 	fi
+ 
+-	if [ "x${dnsmasq_usb0_usb1}" = "xenable" ] ; then
+-		if [ -d /sys/kernel/config/usb_gadget ] ; then
+-			/etc/init.d/udhcpd stop || true
+-
+-			if [ -d /etc/dnsmasq.d/ ] ; then
+-				echo "${log} dnsmasq: setting up for usb0/usb1"
+-				disable_connman_dnsproxy
+-
+-				wfile="/etc/dnsmasq.d/SoftAp0"
+-				echo "interface=usb0" > ${wfile}
+-				echo "interface=usb1" >> ${wfile}
+-				echo "port=53" >> ${wfile}
+-				echo "dhcp-authoritative" >> ${wfile}
+-				echo "domain-needed" >> ${wfile}
+-				echo "bogus-priv" >> ${wfile}
+-				echo "expand-hosts" >> ${wfile}
+-				echo "cache-size=2048" >> ${wfile}
+-				echo "dhcp-range=usb0,192.168.7.1,192.168.7.1,2m" >> ${wfile}
+-				echo "dhcp-range=usb1,192.168.6.1,192.168.6.1,2m" >> ${wfile}
+-				echo "listen-address=127.0.0.1" >> ${wfile}
+-				echo "listen-address=192.168.7.2" >> ${wfile}
+-				echo "listen-address=192.168.6.2" >> ${wfile}
+-				echo "dhcp-option=usb0,3" >> ${wfile}
+-				echo "dhcp-option=usb0,6" >> ${wfile}
+-				echo "dhcp-option=usb1,3" >> ${wfile}
+-				echo "dhcp-option=usb1,6" >> ${wfile}
+-	#FIXME: why was this added, without connman every ip get's 172.1.8.1????
+-	#			echo "address=/#/172.1.8.1" >> ${wfile}
+-				echo "dhcp-leasefile=/var/run/dnsmasq.leases" >> ${wfile}
+-
+-				systemctl restart dnsmasq || true
+-			else
+-				echo "${log} ERROR: dnsmasq is not installed"
+-			fi
+-		fi
+-	fi
++        systemctl start dnsmasq || true
+ fi
+ 
+ #create_ap is now legacy, use connman...
+@@ -798,45 +751,35 @@ if [ -f /usr/bin/create_ap ] ; then
+ 		ifconfig wlan0 down
+ 		ifconfig wlan0 hw ether ${cpsw_0_mac}
+ 		ifconfig wlan0 up || true
+-		echo "${cpsw_0_mac}" > /etc/wlan0-mac
++		echo "${cpsw_0_mac}" > /tmp/wlan0-mac
+ 		systemctl start create_ap &
+ 	fi
+ fi
+ 
+ #Just Cleanup /etc/issue, systemd starts up tty before these are updated...
+-sed -i -e '/Address/d' /etc/issue || true
++#sed -i -e '/Address/d' /etc/issue || true
+ 
+ check_getty_tty=$(systemctl is-active serial-getty@ttyGS0.service || true)
+ if [ "x${check_getty_tty}" = "xinactive" ] ; then
+ 	systemctl restart serial-getty@ttyGS0.service || true
+ fi
+ 
+-#legacy support of: 2014-05-14 (now taken care by the init flasher)
+-if [ "x${abi}" = "x" ] ; then
+-	$(dirname $0)/legacy/write_emmc.sh || true
+-fi
+-
+-#legacy support of: 2014-05-14 (now taken care by the init flasher)
+-if [ "x${abi}" = "x" ] ; then
+-	$(dirname $0)/legacy/old_resize.sh || true
+-fi
+-
+ #these are expected to be set by default...
+-if [ "x${blue_fix_uarts}" = "xenable" ] ; then
+-	if [ -f /usr/bin/config-pin ] ; then
+-		test_config_pin=$(/usr/bin/config-pin -q P9.24 2>&1 | grep pinmux | sed "s/ /_/g" | sed "s/\!/_/g" | tr -d '\000' || true)
+-		if [ "x${test_config_pin}x" = "xP9_24_pinmux_file_not_found_x" ] ; then
+-			echo "${log} broken /usr/bin/config-pin upgrade bb-cape-overlays"
+-		else
+-			echo "${log} config-pin: GPS: Setting P9.21/P9.22 as: uart: [/dev/ttyS2]"
+-			/usr/bin/config-pin P9.21 uart || true
+-			/usr/bin/config-pin P9.22 uart || true
+-			echo "${log} config-pin: UT1: Setting P9.24/P9.26 as: uart: [/dev/ttyS1]"
+-			/usr/bin/config-pin P9.24 uart || true
+-			/usr/bin/config-pin P9.26 uart || true
+-		fi
+-	fi
+-fi
++#if [ "x${blue_fix_uarts}" = "xenable" ] ; then
++#	if [ -f /usr/bin/config-pin ] ; then
++#		test_config_pin=$(/usr/bin/config-pin -q P9.24 2>&1 | grep pinmux | sed "s/ /_/g" | sed "s/\!/_/g" | tr -d '\000' || true)
++#		if [ "x${test_config_pin}x" = "xP9_24_pinmux_file_not_found_x" ] ; then
++#			echo "${log} broken /usr/bin/config-pin upgrade bb-cape-overlays"
++#		else
++#			echo "${log} config-pin: GPS: Setting P9.21/P9.22 as: uart: [/dev/ttyS2]"
++#			/usr/bin/config-pin P9.21 uart || true
++#			/usr/bin/config-pin P9.22 uart || true
++#			echo "${log} config-pin: UT1: Setting P9.24/P9.26 as: uart: [/dev/ttyS1]"
++#			/usr/bin/config-pin P9.24 uart || true
++#			/usr/bin/config-pin P9.26 uart || true
++#		fi
++#	fi
++#fi
+ 
+ unset enable_cape_universal
+ enable_cape_universal=$(grep 'cape_universal=enable' /proc/cmdline || true)
+@@ -937,4 +880,5 @@ if [ ! "x${enable_cape_universal}" = "x" ] ; then
+ 		fi
+ 	fi
+ fi
+-#
++
++exit 0
+diff --git a/boot/autoconfigure_usb0.sh b/boot/autoconfigure_usb0.sh
+index 23a50cd..7b28bbf 100755
+--- a/boot/autoconfigure_usb0.sh
++++ b/boot/autoconfigure_usb0.sh
+@@ -220,4 +220,4 @@ if [ "x${deb_usb_address}" != "x" -a\
+ 	[ "x$deb_dns_nameservers" != "x" ] && echo nameserver $deb_dns_nameservers >> /etc/resolv.conf
+ fi
+ 
+-#
++exit 0
+diff --git a/boot/generic-startup.sh b/boot/generic-startup.sh
+index 0861054..71eb5fe 100755
+--- a/boot/generic-startup.sh
++++ b/boot/generic-startup.sh
+@@ -119,6 +119,8 @@ if [ -f /proc/device-tree/model ] ; then
+ 
+ 	if [ -f "/opt/scripts/boot/${script}" ] ; then
+ 		echo "generic-board-startup: [startup script=/opt/scripts/boot/${script}]"
+-		/bin/sh /opt/scripts/boot/${script}
++		/bin/sh /opt/scripts/boot/${script} || true
+ 	fi
+ fi
++
++exit 0
+-- 
+2.7.4
+
