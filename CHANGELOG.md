@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.26.0+rev4
+## (2018-11-28)
+
+* Add icon for PocketBeagle [Alexandru Costache]
+
 # v2.26.0+rev3
 ## (2018-11-27)
 

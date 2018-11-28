@@ -1,4 +1,16 @@
 - commits:
+    - subject: Add icon for PocketBeagle
+      hash: efce93cb3b2cc743ea7a1b2b21498f6fb3079321
+      body: ''
+      footer:
+        Changelog-entry: Add icon for PocketBeagle
+        changelog-entry: Add icon for PocketBeagle
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+  version: 2.26.0+rev4
+  date: 2018-11-28T14:20:12.780Z
+- commits:
     - subject: Fix boot loop hang when switched to meta-ti rocko
       hash: 3ebe74c6bfa82c74524f9a26a805aa823b23a398
       body: |
