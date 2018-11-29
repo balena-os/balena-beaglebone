@@ -40,5 +40,6 @@ KERNEL_GIT_URI = "git://github.com/beagleboard/linux.git"
 KERNEL_GIT_PROTOCOL = "git"
 SRC_URI += " \
     ${KERNEL_GIT_URI};protocol=${KERNEL_GIT_PROTOCOL};tag=${TAG};nobranch=1 \
+    file://0001-Revert-random-fix-crng_ready-test.patch \
     file://defconfig \
     "
