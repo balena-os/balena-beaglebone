@@ -1,0 +1,11 @@
+[Unit]
+Description=USB Ethernet Gadget Startup
+After=dnsmasq.service
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh /opt/scripts/boot/am335x_evm.sh
+
+[Install]
+WantedBy=multi-user.target
+

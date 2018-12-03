@@ -8,6 +8,12 @@ module.exports =
 	arch: 'armv7hf'
 	state: 'experimental'
 
+	imageDownloadAlerts: [
+		{
+			type: 'warning'
+			message: 'To obtain internet connectivity from a Linux host via onboard microUSB, open nm-connection-editor on the host and edit the connection created by PocketBeagle when plugged. In the "IPv4 Settings" tab > Method > select "Shared to other computers". Then disconnect the board and plug it back in.'
+		}
+	]
 	instructions: commonImg.instructions
 
 	gettingStartedLink:
