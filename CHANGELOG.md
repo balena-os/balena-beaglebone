@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.27.0+rev2
+## (2018-12-03)
+
+* Add scripts for PocketBeagle networking [Alexandru Costache]
+
 # v2.27.0+rev1
 ## (2018-11-29)
 

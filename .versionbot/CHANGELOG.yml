@@ -1,4 +1,26 @@
 - commits:
+    - subject: Add scripts for PocketBeagle networking
+      hash: 4934237b936c48cc930902dc0ca0b2b74775fd6f
+      body: |
+        Integrated boot scripts used by the BeagleBone
+        debian images.
+
+        Adapted these to work with Balena and provide
+        out-of-the-box networking for PocketBeagle.
+
+        Internet connection sharing needs to be used
+        with the network created by default when
+        plugging the PocketBeagle to a host using the
+        on-board microUSB port.
+      footer:
+        Changelog-entry: Add scripts for PocketBeagle networking
+        changelog-entry: Add scripts for PocketBeagle networking
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+  version: 2.27.0+rev2
+  date: 2018-12-03T09:20:28.484Z
+- commits:
     - subject: Update meta-resin from v2.26.0 to v2.27.0
       hash: 3e2a05cff6bade92b1fcefe76ebcddcaabcf4f90
       body: |
