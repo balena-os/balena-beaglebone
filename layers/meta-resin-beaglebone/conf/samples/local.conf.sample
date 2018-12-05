@@ -4,6 +4,9 @@
 #MACHINE ?= "beaglebone-green-wifi"
 #MACHINE ?= "beaglebone-pocket"
 
+# We use the overlayfs docker storage driver for PocketBeagle
+BALENA_STORAGE_beaglebone-pocket = "overlay2"
+
 # More info meta-resin/README.md
 #TARGET_REPOSITORY ?= ""
 #TARGET_TAG ?= ""
