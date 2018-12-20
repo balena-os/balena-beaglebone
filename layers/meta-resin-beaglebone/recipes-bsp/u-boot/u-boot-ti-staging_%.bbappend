@@ -11,6 +11,11 @@ SRC_URI_append = " \
     file://0001-Add-support-for-BeagleBoard.org-PocketBeagle.patch \
     file://uEnv.txt_internal \
     "
+
+SRC_URI_append_beaglebone-pocket = " \
+    file://0001-u-boot-Disable-logging-on-UART0.patch \
+    "
+
 do_deploy_append () {
     install ${WORKDIR}/uEnv.txt_internal ${DEPLOYDIR}
 }
