@@ -1,4 +1,19 @@
 - commits:
+    - subject: 'u-boot: Switch console to USB'
+      hash: d83264f8b7df33461dc80d21870c3df3e4fc1073
+      body: |
+        Switched console from ttyO0 to ttyGS0 over
+        USB to free up one uart which needs to
+        be used with other devices.
+      footer:
+        Changelog-entry: 'u-boot: Switch console to USB'
+        changelog-entry: 'u-boot: Switch console to USB'
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+  version: 2.28.0+rev2
+  date: 2018-12-14T07:52:31.830Z
+- commits:
     - subject: Update meta-resin from v2.27.0 to v2.28.0
       hash: 1f32e62152a377c3ba606cf59c83d9a72c05258e
       body: |

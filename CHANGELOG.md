@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.28.0+rev2
+## (2018-12-14)
+
+* u-boot: Switch console to USB [Alexandru Costache]
+
 # v2.28.0+rev1
 ## (2018-12-06)
 
