@@ -1,0 +1,41 @@
+From 2c5762c51583d48842e73bfd32dca3017ea4d17e Mon Sep 17 00:00:00 2001
+From: Alexandru Costache <alexandru@balena.io>
+Date: Sun, 23 Dec 2018 18:00:21 +0100
+Subject: [PATCH] beaglebone-black: Use Balena vars for mmc boot
+
+Set up rest of necessary environment variables
+accordingly to enable booting Balena OS from SD/EMMC.
+
+Upstream-status: Inappropriate [configuration]
+Signed-off-by: Alexandru Costache <alexandru@balena.io>
+---
+ include/configs/am335x_evm.h | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/include/configs/am335x_evm.h b/include/configs/am335x_evm.h
+index e841b6e..662e713 100644
+--- a/include/configs/am335x_evm.h
++++ b/include/configs/am335x_evm.h
+@@ -64,7 +64,7 @@
+ 	"gpio set 53; " \
+ 	"setenv devtype mmc; " \
+ 	"setenv mmcdev " #instance"; "\
+-	"setenv bootpart " #instance":1 ; "\
++	"setenv bootpart " #instance":${resin_root_part}; "\
+ 	"run boot\0"
+ 
+ #define BOOTENV_DEV_NAME_LEGACY_MMC(devtypeu, devtypel, instance) \
+@@ -107,8 +107,9 @@
+ 	DEFAULT_LINUX_BOOT_ENV \
+ 	DEFAULT_MMC_TI_ARGS \
+ 	DEFAULT_FIT_TI_ARGS \
+-	"bootpart=0:2\0" \
++	"bootpart=${resin_dev_index}:${resin_root_part}\0" \
+ 	"bootdir=/boot\0" \
++        "fdtdir=/boot\0" \
+ 	"bootfile=zImage\0" \
+ 	"board_eeprom_header=undefined\0" \
+ 	"fdtfile=undefined\0" \
+-- 
+2.7.4
+

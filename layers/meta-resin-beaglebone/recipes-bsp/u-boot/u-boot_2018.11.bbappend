@@ -15,6 +15,7 @@ SRC_URI_remove = "file://resin-specific-env-integration-kconfig.patch"
 SRC_URI += "file://0003-resin-specific-env-integration-kconfig_REWORKED.patch"
 
 SRC_URI += "file://0004-Integrate-with-Balena-environment-configuration.patch"
+SRC_URI += "file://0001-beaglebone-black-Use-Balena-vars-for-mmc-boot.patch"
 
 do_deploy_append() {
     install ${B}/MLO ${DEPLOYDIR}
