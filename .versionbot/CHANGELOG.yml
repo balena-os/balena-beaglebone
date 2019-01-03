@@ -1,4 +1,16 @@
 - commits:
+    - subject: Switch to mainline u-boot v2018.11
+      hash: eaa95d8b8e5517c652105f2fc2415c10a46f4868
+      body: ''
+      footer:
+        Changelog-entry: Switch to mainline u-boot v2018.11
+        changelog-entry: Switch to mainline u-boot v2018.11
+        Signed-off-by: Florin Sarbu <florin@balena.io>
+        signed-off-by: Florin Sarbu <florin@balena.io>
+      author: Florin Sarbu
+  version: 2.29.0+rev2
+  date: 2019-01-03T07:03:00.281Z
+- commits:
     - subject: Update meta-resin from v2.28.0 to v2.29.0
       hash: 2fec41b9792f19875dca949096888d21d2797b1a
       body: |

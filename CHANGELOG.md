@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.29.0+rev2
+## (2019-01-03)
+
+* Switch to mainline u-boot v2018.11 [Florin Sarbu]
+
 # v2.29.0+rev1
 ## (2018-12-20)
 
