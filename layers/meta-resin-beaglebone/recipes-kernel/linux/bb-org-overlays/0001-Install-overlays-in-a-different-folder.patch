@@ -1,0 +1,29 @@
+From 362e5b8d5c91f7e929d91a81f789a64dfdd82e5c Mon Sep 17 00:00:00 2001
+From: Sebastian Panceac <sebastian@balena.io>
+Date: Mon, 7 Jan 2019 14:29:18 +0100
+Subject: [PATCH] Install overlays in a different folder
+
+Upstream-Status: Inappropriate [configuration]
+Signed-off-by: Sebastian Panceac <sebastian@balena.io>
+---
+ Makefile | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index db29797..d80f4c7 100644
+--- a/Makefile
++++ b/Makefile
+@@ -146,8 +146,8 @@ all_arch: $(ARCH_DTB)
+ 
+ PHONY += install_arch
+ install_arch: $(ARCH_DTBO)
+-	mkdir -p $(DESTDIR)/lib/firmware/
+-	cp -v $(obj)/*.dtbo $(DESTDIR)/lib/firmware/
++	mkdir -p $(DESTDIR)/boot/overlays
++	cp -v $(obj)/*.dtbo $(DESTDIR)/boot/overlays
+ 
+ RCS_FIND_IGNORE := \( -name SCCS -o -name BitKeeper -o -name .svn -o -name CVS \
+                    -o -name .pc -o -name .hg -o -name .git \) -prune -o
+-- 
+2.17.1
+
