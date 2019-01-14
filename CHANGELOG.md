@@ -1,6 +1,12 @@
 Change log
 -----------
 
+# v2.29.0+rev3
+## (2019-01-14)
+
+* u-boot: Load and apply device tree overlays [Sebastian Panceac]
+* Install BeagleBone DT overlays in root partition [Sebastian Panceac]
+
 # v2.29.0+rev2
 ## (2019-01-03)
 

@@ -1,4 +1,27 @@
 - commits:
+    - subject: 'u-boot: Load and apply device tree overlays'
+      hash: 0a169e4414c909b9491712e95a7938a6df38c130
+      body: ''
+      footer:
+        Changelog-entry: 'u-boot: Load and apply device tree overlays'
+        changelog-entry: 'u-boot: Load and apply device tree overlays'
+        Signed-off-by: Sebastian Panceac <sebastian@balena.io>
+        signed-off-by: Sebastian Panceac <sebastian@balena.io>
+      author: Sebastian Panceac
+    - subject: Install BeagleBone DT overlays in root partition
+      hash: fd39bd2f24d49e40e73b4b44f020e2d465e06174
+      body: |
+        We install the BeagleBone DT overlays in /boot/overlays folder
+        of the root partition so u-boot can load them
+      footer:
+        Changelog-entry: Install BeagleBone DT overlays in root partition
+        changelog-entry: Install BeagleBone DT overlays in root partition
+        Signed-off-by: Sebastian Panceac <sebastian@balena.io>
+        signed-off-by: Sebastian Panceac <sebastian@balena.io>
+      author: Sebastian Panceac
+  version: 2.29.0+rev3
+  date: 2019-01-14T13:16:00.541Z
+- commits:
     - subject: Switch to mainline u-boot v2018.11
       hash: eaa95d8b8e5517c652105f2fc2415c10a46f4868
       body: ''
