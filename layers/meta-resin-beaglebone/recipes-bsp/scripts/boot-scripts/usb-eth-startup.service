@@ -1,6 +1,6 @@
 [Unit]
 Description=USB Ethernet Gadget Startup
-After=dnsmasq.service
+After=NetworkManager.service
 
 [Service]
 Type=oneshot

@@ -1,4 +1,4 @@
-From b2915f43d8a412778080a5aea4e015493960072e Mon Sep 17 00:00:00 2001
+From 065e9f0eee96ccb300790140fd35fba3944f9b39 Mon Sep 17 00:00:00 2001
 From: Alexandru Costache <alexandru@balena.io>
 Date: Fri, 30 Nov 2018 21:17:13 +0200
 Subject: [PATCH] Adapted scripts for Balena usage
@@ -8,17 +8,17 @@ the Balena platform for now and were triggering
 warnings and errors at startup.
 
 Brought in the implementation needed for bringing
-up usb ethernet.
+up usb ethernet managed by NetworkManager.
 
 Upstream-status: Inaproppriate[configuration]
 Signed-off-by: Alexandru Costache <alexandru@balena.io>
 ---
- boot/am335x_evm.sh      | 616 ++----------------------------------------------
+ boot/am335x_evm.sh      | 620 +++---------------------------------------------
  boot/generic-startup.sh |   4 +-
- 2 files changed, 26 insertions(+), 594 deletions(-)
+ 2 files changed, 31 insertions(+), 593 deletions(-)
 
 diff --git a/boot/am335x_evm.sh b/boot/am335x_evm.sh
-index b124105..ac384a9 100755
+index b124105..de717db 100755
 --- a/boot/am335x_evm.sh
 +++ b/boot/am335x_evm.sh
 @@ -23,42 +23,8 @@
@@ -569,7 +569,7 @@ index b124105..ac384a9 100755
  #use libcomposite with v4.4.x+ kernel's...
  kernel_major=$(uname -r | cut -d. -f1 || true)
  kernel_minor=$(uname -r | cut -d. -f2 || true)
-@@ -736,205 +367,4 @@ else
+@@ -736,205 +367,10 @@ else
  	use_libcomposite
  fi
  
@@ -657,7 +657,12 @@ index b124105..ac384a9 100755
 -if [ "x${abi}" = "x" ] ; then
 -	$(dirname $0)/legacy/old_resize.sh || true
 -fi
--
++# Since the update to NetworkManager 1.14.4
++# usb0 interface needs to have carrier and to
++# be marked as managed by NetworkManager
++ifconfig usb0 up
++/usr/bin/nmcli dev set usb0 managed yes
+
 -#these are expected to be set by default...
 -if [ "x${blue_fix_uarts}" = "xenable" ] ; then
 -	if [ -f /usr/bin/config-pin ] ; then
