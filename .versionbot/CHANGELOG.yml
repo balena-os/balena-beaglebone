@@ -1,4 +1,30 @@
 - commits:
+    - subject: Update meta-resin from v2.29.0 to v2.29.2
+      hash: e775b2a177faba489ad872c6cc91bc404598f7ae
+      body: |
+        Update meta-resin from 2.29.0 to 2.29.2
+      footer:
+        Changelog-entry: Update meta-resin from v2.29.0 to v2.29.2
+        changelog-entry: Update meta-resin from v2.29.0 to v2.29.2
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+    - subject: Adapted pocketbeagle bootscripts to NetworkManager 1.14.4
+      hash: dea30b598a812e5b8de99fe01468a0462b950a47
+      body: |
+        Aligned boot-scripts with the new behavior in BalenaOS 2.29
+        where NetworkManager 1.14.4 no longer manages by default the
+        rndis interface on usb0.
+      footer:
+        Changelog-entry: Adapted pocketbeagle bootscripts to NetworkManager 1.14.4
+        changelog-entry: Adapted pocketbeagle bootscripts to NetworkManager 1.14.4
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+  version: 2.29.2+rev1
+  date: 2019-01-15T16:12:52.901Z
+- commits:
     - subject: 'u-boot: Load and apply device tree overlays'
       hash: 0a169e4414c909b9491712e95a7938a6df38c130
       body: ''

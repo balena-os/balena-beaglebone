@@ -1,6 +1,12 @@
 Change log
 -----------
 
+# v2.29.2+rev1
+## (2019-01-15)
+
+* Update meta-resin from v2.29.0 to v2.29.2 [Alexandru Costache]
+* Adapted pocketbeagle bootscripts to NetworkManager 1.14.4 [Alexandru Costache]
+
 # v2.29.0+rev3
 ## (2019-01-14)
 
