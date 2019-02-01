@@ -7,3 +7,7 @@ RESIN_CONFIGS[no_modules_compression]=" \
 
 KERNEL_DEVICETREE_beaglebone += " am335x-boneblack-uboot.dtb \
 "
+
+SRC_URI_append_beaglebone = " \
+	file://0001-Use-bbbw-dts-from-4.9.patch \
+"
