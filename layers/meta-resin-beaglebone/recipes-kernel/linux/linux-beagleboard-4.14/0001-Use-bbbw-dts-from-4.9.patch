@@ -13,6 +13,8 @@ Versions from branch 4.14.53-ti-r62 and onwards added
 in the commit fbb5850bd3c13a7a804c2f47dbd9eeb05e4e4b4a
 breaks bluetooth on BBBW.
 
+Upstream-status: Inappropriate [configuration]
+Signed-off-by: Alexandru Costache <alexandru@balena.io>
 ---
  arch/arm/boot/dts/am335x-boneblack-wireless.dts | 192 +++++++++++++++---------
  1 file changed, 119 insertions(+), 73 deletions(-)
