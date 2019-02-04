@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.29.2+rev3
+## (2019-02-04)
+
+* Fix BT timeout on Beaglebone Green Wireless [Alexandru Costache]
+
 # v2.29.2+rev2
 ## (2019-02-01)
 

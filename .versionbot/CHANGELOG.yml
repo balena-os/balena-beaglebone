@@ -1,4 +1,24 @@
 - commits:
+    - subject: Fix BT timeout on Beaglebone Green Wireless
+      hash: 148abe2b9279329478375ec21183a3bc7a3287c2
+      body: |
+        Switched back to 4.9.34-ti-r43 version of BBGW dts to fix
+        bluetooth timeout issue.
+
+        Newer versions of this dts from kernel branches 4.14 onwards
+        share the same issue - bluetooth timeout. This applies to
+        to dts versions from official debian images as well. However
+        official debian images use overlays with which the issue is
+        not present.
+      footer:
+        Changelog-entry: Fix BT timeout on Beaglebone Green Wireless
+        changelog-entry: Fix BT timeout on Beaglebone Green Wireless
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+  version: 2.29.2+rev3
+  date: 2019-02-04T08:42:21.174Z
+- commits:
     - subject: Fix BT timeout on Beaglebone Black Wireless
       hash: c6dd53756d7acd2c399a11c541cd76f3ed0053e8
       body: |
