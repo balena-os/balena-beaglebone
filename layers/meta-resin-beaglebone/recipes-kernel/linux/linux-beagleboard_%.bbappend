@@ -11,3 +11,7 @@ KERNEL_DEVICETREE_beaglebone += " am335x-boneblack-uboot.dtb \
 SRC_URI_append_beaglebone = " \
 	file://0001-Use-bbbw-dts-from-4.9.patch \
 "
+
+SRC_URI_append_beaglebone-green-wifi = " \
+        file://0001-Use-kernel-4.9-BBGW-dts-version.patch \
+"
