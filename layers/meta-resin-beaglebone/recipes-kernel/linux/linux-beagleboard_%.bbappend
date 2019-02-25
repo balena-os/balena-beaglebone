@@ -15,3 +15,6 @@ SRC_URI_append_beaglebone = " \
 SRC_URI_append_beaglebone-green-wifi = " \
         file://0001-Use-kernel-4.9-BBGW-dts-version.patch \
 "
+
+RESIN_CONFIGS_append = " panic_no_reboot"
+RESIN_CONFIGS[panic_no_reboot] = "CONFIG_PANIC_TIMEOUT=0"
