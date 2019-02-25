@@ -1,4 +1,26 @@
 - commits:
+    - subject: >-
+        Disable reboot on kernel panic as workaround for
+        https://github.com/balena-os/balena-beaglebone/issues/177
+      hash: 63403442a9cab8238c19f68870a1cb26daac09a7
+      body: |
+        Current kernel on the beaglebone exhibits the following issue:
+        https://github.com/balena-os/balena-beaglebone/issues/177
+        As a workaround for this issue we disable the reboot on kernel
+        panic config so that the board can provision as expected.
+      footer:
+        Changelog-entry: >-
+          Disable reboot on kernel panic as workaround for
+          https://github.com/balena-os/balena-beaglebone/issues/177
+        changelog-entry: >-
+          Disable reboot on kernel panic as workaround for
+          https://github.com/balena-os/balena-beaglebone/issues/177
+        Signed-off-by: Florin Sarbu <florin@balena.io>
+        signed-off-by: Florin Sarbu <florin@balena.io>
+      author: Florin Sarbu
+  version: 2.29.2+rev4
+  date: 2019-02-25T15:44:17.373Z
+- commits:
     - subject: Fix BT timeout on Beaglebone Green Wireless
       hash: 148abe2b9279329478375ec21183a3bc7a3287c2
       body: |

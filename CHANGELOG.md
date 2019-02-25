@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.29.2+rev4
+## (2019-02-25)
+
+* Disable reboot on kernel panic as workaround for https://github.com/balena-os/balena-beaglebone/issues/177 [Florin Sarbu]
+
 # v2.29.2+rev3
 ## (2019-02-04)
 
