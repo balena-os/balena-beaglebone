@@ -19,6 +19,10 @@ SRC_URI += " \
 	file://0001-Load-uboot-device-tree-overlays.patch \
 "
 
+SRC_URI_append_beaglebone-pocket = " \
+	file://am335x_evm-autoboot-zero.patch \
+"
+
 do_deploy_append() {
     install ${B}/MLO ${DEPLOYDIR}
     install ${B}/u-boot.img ${DEPLOYDIR}

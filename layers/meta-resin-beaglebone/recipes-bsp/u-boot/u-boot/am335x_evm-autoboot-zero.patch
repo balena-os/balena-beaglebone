@@ -1,0 +1,30 @@
+From d46c192759ed0277419de2af9e94174d2dfc2441 Mon Sep 17 00:00:00 2001
+From: Alexandru Costache <alexandru@balena.io>
+Date: Mon, 4 Mar 2019 14:09:43 +0100
+Subject: [PATCH] am_335x_evm: Set autoboot timeout to 0 
+
+Autoboot timeout is set to 0. If space key is
+pressed and hold before power-on, autoboot
+will be stopped.
+
+Upstream-Status: Inappropriate [configuration]
+Signed-off-by: Alexandru Costache <alexandru@balena.io>
+---
+ include/configs/am335x_evm.h | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/include/configs/am335x_evm.h b/include/configs/am335x_evm.h
+index ca1efec..7dd4627 100644
+--- a/include/configs/am335x_evm.h
++++ b/include/configs/am335x_evm.h
+@@ -114,6 +114,7 @@
+ 	"board_eeprom_header=undefined\0" \
+ 	"fdtfile=undefined\0" \
+ 	"console=ttyO0,115200n8\0" \
++	"bootdelay=0\0" \
+ 	"partitions=" \
+ 		"uuid_disk=${uuid_gpt_disk};" \
+ 		"name=bootloader,start=384K,size=1792K," \
+-- 
+2.7.4
+
