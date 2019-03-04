@@ -1,4 +1,30 @@
 - commits:
+    - subject: 'u-boot: Set pocketbeagle autoboot delay to 0'
+      hash: 6dc2857726ac3d914f1fbc5e478e9a0875186eb2
+      body: |
+        Set autoboot delay to 0 for beaglebone-pocket
+        to shorten boot times.
+
+        SPACE key needs to be pressed and hold before
+        board power-up to stop autoboot
+      footer:
+        Changelog-entry: 'u-boot: Set pocketbeagle autoboot delay to 0'
+        changelog-entry: 'u-boot: Set pocketbeagle autoboot delay to 0'
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+    - subject: 'meta-resin: Update to v2.30.0'
+      hash: 752aef1f6926da736f115d1c719d90020a815aef
+      body: ''
+      footer:
+        Changelog-entry: 'meta-resin: Update to v2.30.0'
+        changelog-entry: 'meta-resin: Update to v2.30.0'
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+  version: 2.30.0+rev1
+  date: 2019-03-04T14:49:45.558Z
+- commits:
     - subject: >-
         Disable reboot on kernel panic as workaround for
         https://github.com/balena-os/balena-beaglebone/issues/177

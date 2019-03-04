@@ -1,6 +1,12 @@
 Change log
 -----------
 
+# v2.30.0+rev1
+## (2019-03-04)
+
+* u-boot: Set pocketbeagle autoboot delay to 0 [Alexandru Costache]
+* meta-resin: Update to v2.30.0 [Alexandru Costache]
+
 # v2.29.2+rev4
 ## (2019-02-25)
 
