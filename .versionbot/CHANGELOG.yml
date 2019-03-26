@@ -1,4 +1,181 @@
 - commits:
+    - subject: Update meta-resin from v2.30.0 to v2.31.5
+      hash: b791d5cc874d62a83fa16fd244f52e9936caa72c
+      body: |
+        Update meta-resin from 2.30.0 to 2.31.5
+      footer:
+        Changelog-entry: Update meta-resin from v2.30.0 to v2.31.5
+        changelog-entry: Update meta-resin from v2.30.0 to v2.31.5
+        Signed-off-by: Florin Sarbu <florin@balena.io>
+        signed-off-by: Florin Sarbu <florin@balena.io>
+      author: Florin Sarbu
+      nested:
+        - commits:
+            - subject: Update resin-supervisor to v9.11.3
+              hash: 7ad04ea5594fc1cf5f378b9cab3c75b2ee6f0e6e
+              body: ''
+              footer:
+                Change-type: patch
+                change-type: patch
+                Changelog-entry: Update resin-supervisor to v9.11.3
+                changelog-entry: Update resin-supervisor to v9.11.3
+                Signed-off-by: Andrei Gherzan <andrei@balena.io>
+                signed-off-by: Andrei Gherzan <andrei@balena.io>
+              author: Andrei Gherzan
+          version: meta-resin-2.31.5
+          date: 2019-03-21T14:43:57.016Z
+        - commits:
+            - subject: 'resin-supervisor: Recreate on start if config has changed'
+              hash: 20032211302d25300c09310e169cafa01375e35e
+              body: >
+                Fix the ordering of the conditional check when starting the
+                supervisor container;
+
+                only check that the values being passed into the environment
+                match the ones held
+
+                in the config IF the container already exists.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Rich Bayliss <rich@balena.io>
+                signed-off-by: Rich Bayliss <rich@balena.io>
+              author: Rich Bayliss
+          version: meta-resin-2.31.4
+          date: 2019-03-20T23:25:52.136Z
+        - commits:
+            - subject: Update resin-supervisor to v9.11.2
+              hash: abb864096b5b473893aa7011a685ed8df97a28ee
+              body: ''
+              footer:
+                Change-type: patch
+                change-type: patch
+                Changelog-entry: Update resin-supervisor to v9.11.2
+                changelog-entry: Update resin-supervisor to v9.11.2
+                Signed-off-by: Pablo Carranza Velez <pablo@balena.io>
+                signed-off-by: Pablo Carranza Velez <pablo@balena.io>
+              author: Pablo Carranza Velez
+          version: meta-resin-2.31.3
+          date: 2019-03-20T20:18:02.522Z
+        - commits:
+            - subject: Update resin-supervisor to v9.11.1
+              hash: 0993710382367b865ce81113dbe5566e5814da10
+              body: ''
+              footer:
+                Change-type: patch
+                change-type: patch
+                Changelog-entry: Update resin-supervisor to v9.11.1
+                changelog-entry: Update resin-supervisor to v9.11.1
+                Signed-off-by: Pablo Carranza Velez <pablo@balena.io>
+                signed-off-by: Pablo Carranza Velez <pablo@balena.io>
+              author: Pablo Carranza Velez
+          version: meta-resin-2.31.2
+          date: 2019-03-19T21:33:42.542Z
+        - commits:
+            - subject: Update resin-supervisor to v9.11.0
+              hash: 8b1380bce8a664ef228b054c2b065521acbb48aa
+              body: ''
+              footer:
+                Change-type: patch
+                change-type: patch
+                Changelog-entry: Update resin-supervisor to v9.11.0
+                changelog-entry: Update resin-supervisor to v9.11.0
+                Signed-off-by: Pablo Carranza Velez <pablo@balena.io>
+                signed-off-by: Pablo Carranza Velez <pablo@balena.io>
+              author: Pablo Carranza Velez
+          version: meta-resin-2.31.1
+          date: 2019-03-18T19:21:24.218Z
+        - commits:
+            - subject: 'README:md: Document dnsServers behaviour'
+              hash: ad441b8367d65fe780beef35b20f8d4898bdd339
+              body: >
+                Taken from fa3de6987e3bc82ab6d85038c637f1871e5269cb commit
+                message
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexis Svinartchouk <alexis@balena.io>
+                signed-off-by: Alexis Svinartchouk <alexis@balena.io>
+              author: Alexis Svinartchouk
+            - subject: Update resin-supervisor to v9.9.0
+              hash: 133dde58bde7c4d54ad157374bb3e7062a599e31
+              body: ''
+              footer:
+                Change-type: minor
+                change-type: minor
+                Changelog-entry: Update resin-supervisor to v9.9.0
+                changelog-entry: Update resin-supervisor to v9.9.0
+                Signed-off-by: Cameron Diver <cameron@balena.io>
+                signed-off-by: Cameron Diver <cameron@balena.io>
+              author: Cameron Diver
+            - subject: Cleanup old versions of iwlwifi firmware files in Yocto sumo
+              hash: 5db4441e50b2d47cd7658845c12508b50808d5ee
+              body: >
+                This is done so we can save considerable amount of space on the
+                root
+
+                partition.
+
+
+                See #810
+              footer:
+                Change-type: minor
+                change-type: minor
+                Changelog-entry: Cleanup old versions of iwlwifi firmware files in Yocto sumo
+                changelog-entry: Cleanup old versions of iwlwifi firmware files in Yocto sumo
+                Signed-off-by: Andrei Gherzan <andrei@balena.io>
+                signed-off-by: Andrei Gherzan <andrei@balena.io>
+              author: Andrei Gherzan
+            - subject: Remove polkit dependency in balenaOS
+              hash: 4fddf1a54ac13ed4acd3f65096afccf6a5f7a5ef
+              body: |
+                Fixes #1404
+                See #810
+              footer:
+                Change-type: minor
+                change-type: minor
+                Changelog-entry: Remove polkit dependency in balenaOS
+                changelog-entry: Remove polkit dependency in balenaOS
+                Signed-off-by: Andrei Gherzan <andrei@balena.io>
+                signed-off-by: Andrei Gherzan <andrei@balena.io>
+              author: Andrei Gherzan
+            - subject: Remove support for XFS file system
+              hash: bbf5675973da6adf8fa8f8b671606fbffaef834e
+              body: |
+                This is done so we can save space on the root file system.
+
+                See #810
+              footer:
+                Change-type: minor
+                change-type: minor
+                Changelog-entry: Remove support for XFS file system
+                changelog-entry: Remove support for XFS file system
+                Signed-off-by: Andrei Gherzan <andrei@balena.io>
+                signed-off-by: Andrei Gherzan <andrei@balena.io>
+              author: Andrei Gherzan
+            - subject: 'resin-init: update resin.io reference to balenaOS'
+              hash: 593fcb558b1afe3892560fdd7e0c315c9459466f
+              body: ''
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Matthew McGinn <matthew@balena.io>
+                signed-off-by: Matthew McGinn <matthew@balena.io>
+              author: Matthew McGinn
+          version: meta-resin-2.31.0
+          date: 2019-03-08T14:31:27.986Z
+    - subject: Update the balena-yocto-scripts submodule to v1.0.3
+      hash: 0096ddbcd1be908df96423cd9eae614a2f278150
+      body: ''
+      footer:
+        Changelog-entry: Update the balena-yocto-scripts submodule to v1.0.3
+        changelog-entry: Update the balena-yocto-scripts submodule to v1.0.3
+        Signed-off-by: Florin Sarbu <florin@balena.io>
+        signed-off-by: Florin Sarbu <florin@balena.io>
+      author: Florin Sarbu
+  version: 2.31.5+rev1
+  date: 2019-03-26T11:20:14.723Z
+- commits:
     - subject: 'u-boot: Set pocketbeagle autoboot delay to 0'
       hash: 6dc2857726ac3d914f1fbc5e478e9a0875186eb2
       body: |

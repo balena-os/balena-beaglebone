@@ -1,6 +1,52 @@
 Change log
 -----------
 
+# v2.31.5+rev1
+## (2019-03-26)
+
+* Update meta-resin from v2.30.0 to v2.31.5 [Florin Sarbu]
+
+<details>
+<summary> View details </summary>
+
+## meta-resin-2.31.5
+### (2019-03-21)
+
+* Update resin-supervisor to v9.11.3 [Andrei Gherzan]
+
+## meta-resin-2.31.4
+### (2019-03-20)
+
+* resin-supervisor: Recreate on start if config has changed [Rich Bayliss]
+
+## meta-resin-2.31.3
+### (2019-03-20)
+
+* Update resin-supervisor to v9.11.2 [Pablo Carranza Velez]
+
+## meta-resin-2.31.2
+### (2019-03-19)
+
+* Update resin-supervisor to v9.11.1 [Pablo Carranza Velez]
+
+## meta-resin-2.31.1
+### (2019-03-18)
+
+* Update resin-supervisor to v9.11.0 [Pablo Carranza Velez]
+
+## meta-resin-2.31.0
+### (2019-03-08)
+
+* README:md: Document dnsServers behaviour [Alexis Svinartchouk]
+* Update resin-supervisor to v9.9.0 [Cameron Diver]
+* Cleanup old versions of iwlwifi firmware files in Yocto sumo [Andrei Gherzan]
+* Remove polkit dependency in balenaOS [Andrei Gherzan]
+* Remove support for XFS file system [Andrei Gherzan]
+* resin-init: update resin.io reference to balenaOS [Matthew McGinn]
+</details>
+
+* Update the balena-yocto-scripts submodule to v1.0.3 [Florin Sarbu]
+
 # v2.30.0+rev1
 ## (2019-03-04)
 
