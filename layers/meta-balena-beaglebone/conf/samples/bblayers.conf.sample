@@ -13,15 +13,15 @@ BBLAYERS ?= " \
     ${TOPDIR}/../layers/meta-openembedded/meta-networking \
     ${TOPDIR}/../layers/meta-openembedded/meta-python \
     ${TOPDIR}/../layers/meta-ti \
-    ${TOPDIR}/../layers/meta-resin/meta-resin-common \
-    ${TOPDIR}/../layers/meta-resin/meta-resin-rocko \
-    ${TOPDIR}/../layers/meta-resin-beaglebone \
+    ${TOPDIR}/../layers/meta-balena/meta-resin-common \
+    ${TOPDIR}/../layers/meta-balena/meta-resin-rocko \
+    ${TOPDIR}/../layers/meta-balena-beaglebone \
     ${TOPDIR}/../layers/meta-rust \
     "
 
 BBLAYERS_NON_REMOVABLE ?= " \
     ${TOPDIR}/../layers/poky/meta \
     ${TOPDIR}/../layers/poky/meta-poky \
-    ${TOPDIR}/../layers/meta-resin/meta-resin-common \
-    ${TOPDIR}/../layers/meta-resin/meta-resin-rocko \
+    ${TOPDIR}/../layers/meta-balena/meta-resin-common \
+    ${TOPDIR}/../layers/meta-balena/meta-resin-rocko \
     "
