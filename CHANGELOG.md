@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.32.0+rev2
+## (2019-04-25)
+
+* Change the poky submodule to our github mirror [Florin Sarbu]
+
 # v2.32.0+rev1
 ## (2019-04-24)
 
