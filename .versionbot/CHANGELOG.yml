@@ -1,4 +1,18 @@
 - commits:
+    - subject: Fix reference in repo.yml to point to the correct URL
+      hash: c3751bbf8226a5a874ee16fc92dc91681954a3ef
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Changelog-entry: Fix reference in repo.yml to point to the correct URL
+        changelog-entry: Fix reference in repo.yml to point to the correct URL
+        Signed-off-by: Giovanni Garufi <giovanni@balena.io>
+        signed-off-by: Giovanni Garufi <giovanni@balena.io>
+      author: Giovanni Garufi
+  version: 2.32.0+rev3
+  date: 2019-05-06T08:28:59.520Z
+- commits:
     - subject: Change the poky submodule to our github mirror
       hash: 891b07eef7393519289c523ee24613afbece6c76
       body: |

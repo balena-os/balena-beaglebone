@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.32.0+rev3
+## (2019-05-06)
+
+* Fix reference in repo.yml to point to the correct URL [Giovanni Garufi]
+
 # v2.32.0+rev2
 ## (2019-04-25)
 
