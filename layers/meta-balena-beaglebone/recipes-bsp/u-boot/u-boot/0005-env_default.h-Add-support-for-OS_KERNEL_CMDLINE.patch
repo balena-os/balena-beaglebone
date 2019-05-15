@@ -1,32 +1,30 @@
-From da3b0246e3899e664f3b5a0be3c668ccf09f0692 Mon Sep 17 00:00:00 2001
-From: Florin Sarbu <florin@balena.io>
-Date: Fri, 3 May 2019 15:24:41 +0200
+From 65b03b136110a7b172446d87cffe2226968d582c Mon Sep 17 00:00:00 2001
+From: Andrei Gherzan <andrei@balena.io>
+Date: Wed, 15 May 2019 19:05:08 +0100
 Subject: [PATCH] env_default.h: Add support for OS_KERNEL_CMDLINE
 
-OS_KERNEL_CMDLINE is passed from meta-balena and contains cmdline arguments
-for production images (supressing writing the boot log to console, no terminal
-cursor blink etc).
+The uboot integration runs set_os_cmdline which sets os_cmdline. Use
+this to pass the cmdline to uboot.
 
-Upstream-Status: Inappropriate [configuration]
-Signed-off-by: Florin Sarbu <florin@balena.io>
+Upstream-status: Inappropriate [Configuration]
+Signed-off-by: Andrei Gherzan <andrei@balena.io>
+
 ---
- include/env_default.h | 3 +++
- 1 file changed, 3 insertions(+)
+ include/environment/ti/mmc.h | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/include/env_default.h b/include/env_default.h
-index b18244f..d13388e 100644
---- a/include/env_default.h
-+++ b/include/env_default.h
-@@ -24,6 +24,9 @@ static char default_environment[] = {
- const uchar default_environment[] = {
- #endif
-     RESIN_ENV
-+
-+"cmdline=" __stringify(OS_KERNEL_CMDLINE) "\0" \
-+
- #ifndef CONFIG_USE_DEFAULT_ENV_FILE
- #ifdef	CONFIG_ENV_CALLBACK_LIST_DEFAULT
- 	ENV_CALLBACK_VAR "=" CONFIG_ENV_CALLBACK_LIST_DEFAULT "\0"
+diff --git a/include/environment/ti/mmc.h b/include/environment/ti/mmc.h
+index 1bf2668a16..ea64a6c0fe 100644
+--- a/include/environment/ti/mmc.h
++++ b/include/environment/ti/mmc.h
+@@ -19,6 +19,7 @@
+ 		"root=PARTUUID=${uuid} ro " \
+ 		"rootfstype=${mmcrootfstype} " \
+ 		"${uboot_detected_capes} " \
++		"${os_cmdline} " \
+ 		"${cmdline}\0" \
+ 	"args_mmc_old=setenv bootargs console=${console} " \
+ 		"${optargs} " \
 -- 
-2.7.4
+2.17.1
 

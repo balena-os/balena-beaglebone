@@ -29,8 +29,3 @@ do_deploy_append() {
     install ${B}/u-boot.img ${DEPLOYDIR}
     install ${WORKDIR}/uEnv.txt_internal ${DEPLOYDIR}
 }
-
-do_generate_resin_uboot_configuration_append() {
-    fl = open(os.path.join(d.getVar('S'), 'include', 'config_resin.h'), 'a')
-    fl.write("#define %s %s\n" % ('OS_KERNEL_CMDLINE', d.getVar('OS_KERNEL_CMDLINE')))
-}
