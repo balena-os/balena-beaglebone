@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.33.0+rev2
+## (2019-05-24)
+
+* bb-org-overlays.bb: Added BB-UART4-RTSCTS-00A0.dts overlay [sharvin26]
+
 # v2.33.0+rev1
 ## (2019-05-06)
 

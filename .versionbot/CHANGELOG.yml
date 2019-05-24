@@ -1,4 +1,17 @@
 - commits:
+    - subject: 'bb-org-overlays.bb: Added BB-UART4-RTSCTS-00A0.dts overlay'
+      hash: 061c351adc138d8810ff4a67b7d25ae9508d359c
+      body: |
+        This overlay enables RTS/CTS flow control for UART4
+      footer:
+        Changelog-entry: 'bb-org-overlays.bb: Added BB-UART4-RTSCTS-00A0.dts overlay'
+        changelog-entry: 'bb-org-overlays.bb: Added BB-UART4-RTSCTS-00A0.dts overlay'
+        Signed-off-by: Sharvin Shah <sharvinshah51@gmail.com>
+        signed-off-by: Sharvin Shah <sharvinshah51@gmail.com>
+      author: sharvin26
+  version: 2.33.0+rev2
+  date: 2019-05-24T13:35:00.005Z
+- commits:
     - subject: Update rust to 1.33
       hash: 13c5c8ecd90ce1761f4a7e2838611425b005ed68
       body: ''
