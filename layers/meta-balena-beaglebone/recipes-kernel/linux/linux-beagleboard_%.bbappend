@@ -16,5 +16,24 @@ SRC_URI_append_beaglebone-green-wifi = " \
         file://0001-Use-kernel-4.9-BBGW-dts-version.patch \
 "
 
+SRC_URI_append_beagleboard-xm = " \
+	file://0001-set-gpios-vaux3.patch \
+"
+
 RESIN_CONFIGS_append = " panic_no_reboot"
 RESIN_CONFIGS[panic_no_reboot] = "CONFIG_PANIC_TIMEOUT=0"
+
+RESIN_CONFIGS_append_beagleboard-xm = " omap3_soc \
+	twl4030 \
+"
+
+RESIN_CONFIGS[omap3_soc] = " \
+	CONFIG_ARCH_OMAP3=y \
+	CONFIG_USB_MUSB_OMAP2PLUS=y \
+"
+
+RESIN_CONFIGS[twl4030] = " \
+	CONFIG_REGULATOR_TWL4030=y \
+	CONFIG_TWL4030_USB=y \
+	CONFIG_GPIO_TWL4030=y \
+"

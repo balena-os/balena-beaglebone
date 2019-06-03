@@ -1,0 +1,40 @@
+From 69723fe0333ff2bcf10fe0c3bb0b561c3d0b93ef Mon Sep 17 00:00:00 2001
+From: Sebastian Panceac <sebastian@balena.io>
+Date: Fri, 5 Apr 2019 15:17:24 +0200
+Subject: [PATCH] Use all 512MB of RAM on BeagleboardXM
+
+U-boot SPL calls the function get_board_mem_timings(), which reads
+3 GPIOs to distinguish between Beagleboard flavours.
+
+When get_board_mem_timings() function is called in SPL it will
+always return -1 because GPIOs can't be read at that early time.
+
+Because of this u-boot will take a code path where will consider
+the board as a simple Beagleboard with 256MB of RAM instead of
+a BeagleboardXM with 512MB RAM.
+
+This patch is a workaround for this bug in the mainline u-boot
+where it forces the board type to BeagleboardXM.
+
+Upstream-status: Pending
+Signed-off-by: Sebastian Panceac <sebastian@balena.io>
+---
+ board/ti/beagle/beagle.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/board/ti/beagle/beagle.c b/board/ti/beagle/beagle.c
+index dbf4ddb396..d29160cba6 100644
+--- a/board/ti/beagle/beagle.c
++++ b/board/ti/beagle/beagle.c
+@@ -195,7 +195,7 @@ void get_board_mem_timings(struct board_sdrc_timings *timings)
+ 			break;
+ 		}
+ 	case REVISION_XM_AB:
+-	case REVISION_XM_C:
++	case -1:
+ 		if (pop_mfr == 0) {
+ 			/* 256MB DDR */
+ 			timings->mcfg = MICRON_V_MCFG_200(256 << 20);
+-- 
+2.17.1
+
