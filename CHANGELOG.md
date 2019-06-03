@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.37.0+rev2
+## (2019-06-03)
+
+* Add icon for Beagleboard-XM board [Sebastian Panceac]
+
 # v2.37.0+rev1
 ## (2019-05-31)
 

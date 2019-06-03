@@ -1,4 +1,16 @@
 - commits:
+    - subject: Add icon for Beagleboard-XM board
+      hash: 4676c6eadcbf4206aebe0f250750e1fccaf338e8
+      body: ''
+      footer:
+        Changelog-entry: Add icon for Beagleboard-XM board
+        changelog-entry: Add icon for Beagleboard-XM board
+        Signed-off-by: Sebastian Panceac <sebastian@balena.io>
+        signed-off-by: Sebastian Panceac <sebastian@balena.io>
+      author: Sebastian Panceac
+  version: 2.37.0+rev2
+  date: 2019-06-03T12:16:00.871Z
+- commits:
     - subject: 'resin-image: Add support for Beagleboard-XM'
       hash: 5f5684581f619cb88b0686be3d6e61d6073ebb01
       body: ''
