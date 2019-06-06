@@ -24,6 +24,10 @@ SRC_URI_append_beaglebone-pocket = " \
 	file://am335x_evm-autoboot-zero.patch \
 "
 
+SRC_URI_append_beagleboard-xm = " \
+	file://0001-all-mem.patch \
+"
+
 do_deploy_append() {
     install ${B}/MLO ${DEPLOYDIR}
     install ${B}/u-boot.img ${DEPLOYDIR}

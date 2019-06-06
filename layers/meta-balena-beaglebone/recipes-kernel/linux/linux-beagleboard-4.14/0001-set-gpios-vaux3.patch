@@ -1,0 +1,52 @@
+From 40c152c4e99cac706358554a573d9f1a71482cec Mon Sep 17 00:00:00 2001
+From: Sebastian Panceac <sebastian@balena.io>
+Date: Mon, 22 Apr 2019 11:25:25 +0200
+Subject: [PATCH] Set pinmux to GPIOs and enable VAUX3 regulator
+
+Set pinmux to gpio for pins GPIO99, GPIO101, GPIO102 and GPIO103
+and enable VAUX3 regulator
+
+Upstream-status: Inappropriate [configuration]
+Signed-off-by: Sebastian Panceac <sebastian@balena.io>
+---
+ arch/arm/boot/dts/omap3-beagle-xm.dts | 15 +++++++++++++++
+ 1 file changed, 15 insertions(+)
+
+diff --git a/arch/arm/boot/dts/omap3-beagle-xm.dts b/arch/arm/boot/dts/omap3-beagle-xm.dts
+index 683b96a8f73e..9b0377ac39a6 100644
+--- a/arch/arm/boot/dts/omap3-beagle-xm.dts
++++ b/arch/arm/boot/dts/omap3-beagle-xm.dts
+@@ -197,8 +197,17 @@
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <
+ 			&hsusb2_pins
++			&stem_pins
+ 	>;
+ 
++	stem_pins: pinmux_stem_pins {
++		pinctrl-single,pins = <
++			OMAP3_CORE1_IOPAD(0x211e, PIN_INPUT | MUX_MODE4) /* gpio_103 */
++			OMAP3_CORE1_IOPAD(0x211a, PIN_INPUT | MUX_MODE4) /* gpio_101 */
++			OMAP3_CORE1_IOPAD(0x2116, PIN_INPUT | MUX_MODE4) /* gpio_99 */
++			OMAP3_CORE1_IOPAD(0x211c, PIN_INPUT | MUX_MODE4) /* gpio_102 */
++		>;
++	};
+ 	uart3_pins: pinmux_uart3_pins {
+ 		pinctrl-single,pins = <
+ 			OMAP3_CORE1_IOPAD(0x219e, PIN_INPUT | MUX_MODE0)	/* uart3_rx_irrx.uart3_rx_irrx */
+@@ -373,6 +382,12 @@
+ 	regulator-always-on;
+ };
+ 
++&vaux3 {
++	regulator-min-microvolt = <1800000>;
++	regulator-max-microvolt = <1800000>;
++	regulator-always-on;
++};
++
+ &mcbsp2 {
+ 	status = "okay";
+ };
+-- 
+2.17.1
+
