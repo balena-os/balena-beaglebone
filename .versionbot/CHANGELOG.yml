@@ -1,4 +1,18 @@
 - commits:
+    - subject: Use the os_cmdline uboot support provided by meta-balena
+      hash: 995dc55af3d8a5fcb7a898e507d54e14956d27dc
+      body: |
+        This removes the use of OS_KERNEL_CMDLINE directly by switching to the
+        uboot support provided by `os_cmdline` variable set by `set_os_cmdline`.
+      footer:
+        Changelog-entry: Use the os_cmdline uboot support provided by meta-balena
+        changelog-entry: Use the os_cmdline uboot support provided by meta-balena
+        Signed-off-by: Andrei Gherzan <andrei@balena.io>
+        signed-off-by: Andrei Gherzan <andrei@balena.io>
+      author: Andrei Gherzan
+  version: 2.37.0+rev4
+  date: 2019-06-07T04:48:58.635Z
+- commits:
     - subject: 'u-boot: Integrate Balena env for Beagleboard-XM'
       hash: c508a830da791f71b065634b87a70a1bfd3a4303
       body: ''

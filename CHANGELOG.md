@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.37.0+rev4
+## (2019-06-07)
+
+* Use the os_cmdline uboot support provided by meta-balena [Andrei Gherzan]
+
 # v2.37.0+rev3
 ## (2019-06-06)
 
