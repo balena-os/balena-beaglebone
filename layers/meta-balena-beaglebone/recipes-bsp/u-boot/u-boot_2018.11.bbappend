@@ -26,6 +26,7 @@ SRC_URI_append_beaglebone-pocket = " \
 
 SRC_URI_append_beagleboard-xm = " \
 	file://0001-all-mem.patch \
+	file://beagle-xm--Balena-environment.patch \
 "
 
 do_deploy_append() {
