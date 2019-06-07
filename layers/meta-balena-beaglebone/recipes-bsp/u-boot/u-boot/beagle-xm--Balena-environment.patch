@@ -1,0 +1,42 @@
+From d80b9ec7c689b56b371752811c672cb2eaad4523 Mon Sep 17 00:00:00 2001
+From: Sebastian Panceac <sebastian@balena.io>
+Date: Thu, 6 Jun 2019 15:34:48 +0200
+Subject: [PATCH] Integrate Beagleboard-XM with Balena environment
+
+Upstream-Status: Inappropriate [configuration]
+Signed-off-by: Sebastian Panceac <sebastian@balena.io>
+---
+ configs/omap3_beagle_defconfig | 2 +-
+ include/configs/omap3_beagle.h | 3 ++-
+ 2 files changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/configs/omap3_beagle_defconfig b/configs/omap3_beagle_defconfig
+index 4fb8aec57d..655f023d0e 100644
+--- a/configs/omap3_beagle_defconfig
++++ b/configs/omap3_beagle_defconfig
+@@ -5,7 +5,7 @@ CONFIG_TARGET_OMAP3_BEAGLE=y
+ CONFIG_SPL=y
+ CONFIG_DISTRO_DEFAULTS=y
+ CONFIG_NR_DRAM_BANKS=2
+-CONFIG_BOOTCOMMAND="run findfdt; run distro_bootcmd"
++CONFIG_BOOTCOMMAND="run findfdt; setenv resin_kernel_load_addr ${loadaddr}; run resin_set_kernel_root; setenv mmcdev ${resin_dev_index}; setenv bootpart ${resin_dev_index}:${resin_root_part}; run set_os_cmdline; run mmcboot"
+ CONFIG_SYS_CONSOLE_INFO_QUIET=y
+ CONFIG_DEFAULT_FDT_FILE="omap3-beagle.dtb"
+ CONFIG_VERSION_VARIABLE=y
+diff --git a/include/configs/omap3_beagle.h b/include/configs/omap3_beagle.h
+index 7698a90c4e..7aa6df79ab 100644
+--- a/include/configs/omap3_beagle.h
++++ b/include/configs/omap3_beagle.h
+@@ -151,7 +151,8 @@
+ 		"${mtdparts} " \
+ 		"${defargs} " \
+ 		"${optargs} " \
+-		"root=${mmcroot} " \
++		"${os_cmdline} " \
++		"${resin_kernel_root} " \
+ 		"rootfstype=${mmcrootfstype}\0" \
+ 	"userbutton_xm=gpio input 4;\0" \
+ 	"userbutton_nonxm=gpio input 7;\0" \
+-- 
+2.17.1
+
