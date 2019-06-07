@@ -1,4 +1,16 @@
 - commits:
+    - subject: 'u-boot: Integrate Balena env for Beagleboard-XM'
+      hash: c508a830da791f71b065634b87a70a1bfd3a4303
+      body: ''
+      footer:
+        Changelog-entry: 'u-boot: Integrate Balena env for Beagleboard-XM'
+        changelog-entry: 'u-boot: Integrate Balena env for Beagleboard-XM'
+        Signed-off-by: Sebastian Panceac <sebastian@balena.io>
+        signed-off-by: Sebastian Panceac <sebastian@balena.io>
+      author: Sebastian Panceac
+  version: 2.37.0+rev3
+  date: 2019-06-06T20:37:04.100Z
+- commits:
     - subject: Add icon for Beagleboard-XM board
       hash: 4676c6eadcbf4206aebe0f250750e1fccaf338e8
       body: ''

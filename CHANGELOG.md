@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.37.0+rev3
+## (2019-06-06)
+
+* u-boot: Integrate Balena env for Beagleboard-XM [Sebastian Panceac]
+
 # v2.37.0+rev2
 ## (2019-06-03)
 
