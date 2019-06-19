@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.37.0+rev5
+## (2019-06-19)
+
+* linux-beagleboard: Power cycle SD card at boot on Beagleboard-XM [Sebastian Panceac]
+
 # v2.37.0+rev4
 ## (2019-06-07)
 

@@ -1,4 +1,22 @@
 - commits:
+    - subject: 'linux-beagleboard: Power cycle SD card at boot on Beagleboard-XM'
+      hash: f9e214536a964af88c3e230194e603a896e4578a
+      body: |
+        We need to power cycle the SD card at the initialization sequence
+        to put it in a reset state. Otherwise, we will encounter this
+        error that prevents boot:
+
+        [    3.042205] mmc0: card never left busy state
+        [    3.050262] mmc0: error -110 whilst initialising SD card
+      footer:
+        Changelog-entry: 'linux-beagleboard: Power cycle SD card at boot on Beagleboard-XM'
+        changelog-entry: 'linux-beagleboard: Power cycle SD card at boot on Beagleboard-XM'
+        Signed-off-by: Sebastian Panceac <sebastian@balena.io>
+        signed-off-by: Sebastian Panceac <sebastian@balena.io>
+      author: Sebastian Panceac
+  version: 2.37.0+rev5
+  date: 2019-06-19T12:51:40.930Z
+- commits:
     - subject: Use the os_cmdline uboot support provided by meta-balena
       hash: 995dc55af3d8a5fcb7a898e507d54e14956d27dc
       body: |
