@@ -18,6 +18,7 @@ SRC_URI_append_beaglebone-green-wifi = " \
 
 SRC_URI_append_beagleboard-xm = " \
 	file://0001-set-gpios-vaux3.patch \
+	file://0001-card-power-cycle.patch \
 "
 
 RESIN_CONFIGS_append = " panic_no_reboot"
