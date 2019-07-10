@@ -1,6 +1,28 @@
 Change log
 -----------
 
+# v2.38.2+rev1
+## (2019-07-10)
+
+* Update the balena-yocto-scripts submodule to v1.2.3 [Florin Sarbu]
+
+<details>
+<summary> Update meta-balena from v2.38.0 to v2.38.2 [Florin Sarbu] </summary>
+
+> ## meta-balena-2.38.2
+> ### (2019-06-27)
+> 
+> * Update to kernel-modules-headers v0.0.20 to fix missing target modpost binary on kernel 5.0.3 [Florin Sarbu]
+> * Update to kernel-modules-headers v0.0.19 to fix target objtool compile issue on kernel 5.0.3 [Florin Sarbu]
+
+> ## meta-balena-2.38.1
+> ### (2019-06-20)
+> 
+> * Add warrior to compatible layers for meta-balena-common [Florin Sarbu]
+> * Fix image-resin.bbclass to be able to use deprecated layers [Andrei Gherzan]
+> * Fix kernel-devsrc on thud when kernel version < 4.10 [Andrei Gherzan]
+</details>
+
 # v2.38.0+rev1
 ## (2019-06-19)
 
