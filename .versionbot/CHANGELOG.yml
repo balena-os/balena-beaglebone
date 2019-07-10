@@ -1,4 +1,16 @@
 - commits:
+    - subject: Rename beaglebone-black.svg to beaglebone.svg
+      hash: 6e6d25311cd97ab0e83809d78dc668a23578bc15
+      body: ''
+      footer:
+        Changelog-entry: Rename beaglebone-black.svg to beaglebone.svg
+        changelog-entry: Rename beaglebone-black.svg to beaglebone.svg
+        Signed-off-by: Florin Sarbu <florin@balena.io>
+        signed-off-by: Florin Sarbu <florin@balena.io>
+      author: Florin Sarbu
+  version: 2.38.2+rev2
+  date: 2019-07-10T11:54:32.974Z
+- commits:
     - subject: Update the balena-yocto-scripts submodule to v1.2.3
       hash: 92342bc94ae8bf1b714698d0644edad71354bef1
       body: ''

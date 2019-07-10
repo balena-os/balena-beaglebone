@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.38.2+rev2
+## (2019-07-10)
+
+* Rename beaglebone-black.svg to beaglebone.svg [Florin Sarbu]
+
 # v2.38.2+rev1
 ## (2019-07-10)
 
