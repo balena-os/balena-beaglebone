@@ -1,4 +1,39 @@
 - commits:
+    - subject: Update the balena-yocto-scripts submodule to v1.3.5
+      hash: 9b7e127a525e2bf7d32a1e937c986f60b69455ed
+      body: ''
+      footer:
+        Changelog-entry: Update the balena-yocto-scripts submodule to v1.3.5
+        changelog-entry: Update the balena-yocto-scripts submodule to v1.3.5
+        Signed-off-by: Florin Sarbu <florin@balena.io>
+        signed-off-by: Florin Sarbu <florin@balena.io>
+      author: Florin Sarbu
+    - subject: Update meta-balena from v2.38.2 to v2.38.3
+      hash: d6f5aad691d6a5b17aee8c7d9367589963a77332
+      body: |
+        Update meta-balena from 2.38.2 to 2.38.3
+      footer:
+        Changelog-entry: Update meta-balena from v2.38.2 to v2.38.3
+        changelog-entry: Update meta-balena from v2.38.2 to v2.38.3
+        Signed-off-by: Florin Sarbu <florin@balena.io>
+        signed-off-by: Florin Sarbu <florin@balena.io>
+      author: Florin Sarbu
+      nested:
+        - commits:
+            - subject: 'resin-proxy-config: fix up incorrect bash subshell command'
+              hash: 0c8de756c22f635b2ef499848b724f1350f555b0
+              body: ''
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Matthew McGinn <matthew@balena.io>
+                signed-off-by: Matthew McGinn <matthew@balena.io>
+              author: Matthew McGinn
+          version: meta-balena-2.38.3
+          date: 2019-07-10T08:16:25.713Z
+  version: 2.38.3+rev1
+  date: 2019-07-16T06:24:06.844Z
+- commits:
     - subject: Rename beaglebone-black.svg to beaglebone.svg
       hash: 6e6d25311cd97ab0e83809d78dc668a23578bc15
       body: ''
