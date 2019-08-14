@@ -1,0 +1,1 @@
+KERNEL=="ttyO[0-9]*", SYMLINK="ttyS%n"
