@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.38.3+rev2
+## (2019-08-14)
+
+* linux-beagleboard: Switch UART driver to CONFIG_SERIAL_OMAP [Sebastian Panceac]
+
 # v2.38.3+rev1
 ## (2019-07-16)
 

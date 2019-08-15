@@ -1,4 +1,20 @@
 - commits:
+    - subject: 'linux-beagleboard: Switch UART driver to CONFIG_SERIAL_OMAP'
+      hash: 3004e401a1cf0254a0aa14115e2b3ba05cac1e56
+      body: |
+        This commit enables CONFIG_SERIAL_OMAP instead of
+        CONFIG_SERIAL_8250_OMAP as the UART driver. This change is necessary
+        because the 8250 driver has a bug and sometimes skips and duplicates
+        sent bytes
+      footer:
+        Changelog-entry: 'linux-beagleboard: Switch UART driver to CONFIG_SERIAL_OMAP'
+        changelog-entry: 'linux-beagleboard: Switch UART driver to CONFIG_SERIAL_OMAP'
+        Signed-off-by: Sebastian Panceac <sebastian@balena.io>
+        signed-off-by: Sebastian Panceac <sebastian@balena.io>
+      author: Sebastian Panceac
+  version: 2.38.3+rev2
+  date: 2019-08-14T13:56:42.643Z
+- commits:
     - subject: Update the balena-yocto-scripts submodule to v1.3.5
       hash: 9b7e127a525e2bf7d32a1e937c986f60b69455ed
       body: ''
