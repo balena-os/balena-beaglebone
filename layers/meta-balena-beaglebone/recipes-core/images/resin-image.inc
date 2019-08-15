@@ -16,4 +16,6 @@ RESIN_BOOT_PARTITION_FILES_beagleboard-xm = " \
 # Beaglebone expects the kernel and dtbs on rootfs
 IMAGE_INSTALL_append = " kernel-image-initramfs kernel-devicetree wlconf"
 
+IMAGE_INSTALL_append = " beagle-serial"
+
 RESIN_BOOT_PARTITION_FILES_append_beaglebone-pocket = " uEnv.txt_internal:"
