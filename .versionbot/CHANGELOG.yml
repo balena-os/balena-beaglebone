@@ -1,4 +1,172 @@
 - commits:
+    - subject: Update the balena-yocto-scripts submodule to v1.3.7
+      hash: ce24ab4ee120c662d62e99a49bd15acd9138a8ad
+      body: ''
+      footer:
+        Changelog-entry: Update the balena-yocto-scripts submodule to v1.3.7
+        changelog-entry: Update the balena-yocto-scripts submodule to v1.3.7
+        Signed-off-by: Florin Sarbu <florin@balena.io>
+        signed-off-by: Florin Sarbu <florin@balena.io>
+      author: Florin Sarbu
+    - subject: Update meta-balena from v2.40.0 to v2.41.1
+      hash: 07b460f3d03998b39804429f42739d9f407b0e88
+      body: |
+        Update meta-balena from 2.40.0 to 2.41.1
+      footer:
+        Changelog-entry: Update meta-balena from v2.40.0 to v2.41.1
+        changelog-entry: Update meta-balena from v2.40.0 to v2.41.1
+        Signed-off-by: Florin Sarbu <florin@balena.io>
+        signed-off-by: Florin Sarbu <florin@balena.io>
+      author: Florin Sarbu
+      nested:
+        - commits:
+            - subject: Update ModemManager to version 1.10.4
+              hash: 6f300a3fc01521ceadd3f8a50c9157d070525dde
+              body: ''
+              footer:
+                Change-type: patch
+                change-type: patch
+                Changelog-entry: Update ModemManager to version 1.10.4
+                changelog-entry: Update ModemManager to version 1.10.4
+                Signed-off-by: Florin Sarbu <florin@balena.io>
+                signed-off-by: Florin Sarbu <florin@balena.io>
+              author: Florin Sarbu
+            - subject: >-
+                Fix for some innocous systemd tmpfile warnings /var/run -> /run
+                ones
+              hash: 25bb6364dfff2a65d7f53f71a35ef74f24f7d7a9
+              body: >
+                Otherwise systemd complains:
+
+                localhost systemd-tmpfiles[525]:
+                [/etc/tmpfiles.d/balena-tmpfiles.conf:1] Line references path
+                below legacy directory /var/run/, updating /var/run/docker.pid →
+                /run/docker.pid; please update the tmpfiles.d/ drop-in file
+                accordingly.
+
+                localhost systemd-tmpfiles[525]:
+                [/etc/tmpfiles.d/balena-tmpfiles.conf:2] Line references path
+                below legacy directory /var/run/, updating /var/run/balena.pid →
+                /run/balena.pid; please update the tmpfiles.d/ drop-in file
+                accordingly.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Changelog-entry: >-
+                  Fix for some innocous systemd tmpfile warnings /var/run ->
+                  /run ones
+                changelog-entry: >-
+                  Fix for some innocous systemd tmpfile warnings /var/run ->
+                  /run ones
+                Signed-off-by: Zubair Lutfullah Kakakhel <zubair@balena.io>
+                signed-off-by: Zubair Lutfullah Kakakhel <zubair@balena.io>
+              author: Zubair Lutfullah Kakakhel
+            - subject: >-
+                Fix for rollbacks where the inactive partition mount was
+                unavailable when altboot triggered
+              hash: 856a3d1ad8dbf3b7a87689bbedac23c9148b3d79
+              body: >
+                PR #1441 changed mnt-sysroot-inactive to an automount. But there
+                is no
+
+                way to easily add a udev dependency to the automount. As a
+                result,
+
+                when rollbacks tries to access the inactive partition, it fails.
+
+                Let's add systemd-udev-settle.service to the rollback services.
+
+
+                This will only delay the first boot after a HUP which is
+                reasonable.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Changelog-entry: >-
+                  Fix for rollbacks where the inactive partition mount was
+                  unavailable when altboot triggered
+                changelog-entry: >-
+                  Fix for rollbacks where the inactive partition mount was
+                  unavailable when altboot triggered
+                Signed-off-by: Zubair Lutfullah Kakakhel <zubair@balena.io>
+                signed-off-by: Zubair Lutfullah Kakakhel <zubair@balena.io>
+              author: Zubair Lutfullah Kakakhel
+            - subject: 'kernel-resin: Enable FTDI USB-serial convertors driver'
+              hash: 40616a274cd7f055397b5acda0fdd6540e797410
+              body: ''
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Sebastian Panceac <sebastian@balena.io>
+                signed-off-by: Sebastian Panceac <sebastian@balena.io>
+              author: Sebastian Panceac
+          version: meta-balena-2.41.1
+          date: 2019-09-03T13:27:47.892Z
+        - commits:
+            - subject: Fix a hang in initramfs for warrior production images
+              hash: 4c44265a7dd13760a89c235068500bf6f315f651
+              body: >
+                When `console=null` is passed in the kernel cmdline for
+                production
+
+                images, the system doesn't boot. Traced to initramfs not
+                starting any
+
+                process such as udev with the right file descripters for 0,1,2
+
+
+                Add workaround for that issue. This got exposed with a systemd
+                bump.
+
+                More details here
+                https://github.com/systemd/systemd/issues/13332
+              footer:
+                Change-type: patch
+                change-type: patch
+                Changelog-entry: Fix a hang in initramfs for warrior production images
+                changelog-entry: Fix a hang in initramfs for warrior production images
+                Signed-off-by: Zubair Lutfullah Kakakhel <zubair@balena.io>
+                signed-off-by: Zubair Lutfullah Kakakhel <zubair@balena.io>
+              author: Zubair Lutfullah Kakakhel
+            - subject: Update balena-engine to 18.09.8
+              hash: 9bcd0ffcc7d6efde45f2bc1eaeaafe1092374c40
+              body: |
+                Includes improvements and fixes to the journald logdriver
+              footer:
+                Change-type: minor
+                change-type: minor
+                Changelog-entry: Update balena-engine to 18.09.8
+                changelog-entry: Update balena-engine to 18.09.8
+                Signed-off-by: Robert Günzler <robertg@balena.io>
+                signed-off-by: Robert Günzler <robertg@balena.io>
+              author: Robert Günzler
+            - subject: Avoid overlayfs mounts in poky's volatile-binds
+              hash: b7b6163d955a3bf76a1759b60ed82ccc5fcce6d0
+              body: >
+                Our root filesystem is overlayfs or aufs. When latter, the
+                system
+
+                crashes when reading a lower directory file. We avoid this by
+                always
+
+                falling back to copy and mount (as if overlayfs is not
+                available).
+
+
+                Fixes #1618
+              footer:
+                Change-type: patch
+                change-type: patch
+                Changelog-entry: Avoid overlayfs mounts in poky's volatile-binds
+                changelog-entry: Avoid overlayfs mounts in poky's volatile-binds
+                Signed-off-by: Andrei Gherzan <andrei@balena.io>
+                signed-off-by: Andrei Gherzan <andrei@balena.io>
+              author: Andrei Gherzan
+          version: meta-balena-2.41.0
+          date: 2019-08-22T14:25:04.139Z
+  version: 2.41.1+rev1
+  date: 2019-09-11T14:32:47.848Z
+- commits:
     - subject: Update meta-balena from v2.38.3 to v2.40.0
       hash: c90ba8db2a5fa6a5e66418dbfd06ad27d34e3c7a
       body: |
