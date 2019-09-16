@@ -1,4 +1,17 @@
 - commits:
+    - subject: Replace 'resin' with 'balena' and update pull request rules.
+      hash: f6897b32475782364cf4246ef0f77e1795cb12fb
+      body: |
+        Replace the old name 'resin' with 'balena'. It matches now the source
+        code directory structure. Update pull request guidelines in readme, from
+        balena-os/balena-intel layer. They were outtdated.
+      footer:
+        Changelog-entry: Replace 'resin' with 'balena' and update pull request rules.
+        changelog-entry: Replace 'resin' with 'balena' and update pull request rules.
+      author: Rafq77
+  version: 2.41.1+rev2
+  date: 2019-09-16T12:29:02.426Z
+- commits:
     - subject: Update the balena-yocto-scripts submodule to v1.3.7
       hash: ce24ab4ee120c662d62e99a49bd15acd9138a8ad
       body: ''

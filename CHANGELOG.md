@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.41.1+rev2
+## (2019-09-16)
+
+* Replace 'resin' with 'balena' and update pull request rules. [Rafq77]
+
 # v2.41.1+rev1
 ## (2019-09-11)
 
