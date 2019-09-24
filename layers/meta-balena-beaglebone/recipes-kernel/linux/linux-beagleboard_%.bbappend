@@ -21,6 +21,14 @@ SRC_URI_append_beagleboard-xm = " \
 	file://0001-card-power-cycle.patch \
 "
 
+SRC_URI_append = " \
+	file://0002-NFLX-2019-001-SACK-Panic.patch \
+	file://0003-NFLX-2019-001-SACK-Panic-for-lteq-4.14.patch \
+	file://0004-NFLX-2019-001-SACK-Slowness.patch \
+	file://0005-NFLX-2019-001-Resour-Consump-Low-MSS.patch \
+	file://0006-NFLX-2019-001-Resour-Consump-Low-MSS.patch \
+"
+
 RESIN_CONFIGS_append = " panic_no_reboot"
 RESIN_CONFIGS[panic_no_reboot] = "CONFIG_PANIC_TIMEOUT=0"
 
