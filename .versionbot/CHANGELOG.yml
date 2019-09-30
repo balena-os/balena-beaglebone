@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update balena-yocto-scripts to v1.3.8
+      hash: 15fcfa35a5841633adc42a056cc93a30eb783d26
+      body: ''
+      footer:
+        Changelog-entry: Update balena-yocto-scripts to v1.3.8
+        changelog-entry: Update balena-yocto-scripts to v1.3.8
+        Signed-off-by: Zubair Lutfullah Kakakhel <zubair@balena.io>
+        signed-off-by: Zubair Lutfullah Kakakhel <zubair@balena.io>
+      author: Zubair Lutfullah Kakakhel
+  version: 2.43.0+rev3
+  date: 2019-09-30T12:06:12.094Z
+- commits:
     - subject: Patches for TCP-based remote denial of service vulnerabilities
       hash: 036795864dcb5f2f21e88aeda46a4919d599b632
       body: >
