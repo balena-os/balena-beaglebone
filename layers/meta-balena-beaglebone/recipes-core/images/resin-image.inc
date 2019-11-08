@@ -19,3 +19,7 @@ IMAGE_INSTALL_append = " kernel-image-initramfs kernel-devicetree wlconf"
 IMAGE_INSTALL_append = " beagle-serial"
 
 RESIN_BOOT_PARTITION_FILES_append_beaglebone-pocket = " uEnv.txt_internal:"
+
+# Fixes error: packages already installed
+# by kernel-image-initramfs
+IMAGE_INSTALL_remove = " kernel-image-zimage"
