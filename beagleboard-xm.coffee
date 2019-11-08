@@ -21,7 +21,7 @@ module.exports =
 		machine: 'beagleboard-xm'
 		image: 'resin-image'
 		fstype: 'resinos-img'
-		version: 'yocto-rocko'
+		version: 'yocto-thud'
 		deployArtifact: 'resin-image-beagleboard-xm.resinos-img'
 		compressed: true
 

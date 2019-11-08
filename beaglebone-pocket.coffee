@@ -27,7 +27,7 @@ module.exports =
 		machine: 'beaglebone-pocket'
 		image: 'resin-image'
 		fstype: 'resinos-img'
-		version: 'yocto-rocko'
+		version: 'yocto-thud'
 		deployArtifact: 'resin-image-beaglebone-pocket.resinos-img'
 		compressed: true
 
