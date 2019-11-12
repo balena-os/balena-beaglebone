@@ -38,7 +38,7 @@ module.exports =
 		machine: 'beaglebone-green'
 		image: 'resin-image-flasher'
 		fstype: 'resinos-img'
-		version: 'yocto-rocko'
+		version: 'yocto-thud'
 		deployArtifact: 'resin-image-flasher-beaglebone-green.resinos-img'
 		compressed: true
 
