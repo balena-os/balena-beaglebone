@@ -1,4 +1,31 @@
 - commits:
+    - subject: Update balena yocto scripts to 1.5.2
+      hash: b245ec1e34a54e6b5170422310f6aa98c3a58bc6
+      body: ''
+      footer:
+        Changelog-entry: Update balena yocto scripts to 1.5.2
+        changelog-entry: Update balena yocto scripts to 1.5.2
+        Change-type: patch
+        change-type: patch
+        Backport-to: current
+        backport-to: current
+        Signed-off-by: Giovanni Garufi <giovanni@balena.io>
+        signed-off-by: Giovanni Garufi <giovanni@balena.io>
+      author: Giovanni Garufi
+    - subject: Update balena-yocto-scripts to 1.5.0
+      hash: 768789b32864e21c3821536496fffef818c3455b
+      body: ''
+      footer:
+        Signed-off-by: Zubair Lutfullah Kakakhel <zubair@balena.io>
+        signed-off-by: Zubair Lutfullah Kakakhel <zubair@balena.io>
+        Change-type: patch
+        change-type: patch
+        Changelog-entry: Update balena-yocto-scripts to 1.5.0
+        changelog-entry: Update balena-yocto-scripts to 1.5.0
+      author: Zubair Lutfullah Kakakhel
+  version: 2019.07.1
+  date: 2019-12-04T15:57:51.255Z
+- commits:
     - subject: 'linux-beagleboard: Switch UART driver to CONFIG_SERIAL_OMAP'
       hash: 3004e401a1cf0254a0aa14115e2b3ba05cac1e56
       body: |
