@@ -29,9 +29,6 @@ SRC_URI_append = " \
 	file://0006-NFLX-2019-001-Resour-Consump-Low-MSS.patch \
 "
 
-RESIN_CONFIGS_append = " panic_no_reboot"
-RESIN_CONFIGS[panic_no_reboot] = "CONFIG_PANIC_TIMEOUT=0"
-
 RESIN_CONFIGS_append_beagleboard-xm = " omap3_soc \
 	twl4030 \
 "
