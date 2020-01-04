@@ -34,3 +34,5 @@ do_deploy_append() {
     install ${B}/u-boot.img ${DEPLOYDIR}
     install ${WORKDIR}/uEnv.txt_internal ${DEPLOYDIR}
 }
+
+UBOOT_MACHINE = "am335x_boneblack_config"
