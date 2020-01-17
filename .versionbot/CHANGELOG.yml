@@ -1,4 +1,18 @@
 - commits:
+    - subject: Change the state to 'released' in the coffee files
+      hash: e7389e99230cd7443403bcca26ac52b8641d09b5
+      body: |
+        Change the state field to 'released'
+        instead of 'experimental'
+      footer:
+        Changelog-entry: Change the state to 'released' in the coffee files
+        changelog-entry: Change the state to 'released' in the coffee files
+        Signed-off-by: Vicentiu Galanopulo <vicentiu@balena.io>
+        signed-off-by: Vicentiu Galanopulo <vicentiu@balena.io>
+      author: Vicentiu Galanopulo
+  version: 2.46.1+rev2
+  date: 2020-01-15T15:21:09.026Z
+- commits:
     - subject: Update meta-balena from v2.45.0 to v2.46.1
       hash: 44d6fc90334ed51adaf97d90bb15b952d15a6a87
       body: |
