@@ -15,7 +15,7 @@ module.exports =
 	slug: 'beaglebone-green'
 	name: 'BeagleBone Green'
 	arch: 'armv7hf'
-	state: 'experimental'
+	state: 'released'
 
 	stateInstructions:
 		postProvisioning: postProvisioningInstructions

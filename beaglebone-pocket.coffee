@@ -6,7 +6,7 @@ module.exports =
 	slug: 'beaglebone-pocket'
 	name: 'PocketBeagle'
 	arch: 'armv7hf'
-	state: 'experimental'
+	state: 'released'
 
 	imageDownloadAlerts: [
 		{

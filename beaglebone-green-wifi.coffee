@@ -15,7 +15,7 @@ module.exports =
 	slug: 'beaglebone-green-wifi'
 	name: 'BeagleBone Green Wireless'
 	arch: 'armv7hf'
-	state: 'experimental'
+	state: 'released'
 
 	stateInstructions:
 		postProvisioning: postProvisioningInstructions
