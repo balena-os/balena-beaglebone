@@ -1,4 +1,19 @@
 - commits:
+    - subject: Remove unnecessary override of IMAGE_ROOTFS_MAXSIZE
+      hash: f40f70792fb7c8575ebeb74803feb2ba35e87abd
+      body: |
+        This is unnecessary since 2.47+
+
+        See https://github.com/balena-os/meta-balena/pull/1813 for more detail
+      footer:
+        Changelog-entry: Remove unnecessary override of IMAGE_ROOTFS_MAXSIZE
+        changelog-entry: Remove unnecessary override of IMAGE_ROOTFS_MAXSIZE
+        Signed-off-by: Zubair Lutfullah Kakakhel <zubair@balena.io>
+        signed-off-by: Zubair Lutfullah Kakakhel <zubair@balena.io>
+      author: Zubair Lutfullah Kakakhel
+  version: 2.46.1+rev3
+  date: 2020-02-10T13:40:55.122Z
+- commits:
     - subject: Change the state to 'released' in the coffee files
       hash: e7389e99230cd7443403bcca26ac52b8641d09b5
       body: |
