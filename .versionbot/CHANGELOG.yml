@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update meta-rust to include 1.36
+      hash: a2bf023d225297e11d99a041d74d7d1597f85b19
+      body: ''
+      footer:
+        Changelog-entry: Update meta-rust to include 1.36
+        changelog-entry: Update meta-rust to include 1.36
+        Signed-off-by: Zubair Lutfullah Kakakhel <zubair@balena.io>
+        signed-off-by: Zubair Lutfullah Kakakhel <zubair@balena.io>
+      author: Zubair Lutfullah Kakakhel
+  version: 2.46.1+rev4
+  date: 2020-02-11T10:35:04.658Z
+- commits:
     - subject: Remove unnecessary override of IMAGE_ROOTFS_MAXSIZE
       hash: f40f70792fb7c8575ebeb74803feb2ba35e87abd
       body: |
