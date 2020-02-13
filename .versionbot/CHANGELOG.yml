@@ -1,4 +1,43 @@
 - commits:
+    - subject: Update meta-balena from v2.47.0 to v2.47.1
+      hash: d132e5add2ffaf91147b02a321b0b7aadc5a193a
+      body: |
+        Update meta-balena from 2.47.0 to 2.47.1
+      footer:
+        Changelog-entry: Update meta-balena from v2.47.0 to v2.47.1
+        changelog-entry: Update meta-balena from v2.47.0 to v2.47.1
+        Signed-off-by: Florin Sarbu <florin@balena.io>
+        signed-off-by: Florin Sarbu <florin@balena.io>
+      author: Florin Sarbu
+      nested:
+        - commits:
+            - subject: >-
+                Affects 2.45+ on all devices. Fix dangling sshd services on
+                failed connections that would grow and cause cpu load to keep
+                rising. See issue 1837 in meta-balena for more detail.
+              hash: 0759f60bda559377bfb10361167222d4e0de6d01
+              body: |
+                This reverts commit 6d5de094c3f0d9f2f06a1c58abc5eb9dc256cf79.
+                Fixes #1837
+              footer:
+                Change-type: patch
+                change-type: patch
+                Changelog-entry: >-
+                  Affects 2.45+ on all devices. Fix dangling sshd services on
+                  failed connections that would grow and cause cpu load to keep
+                  rising. See issue 1837 in meta-balena for more detail.
+                changelog-entry: >-
+                  Affects 2.45+ on all devices. Fix dangling sshd services on
+                  failed connections that would grow and cause cpu load to keep
+                  rising. See issue 1837 in meta-balena for more detail.
+                Signed-off-by: Zubair Lutfullah Kakakhel <zubair@balena.io>
+                signed-off-by: Zubair Lutfullah Kakakhel <zubair@balena.io>
+              author: Zubair Lutfullah Kakakhel
+          version: meta-balena-2.47.1
+          date: 2020-02-13T11:54:53.438Z
+  version: 2.47.1+rev1
+  date: 2020-02-13T16:07:55.058Z
+- commits:
     - subject: Update balena-yocto-scripts to v1.5.4
       hash: 712afe6ad75900371e85152e3724eccc043afcf9
       body: ''
