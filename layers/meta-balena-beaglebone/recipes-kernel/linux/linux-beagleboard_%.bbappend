@@ -14,6 +14,7 @@ SRC_URI_append_beaglebone = " \
 
 SRC_URI_append_beaglebone-green-wifi = " \
         file://0001-Use-kernel-4.9-BBGW-dts-version.patch \
+        file://0002-rtc-omap-Prevent-kernel-panic-and-reboot-on-shutdown.patch \
 "
 
 SRC_URI_append_beagleboard-xm = " \
