@@ -1,4 +1,22 @@
 - commits:
+    - subject: 'linux-beagleboard: Prevent kernel panic if rtc failed'
+      hash: 68a20488c858b5d35177f36376c0ae0851fc1cb4
+      body: |
+        On some bbgw boards the rtc doesn't work
+        correctly and thus will not trigger the
+        PMIC to power off the system. This causes
+        a kernel panic and reboot.
+
+        Let's put the system in idle in case this happens.
+      footer:
+        Changelog-entry: 'linux-beagleboard: Prevent kernel panic if rtc failed'
+        changelog-entry: 'linux-beagleboard: Prevent kernel panic if rtc failed'
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+  version: 2.47.1+rev2
+  date: 2020-03-06T18:40:45.145Z
+- commits:
     - subject: Update meta-balena from v2.47.0 to v2.47.1
       hash: d132e5add2ffaf91147b02a321b0b7aadc5a193a
       body: |
