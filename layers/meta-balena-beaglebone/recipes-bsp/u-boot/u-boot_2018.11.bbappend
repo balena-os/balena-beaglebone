@@ -35,4 +35,9 @@ do_deploy_append() {
     install ${WORKDIR}/uEnv.txt_internal ${DEPLOYDIR}
 }
 
+# Let's be able to debug u-boot
+# on development images, for cases
+# where we need to debug it
+OS_DEV_UBOOT_DELAY_beaglebone-green-wifi = "${@bb.utils.contains('DISTRO_FEATURES', 'development-image', '1', '', d)}"
+
 UBOOT_MACHINE = "am335x_boneblack_config"
