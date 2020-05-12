@@ -17,6 +17,7 @@ module.exports =
 	name: 'BeagleBone Black'
 	arch: 'armv7hf'
 	state: 'released'
+	private: false
 
 	stateInstructions:
 		postProvisioning: postProvisioningInstructions

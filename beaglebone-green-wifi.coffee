@@ -16,6 +16,7 @@ module.exports =
 	name: 'BeagleBone Green Wireless'
 	arch: 'armv7hf'
 	state: 'released'
+	private: false
 
 	stateInstructions:
 		postProvisioning: postProvisioningInstructions
