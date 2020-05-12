@@ -7,6 +7,7 @@ module.exports =
 	name: 'PocketBeagle'
 	arch: 'armv7hf'
 	state: 'released'
+	private: false
 
 	imageDownloadAlerts: [
 		{

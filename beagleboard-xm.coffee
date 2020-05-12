@@ -7,6 +7,7 @@ module.exports =
 	name: 'BeagleBoard-XM'
 	arch: 'armv7hf'
 	state: 'released'
+	private: false
 
 	instructions: commonImg.instructions
 
