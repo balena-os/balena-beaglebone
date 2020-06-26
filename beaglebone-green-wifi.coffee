@@ -1,7 +1,8 @@
 deviceTypesCommon = require '@resin.io/device-types/common'
 { networkOptions, commonImg, instructions } = deviceTypesCommon
 
-BBGW_FLASH = 'Power up the <%= TYPE_NAME %>.'
+BBGW_FLASH = 'Power up the <%= TYPE_NAME %> while holding down the small button near the SD slot.
+You need to keep it pressed until the blue LEDs start flashing wildly.'
 BBGW_REMOVE_POWER = 'Wait 5 seconds after the blue leds stopped flashing wildly, then remove power from the board. On some boards the leds will shut down completely.'
 
 postProvisioningInstructions = [
