@@ -1,4 +1,19 @@
 - commits:
+    - subject: 'u-boot: Use meta-balena fs uuids for beaglebones'
+      hash: 0b066e5b7381df964fe805ece8d85689346fa00e
+      body: |
+        This board was using part uuids for
+        booting. Switch to the meta-balena
+        provided fs uuid for root.
+      footer:
+        Changelog-entry: 'u-boot: Use meta-balena fs uuids for beaglebones'
+        changelog-entry: 'u-boot: Use meta-balena fs uuids for beaglebones'
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+  version: 2.51.1+rev2
+  date: 2020-06-29T15:18:10.957Z
+- commits:
     - subject: Update balena-yocto-scripts to v1.8.0
       hash: 6ea676e0d61aabdccd4373ba011b7550a506aa55
       body: ''
