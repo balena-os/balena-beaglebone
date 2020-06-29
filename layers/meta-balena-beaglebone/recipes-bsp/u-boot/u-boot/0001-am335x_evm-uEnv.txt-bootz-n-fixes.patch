@@ -1080,7 +1080,7 @@ index 785fc15345..110c426058 100644
 +		"${cape_disable} " \
 +		"${cape_enable} " \
 +		"${cape_uboot} " \
-+		"root=PARTUUID=${uuid} ro " \
++		"${resin_kernel_root} ro " \
 +		"rootfstype=${mmcrootfstype} " \
 +		"${uboot_detected_capes} " \
 +		"${cmdline}\0" \
@@ -1102,7 +1102,7 @@ index 785fc15345..110c426058 100644
 +		"${cape_disable} " \
 +		"${cape_enable} " \
 +		"${cape_uboot} " \
-+		"root=UUID=${uuid} ro " \
++		"${resin_kernel_root} ro " \
 +		"rootfstype=${mmcrootfstype} " \
 +		"${uboot_detected_capes} " \
 +		"${cmdline}\0" \
