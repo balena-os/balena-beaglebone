@@ -1,7 +1,7 @@
 SECTION = "kernel"
 DESCRIPTION = "Linux kernel for beaglebone boards"
 LICENSE = "GPLv2"
-LIC_FILES_CHKSUM = "file://COPYING;md5=d7810fab7487fb0aad327b76f1be7cd7"
+LIC_FILES_CHKSUM = "file://COPYING;md5=bbea815ee2795b2f4230826c0c6b8814"
 
 inherit kernel kernel-resin
 
@@ -10,7 +10,7 @@ require recipes-kernel/linux/setup-defconfig.inc
 DEPENDS += "lzop-native"
 
 # Look in the generic major.minor directory for files
-FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}-4.14:"
+FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}-5.4:"
 
 KERNEL_DEVICETREE_beaglebone = "am335x-bone.dtb am335x-boneblack.dtb am335x-boneblack-wireless.dtb am335x-boneblue.dtb am335x-bonegreen.dtb am335x-bonegreen-wireless.dtb"
 
@@ -20,9 +20,9 @@ COMPATIBLE_MACHINE = "beaglebone|beagleboard-xm"
 
 S = "${WORKDIR}/git"
 
-TAG = "4.14.53-ti-r62"
+TAG = "5.4.47-ti-r13"
 
-PV = "4.14.53+git${SRCPV}"
+PV = "5.4.47+git${SRCPV}"
 
 # Append to the MACHINE_KERNEL_PR so that a new SRCREV will cause a rebuild
 MACHINE_KERNEL_PR_append = "b"
@@ -43,3 +43,7 @@ SRC_URI += " \
     file://0001-Revert-random-fix-crng_ready-test.patch \
     file://defconfig \
     "
+
+do_install_append() {
+    rm -rf ${D}//lib/modules/5.4.47+/modules.builtin.modinfo
+}

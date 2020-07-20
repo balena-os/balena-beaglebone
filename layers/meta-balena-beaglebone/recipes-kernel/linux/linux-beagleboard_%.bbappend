@@ -9,25 +9,16 @@ KERNEL_DEVICETREE_beaglebone += " am335x-boneblack-uboot.dtb \
 "
 
 SRC_URI_append_beaglebone = " \
-	file://0001-Use-bbbw-dts-from-4.9.patch \
+       file://0001-Use-bbbw-dts-from-4.9.patch \
 "
 
 SRC_URI_append_beaglebone-green-wifi = " \
         file://0001-Use-kernel-4.9-BBGW-dts-version.patch \
-        file://0002-rtc-omap-Prevent-kernel-panic-and-reboot-on-shutdown.patch \
 "
 
 SRC_URI_append_beagleboard-xm = " \
 	file://0001-set-gpios-vaux3.patch \
 	file://0001-card-power-cycle.patch \
-"
-
-SRC_URI_append = " \
-	file://0002-NFLX-2019-001-SACK-Panic.patch \
-	file://0003-NFLX-2019-001-SACK-Panic-for-lteq-4.14.patch \
-	file://0004-NFLX-2019-001-SACK-Slowness.patch \
-	file://0005-NFLX-2019-001-Resour-Consump-Low-MSS.patch \
-	file://0006-NFLX-2019-001-Resour-Consump-Low-MSS.patch \
 "
 
 RESIN_CONFIGS_append_beagleboard-xm = " omap3_soc \
