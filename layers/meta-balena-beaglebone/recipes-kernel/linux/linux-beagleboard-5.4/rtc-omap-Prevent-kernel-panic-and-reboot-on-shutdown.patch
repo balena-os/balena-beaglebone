@@ -1,0 +1,46 @@
+From 3624e2f01f564c839c1014dbdbb9dbd0832474f2 Mon Sep 17 00:00:00 2001
+From: Alexandru Costache <alexandru@balena.io>
+Date: Wed, 22 Jul 2020 16:04:11 +0200
+Subject: [PATCH] rtc-omap: Prevent kernel panic and reboot on shutdown
+
+On some beaglebone green wireless boards the rtc
+doesn't work correctly and this causes the PMIC
+to not cut the power at shutdown. This causes
+a kernel panic and reboot.
+
+If this module would be disabled, then the
+system would still stay on but there would
+be no kernel panic.
+
+Keep the system idle in this case.
+
+Upstream-status: Inappropriate [configuration]
+Signed-off-by: Alexandru Costache <alexandru@balena.io>
+---
+ drivers/rtc/rtc-omap.c | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
+
+diff --git a/drivers/rtc/rtc-omap.c b/drivers/rtc/rtc-omap.c
+index a2941c875a06..98ff814da67a 100644
+--- a/drivers/rtc/rtc-omap.c
++++ b/drivers/rtc/rtc-omap.c
+@@ -500,6 +500,16 @@ static void omap_rtc_power_off(void)
+ 	 * (e.g. debounce circuits).
+ 	 */
+ 	mdelay(1500);
++
++	pr_err("rtc_power_off failed, please power off the device manually\.n");
++
++	/* The RTC should trigger the PMIC to cut the power, but if the
++	 * RTC is not working properly there's not much that we
++	 * can do but put the system in idle mode. This way we prevent
++	 * a kernel panic that would reboot the system.
++	 */
++	while (1)
++		cpu_relax();
+ }
+ 
+ static const struct rtc_class_ops omap_rtc_ops = {
+-- 
+2.17.1
+
