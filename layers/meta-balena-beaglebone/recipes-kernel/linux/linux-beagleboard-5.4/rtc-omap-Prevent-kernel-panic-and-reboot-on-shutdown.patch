@@ -1,6 +1,6 @@
-From 347ec78ce2381642a6dc662e8865c6179eed5544 Mon Sep 17 00:00:00 2001
+From 3624e2f01f564c839c1014dbdbb9dbd0832474f2 Mon Sep 17 00:00:00 2001
 From: Alexandru Costache <alexandru@balena.io>
-Date: Fri, 6 Mar 2020 19:08:29 +0100
+Date: Wed, 22 Jul 2020 16:04:11 +0200
 Subject: [PATCH] rtc-omap: Prevent kernel panic and reboot on shutdown
 
 On some beaglebone green wireless boards the rtc
@@ -17,18 +17,18 @@ Keep the system idle in this case.
 Upstream-status: Inappropriate [configuration]
 Signed-off-by: Alexandru Costache <alexandru@balena.io>
 ---
- drivers/rtc/rtc-omap.c | 10 +++++++++-
- 1 file changed, 9 insertions(+), 1 deletion(-)
+ drivers/rtc/rtc-omap.c | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
 
 diff --git a/drivers/rtc/rtc-omap.c b/drivers/rtc/rtc-omap.c
-index 2d9f7e38c7ca..025f51a678ac 100644
+index a2941c875a06..98ff814da67a 100644
 --- a/drivers/rtc/rtc-omap.c
 +++ b/drivers/rtc/rtc-omap.c
-@@ -529,7 +529,15 @@ static void omap_rtc_power_off(void)
+@@ -500,6 +500,16 @@ static void omap_rtc_power_off(void)
+ 	 * (e.g. debounce circuits).
  	 */
- 	mdelay(2500);
- 
--	pr_err("rtc_power_off failed, bailing out.\n");
+ 	mdelay(1500);
++
 +	pr_err("rtc_power_off failed, please power off the device manually\.n");
 +
 +	/* The RTC should trigger the PMIC to cut the power, but if the
@@ -40,7 +40,7 @@ index 2d9f7e38c7ca..025f51a678ac 100644
 +		cpu_relax();
  }
  
- static void omap_rtc_cleanup_pm_power_off(struct omap_rtc *rtc)
+ static const struct rtc_class_ops omap_rtc_ops = {
 -- 
 2.17.1
 
