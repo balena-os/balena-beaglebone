@@ -1,4 +1,111 @@
 - commits:
+    - subject: Update meta-balena from v2.53.6 to v2.53.8
+      hash: 4402abdd444e638b80c6c670d8a5468c52f39aee
+      body: |
+        Update meta-balena from 2.53.6 to 2.53.8
+      footer:
+        Changelog-entry: Update meta-balena from v2.53.6 to v2.53.8
+        changelog-entry: Update meta-balena from v2.53.6 to v2.53.8
+        Signed-off-by: Florin Sarbu <florin@balena.io>
+        signed-off-by: Florin Sarbu <florin@balena.io>
+      author: Florin Sarbu
+      nested:
+        - commits:
+            - subject: 'resin-supervisor: Create required directories before launch'
+              hash: 7be7738c655e37e48c1a98f9e1e0ff2795d66bf8
+              body: >
+                On commit a4ce26caadabcb1e87d944d78218cc32c579914e the
+                supervisor moved
+
+                from using --volume to using --mount to avoid the implicit
+                creation of
+
+                directories instead of files.
+
+
+                However, in the case where the mount referred to a directory,
+                these have
+
+                to exist in the rootfs beforehand as --mount will not create
+                them.
+
+
+                This commit checks for the existence of the
+                /var/log/supervisor-log
+
+                directory and creates it if required.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+          version: meta-balena-2.53.8
+          date: 2020-07-23T04:33:45.808Z
+        - commits:
+            - subject: 'balena-supervisor: Update to v11.9.8'
+              hash: f919017e873062d30efa73d93a99ad0272675d24
+              body: |
+                Update balena-supervisor from 11.9.6 to 11.9.8
+              footer:
+                Change-type: patch
+                change-type: patch
+                Backport-to: next
+                backport-to: next
+                Signed-off-by: Florin Sarbu <florin@balena.io>
+                signed-off-by: Florin Sarbu <florin@balena.io>
+              author: Florin Sarbu
+              nested:
+                - commits:
+                    - subject: Bump lodash from 4.17.15 to 4.17.19
+                      hash: 01655b595555ae63ea1b70d623451c9ad3ec03dd
+                      body: >
+                        Bumps [lodash](https://github.com/lodash/lodash) from
+                        4.17.15 to 4.17.19.
+
+                        - [Release
+                        notes](https://github.com/lodash/lodash/releases)
+
+                        -
+                        [Commits](https://github.com/lodash/lodash/compare/4.17.15...4.17.19)
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: 'dependabot[bot] <support@github.com>'
+                        signed-off-by: 'dependabot[bot] <support@github.com>'
+                      author: 'dependabot[bot]'
+                      nested: []
+                  version: balena-supervisor-11.9.8
+                  date: 2020-07-22T14:44:00.974Z
+                - commits:
+                    - subject: 'docker-utils: Test network gateway determination logic'
+                      hash: 6ef3bd2362ebd185053a351490f6561ec10b84d8
+                      body: ''
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: Rich Bayliss <rich@balena.io>
+                        signed-off-by: Rich Bayliss <rich@balena.io>
+                      author: Rich Bayliss
+                      nested: []
+                    - subject: Fix docker-util using incorrect reference for function
+                      hash: 3b3babfd62868e986788d6c2f4fcede915fb4711
+                      body: ''
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: Miguel Casqueira <miguel@balena.io>
+                        signed-off-by: Miguel Casqueira <miguel@balena.io>
+                      author: Miguel Casqueira
+                      nested: []
+                  version: balena-supervisor-11.9.7
+                  date: 2020-07-22T12:19:06.693Z
+          version: meta-balena-2.53.7
+          date: 2020-07-23T03:02:50.027Z
+  version: 2.53.8+rev1
+  date: 2020-07-23T07:28:04.617Z
+- commits:
     - subject: Enable hciuart drivers to make bluetooth working again
       hash: 1727aa670150e268898819703981059542364943
       body: |

@@ -1,6 +1,41 @@
 Change log
 -----------
 
+# v2.53.8+rev1
+## (2020-07-23)
+
+
+<details>
+<summary> Update meta-balena from v2.53.6 to v2.53.8 [Florin Sarbu] </summary>
+
+> ## meta-balena-2.53.8
+> ### (2020-07-23)
+> 
+> * resin-supervisor: Create required directories before launch [Alex Gonzalez]
+> 
+> ## meta-balena-2.53.7
+> ### (2020-07-23)
+> 
+> 
+> <details>
+> <summary> balena-supervisor: Update to v11.9.8 [Florin Sarbu] </summary>
+> 
+>> ### balena-supervisor-11.9.8
+>> #### (2020-07-22)
+>> 
+>> * Bump lodash from 4.17.15 to 4.17.19 [dependabot[bot]]
+>> 
+>> ### balena-supervisor-11.9.7
+>> #### (2020-07-22)
+>> 
+>> * docker-utils: Test network gateway determination logic [Rich Bayliss]
+>> * Fix docker-util using incorrect reference for function [Miguel Casqueira]
+>> 
+> </details>
+> 
+> 
+</details>
+
 # v2.53.6+rev2
 ## (2020-07-23)
 
