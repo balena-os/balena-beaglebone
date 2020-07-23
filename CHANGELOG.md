@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.53.6+rev2
+## (2020-07-23)
+
+* Enable hciuart drivers to make bluetooth working again [Florin Sarbu]
+
 # v2.53.6+rev1
 ## (2020-07-22)
 

@@ -1,4 +1,18 @@
 - commits:
+    - subject: Enable hciuart drivers to make bluetooth working again
+      hash: 1727aa670150e268898819703981059542364943
+      body: |
+        These drivers are needed for bluetooth.
+      footer:
+        Changelog-entry: Enable hciuart drivers to make bluetooth working again
+        changelog-entry: Enable hciuart drivers to make bluetooth working again
+        Signed-off-by: Florin Sarbu <florin@balena.io>
+        signed-off-by: Florin Sarbu <florin@balena.io>
+      author: Florin Sarbu
+      nested: []
+  version: 2.53.6+rev2
+  date: 2020-07-23T04:43:54.212Z
+- commits:
     - subject: Update meta-balena from v2.51.1 to v2.53.6
       hash: 44508e0fc2e9d47f9a61742ac16468e9a868df71
       body: |
