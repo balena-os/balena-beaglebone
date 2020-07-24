@@ -1,4 +1,49 @@
 - commits:
+    - subject: Update meta-balena from v2.53.8 to v2.53.9
+      hash: 90d2e32df5a83913db104613c26c6fc8d996a7d9
+      body: |
+        Update meta-balena from 2.53.8 to 2.53.9
+      footer:
+        Changelog-entry: Update meta-balena from v2.53.8 to v2.53.9
+        changelog-entry: Update meta-balena from v2.53.8 to v2.53.9
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested:
+        - commits:
+            - subject: 'balena-supervisor: Update to v11.9.9'
+              hash: b991ede01e5140ef04f2e6fe9baa37a8ded95ab5
+              body: |
+                Update balena-supervisor from 11.9.8 to 11.9.9
+              footer:
+                Change-type: patch
+                change-type: patch
+                Backport-to: next
+                backport-to: next
+                Signed-off-by: Rich Bayliss <rich@balena.io>
+                signed-off-by: Rich Bayliss <rich@balena.io>
+              author: Rich Bayliss
+              nested:
+                - commits:
+                    - subject: 'common: Fix bug where aliases might be undefined'
+                      hash: 60132134deffd770a40d1e6f18fdd87cb2f9f52e
+                      body: >
+                        Should handle the scenario where the network aliases are
+                        undefined.
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: Rich Bayliss <rich@balena.io>
+                        signed-off-by: Rich Bayliss <rich@balena.io>
+                      author: Rich Bayliss
+                      nested: []
+                  version: balena-supervisor-11.9.9
+                  date: 2020-07-23T15:45:31.161Z
+          version: meta-balena-2.53.9
+          date: 2020-07-23T17:44:58.146Z
+  version: 2.53.9+rev1
+  date: 2020-07-24T09:28:24.140Z
+- commits:
     - subject: Update meta-balena from v2.53.6 to v2.53.8
       hash: 4402abdd444e638b80c6c670d8a5468c52f39aee
       body: |
