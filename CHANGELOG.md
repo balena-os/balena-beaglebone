@@ -1,6 +1,12 @@
 Change log
 -----------
 
+# v2020.07.1
+## (2020-08-10)
+
+* Update meta-balena from v2.50.4 to v2.50.8 [Alexandru Costache]
+* u-boot: Use meta-balena fs uuids for beaglebones [Alexandru Costache]
+
 # 2020.07.0
 ## (2020-07-23)
 

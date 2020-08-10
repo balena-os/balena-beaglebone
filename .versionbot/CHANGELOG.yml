@@ -1,4 +1,31 @@
 - commits:
+    - subject: Update meta-balena from v2.50.4 to v2.50.8
+      hash: bcade26e852ef5bf37cf755389707dd9a7c30a6a
+      body: |
+        Update meta-balena from 2.50.4 to 2.50.8
+      footer:
+        Changelog-entry: Update meta-balena from v2.50.4 to v2.50.8
+        changelog-entry: Update meta-balena from v2.50.4 to v2.50.8
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+    - subject: 'u-boot: Use meta-balena fs uuids for beaglebones'
+      hash: 191b8ca4b0924e3824cfaf7525860aad4dd0f36c
+      body: |
+        This board was using part uuids for
+        booting. Switch to the meta-balena
+        provided fs uuid for root.
+      footer:
+        Changelog-entry: 'u-boot: Use meta-balena fs uuids for beaglebones'
+        changelog-entry: 'u-boot: Use meta-balena fs uuids for beaglebones'
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+  version: 2020.07.1
+  date: 2020-08-10T07:42:15.993Z
+- commits:
     - subject: Set private to false in .coffee files for the public device types
       hash: 5ef059076582661217535b646db51c6aa26157d3
       body: ''
