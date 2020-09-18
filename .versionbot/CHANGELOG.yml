@@ -1,4 +1,18 @@
 - commits:
+    - subject: Update meta-balena from v2.50.8 to v2.50.10
+      hash: f11d259d6f1ffaba5ce2949f34e91bae86ad5515
+      body: |
+        Update meta-balena from 2.50.8 to 2.50.10
+      footer:
+        Changelog-entry: Update meta-balena from v2.50.8 to v2.50.10
+        changelog-entry: Update meta-balena from v2.50.8 to v2.50.10
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+  version: 2020.07.2
+  date: 2020-09-18T09:15:33.447Z
+- commits:
     - subject: Update meta-balena from v2.50.4 to v2.50.8
       hash: bcade26e852ef5bf37cf755389707dd9a7c30a6a
       body: |
