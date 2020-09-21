@@ -1,0 +1,33 @@
+From 92cd3b1f33c9d39366b66c17156e44009a632bde Mon Sep 17 00:00:00 2001
+From: Alexandru Costache <alexandru@balena.io>
+Date: Fri, 18 Sep 2020 18:27:43 +0200
+Subject: [PATCH] Remove pin tool
+
+---
+ Makefile | 3 ---
+ 1 file changed, 3 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index 84018c4..d2278b4 100644
+--- a/Makefile
++++ b/Makefile
+@@ -117,7 +117,6 @@ export quiet Q KBUILD_VERBOSE
+ 
+ all_%:
+ 	$(Q)$(MAKE) ARCH=$* all_arch
+-	$(CC)gcc -o config-pin ./tools/pmunts_muntsos/config-pin.c
+ 
+ clean_%:
+ 	$(Q)$(MAKE) ARCH=$* clean_arch
+@@ -180,8 +179,6 @@ PHONY += install_arch
+ install_arch: $(ARCH_DTBO)
+ 	mkdir -p $(DESTDIR)/boot/overlays
+ 	cp -v $(obj)/*.dtbo $(DESTDIR)/boot/overlays
+-	mkdir -p $(DESTDIR)/usr/bin/
+-	cp -v config-pin $(DESTDIR)/usr/bin/
+ 
+ RCS_FIND_IGNORE := \( -name SCCS -o -name BitKeeper -o -name .svn -o -name CVS \
+                    -o -name .pc -o -name .hg -o -name .git \) -prune -o
+-- 
+2.7.4
+
