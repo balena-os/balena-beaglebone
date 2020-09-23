@@ -4,11 +4,12 @@ deviceTypesCommon = require '@resin.io/device-types/common'
 BBGW_FLASH = 'Power up the <%= TYPE_NAME %> while holding down the small button near the SD slot.
 You need to keep it pressed until the blue LEDs start flashing wildly.'
 BBGW_REMOVE_POWER = 'Wait 5 seconds after the blue leds stopped flashing wildly, then remove power from the board. On some boards the leds will shut down completely.'
+BBGW_BOARD_POWERON = 'Re-connect power to the board.'
 
 postProvisioningInstructions = [
 	BBGW_REMOVE_POWER
 	instructions.REMOVE_INSTALL_MEDIA
-	instructions.BOARD_REPOWER
+	BBGW_BOARD_POWERON
 ]
 
 module.exports =
