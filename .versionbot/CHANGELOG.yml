@@ -1,4 +1,17 @@
 - commits:
+    - subject: 'beaglebone: Remove duplicate instruction for power removal'
+      hash: ebd5d4fe7e26bc0dca0293eac815fd42e1cc7744
+      body: ''
+      footer:
+        Changelog-entry: 'beaglebone: Remove duplicate instruction for power removal'
+        changelog-entry: 'beaglebone: Remove duplicate instruction for power removal'
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+  version: 2.58.3+rev2
+  date: 2020-09-23T14:20:24.501Z
+- commits:
     - subject: Update meta-balena from v2.56.0 to v2.5.3
       hash: 0b6f62df91a12b6ac6636709aaa6368e1592ffea
       body: |

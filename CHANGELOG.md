@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.58.3+rev2
+## (2020-09-23)
+
+* beaglebone: Remove duplicate instruction for power removal [Alexandru Costache]
+
 # v2.58.3+rev1
 ## (2020-09-23)
 
