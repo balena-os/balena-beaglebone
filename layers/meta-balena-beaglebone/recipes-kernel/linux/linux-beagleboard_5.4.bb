@@ -20,9 +20,9 @@ COMPATIBLE_MACHINE = "beaglebone|beagleboard-xm"
 
 S = "${WORKDIR}/git"
 
-TAG = "5.4.47-ti-r13"
+TAG = "5.4.66-ti-r18"
 
-PV = "5.4.47+git${SRCPV}"
+PV = "5.4.66+git${SRCPV}"
 
 # Append to the MACHINE_KERNEL_PR so that a new SRCREV will cause a rebuild
 MACHINE_KERNEL_PR_append = "b"
@@ -45,5 +45,5 @@ SRC_URI += " \
     "
 
 do_install_append() {
-    rm -rf ${D}//lib/modules/5.4.47+/modules.builtin.modinfo
+    rm -rf ${D}/lib/modules/5.4.66+/modules.builtin.modinfo
 }
