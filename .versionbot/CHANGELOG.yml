@@ -1,4 +1,19 @@
 - commits:
+    - subject: Update kernel for the beaglebones to version 5.4.66-ti-r18
+      hash: 547de0778f2007f75aa99eefff34963786256e73
+      body: |
+        The kernel defconfig is the arch/arm/configs/bb.org_defconfig file
+        from the kernel source tree at tag 5.4.66-ti-r18.
+      footer:
+        Changelog-entry: Update kernel for the beaglebones to version 5.4.66-ti-r18
+        changelog-entry: Update kernel for the beaglebones to version 5.4.66-ti-r18
+        Signed-off-by: Florin Sarbu <florin@balena.io>
+        signed-off-by: Florin Sarbu <florin@balena.io>
+      author: Florin Sarbu
+      nested: []
+  version: 2.58.3+rev3
+  date: 2020-10-14T20:42:56.297Z
+- commits:
     - subject: 'beaglebone: Remove duplicate instruction for power removal'
       hash: ebd5d4fe7e26bc0dca0293eac815fd42e1cc7744
       body: ''

@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.58.3+rev3
+## (2020-10-14)
+
+* Update kernel for the beaglebones to version 5.4.66-ti-r18 [Florin Sarbu]
+
 # v2.58.3+rev2
 ## (2020-09-23)
 
