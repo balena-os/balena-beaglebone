@@ -14,14 +14,7 @@ BBLAYERS ?= " \
     ${TOPDIR}/../layers/meta-openembedded/meta-python \
     ${TOPDIR}/../layers/meta-ti \
     ${TOPDIR}/../layers/meta-balena/meta-balena-common \
-    ${TOPDIR}/../layers/meta-balena/meta-balena-thud \
+    ${TOPDIR}/../layers/meta-balena/meta-balena-dunfell \
     ${TOPDIR}/../layers/meta-balena-beaglebone \
     ${TOPDIR}/../layers/meta-rust \
-    "
-
-BBLAYERS_NON_REMOVABLE ?= " \
-    ${TOPDIR}/../layers/poky/meta \
-    ${TOPDIR}/../layers/poky/meta-poky \
-    ${TOPDIR}/../layers/meta-balena/meta-balena-common \
-    ${TOPDIR}/../layers/meta-balena/meta-balena-thud \
     "
