@@ -14,10 +14,10 @@ SRC_URI += " \
 SRC_URI_remove = "file://resin-specific-env-integration-kconfig.patch"
 SRC_URI += " \
 	file://0003-resin-specific-env-integration-kconfig_REWORKED.patch \
-	file://0004-Integrate-with-Balena-environment-configuration.patch \
 	file://0001-beaglebone-black-Use-Balena-vars-for-mmc-boot.patch \
-	file://0001-Load-uboot-device-tree-overlays.patch \
-	file://0005-env_default.h-Add-support-for-OS_KERNEL_CMDLINE.patch \
+        file://0001-Load-uboot-device-tree-overlays.patch \
+        file://0005-env_default.h-Add-support-for-OS_KERNEL_CMDLINE.patch \
+	file://0004-Integrate-with-Balena-environment-configuration.patch \
 "
 
 SRC_URI_append_beaglebone-pocket = " \
