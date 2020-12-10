@@ -1,30 +1,30 @@
-From d80b9ec7c689b56b371752811c672cb2eaad4523 Mon Sep 17 00:00:00 2001
-From: Sebastian Panceac <sebastian@balena.io>
-Date: Thu, 6 Jun 2019 15:34:48 +0200
+From d1b56e246e22d84408629a3cbab6af0790c78e71 Mon Sep 17 00:00:00 2001
+From: Alexandru Costache <alexandru@balena.io>
+Date: Fri, 11 Dec 2020 15:15:34 +0100
 Subject: [PATCH] Integrate Beagleboard-XM with Balena environment
 
 Upstream-Status: Inappropriate [configuration]
 Signed-off-by: Sebastian Panceac <sebastian@balena.io>
 ---
  configs/omap3_beagle_defconfig | 2 +-
- include/configs/omap3_beagle.h | 3 ++-
- 2 files changed, 3 insertions(+), 2 deletions(-)
+ include/configs/omap3_beagle.h | 7 ++++---
+ 2 files changed, 5 insertions(+), 4 deletions(-)
 
 diff --git a/configs/omap3_beagle_defconfig b/configs/omap3_beagle_defconfig
-index 4fb8aec57d..655f023d0e 100644
+index 73ffa83d0c..0f9a401b61 100644
 --- a/configs/omap3_beagle_defconfig
 +++ b/configs/omap3_beagle_defconfig
-@@ -5,7 +5,7 @@ CONFIG_TARGET_OMAP3_BEAGLE=y
- CONFIG_SPL=y
+@@ -9,7 +9,7 @@ CONFIG_SPL=y
  CONFIG_DISTRO_DEFAULTS=y
  CONFIG_NR_DRAM_BANKS=2
+ CONFIG_TPL_SYS_MALLOC_F_LEN=0x400
 -CONFIG_BOOTCOMMAND="run findfdt; run distro_bootcmd"
 +CONFIG_BOOTCOMMAND="run findfdt; setenv resin_kernel_load_addr ${loadaddr}; run resin_set_kernel_root; setenv mmcdev ${resin_dev_index}; setenv bootpart ${resin_dev_index}:${resin_root_part}; run set_os_cmdline; run mmcboot"
  CONFIG_SYS_CONSOLE_INFO_QUIET=y
  CONFIG_DEFAULT_FDT_FILE="omap3-beagle.dtb"
  CONFIG_VERSION_VARIABLE=y
 diff --git a/include/configs/omap3_beagle.h b/include/configs/omap3_beagle.h
-index 7698a90c4e..7aa6df79ab 100644
+index 7698a90c4e..48ed95efe8 100644
 --- a/include/configs/omap3_beagle.h
 +++ b/include/configs/omap3_beagle.h
 @@ -151,7 +151,8 @@
@@ -32,11 +32,22 @@ index 7698a90c4e..7aa6df79ab 100644
  		"${defargs} " \
  		"${optargs} " \
 -		"root=${mmcroot} " \
-+		"${os_cmdline} " \
-+		"${resin_kernel_root} " \
++                "${os_cmdline} " \
++                "${resin_kernel_root} " \
  		"rootfstype=${mmcrootfstype}\0" \
  	"userbutton_xm=gpio input 4;\0" \
  	"userbutton_nonxm=gpio input 7;\0" \
+@@ -185,8 +186,8 @@
+ 				"setenv fdtfile omap3-beagle-xm.dtb; " \
+ 			"fi; " \
+ 		"fi; \0" \
+-	"loadimage=ext4load mmc ${bootpart} ${loadaddr} ${bootdir}/${bootfile}\0" \
+-	"loaddtb=run validatefdt; ext4load mmc ${bootpart} ${fdtaddr} ${bootdir}/${fdtfile}\0" \
++	"loadimage=ext4load mmc ${resin_root_part} ${loadaddr} boot/${bootfile}\0" \
++	"loaddtb=run validatefdt; ext4load mmc ${resin_root_part} ${fdtaddr} boot/${fdtfile}\0" \
+ 	"mmcboot=run mmcbootenv; " \
+ 		"if run loadimage && run loaddtb; then " \
+ 			"echo Booting ${bootdir}/${bootfile} from mmc ${bootpart} ...; " \
 -- 
 2.17.1
 

@@ -1,7 +1,6 @@
 UBOOT_KCONFIG_SUPPORT = "1"
 inherit resin-u-boot
 
-# add u-boot overlay and capemgr support patches from https://github.com/RobertCNelson/Bootloader-Builder/tree/master/patches/v2018.11
 FILESEXTRAPATHS_append := ":${THISDIR}/${PN}"
 
 SRC_URI += " \
@@ -10,7 +9,7 @@ SRC_URI += " \
     file://uEnv.txt_internal \
 "
 
-# rework meta-resin patch whose context is different now in u-boot v2018.11
+# Added u-boot overlay and capemgr support patches from https://github.com/RobertCNelson/Bootloader-Builder/tree/master/patches/v2019.14
 SRC_URI_remove = "file://resin-specific-env-integration-kconfig.patch"
 SRC_URI += " \
 	file://0003-resin-specific-env-integration-kconfig_REWORKED.patch \

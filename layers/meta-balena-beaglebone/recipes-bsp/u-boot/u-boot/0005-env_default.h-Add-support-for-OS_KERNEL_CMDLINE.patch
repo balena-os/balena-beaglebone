@@ -1,4 +1,4 @@
-From 34dc774af045805a72c63ca6d993738cd9949e24 Mon Sep 17 00:00:00 2001
+From dd65f0b6615c1cb049351ce2c9f4e5f1a27ad719 Mon Sep 17 00:00:00 2001
 From: Alexandru Costache <alexandru@balena.io>
 Date: Thu, 10 Dec 2020 18:11:16 +0100
 Subject: [PATCH] env_default.h: Add support for OS_KERNEL_CMDLINE
@@ -9,21 +9,79 @@ this to pass the cmdline to uboot.
 Upstream-status: Inappropriate [Configuration]
 Signed-off-by: Andrei Gherzan <andrei@balena.io>
 ---
- include/environment/ti/mmc.h | 1 +
- 1 file changed, 1 insertion(+)
+ include/environment/ti/mmc.h | 26 +++++++++++++-------------
+ 1 file changed, 13 insertions(+), 13 deletions(-)
 
 diff --git a/include/environment/ti/mmc.h b/include/environment/ti/mmc.h
-index ac1aaa0cfc..5b5aec23a8 100644
+index ac1aaa0cfc..9048041c1f 100644
 --- a/include/environment/ti/mmc.h
 +++ b/include/environment/ti/mmc.h
-@@ -17,6 +17,7 @@
- 		"root=PARTUUID=${uuid} ro " \
- 		"rootfstype=${mmcrootfstype} " \
+@@ -14,29 +14,29 @@
+ 	"finduuid=part uuid ${devtype} ${bootpart} uuid\0" \
+ 	"args_mmc=run finduuid;setenv bootargs console=${console} " \
+ 		"${cape_uboot} " \
+-		"root=PARTUUID=${uuid} ro " \
+-		"rootfstype=${mmcrootfstype} " \
++		"${resin_kernel_root}" \
  		"${uboot_detected_capes} " \
 +		"${os_cmdline} " \
  		"${cmdline}\0" \
  	"args_mmc_old=setenv bootargs console=${console} " \
  		"${optargs} " \
+ 		"${cape_uboot} " \
+-		"root=${oldroot} ro " \
+-		"rootfstype=${mmcrootfstype} " \
++		"${resin_kernel_root}" \
++		"${os_cmdline} " \
+ 		"${uboot_detected_capes} " \
+ 		"${cmdline}\0" \
+ 	"args_mmc_uuid=setenv bootargs console=${console} " \
+ 		"${optargs} " \
+ 		"${cape_uboot} " \
+-		"root=UUID=${uuid} ro " \
+-		"rootfstype=${mmcrootfstype} " \
++		"${resin_kernel_root}" \
++		"${os_cmdline} " \
+ 		"${uboot_detected_capes} " \
+ 		"${cmdline}\0" \
+ 	"args_uenv_root=setenv bootargs console=${console} " \
+ 		"${optargs} " \
+ 		"${cape_uboot} " \
+-		"root=${uenv_root} ro " \
+-		"rootfstype=${mmcrootfstype} " \
++		"${resin_kernel_root}" \
++		"${os_cmdline} " \
+ 		"${uboot_detected_capes} " \
+ 		"${cmdline}\0" \
+ 	"args_netinstall=setenv bootargs ${netinstall_bootargs} " \
+@@ -55,14 +55,14 @@
+ 	"importbootenv=echo Importing environment from ${devtype} ...; " \
+ 		"env import -t ${loadaddr} ${filesize}\0" \
+ 	"loadbootenv=load ${resin_dev_type} ${resin_dev_index}:${resin_boot_part} ${loadaddr} ${bootenvfile}\0" \
+-	"loadimage=load ${devtype} ${bootpart} ${loadaddr} ${bootdir}/${bootfile}\0" \
++	"loadimage=load ${devtype} ${resin_dev_index}:${resin_root_part} ${loadaddr} boot/${bootfile}\0" \
+ 	"loadrd=load ${devtype} ${bootpart} ${rdaddr} ${bootdir}/${rdfile}; setenv rdsize ${filesize}\0" \
+-	"loadfdt=echo loading ${fdtdir}/${fdtfile} ...; load ${devtype} ${bootpart} ${fdtaddr} ${fdtdir}/${fdtfile}\0" \
++	"loadfdt=echo loading boot/${fdtfile} ...; load ${devtype} ${resin_dev_index}:${resin_root_part} ${fdtaddr} boot/${fdtfile}\0" \
+ 	"loadoverlay=echo uboot_overlays: loading ${actual_uboot_overlay} ...; " \
+-		"load ${devtype} ${bootpart} ${rdaddr} ${actual_uboot_overlay}; " \
++		"load ${devtype} ${resin_dev_index}:${resin_root_part} ${rdaddr} ${actual_uboot_overlay}; " \
+ 		"fdt addr ${fdtaddr}; fdt resize ${fdt_buffer}; " \
+ 		"fdt apply ${rdaddr}; fdt resize ${fdt_buffer};\0" \
+-	"virtualloadoverlay=if test -e ${devtype} ${bootpart} ${fdtdir}/overlays/${uboot_overlay}; then " \
++	"virtualloadoverlay=if test -e ${devtype} ${resin_dev_index}:${resin_root_part} boot/overlays/${uboot_overlay}; then " \
+ 				"setenv actual_uboot_overlay ${fdtdir}/overlays/${uboot_overlay}; " \
+ 				"run loadoverlay;" \
+ 			"else " \
+@@ -70,7 +70,7 @@
+ 					"setenv actual_uboot_overlay /lib/firmware/${uboot_overlay}; " \
+ 					"run loadoverlay;" \
+ 				"else " \
+-					"if test -e ${devtype} ${bootpart} ${uboot_overlay}; then " \
++					"if test -e ${devtype} ${resin_dev_index}:${resin_root_part} ${uboot_overlay}; then " \
+ 						"setenv actual_uboot_overlay ${uboot_overlay}; " \
+ 						"run loadoverlay;" \
+ 					"else " \
 -- 
 2.17.1
 
