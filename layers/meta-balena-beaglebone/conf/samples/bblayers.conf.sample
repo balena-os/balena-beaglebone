@@ -13,6 +13,8 @@ BBLAYERS ?= " \
     ${TOPDIR}/../layers/meta-openembedded/meta-networking \
     ${TOPDIR}/../layers/meta-openembedded/meta-python \
     ${TOPDIR}/../layers/meta-ti \
+    ${TOPDIR}/../layers/meta-arm/meta-arm \
+    ${TOPDIR}/../layers/meta-arm/meta-arm-toolchain \
     ${TOPDIR}/../layers/meta-balena/meta-balena-common \
     ${TOPDIR}/../layers/meta-balena/meta-balena-dunfell \
     ${TOPDIR}/../layers/meta-balena-beaglebone \
