@@ -16,3 +16,6 @@
 [submodule "layers/meta-rust"]
 	path = layers/meta-rust
 	url = https://github.com/meta-rust/meta-rust.git
+[submodule "layers/meta-arm"]
+	path = layers/meta-arm
+	url = git://git.yoctoproject.org/meta-arm
