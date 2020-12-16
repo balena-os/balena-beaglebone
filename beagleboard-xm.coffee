@@ -7,7 +7,6 @@ module.exports =
 	name: 'BeagleBoard-XM'
 	arch: 'armv7hf'
 	state: 'released'
-	private: false
 
 	instructions: commonImg.instructions
 
@@ -22,7 +21,7 @@ module.exports =
 		machine: 'beagleboard-xm'
 		image: 'resin-image'
 		fstype: 'resinos-img'
-		version: 'yocto-thud'
+		version: 'yocto-dunfell'
 		deployArtifact: 'resin-image-beagleboard-xm.resinos-img'
 		compressed: true
 

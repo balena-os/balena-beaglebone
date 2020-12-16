@@ -18,7 +18,6 @@ module.exports =
 	name: 'BeagleBone Green Wireless'
 	arch: 'armv7hf'
 	state: 'released'
-	private: false
 
 	stateInstructions:
 		postProvisioning: postProvisioningInstructions
@@ -41,7 +40,7 @@ module.exports =
 		machine: 'beaglebone-green-wifi'
 		image: 'resin-image-flasher'
 		fstype: 'resinos-img'
-		version: 'yocto-thud'
+		version: 'yocto-dunfell'
 		deployArtifact: 'resin-image-flasher-beaglebone-green-wifi.resinos-img'
 		compressed: true
 

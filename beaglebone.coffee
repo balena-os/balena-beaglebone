@@ -17,7 +17,6 @@ module.exports =
 	name: 'BeagleBone Black'
 	arch: 'armv7hf'
 	state: 'released'
-	private: false
 
 	stateInstructions:
 		postProvisioning: postProvisioningInstructions
@@ -40,7 +39,7 @@ module.exports =
 		machine: 'beaglebone'
 		image: 'resin-image-flasher'
 		fstype: 'resinos-img'
-		version: 'yocto-thud'
+		version: 'yocto-dunfell'
 		deployArtifact: 'resin-image-flasher-beaglebone.resinos-img'
 		compressed: true
 
