@@ -7,7 +7,6 @@ module.exports =
 	name: 'PocketBeagle'
 	arch: 'armv7hf'
 	state: 'released'
-	private: false
 
 	imageDownloadAlerts: [
 		{
@@ -28,7 +27,7 @@ module.exports =
 		machine: 'beaglebone-pocket'
 		image: 'resin-image'
 		fstype: 'resinos-img'
-		version: 'yocto-thud'
+		version: 'yocto-dunfell'
 		deployArtifact: 'resin-image-beaglebone-pocket.resinos-img'
 		compressed: true
 

@@ -1,28 +1,80 @@
-From 9d214394f638a9c938efdf66269f17e896eab037 Mon Sep 17 00:00:00 2001
-From: Florin Sarbu <florin@balena.io>
-Date: Fri, 14 Dec 2018 15:07:37 +0100
+From 85e356482b669ca12da5f477f23338b1fe8c915b Mon Sep 17 00:00:00 2001
+From: Alexandru Costache <alexandru@balena.io>
+Date: Thu, 10 Dec 2020 18:15:29 +0100
 Subject: [PATCH] Integrate with Balena environment configuration
+
+And also add am335x_boneblack_defconfig file, which
+is a copy of am335x_evm_defconfig.
 
 Upstream-Status: Inappropriate [configuration]
 Signed-off-by: Florin Sarbu <florin@balena.io>
 Signed-off-by: Andrei Gherzan <andrei@balena.io>
+Signed-off-by: Alexandru Costache <alexandru@balena.io>
 ---
- configs/am335x_boneblack_defconfig | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ configs/am335x_boneblack_defconfig | 54 ++++++++++++++++++++++++++++++
+ 1 file changed, 54 insertions(+)
+ create mode 100644 configs/am335x_boneblack_defconfig
 
 diff --git a/configs/am335x_boneblack_defconfig b/configs/am335x_boneblack_defconfig
-index a68e0ad..65644a9 100644
---- a/configs/am335x_boneblack_defconfig
+new file mode 100644
+index 0000000000..032e90910b
+--- /dev/null
 +++ b/configs/am335x_boneblack_defconfig
-@@ -4,7 +4,7 @@ CONFIG_TI_COMMON_CMD_OPTIONS=y
- CONFIG_AM33XX=y
- CONFIG_SPL=y
- CONFIG_DISTRO_DEFAULTS=y
--CONFIG_BOOTCOMMAND="if test ${boot_fit} -eq 1; then run update_to_fit; fi; run findfdt; run init_console; run envboot; run distro_bootcmd"
+@@ -0,0 +1,54 @@
++CONFIG_ARM=y
++CONFIG_ARCH_OMAP2PLUS=y
++CONFIG_TI_COMMON_CMD_OPTIONS=y
++CONFIG_AM33XX=y
++CONFIG_SPL=y
++CONFIG_DISTRO_DEFAULTS=y
++CONFIG_BOOTDELAY=0
 +CONFIG_BOOTCOMMAND="if test ${boot_fit} -eq 1; then run update_to_fit; fi; run findfdt; run init_console; setenv resin_kernel_load_addr ${loadaddr}; run resin_set_kernel_root; setenv mmcdev ${resin_dev_index}; setenv bootpart ${resin_dev_index}:${resin_root_part}; run set_os_cmdline; run envboot; run mmcboot"
- CONFIG_SYS_CONSOLE_INFO_QUIET=y
- CONFIG_VERSION_VARIABLE=y
- CONFIG_ARCH_MISC_INIT=y
++CONFIG_SYS_CONSOLE_INFO_QUIET=y
++CONFIG_VERSION_VARIABLE=y
++CONFIG_ARCH_MISC_INIT=y
++CONFIG_SPL_MUSB_NEW_SUPPORT=y
++# CONFIG_SPL_NAND_SUPPORT is not set
++CONFIG_SPL_OS_BOOT=y
++CONFIG_AUTOBOOT_KEYED=y
++CONFIG_AUTOBOOT_PROMPT="Press SPACE to abort autoboot in %d seconds\n"
++CONFIG_AUTOBOOT_DELAY_STR="d"
++CONFIG_AUTOBOOT_STOP_STR=" "
++CONFIG_CMD_SPL=y
++# CONFIG_CMD_FLASH is not set
++CONFIG_CMD_BTRFS=y
++# CONFIG_ENV_IS_IN_FAT is not set
++CONFIG_ENV_IS_IN_EXT4=y
++CONFIG_ENV_EXT4_INTERFACE="mmc"
++CONFIG_ENV_EXT4_DEVICE_AND_PART="0:1"
++CONFIG_ENV_EXT4_FILE="/boot/uboot.env"
++CONFIG_ENV_VARS_UBOOT_RUNTIME_CONFIG=y
++CONFIG_BOOTCOUNT_LIMIT=y
++CONFIG_DFU_TFTP=y
++CONFIG_DFU_MMC=y
++CONFIG_DFU_RAM=y
++CONFIG_USB_FUNCTION_FASTBOOT=y
++CONFIG_FASTBOOT_FLASH=y
++CONFIG_FASTBOOT_FLASH_MMC_DEV=1
++CONFIG_FASTBOOT_CMD_OEM_FORMAT=y
++CONFIG_MMC_OMAP_HS=y
++CONFIG_SPI_FLASH=y
++CONFIG_SPI_FLASH_WINBOND=y
++CONFIG_PHY_MSCC=y
++CONFIG_MII=y
++CONFIG_DRIVER_TI_CPSW=y
++CONFIG_SPI=y
++CONFIG_OMAP3_SPI=y
++CONFIG_USB=y
++CONFIG_USB_MUSB_HOST=y
++CONFIG_USB_MUSB_GADGET=y
++CONFIG_USB_MUSB_DSPS=y
++CONFIG_USB_GADGET=y
++CONFIG_USB_GADGET_MANUFACTURER="Texas Instruments"
++CONFIG_USB_GADGET_VENDOR_NUM=0x0451
++CONFIG_USB_GADGET_PRODUCT_NUM=0xd022
++CONFIG_USB_ETHER=y
++CONFIG_USBNET_HOST_ADDR="de:ad:be:af:00:00"
++CONFIG_OF_LIBFDT=y
 -- 
-2.7.4
+2.17.1
 

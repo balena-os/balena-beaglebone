@@ -1,20 +1,21 @@
 deviceTypesCommon = require '@resin.io/device-types/common'
 { networkOptions, commonImg, instructions } = deviceTypesCommon
 
-BBB_FLASH = 'Power up the <%= TYPE_NAME %> while holding down the small button near the SD slot.
+BBGW_FLASH = 'Power up the <%= TYPE_NAME %> while holding down the small button near the SD slot.
 You need to keep it pressed until the blue LEDs start flashing wildly.'
+BBGW_REMOVE_POWER = 'Wait 5 seconds after the blue leds stopped flashing wildly, then remove power from the board. On some boards the leds will shut down completely.'
+BBGW_BOARD_POWERON = 'Re-connect power to the board.'
 
 postProvisioningInstructions = [
-	instructions.BOARD_SHUTDOWN
+	BBGW_REMOVE_POWER
 	instructions.REMOVE_INSTALL_MEDIA
-	instructions.BOARD_REPOWER
+	BBGW_BOARD_POWERON
 ]
 
 module.exports =
 	version: 1
-	slug: 'beaglebone-black'
-	aliases: [ 'beaglebone' ]
-	name: 'BeagleBone Black'
+	slug: 'beaglebone-green-gateway'
+	name: 'BeagleBone Green Gateway'
 	arch: 'armv7hf'
 	state: 'released'
 
@@ -25,7 +26,7 @@ module.exports =
 		instructions.ETCHER_SD
 		instructions.EJECT_SD
 		instructions.FLASHER_WARNING
-		BBB_FLASH
+		BBGW_FLASH
 	].concat(postProvisioningInstructions)
 
 	gettingStartedLink:
@@ -36,11 +37,11 @@ module.exports =
 	supportsBlink: true
 
 	yocto:
-		machine: 'beaglebone'
+		machine: 'beaglebone-green-gateway'
 		image: 'resin-image-flasher'
 		fstype: 'resinos-img'
 		version: 'yocto-dunfell'
-		deployArtifact: 'resin-image-flasher-beaglebone.resinos-img'
+		deployArtifact: 'resin-image-flasher-beaglebone-green-gateway.resinos-img'
 		compressed: true
 
 	options: [ networkOptions.group ]
