@@ -1,4 +1,17 @@
 - commits:
+    - subject: 'linux-beagleboard: Include beaglebone green gateway device tree'
+      hash: 4ca25f09397c8111473f38ceeafa440e6eec671e
+      body: ''
+      footer:
+        Changelog-entry: 'linux-beagleboard: Include beaglebone green gateway device tree'
+        changelog-entry: 'linux-beagleboard: Include beaglebone green gateway device tree'
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+  version: 2.65.0+rev2
+  date: 2020-12-17T10:28:53.475Z
+- commits:
     - subject: Update balena-yocto-scripts to v1.9.0
       hash: 3c70726424fbf6dc1da15ed68e9700f3d10ed63f
       body: ''

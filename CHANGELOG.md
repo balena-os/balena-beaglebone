@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.65.0+rev2
+## (2020-12-17)
+
+* linux-beagleboard: Include beaglebone green gateway device tree [Alexandru Costache]
+
 # v2.65.0+rev1
 ## (2020-12-16)
 
