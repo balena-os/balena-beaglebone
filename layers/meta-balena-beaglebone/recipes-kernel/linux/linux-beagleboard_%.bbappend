@@ -5,11 +5,13 @@ RESIN_CONFIGS[no_modules_compression]=" \
     CONFIG_MODULE_COMPRESS_XZ=n \
 "
 
-KERNEL_DEVICETREE_beaglebone += " am335x-boneblack-uboot.dtb \
+KERNEL_DEVICETREE_beaglebone += " \
+	am335x-boneblack-uboot.dtb \
+	am335x-bonegreen-gateway.dtb \
 "
 
 SRC_URI_append_beaglebone = " \
-       file://rtc-omap-Prevent-kernel-panic-and-reboot-on-shutdown.patch \
+	file://rtc-omap-Prevent-kernel-panic-and-reboot-on-shutdown.patch \
 "
 
 SRC_URI_append_beagleboard-xm = " \
