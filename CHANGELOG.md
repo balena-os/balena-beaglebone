@@ -1,6 +1,22 @@
 Change log
 -----------
 
+# v2.65.1+rev1
+## (2020-12-23)
+
+
+<details>
+<summary> Update meta-balena from 2.65.0 to 2.65.1 [Alexandru Costache] </summary>
+
+> ## meta-balena-2.65.1
+> ### (2020-12-17)
+> 
+> * u-boot: Add required configuration for BalenaOS environment [Alex Gonzalez]
+> 
+</details>
+
+* linux-beagleboard: Revert "cpsw: fix min eth packet size" [Zahari Petkov]
+
 # v2.65.0+rev2
 ## (2020-12-17)
 

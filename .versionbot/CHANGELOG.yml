@@ -1,4 +1,60 @@
 - commits:
+    - subject: Update meta-balena from 2.65.0 to 2.65.1
+      hash: dda550ad23e175d5772778442a195f29fbb2a370
+      body: |
+        Update meta-balena from 2.65.0 to 2.65.1
+      footer:
+        Changelog-entry: Update meta-balena from 2.65.0 to 2.65.1
+        changelog-entry: Update meta-balena from 2.65.0 to 2.65.1
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested:
+        - commits:
+            - subject: 'u-boot: Add required configuration for BalenaOS environment'
+              hash: 401345c86a3a017dc548a94c7afa3977d547fc21
+              body: >
+                The BalenaOS u-boot environment patch requires u-boot to support
+                importing
+
+                and exporting of the environment as well as the fsuuid command.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+          version: meta-balena-2.65.1
+          date: 2020-12-17T10:39:35.947Z
+    - subject: 'linux-beagleboard: Revert "cpsw: fix min eth packet size"'
+      hash: 58fd80c3dd6e2d9896ac808530708329794557c4
+      body: |
+        This reverts commit 9421c90150470512bd5d0fc49eaa108a0b195358
+        ("net: ethernet: ti: cpsw: fix min eth packet size") from our
+        kernel tree.
+
+        The above commit increased the min tx packet size from 60 to
+        64 bytes. While this fixes VLAN packets forwarding it breaks
+        communication with some industrial PLC devices, which drop
+        those packets as incorrect because of the extra padding added.
+
+        Commit d0ff769214e9705573554921c6a8fe491e01fa30 ("HACK: net:
+        ethernet: ti: cpsw: allow to configure min tx packet size")
+        introduces boot time configurability with a module boot
+        parameter "tx_packet_min", which can be adjusted according
+        to the use-case, however we considered that 60 bytes is a
+        better default value.
+      footer:
+        Changelog-entry: 'linux-beagleboard: Revert "cpsw: fix min eth packet size"'
+        changelog-entry: 'linux-beagleboard: Revert "cpsw: fix min eth packet size"'
+        Signed-off-by: Zahari Petkov <zahari@balena.io>
+        signed-off-by: Zahari Petkov <zahari@balena.io>
+      author: Zahari Petkov
+      nested: []
+  version: 2.65.1+rev1
+  date: 2020-12-23T09:22:04.400Z
+- commits:
     - subject: 'linux-beagleboard: Include beaglebone green gateway device tree'
       hash: 4ca25f09397c8111473f38ceeafa440e6eec671e
       body: ''
