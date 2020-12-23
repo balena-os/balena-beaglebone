@@ -12,6 +12,7 @@ KERNEL_DEVICETREE_beaglebone += " \
 
 SRC_URI_append_beaglebone = " \
 	file://rtc-omap-Prevent-kernel-panic-and-reboot-on-shutdown.patch \
+        file://0001-Revert-net-ethernet-ti-cpsw-fix-min-eth-packet-size.patch \
 "
 
 SRC_URI_append_beagleboard-xm = " \
