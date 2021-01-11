@@ -49,3 +49,8 @@ RESIN_CONFIGS[bt_hciuart] = " \
 	CONFIG_BT_HCIUART_H4=y \
 	CONFIG_BT_HCIUART_LL=y \
 "
+
+RESIN_CONFIGS_append = " hm3301"
+RESIN_CONFIGS[hm3301] = " \
+        CONFIG_HM3301=m \
+"
