@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.65.1+rev2
+## (2021-01-11)
+
+* linux-beagleboard: Update to 5.4.70-ti-r21, add HM3301 [Alexandru Costache]
+
 # v2.65.1+rev1
 ## (2020-12-23)
 
