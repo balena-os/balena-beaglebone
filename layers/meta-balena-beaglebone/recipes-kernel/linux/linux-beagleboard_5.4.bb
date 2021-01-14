@@ -20,9 +20,9 @@ COMPATIBLE_MACHINE = "beaglebone|beagleboard-xm"
 
 S = "${WORKDIR}/git"
 
-TAG = "5.4.70-ti-r21"
+TAG = "5.4.47-ti-r13"
 
-PV = "5.4.70+git${SRCPV}"
+PV = "5.4.47+git${SRCPV}"
 
 # Append to the MACHINE_KERNEL_PR so that a new SRCREV will cause a rebuild
 MACHINE_KERNEL_PR_append = "b"
