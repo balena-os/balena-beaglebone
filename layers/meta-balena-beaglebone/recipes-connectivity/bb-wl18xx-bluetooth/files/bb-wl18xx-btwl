@@ -1,0 +1,3 @@
+#!/bin/bash
+
+/sbin/modprobe rfcomm; sleep 5; /sbin/modprobe hci_uart; sleep 5; /sbin/modprobe wl18xx
