@@ -1,6 +1,56 @@
 Change log
 -----------
 
+# v2.67.3+rev1
+## (2021-01-25)
+
+
+<details>
+<summary> Update meta-balena from v2.65.1 to v2.67.3 [Alexandru Costache] </summary>
+
+> ## meta-balena-2.67.3
+> ### (2021-01-15)
+> 
+> * kernel-headers-test: Install python dependency [Alexandru Costache]
+> 
+> ## meta-balena-2.67.2
+> ### (2021-01-14)
+> 
+> * Fix pppd timeout when launched by NetworkManager [Zahari Petkov]
+> 
+> ## meta-balena-2.67.1
+> ### (2021-01-13)
+> 
+> * resin-device-register: Fix post provisioning state not reported [Alexandru Costache]
+> 
+> ## meta-balena-2.67.0
+> ### (2021-01-12)
+> 
+> * Update balena-supervisor from v12.2.11 to v12.3.0 [Felipe Lalanne]
+> 
+> ## meta-balena-2.66.3
+> ### (2021-01-12)
+> 
+> * Respect custom CA in supervisor [Michal Toman]
+> 
+> ## meta-balena-2.66.2
+> ### (2021-01-11)
+> 
+> * README: Rename resin-logo to balena-logo. [Alex Gonzalez]
+> 
+> ## meta-balena-2.66.1
+> ### (2021-01-04)
+> 
+> * kernel-devsrc: use upstream recipe starting with dunfell [Kyle Harding]
+> * gen_mod_headers: add missing arch headers to tools [Kyle Harding]
+> 
+> ## meta-balena-2.66.0
+> ### (2020-12-18)
+> 
+> * chrony: bump to version 4.0 [Mark Corbin]
+> 
+</details>
+
 # v2.65.1+rev2
 ## (2021-01-11)
 
