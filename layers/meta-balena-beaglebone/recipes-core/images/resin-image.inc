@@ -23,3 +23,6 @@ RESIN_BOOT_PARTITION_FILES_append_beaglebone-pocket = " uEnv.txt_internal:"
 # Fixes error: packages already installed
 # by kernel-image-initramfs
 IMAGE_INSTALL_remove = " kernel-image-zimage"
+
+IMAGE_INSTALL_remove_beaglebone-green-gateway = " bb-wl18xx-bluetooth bb-wl18xx-wlan0"
+IMAGE_INSTALL_append_beaglebone-green-gateway = " bb-wl18xx-btwl"

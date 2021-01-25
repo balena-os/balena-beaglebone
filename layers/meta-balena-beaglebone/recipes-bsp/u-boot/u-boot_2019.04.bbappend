@@ -35,3 +35,6 @@ do_deploy_append() {
 }
 
 UBOOT_MACHINE = "am335x_boneblack_config"
+
+# Necessary for Bluetooth to work on this board
+OS_KERNEL_CMDLINE_append_beaglebone-green-gateway = " coherent_pool=1M net.ifnames=0  lpj=1990656 rng_core.default_quality=100 "

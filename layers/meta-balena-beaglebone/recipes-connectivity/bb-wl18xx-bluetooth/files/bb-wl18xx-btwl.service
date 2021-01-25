@@ -1,0 +1,11 @@
+[Unit]
+Description=BB WL18xx BT & WiFi Service BBGG
+After=getty.target bluetooth.service generic-board-startup.service rngd.service
+
+[Service]
+ExecStart=/usr/bin/bb-wl18xx-btwl
+Type=simple
+
+[Install]
+WantedBy=multi-user.target
+
