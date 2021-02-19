@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2021.01.1
+## (2021-02-19)
+
+* resin-image: Install new BT package for kernel 5.4.70 [Alexandru Costache]
+
 # 2021.01.0
 ## (2021-02-11)
 
