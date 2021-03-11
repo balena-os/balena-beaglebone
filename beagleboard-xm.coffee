@@ -19,10 +19,10 @@ module.exports =
 
 	yocto:
 		machine: 'beagleboard-xm'
-		image: 'resin-image'
-		fstype: 'resinos-img'
+		image: 'balena-image'
+		fstype: 'balenaos-img'
 		version: 'yocto-dunfell'
-		deployArtifact: 'resin-image-beagleboard-xm.resinos-img'
+		deployArtifact: 'balena-image-beagleboard-xm.balenaos-img'
 		compressed: true
 
 	options: [ networkOptions.group ]
