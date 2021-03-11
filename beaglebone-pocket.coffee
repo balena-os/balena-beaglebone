@@ -25,10 +25,10 @@ module.exports =
 
 	yocto:
 		machine: 'beaglebone-pocket'
-		image: 'resin-image'
-		fstype: 'resinos-img'
+		image: 'balena-image'
+		fstype: 'balenaos-img'
 		version: 'yocto-dunfell'
-		deployArtifact: 'resin-image-beaglebone-pocket.resinos-img'
+		deployArtifact: 'balena-image-beaglebone-pocket.balenaos-img'
 		compressed: true
 
 	options: [ networkOptions.group ]

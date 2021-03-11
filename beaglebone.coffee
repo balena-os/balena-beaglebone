@@ -37,10 +37,10 @@ module.exports =
 
 	yocto:
 		machine: 'beaglebone'
-		image: 'resin-image-flasher'
-		fstype: 'resinos-img'
+		image: 'balena-image-flasher'
+		fstype: 'balenaos-img'
 		version: 'yocto-dunfell'
-		deployArtifact: 'resin-image-flasher-beaglebone.resinos-img'
+		deployArtifact: 'balena-image-flasher-beaglebone.balenaos-img'
 		compressed: true
 
 	options: [ networkOptions.group ]
