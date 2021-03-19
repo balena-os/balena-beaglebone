@@ -1,4 +1,22 @@
 - commits:
+    - subject: 'resin-image: Install new BT package for kernel 5.4.70'
+      hash: 5aa4f585bfa65921cac74cabeceb1ee8366d44b2
+      body: |
+        The old wlan and bt scripts no longer work on this kernel
+        version. The new package works well on the green gateway
+        and fixes the following BT problem on BeagleBlackWireless
+            hcitool scan
+            Inquiry failed: Connection timed out
+      footer:
+        Changelog-entry: 'resin-image: Install new BT package for kernel 5.4.70'
+        changelog-entry: 'resin-image: Install new BT package for kernel 5.4.70'
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+  version: 2.73.1+rev2
+  date: 2021-03-19T12:06:34.784Z
+- commits:
     - subject: Update meta-balena from v2.72.0 to v2.73.1
       hash: 49659ee3aec891ec2440d85ec8153f4ee3746b7f
       body: |
