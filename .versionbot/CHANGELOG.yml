@@ -1,4 +1,18 @@
 - commits:
+    - subject: Update balena-yocto-scripts from v1.14.7 to v1.14.9
+      hash: 4e3e28343207abd9f64a4c39152225f6685895df
+      body: |
+        Update balena-yocto-scripts from 1.14.7 to 1.14.9
+      footer:
+        Changelog-entry: Update balena-yocto-scripts from v1.14.7 to v1.14.9
+        changelog-entry: Update balena-yocto-scripts from v1.14.7 to v1.14.9
+        Signed-off-by: Alex Gonzalez <alexg@balena.io>
+        signed-off-by: Alex Gonzalez <alexg@balena.io>
+      author: Alex Gonzalez
+      nested: []
+  version: 2.81.1+rev2
+  date: 2021-08-24T08:31:59.883Z
+- commits:
     - subject: Update balena-yocto-scripts from v1.11.0 to v1.14.7
       hash: b8b51e5862a5366312f4ff8dd60a7baf05d82c6c
       body: |
