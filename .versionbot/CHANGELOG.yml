@@ -1,4 +1,23 @@
 - commits:
+    - subject: >-
+        Add am335x-bonegreen-wireless-uboot-univ to rootfs for people using
+        gpios on BeagleBone Green Wireless
+      hash: 167110a588b54b2af08b81b73bf389d43c987aaa
+      body: |
+        Include this overlay so that users of BeagleBone Green Wireless can load
+        it and use the gpios.
+      footer:
+        Changelog-entry: >-
+          Add am335x-bonegreen-wireless-uboot-univ to rootfs for people using
+          gpios on BeagleBone Green Wireless
+        changelog-entry: >-
+          Add am335x-bonegreen-wireless-uboot-univ to rootfs for people using
+          gpios on BeagleBone Green Wireless
+      author: Claude Sammut
+      nested: []
+  version: 2.85.6+rev2
+  date: 2021-10-15T13:02:05.647Z
+- commits:
     - subject: Update meta-balena from v2.84.3 to v2.85.6
       hash: bbfbd208fc9fa8dd9b571f6d95063f1f94544092
       body: |

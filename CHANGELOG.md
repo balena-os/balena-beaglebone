@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.85.6+rev2
+## (2021-10-15)
+
+* Add am335x-bonegreen-wireless-uboot-univ to rootfs for people using gpios on BeagleBone Green Wireless [Claude Sammut]
+
 # v2.85.6+rev1
 ## (2021-09-29)
 
