@@ -1,4 +1,21 @@
 - commits:
+    - subject: 'meta-balena-beaglebone: update local.conf.sample'
+      hash: d71574dbe7d72de8a40b73d209b1543bd5e46ccb
+      body: |
+        Update the sample configuration file to use OS_DEVELOPMENT instead of
+        DEVELOPMENT_IMAGE.
+      footer:
+        Change-type: patch
+        change-type: patch
+        Changelog-entry: 'meta-balena-beaglebone: update local.conf.sample'
+        changelog-entry: 'meta-balena-beaglebone: update local.conf.sample'
+        Signed-off-by: Mark Corbin <mark@balena.io>
+        signed-off-by: Mark Corbin <mark@balena.io>
+      author: Mark Corbin
+      nested: []
+  version: 2.85.6+rev3
+  date: 2021-10-18T13:37:34.472Z
+- commits:
     - subject: >-
         Add am335x-bonegreen-wireless-uboot-univ to rootfs for people using
         gpios on BeagleBone Green Wireless

@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.85.6+rev3
+## (2021-10-18)
+
+* meta-balena-beaglebone: update local.conf.sample [Mark Corbin]
+
 # v2.85.6+rev2
 ## (2021-10-15)
 
