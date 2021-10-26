@@ -1,0 +1,75 @@
+From 55e9704fae63114fad4d58866ed8b72fea1e9a6e Mon Sep 17 00:00:00 2001
+From: Alexandru Costache <alexandru@balena.io>
+Date: Mon, 25 Oct 2021 15:32:59 +0200
+Subject: [PATCH] Fix booting with capes that have eeproms
+
+Fix missing space at the end of the root partition
+uuid which, in the case of booting with a cape that
+had an eeprom, caused boot to fail due to the a
+flag being appended to the root uuid.
+
+Also fix passing uboot_detected_capes in cmdline when
+enable_uboot_overlays is not set, to avoid booting
+in recovery mode.
+
+Signed-off-by: Alexandru Costache <alexandru@balena.io>
+Upstream-status: Inappropriate [configuration]
+---
+ include/configs/ti_armv7_common.h | 3 +++
+ include/environment/ti/mmc.h      | 8 ++++----
+ 2 files changed, 7 insertions(+), 4 deletions(-)
+
+diff --git a/include/configs/ti_armv7_common.h b/include/configs/ti_armv7_common.h
+index f3eacb983d..fc5784b8f7 100644
+--- a/include/configs/ti_armv7_common.h
++++ b/include/configs/ti_armv7_common.h
+@@ -487,6 +487,9 @@
+ 				"fi;" \
+ 			"else " \
+ 				"echo uboot_overlays: add [enable_uboot_overlays=1] to /boot/uEnv.txt to enable...;" \
++			"fi; " \
++			"if test \"${uboot_detected_capes}\" = 1; then " \
++				"setenv uboot_detected_capes uboot_detected_capes=1; " \
+ 			"fi;\0" \
+ 
+ /*
+diff --git a/include/environment/ti/mmc.h b/include/environment/ti/mmc.h
+index 744a587bdb..116b5b7c27 100644
+--- a/include/environment/ti/mmc.h
++++ b/include/environment/ti/mmc.h
+@@ -14,28 +14,28 @@
+ 	"finduuid=part uuid ${devtype} ${bootpart} uuid\0" \
+ 	"args_mmc=run finduuid;setenv bootargs console=${console} " \
+ 		"${cape_uboot} " \
+-		"${resin_kernel_root}" \
++		"${resin_kernel_root} " \
+ 		"${uboot_detected_capes} " \
+ 		"${os_cmdline} " \
+ 		"${cmdline}\0" \
+ 	"args_mmc_old=setenv bootargs console=${console} " \
+ 		"${optargs} " \
+ 		"${cape_uboot} " \
+-		"${resin_kernel_root}" \
++		"${resin_kernel_root} " \
+ 		"${os_cmdline} " \
+ 		"${uboot_detected_capes} " \
+ 		"${cmdline}\0" \
+ 	"args_mmc_uuid=setenv bootargs console=${console} " \
+ 		"${optargs} " \
+ 		"${cape_uboot} " \
+-		"${resin_kernel_root}" \
++		"${resin_kernel_root} " \
+ 		"${os_cmdline} " \
+ 		"${uboot_detected_capes} " \
+ 		"${cmdline}\0" \
+ 	"args_uenv_root=setenv bootargs console=${console} " \
+ 		"${optargs} " \
+ 		"${cape_uboot} " \
+-		"${resin_kernel_root}" \
++		"${resin_kernel_root} " \
+ 		"${os_cmdline} " \
+ 		"${uboot_detected_capes} " \
+ 		"${cmdline}\0" \
+-- 
+2.17.1
+
