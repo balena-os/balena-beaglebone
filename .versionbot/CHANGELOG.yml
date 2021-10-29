@@ -1,4 +1,241 @@
 - commits:
+    - subject: Update meta-balena from v2.85.6 to v2.85.16
+      hash: ce5a9b621396d46486892a47b681dfa7742d7e37
+      body: |
+        Update meta-balena from 2.85.6 to 2.85.16
+      footer:
+        Changelog-entry: Update meta-balena from v2.85.6 to v2.85.16
+        changelog-entry: Update meta-balena from v2.85.6 to v2.85.16
+        Signed-off-by: Robert Günzler <robertg@balena.io>
+        signed-off-by: Robert Günzler <robertg@balena.io>
+      author: Robert Günzler
+      nested:
+        - commits:
+            - subject: Update balena-engine to v19.03.30
+              hash: abf610e022eeac709c054e4fb672b850ef08a940
+              body: >
+                Fixes EINVAL errors caused by sockets during storage migration,
+
+                https://github.com/balena-os/balena-engine/commit/17a198cb53a53da456c848bf303dc3917ca538c5
+
+
+                Update balena-engine from 19.03.29 to 19.03.30
+              footer:
+                Changelog-entry: Update balena-engine to v19.03.30
+                changelog-entry: Update balena-engine to v19.03.30
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Robert Günzler <robertg@balena.io>
+                signed-off-by: Robert Günzler <robertg@balena.io>
+              author: Robert Günzler
+              nested:
+                - commits:
+                    - subject: 'storagemigration: keep going if migration fails'
+                      hash: 2bde63c800b1df72fba7161d62b5b6da84a8d390
+                      body: >
+                        the only hard error is if rollback (failcleanup) fails,
+                        in all other
+
+                        scenarios we want the daemon to continue starting with
+                        the new
+
+                        graphdriver
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: Robert Günzler <robertg@balena.io>
+                        signed-off-by: Robert Günzler <robertg@balena.io>
+                      author: Robert Günzler
+                      nested: []
+                    - subject: 'graphdriver/copy: fix handling of sockets'
+                      hash: 17a198cb53a53da456c848bf303dc3917ca538c5
+                      body: >
+                        previously switch would treat S_IFIFO and S_IFSOCK as
+                        the same, passing
+
+                        both of the to mkfifo, which lead to EINVAL errors when
+                        trying to create
+
+                        the socket, we instead handle socket separately.
+
+
+                        Also adds cases for this to the unit and integration
+                        tests of the
+
+                        migrator.
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: Robert Günzler <robertg@balena.io>
+                        signed-off-by: Robert Günzler <robertg@balena.io>
+                      author: Robert Günzler
+                      nested: []
+                  version: balena-engine-19.03.30
+                  date: 2021-10-26T13:43:43.638Z
+          version: meta-balena-2.85.16
+          date: 2021-10-27T10:26:55.185Z
+        - commits:
+            - subject: 'linux-firmware: Include RTL8723BU firmware files'
+              hash: 2490287e51d96f3ceabd7e3d7a9cd93f49442ba7
+              body: >
+                The driver for RTL8723BU wireless chipset is present, but its
+                firmware
+
+                files are not loaded. This patch includes them.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Zahari Petkov <zahari@balena.io>
+                signed-off-by: Zahari Petkov <zahari@balena.io>
+              author: Zahari Petkov
+              nested: []
+          version: meta-balena-2.85.15
+          date: 2021-10-26T15:34:07.511Z
+        - commits:
+            - subject: 'balena-supervisor: Update balena-supervisor to v12.11.0'
+              hash: 983eba7a9e61ba9fdd494807d516f1006a7a3504
+              body: |
+                Update supervisor to latest version to add API backoff behavior.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Felipe Lalanne <felipe@balena.io>
+                signed-off-by: Felipe Lalanne <felipe@balena.io>
+              author: Felipe Lalanne
+              nested: []
+          version: meta-balena-2.85.14
+          date: 2021-10-25T15:51:29.429Z
+        - commits:
+            - subject: >-
+                balena-engine: Remove deprecated development drop-in service
+                file
+              hash: 8db04c4e70fc4f30ae6b9e5009d04d8c247d7364
+              body: >
+                This file is no longer used since the merge of dev and prod
+                images.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Kyle Harding <kyle@balena.io>
+                signed-off-by: Kyle Harding <kyle@balena.io>
+              author: Kyle Harding
+              nested: []
+          version: meta-balena-2.85.13
+          date: 2021-10-21T13:51:52.714Z
+        - commits:
+            - subject: make led test work with beaglebone
+              hash: e615c008f916fb4542731c3b0c860be0d79a71b2
+              body: ''
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Ryan Cooke <ryan@balena.io>
+                signed-off-by: Ryan Cooke <ryan@balena.io>
+              author: rcooke-warwick
+              nested: []
+          version: meta-balena-2.85.12
+          date: 2021-10-21T10:59:58.802Z
+        - commits:
+            - subject: 'patch: Add dtoverlay practical test'
+              hash: 76664fceb33d01cf504df464879569f8c147f2fd
+              body: ''
+              footer:
+                Signed-off-by: Vipul Gupta (@vipulgupta2048) <vipul@balena.io>
+                signed-off-by: Vipul Gupta (@vipulgupta2048) <vipul@balena.io>
+              author: Vipul Gupta (@vipulgupta2048)
+              nested: []
+          version: meta-balena-2.85.11
+          date: 2021-10-06T07:35:19.121Z
+        - commits:
+            - subject: >-
+                image-balena: Decouple boot directory generation from rootfs
+                task
+              hash: 0a2a6bc11a0868c6cd858f28783eccfee5199ca9
+              body: >
+                The boot partition needs to be generated before creating the
+                balenaos-img
+
+                but is not part of the root filesystem generation.
+
+
+                The decoupling allows to build just the docker rootfs image
+                without
+
+                having to build the balenaos-img target.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+          version: meta-balena-2.85.10
+          date: 2021-10-04T11:39:33.460Z
+        - commits:
+            - subject: 'classes/resin-u-boot: Increase OS_BOOTCOUNT_LIMIT to 3'
+              hash: 2756f4e2621f6f24ed8e0add675049bf3515383f
+              body: |
+                Let's increase the current value for the rollback-altboot
+                bootcount to 3, to account for accidental poweroffs triggered
+                by users or by power supplys when booting into the new OS,
+                during HUP.
+
+                When the limit is reached, u-boot will proceed to try
+                to boot into the old OS.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+              nested: []
+          version: meta-balena-2.85.9
+          date: 2021-10-01T13:01:16.476Z
+        - commits:
+            - subject: 'hostapp-update-hooks: Blacklist Rock Pi configuration file'
+              hash: 5379c4131b23e912dda9eddc0c309301d007414b
+              body: |
+                The Rock Pi 4B uses a file named hw_intf.conf for
+                enabling/disabling interfaces and for loading overlays.
+                Just noting that the syntax is also slightly different
+                from the config.txt file on RaspberryPi.
+
+                Let's blacklist this file to avoid overriding
+                it during an OS update.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+              nested: []
+          version: meta-balena-2.85.8
+          date: 2021-09-29T13:49:00.466Z
+        - commits:
+            - subject: >-
+                balena-healthcheck: Remove redundant steps and rely on
+                hello-world
+              hash: 33925aa5132f23e92d3754b4422c22f40d854d42
+              body: >
+                In situations with limited resources the info and ps commands
+                can take
+
+                an unecessarily long time when we really only need to know that
+                a
+
+                container can be started.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Kyle Harding <kyle@balena.io>
+                signed-off-by: Kyle Harding <kyle@balena.io>
+              author: Kyle Harding
+              nested: []
+          version: meta-balena-2.85.7
+          date: 2021-09-28T14:01:40.209Z
+  version: 2.85.16+rev1
+  date: 2021-10-27T17:10:45.575Z
+- commits:
     - subject: Update balena-yocto-scripts from v1.14.9 to v1.15.5
       hash: 4ddac03d65b7eb9125659223e72703f7942921ef
       body: |

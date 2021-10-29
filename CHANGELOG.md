@@ -1,6 +1,76 @@
 Change log
 -----------
 
+# v2.85.16+rev1
+## (2021-10-27)
+
+
+<details>
+<summary> Update meta-balena from v2.85.6 to v2.85.16 [Robert Günzler] </summary>
+
+> ## meta-balena-2.85.16
+> ### (2021-10-27)
+> 
+> 
+> <details>
+> <summary> Update balena-engine to v19.03.30 [Robert Günzler] </summary>
+> 
+>> ### balena-engine-19.03.30
+>> #### (2021-10-26)
+>> 
+>> * storagemigration: keep going if migration fails [Robert Günzler]
+>> * graphdriver/copy: fix handling of sockets [Robert Günzler]
+>> 
+> </details>
+> 
+> 
+> ## meta-balena-2.85.15
+> ### (2021-10-26)
+> 
+> * linux-firmware: Include RTL8723BU firmware files [Zahari Petkov]
+> 
+> ## meta-balena-2.85.14
+> ### (2021-10-25)
+> 
+> * balena-supervisor: Update balena-supervisor to v12.11.0 [Felipe Lalanne]
+> 
+> ## meta-balena-2.85.13
+> ### (2021-10-21)
+> 
+> * balena-engine: Remove deprecated development drop-in service file [Kyle Harding]
+> 
+> ## meta-balena-2.85.12
+> ### (2021-10-21)
+> 
+> * make led test work with beaglebone [rcooke-warwick]
+> 
+> ## meta-balena-2.85.11
+> ### (2021-10-06)
+> 
+> * patch: Add dtoverlay practical test [Vipul Gupta (@vipulgupta2048)]
+> 
+> ## meta-balena-2.85.10
+> ### (2021-10-04)
+> 
+> * image-balena: Decouple boot directory generation from rootfs task [Alex Gonzalez]
+> 
+> ## meta-balena-2.85.9
+> ### (2021-10-01)
+> 
+> * classes/resin-u-boot: Increase OS_BOOTCOUNT_LIMIT to 3 [Alexandru Costache]
+> 
+> ## meta-balena-2.85.8
+> ### (2021-09-29)
+> 
+> * hostapp-update-hooks: Blacklist Rock Pi configuration file [Alexandru Costache]
+> 
+> ## meta-balena-2.85.7
+> ### (2021-09-28)
+> 
+> * balena-healthcheck: Remove redundant steps and rely on hello-world [Kyle Harding]
+> 
+</details>
+
 # v2.85.6+rev4
 ## (2021-10-26)
 
