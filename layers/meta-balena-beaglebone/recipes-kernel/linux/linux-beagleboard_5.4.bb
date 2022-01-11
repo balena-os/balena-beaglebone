@@ -37,7 +37,7 @@ KERNEL_CONFIG_DIR = "${S}/ti_config_fragments"
 MULTI_CONFIG_BASE_SUFFIX = ""
 
 KERNEL_GIT_URI = "git://github.com/beagleboard/linux.git"
-KERNEL_GIT_PROTOCOL = "git"
+KERNEL_GIT_PROTOCOL = "https"
 SRC_URI += " \
     ${KERNEL_GIT_URI};protocol=${KERNEL_GIT_PROTOCOL};tag=${TAG};nobranch=1 \
     file://0001-Revert-random-fix-crng_ready-test.patch \
