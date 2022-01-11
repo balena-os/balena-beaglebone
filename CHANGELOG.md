@@ -1,6 +1,326 @@
 Change log
 -----------
 
+# v2.88.17
+## (2022-01-11)
+
+
+<details>
+<summary> Update meta-balena from v2.85.16 to v2.88.17 [Florin Sarbu] </summary>
+
+> ## meta-balena-2.88.17
+> ### (2022-01-10)
+> 
+> * recipes-core/coreutils: Use 64bit time symbols [Alexandru Costache]
+> * classes/image_types_balena: Preserve file modification times with mcopy [Alexandru Costache]
+> 
+> ## meta-balena-2.88.16
+> ### (2022-01-05)
+> 
+> * balena-os.inc: Switch balena backend storage to overlay2 [Florin Sarbu]
+> 
+> ## meta-balena-2.88.15
+> ### (2022-01-04)
+> 
+> * initrdscripts: fsuuidinit: Generate resin-rootA last [Alex Gonzalez]
+> * lvm2: Add rule to persist dm devices in udev database [Alex Gonzalez]
+> * initrdscript: Cleanup udev database before transitioning to rootfs [Alex Gonzalez]
+> * initrdscripts: Use /run as bootparam_root storage [Alex Gonzalez]
+> * lvm: Add lvm rules when secure boot is configured [Alex Gonzalez]
+> * balena-keys: Fetch DER keys and decode from base64 [Alex Gonzalez]
+> 
+> ## meta-balena-2.88.14
+> ### (2022-01-04)
+> 
+> * Sync cached writes to disk when updating supervisor.conf [Miguel Casqueira]
+> 
+> ## meta-balena-2.88.13
+> ### (2022-01-04)
+> 
+> * hostapp-update-hooks: Handle developmentMode updates [Alex Gonzalez]
+> 
+> ## meta-balena-2.88.12
+> ### (2022-01-03)
+> 
+> * systemd/timeinit: handle missing date field in HTTPS header [Mark Corbin]
+> 
+> ## meta-balena-2.88.11
+> ### (2021-12-22)
+> 
+> * balena-supervisor: Update balena-supervisor to v12.11.16 Update balena-supervisor from 12.11.0 to 12.11.16 [Miguel Casqueira]
+> 
+> ## meta-balena-2.88.10
+> ### (2021-12-16)
+> 
+> * Update NetworkManager to 1.32.12 [Zahari Petkov]
+> 
+> ## meta-balena-2.88.9
+> ### (2021-12-15)
+> 
+> * u-boot: Move u-boot configs inclusion into resin-u-boot.bbclass [Florin Sarbu]
+> 
+> ## meta-balena-2.88.8
+> ### (2021-12-09)
+> 
+> * patch: Add archiveLogs Teardown for HUP suite [Vipul Gupta]
+> 
+> ## meta-balena-2.88.7
+> ### (2021-12-06)
+> 
+> * tests: Ensure BDADDR is initialized [Alexandru Costache]
+> 
+> ## meta-balena-2.88.6
+> ### (2021-12-04)
+> 
+> * docs: Fix links in Rollback documentation [Kyle Harding]
+> 
+> ## meta-balena-2.88.5
+> ### (2021-12-04)
+> 
+> * tests: os: fix unhandled exception when unwrapping non-flasher image [Joseph Kogut]
+> 
+> ## meta-balena-2.88.4
+> ### (2021-12-03)
+> 
+> * tests: Add basic checks for data loss during HUP [Kyle Harding]
+> * hostapp-update-hooks: Ensure data breadcrumb is present before HUP [Kyle Harding]
+> 
+> ## meta-balena-2.88.3
+> ### (2021-12-02)
+> 
+> * grub-conf: Delay grub boot in os development mode [Alex Gonzalez]
+> * grub-efi: Allow input/output in OS development mode [Alex Gonzalez]
+> 
+> ## meta-balena-2.88.2
+> ### (2021-12-02)
+> 
+> * sign-efi.bbclass: Do not deploy the unused .signed symlink [Michal Toman]
+> * sign-gpg.bbclass: Only deploy the detached signature [Michal Toman]
+> * kernel-image-initramfs.bb: Ship kernel and matching signature [Michal Toman]
+> * Make kexec work under kernel lockdown [Michal Toman]
+> 
+> ## meta-balena-2.88.1
+> ### (2021-12-02)
+> 
+> * bluez5: Update to bluez 5.61 from poky honister [Kyle Harding]
+> 
+> ## meta-balena-2.88.0
+> ### (2021-12-01)
+> 
+> * systemd/timeinit: add HTTPS time synchronisation service [Mark Corbin]
+> 
+> ## meta-balena-2.87.32
+> ### (2021-12-01)
+> 
+> * tests: Add BeagleBone Black u-boot overlay test [Florin Sarbu]
+> 
+> ## meta-balena-2.87.31
+> ### (2021-11-30)
+> 
+> * resin-update-state.rules: do not run for unnamed partitions [Michal Toman]
+> * resin_update_state_probe: do not skip device mapper devices [Michal Toman]
+> 
+> ## meta-balena-2.87.30
+> ### (2021-11-30)
+> 
+> * tests: Add device specific RevPi Core 3 DIO module test [Alexandru Costache]
+> 
+> ## meta-balena-2.87.29
+> ### (2021-11-29)
+> 
+> * common: image-balena: enable developmentMode when OS_DEVELOPMENT=1 [Joseph Kogut]
+> 
+> ## meta-balena-2.87.28
+> ### (2021-11-26)
+> 
+> * Add secure boot keys to the flasher boot partition [Alex Gonzalez]
+> 
+> ## meta-balena-2.87.27
+> ### (2021-11-25)
+> 
+> * balena-os: make sure PAM support is not configured [Alex Gonzalez]
+> 
+> ## meta-balena-2.87.26
+> ### (2021-11-25)
+> 
+> * tests: add test for filesystem checks [Joseph Kogut]
+> * common: initrdscript: fsck resin-data on boot [Joseph Kogut]
+> 
+> ## meta-balena-2.87.25
+> ### (2021-11-25)
+> 
+> * connectivity: reduce ping interval to minimum [Joseph Kogut]
+> 
+> ## meta-balena-2.87.24
+> ### (2021-11-24)
+> 
+> * tests: Fix dnsmasq tests in cases where 8.8.8.8 is assigned via DHCP [Kyle Harding]
+> 
+> ## meta-balena-2.87.23
+> ### (2021-11-24)
+> 
+> * 0-signed-update HUP hook: mount efivarfs if necessary [Michal Toman]
+> 
+> ## meta-balena-2.87.22
+> ### (2021-11-24)
+> 
+> * grub-efi: Accept no input and output nothing when in secure boot mode [Michal Toman]
+> 
+> ## meta-balena-2.87.21
+> ### (2021-11-24)
+> 
+> * linux-firmware: Include MT7601U firmware [Zahari Petkov]
+> 
+> ## meta-balena-2.87.20
+> ### (2021-11-23)
+> 
+> * balena-image: Add balena keys to boot partition if required [Alex Gonzalez]
+> * grub-conf: Enforce module signing and integrity lockdown on luks config [Alex Gonzalez]
+> * distro: balena-os: Add empty SIGN_API [Alex Gonzalez]
+> * classes: image-balena: Copy signed files if present [Alex Gonzalez]
+> * classes/sign-gpg: Rename class to sign_gpg [Alex Gonzalez]
+> * classes: Rename sign to sign-gpg [Alex Gonzalez]
+> * classes: sign: Drop suffix from deployed files [Alex Gonzalez]
+> * resin-init-flasher: Set fde grub.cfg if secure boot is enabled [Alex Gonzalez]
+> * balena-image-initramfs: Add secure boot dependencies [Alex Gonzalez]
+> * kernel-image-initramfs: Install signed kernel images if available [Alex Gonzalez]
+> * kernel-balena: Configure for secure boot [Alex Gonzalez]
+> 
+> ## meta-balena-2.87.19
+> ### (2021-11-22)
+> 
+> * common: enable multi-label mDNS resolution and IPv6 [Joseph Kogut]
+> 
+> ## meta-balena-2.87.18
+> ### (2021-11-22)
+> 
+> * unwrap flasher images in os suite if needed [rcooke-warwick]
+> * bluetooth and hup test with qemu [rcooke-warwick]
+> 
+> ## meta-balena-2.87.17
+> ### (2021-11-21)
+> 
+> * efitools: Add recipe [Alex Gonzalez]
+> * sbsigntool: Add recipe [Alex Gonzalez]
+> 
+> ## meta-balena-2.87.16
+> ### (2021-11-21)
+> 
+> * peak: Modify kernel driver to use signing class [Alex Gonzalez]
+> 
+> ## meta-balena-2.87.15
+> ### (2021-11-21)
+> 
+> * kernel-balena.class: Add support for FDE and sign for secure boot [Michal Toman]
+> 
+> ## meta-balena-2.87.14
+> ### (2021-11-21)
+> 
+> * sign-efi.bbclass: do not mix old and new bitbake syntax [Michal Toman]
+> * Revert "sign-efi.class, sign-kmod.class: Replace original files with signed ones" [Michal Toman]
+> 
+> ## meta-balena-2.87.13
+> ### (2021-11-20)
+> 
+> * meta-resin-sumo/pyro: Fix initramfs-framework kexec dependencies [Alex Gonzalez]
+> * initrdscripts: Use a 2nd stage bootloader to unlock LUKS partitions [Michal Toman]
+> * grub-efi: add support for signature verification in secure boot mode [Michal Toman]
+> 
+> ## meta-balena-2.87.12
+> ### (2021-11-20)
+> 
+> * initramfs-module-cryptsetup: add TPM dependencies [Michal Toman]
+> 
+> ## meta-balena-2.87.11
+> ### (2021-11-20)
+> 
+> * balena-keys: Add recipe [Alex Gonzalez]
+> 
+> ## meta-balena-2.87.10
+> ### (2021-11-20)
+> 
+> * sign-efi.class, sign-kmod.class: Replace original files with signed ones [Michal Toman]
+> * Add signing classes [Alex Gonzalez]
+> 
+> ## meta-balena-2.87.9
+> ### (2021-11-17)
+> 
+> * hostapp-update-hooks: Add a hook that aborts HUP to unsigned OS under secure boot [Michal Toman]
+> 
+> ## meta-balena-2.87.8
+> ### (2021-11-17)
+> 
+> * resin-mounts: mount EFI partition if it is split from boot [Michal Toman]
+> 
+> ## meta-balena-2.87.7
+> ### (2021-11-16)
+> 
+> * initrdscripts: add a script for unlocking LUKS volumes [Michal Toman]
+> 
+> ## meta-balena-2.87.6
+> ### (2021-11-15)
+> 
+> * connectivity: proxy: move nadoo/glider to container [Joseph Kogut]
+> 
+> ## meta-balena-2.87.5
+> ### (2021-11-11)
+> 
+> * tests: os: Add exposed engine socket test [Alex Gonzalez]
+> 
+> ## meta-balena-2.87.4
+> ### (2021-11-11)
+> 
+> * resindataexpander: also resize LUKS volume if necessary [Michal Toman]
+> 
+> ## meta-balena-2.87.3
+> ### (2021-11-11)
+> 
+> * Add out-of-tree peak CAN driver [Michal Toman]
+> 
+> ## meta-balena-2.87.2
+> ### (2021-11-11)
+> 
+> * Add recipes for TPM2 tools [Michal Toman]
+> 
+> ## meta-balena-2.87.1
+> ### (2021-11-10)
+> 
+> * recipes-devtools/dosfstools: Fix build with Poky Honister [Alexandru Costache]
+> 
+> ## meta-balena-2.87.0
+> ### (2021-11-09)
+> 
+> * meta-balena-common/conf: Switch layer to Honister compatibility [Alexandru Costache]
+> 
+> ## meta-balena-2.86.3
+> ### (2021-11-09)
+> 
+> * patch: Fix URL to yocto project dependencies [Kyle Harding]
+> 
+> ## meta-balena-2.86.2
+> ### (2021-11-08)
+> 
+> * dosfstools: selectively apply upstreamed patch [Joseph Kogut]
+> * tests: wait for the chronyd service become active [Mark Corbin]
+> 
+> ## meta-balena-2.86.1
+> ### (2021-11-02)
+> 
+> * tests/issue: Add test to check issues files [Alex Gonzalez]
+> * base files: Use HOSTOS_VERSION in issue and issue.net [Alex Gonzalez]
+> 
+> ## meta-balena-2.86.0
+> ### (2021-10-29)
+> 
+> * Create new data partition reset service [Kyle Harding]
+> 
+> ## meta-balena-2.85.17
+> ### (2021-10-28)
+> 
+> * restrict dtoverlay test to rpi devices [rcooke-warwick]
+> 
+</details>
+
 # v2.85.16+rev3
 ## (2022-01-03)
 
