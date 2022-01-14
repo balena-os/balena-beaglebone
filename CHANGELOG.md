@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.88.17+rev2
+## (2022-01-14)
+
+* recipes-core/systemd: Move audit socket removal to meta-balena [Alexandru Costache]
+
 # v2.88.17+rev1
 ## (2022-01-12)
 

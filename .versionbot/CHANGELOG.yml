@@ -1,4 +1,19 @@
 - commits:
+    - subject: 'recipes-core/systemd: Move audit socket removal to meta-balena'
+      hash: 8f41bbf14b039653042f1c387230f8d16b48943e
+      body: |
+        Removal of audit sockets to disable audit messages should
+        be done in meta-balena.
+      footer:
+        Changelog-entry: 'recipes-core/systemd: Move audit socket removal to meta-balena'
+        changelog-entry: 'recipes-core/systemd: Move audit socket removal to meta-balena'
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+  version: 2.88.17+rev2
+  date: 2022-01-14T15:54:38.317Z
+- commits:
     - subject: Update balena-yocto-scripts to v1.16.1
       hash: 7d45de132b0597bd6cb75abd6167cb502469d3b3
       body: |
