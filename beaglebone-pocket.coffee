@@ -21,8 +21,6 @@ module.exports =
 		osx: 'https://docs.resin.io/pocketbeagle/nodejs/getting-started/#adding-your-first-device'
 		linux: 'https://docs.resin.io/pocketbeagle/nodejs/getting-started/#adding-your-first-device'
 
-	supportsBlink: true
-
 	yocto:
 		machine: 'beaglebone-pocket'
 		image: 'balena-image'
