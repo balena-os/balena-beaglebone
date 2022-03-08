@@ -1,6 +1,25 @@
 Change log
 -----------
 
+# v2.94.3+rev1
+## (2022-03-08)
+
+
+<details>
+<summary> Update balena-yocto-scripts from v1.17.3 to v1.17.5 [Kyle Harding] </summary>
+
+> ## balena-yocto-scripts-1.17.5
+> ### (2022-03-08)
+> 
+> * balena-deploy: Avoid patching test suites config.js during deploy [Kyle Harding]
+> 
+> ## balena-yocto-scripts-1.17.4
+> ### (2022-03-03)
+> 
+> * Init and update submodules when switching meta-balena branches [Kyle Harding]
+> 
+</details>
+
 # v2.94.3
 ## (2022-03-03)
 
