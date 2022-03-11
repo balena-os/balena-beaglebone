@@ -1,9 +1,10 @@
 # Supported machines
+#MACHINE ?= "beagleboard-xm"
 #MACHINE ?= "beaglebone"
 #MACHINE ?= "beaglebone-green"
+#MACHINE ?= "beaglebone-green-gateway"
 #MACHINE ?= "beaglebone-green-wifi"
 #MACHINE ?= "beaglebone-pocket"
-#MACHINE ?= "beagleboard-xm"
 
 # More info meta-resin/README.md
 #TARGET_REPOSITORY ?= ""
