@@ -54,3 +54,12 @@ BALENA_CONFIGS_append = " hm3301"
 BALENA_CONFIGS[hm3301] = " \
         CONFIG_HM3301=m \
 "
+
+# These device types have been using the aufs storage driver,
+# and during a HUP the storage in the inactive sysroot will
+# still be aufs, so we need to include the aufs driver further
+# for them, as per the internal thread
+# https://www.flowdock.com/app/rulemotion/resin-devices/threads/K2TQiSUfNDqBT5Ih6cciNI2d9QJ
+BALENA_CONFIGS_append_beaglebone = " aufs"
+BALENA_CONFIGS_append_beaglebone-green = " aufs"
+BALENA_CONFIGS_append_beaglebone-green-wifi = " aufs"
