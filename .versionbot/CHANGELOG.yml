@@ -1,4 +1,300 @@
 - commits:
+    - subject: Update meta-balena from v2.94.3 to v2.95.1
+      hash: af0b9773813b837962aa02abfe2a096d608465ed
+      body: |
+        Update meta-balena from 2.94.3 to 2.95.1
+      footer:
+        Changelog-entry: Update meta-balena from v2.94.3 to v2.95.1
+        changelog-entry: Update meta-balena from v2.94.3 to v2.95.1
+        Signed-off-by: Florin Sarbu <florin@balena.io>
+        signed-off-by: Florin Sarbu <florin@balena.io>
+      author: Florin Sarbu
+      nested:
+        - commits:
+            - subject: "tests: Add leviathan v2.0.0 as a submodule"
+              hash: 49b6fd8e07edc4facdef13795fa4fe079958977c
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Kyle Harding <kyle@balena.io>
+                signed-off-by: Kyle Harding <kyle@balena.io>
+              author: Kyle Harding
+              nested: []
+            - subject: "tests/cloud: Cleanup wait until loops in cloud suite"
+              hash: 65775fdf08d260ee7a87dbe262038bc9831780f7
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Kyle Harding <kyle@balena.io>
+                signed-off-by: Kyle Harding <kyle@balena.io>
+              author: Kyle Harding
+              nested: []
+            - subject: "tests/hup: Remove bluebird and this.context.get references"
+              hash: be472ff82d27a0ff5a67fd3202ae15e63aafb685
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Kyle Harding <kyle@balena.io>
+                signed-off-by: Kyle Harding <kyle@balena.io>
+              author: Kyle Harding
+              nested: []
+            - subject: "tests/os: Remove bluebird and this.context.get references"
+              hash: c3570af3bd58f5fd8a134ffe5d71bce970b3ade8
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Kyle Harding <kyle@balena.io>
+                signed-off-by: Kyle Harding <kyle@balena.io>
+              author: Kyle Harding
+              nested: []
+            - subject: "tests/cloud: Remove bluebird and this.context.get references"
+              hash: 8c901905dadfb66a157f05ed9fcea2f6499e15bd
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Kyle Harding <kyle@balena.io>
+                signed-off-by: Kyle Harding <kyle@balena.io>
+              author: Kyle Harding
+              nested: []
+            - subject: "tests: Cleanup suites config to support both testbot and qemu workers"
+              hash: e48e71e0bd2533806e7eff31f74b3e3a243e9493
+              body: >
+                This avoids having to make perl regex changes in yocto-scripts
+                or in Jenkins.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Kyle Harding <kyle@balena.io>
+                signed-off-by: Kyle Harding <kyle@balena.io>
+              author: Kyle Harding
+              nested: []
+            - subject: "tests/cloud: Update cloud suite to support core on client"
+              hash: 428d9d616edacbaf70df9df0f76bc731af247c98
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Kyle Harding <kyle@balena.io>
+                signed-off-by: Kyle Harding <kyle@balena.io>
+              author: Kyle Harding
+              nested: []
+            - subject: "tests/hup: Update hup suite to support core on client"
+              hash: 2f386863408f32b0197090e786c46605e2ab7fcb
+              body: >
+                This also removes the need for a registry and performs hup from
+                file.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Kyle Harding <kyle@balena.io>
+                signed-off-by: Kyle Harding <kyle@balena.io>
+              author: Kyle Harding
+              nested: []
+            - subject: "tests/os: Update os suite to support core on client"
+              hash: fe68f8192c4875b575f86bc41c6e3ff9fb27f587
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Kyle Harding <kyle@balena.io>
+                signed-off-by: Kyle Harding <kyle@balena.io>
+              author: Kyle Harding
+              nested: []
+          version: meta-balena-2.95.1
+          title: "'tests: Suite updates for compatiblity with core moved to client'"
+          date: 2022-03-08T18:48:12.462Z
+        - commits:
+            - subject: Adds modem test suite
+              hash: c3cc64723e8a8d50aa5c6d4ece52d2c5a3b90e8a
+              body: ""
+              footer:
+                Change-type: minor
+                change-type: minor
+                Signed-off-by: Alex Bucknall <alex.bucknall@gmail.com>
+                signed-off-by: Alex Bucknall <alex.bucknall@gmail.com>
+              author: Alex
+              nested: []
+          version: meta-balena-2.95.0
+          title: "'Adds modem test suite'"
+          date: 2022-03-04T18:27:18.723Z
+        - commits:
+            - subject: Use by-state symlink for mounting the EFI partition when split
+              hash: 42d8ac8daaee2a67d5666c7220e1b9cd0e013e6e
+              body: >
+                In the current state the by-state symlink for balena-efi
+                partition
+
+                is not generated for two reasons:
+
+                - 60-resin-update-state.rules only react to resin-* partition names
+
+                - the root device is not identified correctly in resin_update_state_probe
+                  for LUKS devices
+
+                This patch fixes both the issues and makes use of the by-state symlink
+
+                instead of by-label.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Michal Toman <michalt@balena.io>
+                signed-off-by: Michal Toman <michalt@balena.io>
+              author: Michal Toman
+              nested: []
+            - subject: "os-helpers: add TPM2 helpers"
+              hash: 78f7da3a3cdf1942861195238a6cea691899a140
+              body: >
+                This helps with code duplication in flasher and initrd scripts
+                using
+
+                the TPM to manipulate LUKS passphrase.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Michal Toman <michalt@balena.io>
+                signed-off-by: Michal Toman <michalt@balena.io>
+              author: Michal Toman
+              nested: []
+            - subject: Add PCR protection policy to TPM operation unlocking LUKS passphrase
+              hash: aa76a9b45e18192ecaa67f17ef68f9cfc4d66a66
+              body: >
+                This patch adds the check for PCRs
+
+                - 0 - firmware/UEFI blob
+
+                - 1 - firmware/UEFI config
+
+                - 2 - Expansion card firmware blobs
+
+                - 3 - Expansion card firmware configs
+
+
+                The full protection is only applied on first boot after provisioning,
+
+                flasher only locks against PCRs 0, 2 and 3.
+
+                This is because when using flasher, the environment is not in the same
+
+                state as the one we want to lock to. In particular the boot order is
+
+                different (flasher is booted from a different drive than the resulting OS).
+
+                As for now we were not able to find a better solution than fully locking
+
+                only on first boot. This means the device must be booted in a secure
+
+                environment at least once after provisioning.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Michal Toman <michalt@balena.io>
+                signed-off-by: Michal Toman <michalt@balena.io>
+              author: Michal Toman
+              nested: []
+          version: meta-balena-2.94.5
+          title: "'Add PCR protection to LUKS/TPM manipulation'"
+          date: 2022-03-04T13:12:52.505Z
+        - commits:
+            - subject: "balena-supervisor: Fix supervisor tagging command"
+              hash: d25d6289b14edd9111d6abbc45448693ca872036
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Florin Sarbu <florin@balena.io>
+                signed-off-by: Florin Sarbu <florin@balena.io>
+              author: Florin Sarbu
+              nested: []
+          version: meta-balena-2.94.4
+          title: "'balena-supervisor: Fix supervisor tagging command'"
+          date: 2022-03-04T05:54:28.770Z
+    - subject: Update balena-yocto-scripts to v1.17.6
+      hash: e417c130edd3a2a8daa0f5def8f2962ac9fc3c45
+      body: |
+        Update balena-yocto-scripts from v1.17.3 to v1.17.6
+      footer:
+        Changelog-entry: Update balena-yocto-scripts to v1.17.6
+        changelog-entry: Update balena-yocto-scripts to v1.17.6
+        Signed-off-by: Florin Sarbu <florin@balena.io>
+        signed-off-by: Florin Sarbu <florin@balena.io>
+      author: Florin Sarbu
+      nested:
+        - commits:
+            - subject: "barys: Remove RESINHUP setting"
+              hash: 367f153009928f36de8edcd97a56d6f58b5d6773
+              body: |
+                This has now been removed from meta-balena.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+          version: balena-yocto-scripts-1.17.6
+          title: "'barys: Remove RESINHUP setting'"
+          date: 2022-03-08T19:00:31.730Z
+        - commits:
+            - subject: "balena-deploy: Avoid patching test suites config.js during deploy"
+              hash: 21c27cd41cda7ee7f5041752cca1f79280c51a7e
+              body: >
+                This will allow us to make changes to config.js in meta-balena
+                without
+
+                breaking the deploy steps. If additional changes are needed at runtime
+
+                the substitutions can be made by the leviathan Jenkins job.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Kyle Harding <kyle@balena.io>
+                signed-off-by: Kyle Harding <kyle@balena.io>
+              author: Kyle Harding
+              nested: []
+          version: balena-yocto-scripts-1.17.5
+          title: "'balena-deploy: Avoid patching test suites config.js during deploy'"
+          date: 2022-03-08T13:38:17.771Z
+        - commits:
+            - subject: Init and update submodules when switching meta-balena branches
+              hash: 5162e7c9fa39498488303caab7d746456fc9abd4
+              body: >
+                If the submodule was recently added to meta-balena, the checkout
+
+                command will not initialize it without a separate submodule update
+
+                command.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Kyle Harding <kyle@balena.io>
+                signed-off-by: Kyle Harding <kyle@balena.io>
+              author: Kyle Harding
+              nested: []
+          version: balena-yocto-scripts-1.17.4
+          title: "'Init and update submodules when switching meta-balena branches'"
+          date: 2022-03-03T16:46:17.542Z
+    - subject: "linux-beagleboard: Include aufs module for devices that have been
+        using aufs"
+      hash: 779417c104a67c43f3b0b5b5fda6cb4d4f463af8
+      body: ""
+      footer:
+        Changelog-entry: "linux-beagleboard: Include aufs module for devices that have
+          been using aufs"
+        changelog-entry: "linux-beagleboard: Include aufs module for devices that have
+          been using aufs"
+        Signed-off-by: Florin Sarbu <florin@balena.io>
+        signed-off-by: Florin Sarbu <florin@balena.io>
+      author: Florin Sarbu
+      nested: []
+  version: 2.95.1
+  title: "'Release v2.95.1'"
+  date: 2022-03-11T15:03:09.264Z
+- commits:
     - subject: Update meta-balena from v2.88.17 to v2.94.3
       hash: dd35b77c7212de6b2efa3fc21240a2b38957ea63
       body: |
