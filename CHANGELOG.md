@@ -1,6 +1,83 @@
 Change log
 -----------
 
+# v2.95.9
+## (2022-03-29)
+
+
+<details>
+<summary> Update meta-balena from v2.95.1 to v2.95.9 [Florin Sarbu] </summary>
+
+> ## meta-balena-2.95.9
+> ### (2022-03-28)
+> 
+> * tests: update leviathan to 2.0.4 [rcooke-warwick]
+> * tests: update config for new leviathan version [rcooke-warwick]
+> 
+> ## meta-balena-2.95.8
+> ### (2022-03-25)
+> 
+> * resindataexpander: Check and fix end GPT if necessary [Alexandru Costache]
+> 
+> ## meta-balena-2.95.7
+> ### (2022-03-23)
+> 
+> * hostapp-update-hooks: Always update legacy development variants to development mode [Alex Gonzalez]
+> 
+> ## meta-balena-2.95.6
+> ### (2022-03-22)
+> 
+> * balena-supervisor: Use architecture instead of device type to query API [Alex Gonzalez]
+> * update-balena-supervisor: Support passing command line image argument [Alex Gonzalez]
+> 
+> ## meta-balena-2.95.5
+> ### (2022-03-21)
+> 
+> * tests/kernel-overlap: Prevent test run failure on older kernels [Alexandru Costache]
+> 
+> ## meta-balena-2.95.4
+> ### (2022-03-17)
+> 
+> * tests/os: wait for osconfig service to be inactive [rcooke-warwick]
+> 
+> ## meta-balena-2.95.3
+> ### (2022-03-15)
+> 
+> * balena-supervisor: Update balena-supervisor to v12.11.38 Ensure preloaded applications are ran when no internet is available on first run [20k-ultra]
+> 
+> ## meta-balena-2.95.2
+> ### (2022-03-11)
+> 
+> * kernel-balena: Disable building gcc plugins [Alexandru Costache]
+> 
+</details>
+
+
+<details>
+<summary> Update balena-yocto-scripts to v1.17.10 [Florin Sarbu] </summary>
+
+> ## balena-yocto-scripts-1.17.10
+> ### (2022-03-28)
+> 
+> * Pass environment to docker [ab77]
+> 
+> ## balena-yocto-scripts-1.17.9
+> ### (2022-03-25)
+> 
+> * automation: ami: make BALENA_PRELOAD_COMMIT optional [Joseph Kogut]
+> 
+> ## balena-yocto-scripts-1.17.8
+> ### (2022-03-15)
+> 
+> * balena-deploy: s/resin-flasher/balena-flasher [Joseph Kogut]
+> 
+> ## balena-yocto-scripts-1.17.7
+> ### (2022-03-15)
+> 
+> * jenkins_generate_ami: surface preload app commit as variable [Joseph Kogut]
+> 
+</details>
+
 # v2.95.1
 ## (2022-03-11)
 
