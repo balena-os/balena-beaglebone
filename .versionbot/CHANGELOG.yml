@@ -1,4 +1,288 @@
 - commits:
+    - subject: Update layers/meta-balena to 8797487542bebf28f89bcb5251437f12c117dec7
+      hash: c0d0ebb4df92ac28c50a07ef9d53832817effef1
+      body: Update layers/meta-balena
+      footer:
+        Changelog-entry: Update layers/meta-balena to 8797487542bebf28f89bcb5251437f12c117dec7
+        changelog-entry: Update layers/meta-balena to 8797487542bebf28f89bcb5251437f12c117dec7
+      author: Renovate Bot
+      nested:
+        - commits:
+            - subject: "grub-efi: Remove patch passing secure boot status to the kernel"
+              hash: fb171dc507348e11ab2c6ed894289f51689fc874
+              body: >
+                This was originally introduced in combination with a kernel
+                patch backported
+
+                from Red Hat kernel that would enable kernel lockdown when secure boot
+
+                is enabled. We have since changed the approach, dropped the kernel patch
+
+                and when in secure boot mode use a different GRUB config file that enables
+
+                lockdown on kernel command line unconditionally.
+
+
+                That said, while the patch works fine, we do not really need it and it adds
+
+                extra overhead porting it to newer yocto versions so there is no point keeping
+
+                it at this moment. If in the future there is need for the kernel to know
+
+                whether it is in secure boot mode or not, we can roll this back and rebase.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Michal Toman <michalt@balena.io>
+                signed-off-by: Michal Toman <michalt@balena.io>
+              author: Michal Toman
+              nested: []
+          version: meta-balena-2.95.12
+          title: "'grub-efi: Remove patch passing secure boot status to the kernel'"
+          date: 2022-03-31T14:45:57.845Z
+        - commits:
+            - subject: "hostapp-update: Mount data partition on target balena/tmp"
+              hash: 548c6c08f041f69786f0092eb2397f2fbf8e7e86
+              body: >
+                In most cases there is not enough space on rootfs to extract
+
+                and load a local hostapp image when the balena-host tmpdir
+
+                is on the same partition.
+
+
+                This uses a data mount to ensure temporary extracted files of the
+
+                compressed image will not fill the target sysroot.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Kyle Harding <kyle@balena.io>
+                signed-off-by: Kyle Harding <kyle@balena.io>
+              author: Kyle Harding
+              nested: []
+          version: meta-balena-2.95.11
+          title: "'hostapp-update: Mount data partition on target balena/tmp'"
+          date: 2022-03-30T17:20:46.022Z
+        - commits:
+            - subject: "tests/os: check supervisor is pulled  after purge"
+              hash: 58a645684921797383602311821522604064fd62
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Ryan Cooke <ryan@balena.io>
+                signed-off-by: Ryan Cooke <ryan@balena.io>
+              author: rcooke-warwick
+              nested: []
+          version: meta-balena-2.95.10
+          title: "'tests/os: check supervisor is pulled  after purge'"
+          date: 2022-03-30T11:28:54.776Z
+        - commits:
+            - subject: "tests: update leviathan to 2.0.4"
+              hash: b90c280d8f08497fcf2ca7b5329bdb7e7dc7c22a
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Ryan Cooke <ryan@balena.io>
+                signed-off-by: Ryan Cooke <ryan@balena.io>
+              author: rcooke-warwick
+              nested: []
+            - subject: "tests: update config for new leviathan version"
+              hash: 788cacc8daadf487698e28e2ad308cc54f1d96b4
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Ryan Cooke <ryan@balena.io>
+                signed-off-by: Ryan Cooke <ryan@balena.io>
+              author: rcooke-warwick
+              nested: []
+          version: meta-balena-2.95.9
+          title: "'tests: update config for new leviathan version'"
+          date: 2022-03-28T12:52:25.738Z
+        - commits:
+            - subject: "resindataexpander: Check and fix end GPT if necessary"
+              hash: 5d2435e17851f44f17cfba491b01f766d7930317
+              body: >
+                Under certain circumstances that we haven't reproduced,
+
+                it is reported that the alternate GPT may become corrupt,
+
+                preventing the device from booting.
+
+
+                Should this happen, we use sgdisk to check and recover the end gpt
+
+                from the main one.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+              nested: []
+          version: meta-balena-2.95.8
+          title: "'Add gpt check'"
+          date: 2022-03-25T08:08:23.471Z
+        - commits:
+            - subject: "hostapp-update-hooks: Always update legacy development variants to
+                development mode"
+              hash: 8c7bd8d87d0db97851528f97c4853097c63273e4
+              body: >
+                A legacy development image will update to development mode
+                enabled
+
+                independently of whether the newOS is configured for development mode or
+
+                not. The only case when a hostapp has developmentMode set is when locally
+
+                building with `OS_DEVELOPMENT`.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+          version: meta-balena-2.95.7
+          title: "'Always update legacy development variants to development mode'"
+          date: 2022-03-23T12:47:07.162Z
+        - commits:
+            - subject: "balena-supervisor: Use architecture instead of device type to query
+                API"
+              hash: 419e1eefe64b6e5ffc9ff370e50cd256a319ef2c
+              body: >
+                This caters for the use case of custom device types that are not
+
+                registered in balena-cloud but still need to fetch the supervisor from
+
+                balena-cloud's registry by querying the `supervisor_version` endpoint,
+
+                for example when using openBalena.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+            - subject: "update-balena-supervisor: Support passing command line image argument"
+              hash: 227fea72a17c00bcd7e8ee069414ccc006703072
+              body: >
+                For balena-cloud managed devices, the supervisor update data is
+                managed
+
+                by the API.
+
+
+                Providing the image name in the command line provides an update path
+
+                for unmanaged devices, manual updates on ESR devices (which currently
+
+                do not allow dashboard based updates) and openBalena use cases.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+          version: meta-balena-2.95.6
+          title: "'Supervisor update enhacements'"
+          date: 2022-03-22T15:05:51.376Z
+        - commits:
+            - subject: "tests/kernel-overlap: Prevent test run failure on older kernels"
+              hash: 3d230a9d003988924b6c16720d554c9f48a05c16
+              body: >
+                The issue that this test is aimed at has been introduced in
+
+                kernel versions above 4.13. On older kernels like for instance
+
+                4.9, the test will not pass.
+
+
+                Let's run this test on kernel versions where the issue was present.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+              nested: []
+          version: meta-balena-2.95.5
+          title: "'tests/kernel-overlap: Prevent test run failure on older kernels'"
+          date: 2022-03-21T15:04:59.766Z
+        - commits:
+            - subject: "tests/os: wait for osconfig service to be inactive"
+              hash: da59749c901057a55adaf990643fc235480156aa
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Ryan Cooke <ryan@balena.io>
+                signed-off-by: Ryan Cooke <ryan@balena.io>
+              author: rcooke-warwick
+              nested: []
+          version: meta-balena-2.95.4
+          title: "'Fix dns test'"
+          date: 2022-03-17T17:38:43.827Z
+        - commits:
+            - subject: "balena-supervisor: Update balena-supervisor to v12.11.38 Ensure
+                preloaded applications are ran when no internet is available on
+                first run"
+              hash: 08058f8671704f7d925ed97c3202b3620570a95b
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: 20k-ultra <3946250+20k-ultra@users.noreply.github.com>
+                signed-off-by: 20k-ultra <3946250+20k-ultra@users.noreply.github.com>
+              author: 20k-ultra
+              nested: []
+          version: meta-balena-2.95.3
+          title: "'balena-supervisor: Update balena-supervisor to v12.11.38'"
+          date: 2022-03-15T23:32:43.991Z
+        - commits:
+            - subject: "kernel-balena: Disable building gcc plugins"
+              hash: bd8d2de9983f47e46ffa0e689be88c5b12e46617
+              body: >
+                Since
+                https://github.com/raspberrypi/linux/commit/1eee36a5520b5a89fb4d0d6af6f9cb0217a3164f
+
+                was merged and included in kernel versions after 5.10.84,
+
+                building the kernel-modules-headers fails due to various missing
+
+                headers from the gmp and mpc packages. This problem is visible
+
+                only after upgrading to a newer kernel, because until now the
+
+                gcc plugins kernel config was not enabled at all, due to the
+
+                failed check in the above mentioned patch.
+
+
+                Since we are not using the functions provided
+
+                by the gcc plugins anyway, we can disable this
+
+                config.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+              nested: []
+          version: meta-balena-2.95.2
+          title: "'kernel-balena: Disable building of gcc plugins'"
+          date: 2022-03-11T17:26:05.533Z
+  version: 2.95.12
+  title: "'Update layers/meta-balena digest to 8797487'"
+  date: 2022-04-05T09:24:16.954Z
+- commits:
     - subject: Update balena-yocto-scripts to a5b7cacc6dd4e3a3e03c77513760b6d3a89a68d0
       hash: 058edc7cf099139d1019bad4f7114ccf46e35759
       body: Update balena-yocto-scripts

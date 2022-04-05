@@ -1,6 +1,72 @@
 Change log
 -----------
 
+# v2.95.12
+## (2022-04-05)
+
+
+<details>
+<summary> Update layers/meta-balena to 8797487542bebf28f89bcb5251437f12c117dec7 [Renovate Bot] </summary>
+
+> ## meta-balena-2.95.12
+> ### (2022-04-01)
+> 
+> * grub-efi: Remove patch passing secure boot status to the kernel [Michal Toman]
+> 
+> ## meta-balena-2.95.11
+> ### (Invalid date)
+> 
+> * hostapp-update: Mount data partition on target balena/tmp [Kyle Harding]
+> 
+> ## meta-balena-2.95.10
+> ### (Invalid date)
+> 
+> * tests/os: check supervisor is pulled  after purge [rcooke-warwick]
+> 
+> ## meta-balena-2.95.9
+> ### (2022-03-28)
+> 
+> * tests: update leviathan to 2.0.4 [rcooke-warwick]
+> * tests: update config for new leviathan version [rcooke-warwick]
+> 
+> ## meta-balena-2.95.8
+> ### (2022-03-25)
+> 
+> * resindataexpander: Check and fix end GPT if necessary [Alexandru Costache]
+> 
+> ## meta-balena-2.95.7
+> ### (2022-03-23)
+> 
+> * hostapp-update-hooks: Always update legacy development variants to development mode [Alex Gonzalez]
+> 
+> ## meta-balena-2.95.6
+> ### (2022-03-22)
+> 
+> * balena-supervisor: Use architecture instead of device type to query API [Alex Gonzalez]
+> * update-balena-supervisor: Support passing command line image argument [Alex Gonzalez]
+> 
+> ## meta-balena-2.95.5
+> ### (2022-03-21)
+> 
+> * tests/kernel-overlap: Prevent test run failure on older kernels [Alexandru Costache]
+> 
+> ## meta-balena-2.95.4
+> ### (2022-03-17)
+> 
+> * tests/os: wait for osconfig service to be inactive [rcooke-warwick]
+> 
+> ## meta-balena-2.95.3
+> ### (2022-03-15)
+> 
+> * balena-supervisor: Update balena-supervisor to v12.11.38 Ensure preloaded applications are ran when no internet is available on first run [20k-ultra]
+> 
+> ## meta-balena-2.95.2
+> ### (2022-03-11)
+> 
+> * kernel-balena: Disable building gcc plugins [Alexandru Costache]
+> 
+</details>
+
 # v2.95.1+rev2
 ## (2022-04-01)
 
