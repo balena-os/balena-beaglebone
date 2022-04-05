@@ -1,6 +1,50 @@
 Change log
 -----------
 
+# v2.95.1+rev2
+## (2022-04-01)
+
+
+<details>
+<summary> Update balena-yocto-scripts to a5b7cacc6dd4e3a3e03c77513760b6d3a89a68d0 [Renovate Bot] </summary>
+
+> ## balena-yocto-scripts-1.18.0
+> ### (2022-04-01)
+> 
+> * Bump balena-cli to v.Latest [ab77]
+> 
+> ## balena-yocto-scripts-1.17.12
+> ### (2022-03-29)
+> 
+> * Remove superfluous preload flag [ab77]
+> 
+> ## balena-yocto-scripts-1.17.11
+> ### (2022-03-29)
+> 
+> * Unattended preload operation [ab77]
+> 
+> ## balena-yocto-scripts-1.17.10
+> ### (2022-03-28)
+> 
+> * Pass environment to docker [ab77]
+> 
+> ## balena-yocto-scripts-1.17.9
+> ### (2022-03-25)
+> 
+> * automation: ami: make BALENA_PRELOAD_COMMIT optional [Joseph Kogut]
+> 
+> ## balena-yocto-scripts-1.17.8
+> ### (2022-03-15)
+> 
+> * balena-deploy: s/resin-flasher/balena-flasher [Joseph Kogut]
+> 
+> ## balena-yocto-scripts-1.17.7
+> ### (2022-03-15)
+> 
+> * jenkins_generate_ami: surface preload app commit as variable [Joseph Kogut]
+> 
+</details>
+
 # v2.95.1+rev1
 ## (2022-03-29)
 
