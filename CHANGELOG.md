@@ -1,6 +1,31 @@
 Change log
 -----------
 
+# v2.98.1
+## (2022-04-24)
+
+
+<details>
+<summary> Update layers/meta-balena to 54c754e97eb0ba3dcb4119908cc368e200c2f4ca [Renovate Bot] </summary>
+
+> ## meta-balena-2.98.1
+> ### (2022-04-23)
+> 
+> * tests/leviathan: Update leviathan to v2.2.4 [Kyle Harding]
+> 
+</details>
+
+
+<details>
+<summary> Update layers/meta-balena to 5498ce099c7316a58d21c35d970292f1e2443d97 [Renovate Bot] </summary>
+
+> ## meta-balena-2.98.1
+> ### (2022-04-23)
+> 
+> * tests/leviathan: Update leviathan to v2.2.4 [Kyle Harding]
+> 
+</details>
+
 # v2.97.0
 ## (2022-04-23)
 
