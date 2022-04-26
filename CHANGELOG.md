@@ -1,6 +1,20 @@
 Change log
 -----------
 
+# v2.98.5
+## (2022-04-26)
+
+
+<details>
+<summary> Update layers/meta-balena to edda207aee705431cd02443bdfe8d6271228b96d [Renovate Bot] </summary>
+
+> ## meta-balena-2.98.5
+> ### (2022-04-26)
+> 
+> * networkmanager: Use default DHCP timeout [Zahari Petkov]
+> 
+</details>
+
 # v2.98.4+rev1
 ## (2022-04-26)
 
