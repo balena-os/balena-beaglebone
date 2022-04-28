@@ -1,4 +1,30 @@
 - commits:
+    - subject: Update layers/meta-balena to fc45fb36cc79e5b7eab1017f4e5713773aba7ed1
+      hash: 41aea9340354a512b90f7a51b268b92c543c5297
+      body: Update layers/meta-balena
+      footer:
+        Changelog-entry: Update layers/meta-balena to fc45fb36cc79e5b7eab1017f4e5713773aba7ed1
+        changelog-entry: Update layers/meta-balena to fc45fb36cc79e5b7eab1017f4e5713773aba7ed1
+      author: Renovate Bot
+      nested:
+        - commits:
+            - subject: "tests: bump leviathan to 2.2.11"
+              hash: 617ab26578364b95525c225b3f2066e792b3cf2f
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Ryan Cooke <ryan@balena.io>
+                signed-off-by: Ryan Cooke <ryan@balena.io>
+              author: rcooke-warwick
+              nested: []
+          version: meta-balena-2.98.9
+          title: "'tests: bump leviathan to 2.2.11'"
+          date: 2022-04-28T10:27:03.026Z
+  version: 2.98.9
+  title: "'Update layers/meta-balena digest to fc45fb3'"
+  date: 2022-04-28T13:23:04.902Z
+- commits:
     - subject: Update layers/meta-balena to 87fb338552e3cfdfcb3500ed65940be897b99bbc
       hash: 5c3d8cd26691107defe6e692140f0a7de1adb34c
       body: Update layers/meta-balena
