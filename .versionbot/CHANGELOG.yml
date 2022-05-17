@@ -1,4 +1,34 @@
 - commits:
+    - subject: Update layers/meta-balena to 5399363b3758860b22ac93a4406d62de5d88b229
+      hash: 11051fb6692c94d6ffae0fc3c725695fff7fe13e
+      body: Update layers/meta-balena
+      footer:
+        Changelog-entry: Update layers/meta-balena to 5399363b3758860b22ac93a4406d62de5d88b229
+        changelog-entry: Update layers/meta-balena to 5399363b3758860b22ac93a4406d62de5d88b229
+      author: Renovate Bot
+      nested:
+        - commits:
+            - subject: "balena-supervisor: Randomize the updater timer period"
+              hash: 5c402bc9a449c4f6d6cefe9aa44b7cdacb8ae4c8
+              body: |
+                To avoid fleets updating the supervisor at the same time,
+                distribute the timer adding a random time between 0 and 1 hour.
+
+                Fixes #2631
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+          version: meta-balena-2.98.26
+          title: "'balena-supervisor: Randomize the updater timer period'"
+          date: 2022-05-17T16:20:39.324Z
+  version: 2.98.26
+  title: "'Update layers/meta-balena digest to 5399363'"
+  date: 2022-05-17T20:06:11.760Z
+- commits:
     - subject: Update layers/meta-balena to b6e9352e8784e433c647811d532d7ab3e2ee05e2
       hash: ec5f4f72bb4e994a78149c5b199e7b85c58d1c19
       body: Update layers/meta-balena

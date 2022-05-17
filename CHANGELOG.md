@@ -1,6 +1,20 @@
 Change log
 -----------
 
+# v2.98.26
+## (2022-05-17)
+
+
+<details>
+<summary> Update layers/meta-balena to 5399363b3758860b22ac93a4406d62de5d88b229 [Renovate Bot] </summary>
+
+> ## meta-balena-2.98.26
+> ### (2022-05-17)
+> 
+> * balena-supervisor: Randomize the updater timer period [Alex Gonzalez]
+> 
+</details>
+
 # v2.98.25
 ## (2022-05-17)
 
