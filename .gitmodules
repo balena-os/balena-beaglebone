@@ -19,3 +19,6 @@
 [submodule "layers/meta-arm"]
 	path = layers/meta-arm
 	url = git://git.yoctoproject.org/meta-arm
+[submodule "contracts"]
+	path = contracts
+	url = https://github.com/balena-io/contracts.git
