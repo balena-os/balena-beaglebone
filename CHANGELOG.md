@@ -1,6 +1,37 @@
 Change log
 -----------
 
+# v2.98.42
+## (2022-06-07)
+
+
+<details>
+<summary> Update layers/meta-balena to 3a62a83ec12b05377b46d46bee9661b8b6b4a090 [Renovate Bot] </summary>
+
+> ## meta-balena-2.98.42
+> ### (2022-06-05)
+> 
+> * tests:cloud: Register teardown only when DUT is reachable [Florin Sarbu]
+> 
+> ## meta-balena-2.98.41
+> ### (2022-06-05)
+> 
+> 
+> <details>
+> <summary> Update tests/leviathan digest to 4fbc1b8 [Renovate Bot] </summary>
+> 
+>> ### leviathan-2.3.10
+>> #### (2022-06-05)
+>> 
+>> * worker: Expose additional QEMU runtime args via docker-compose [Kyle Harding]
+>> 
+> </details>
+> 
+> 
+</details>
+
+* Update contracts to 58bcfbc0b0237177c51db2d7120e61d70e9c415b [Renovate Bot]
+
 # v2.98.40
 ## (2022-06-04)
 
