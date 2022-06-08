@@ -1,4 +1,22 @@
 - commits:
+    - subject: Add build and deploy workflow
+      hash: 6558204991278269ec111302be09eecbb585c90f
+      body: >
+        This workflow will launch a Jenkins build and draft deploy job when a
+        new
+
+        tag is made.
+      footer:
+        Changelog-entry: Add build and deploy workflow
+        changelog-entry: Add build and deploy workflow
+        Signed-off-by: Alex Gonzalez <alexg@balena.io>
+        signed-off-by: Alex Gonzalez <alexg@balena.io>
+      author: Alex Gonzalez
+      nested: []
+  version: 2.98.42+rev1
+  title: "'workflows: Add build and deploy on release tag workflow'"
+  date: 2022-06-08T08:50:32.797Z
+- commits:
     - subject: Update layers/meta-balena to 3a62a83ec12b05377b46d46bee9661b8b6b4a090
       hash: 6b6f0fa656431b5b1d2fbe7bc5fd2677218803d3
       body: Update layers/meta-balena
