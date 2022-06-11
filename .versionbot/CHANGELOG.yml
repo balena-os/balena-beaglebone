@@ -1,4 +1,56 @@
 - commits:
+    - subject: Update layers/meta-balena to 1aee182ad517f4dd6f24c643bdee1b4db883ffb3
+      hash: b4e687c3a7e6096e4735005e6b28e8adf17f3ac1
+      body: Update layers/meta-balena
+      footer:
+        Changelog-entry: Update layers/meta-balena to 1aee182ad517f4dd6f24c643bdee1b4db883ffb3
+        changelog-entry: Update layers/meta-balena to 1aee182ad517f4dd6f24c643bdee1b4db883ffb3
+      author: Renovate Bot
+      nested:
+        - commits:
+            - subject: "tests: hup: gzip hostapp before transfer to DUT"
+              hash: cac92a4d5e884110ae5caaf807c2c5685a88237e
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Ryan Cooke <ryan@balena.io>
+                signed-off-by: Ryan Cooke <ryan@balena.io>
+              author: rcooke-warwick
+              nested: []
+          version: meta-balena-2.99.1
+          title: "'tests: hup: gzip hostapp before transfer to DUT'"
+          date: 2022-06-11T12:01:27.278Z
+        - commits:
+            - subject: "chronyd: Add time synchronization healthcheck"
+              hash: e2a0fb8ebd45400789ab466dbbe0e70da7fa6165
+              body: >
+                Add a healthcheck that will check that the NTP sources are
+                reachable
+
+                and the system time does not skew.
+
+
+                The healthcheck will command a burst sync if there is no selected
+
+                reachable source, and will restart chronyd if the system clock skews.
+
+
+                Fixes #2314
+              footer:
+                Change-type: minor
+                change-type: minor
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+          version: meta-balena-2.99.0
+          title: "'chronyd: Add time synchronization healthcheck'"
+          date: 2022-06-10T08:04:29.339Z
+  version: 2.99.1
+  title: "'Update layers/meta-balena digest to 1aee182'"
+  date: 2022-06-11T20:11:04.765Z
+- commits:
     - subject: Update layers/meta-balena to 466c0e3a56da6605f033d8fd1b37c301c96af979
       hash: 1aa69122a997fe9bf26abb41b158ac8ae48c8c9a
       body: Update layers/meta-balena
