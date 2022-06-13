@@ -1,6 +1,22 @@
 Change log
 -----------
 
+# v2.99.1+rev1
+## (2022-06-13)
+
+
+<details>
+<summary> Update contracts to b2bddbdc896e6c628231512b363e5c93d16f5b15 [Renovate Bot] </summary>
+
+> ## contracts-2.0.3
+> ### (2022-06-13)
+> 
+> * Add Python v3.10.5 and v3.9.13 [Trong Nghia Nguyen]
+> * Add support for Alpine Linux 3.16 [Trong Nghia Nguyen]
+> * Add support for Ubuntu Jammy and Kinetic [Trong Nghia Nguyen]
+> 
+</details>
+
 # v2.99.1
 ## (2022-06-11)
 
