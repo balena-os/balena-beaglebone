@@ -1,6 +1,25 @@
 Change log
 -----------
 
+# v2.99.20
+## (2022-06-25)
+
+
+<details>
+<summary> Update layers/meta-balena to 34e139b190f7aef385f9d7a831fe90e5efee007d [renovate[bot]] </summary>
+
+> ## meta-balena-2.99.20
+> ### (2022-06-24)
+> 
+> * tests: os: make apiKey an optional parameter [Joseph Kogut]
+> 
+> ## meta-balena-2.99.19
+> ### (2022-06-24)
+> 
+> * tests: os: purge-data: reduce intervals in waitUntil [Joseph Kogut]
+> 
+</details>
+
 # v2.99.18
 ## (2022-06-24)
 

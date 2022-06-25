@@ -1,4 +1,59 @@
 - commits:
+    - subject: Update layers/meta-balena to 34e139b190f7aef385f9d7a831fe90e5efee007d
+      hash: 819d16af2af8142ed727aaba2c53c642984dc009
+      body: Update layers/meta-balena
+      footer:
+        Changelog-entry: Update layers/meta-balena to 34e139b190f7aef385f9d7a831fe90e5efee007d
+        changelog-entry: Update layers/meta-balena to 34e139b190f7aef385f9d7a831fe90e5efee007d
+      author: renovate[bot]
+      nested:
+        - commits:
+            - subject: "tests: os: make apiKey an optional parameter"
+              hash: 5b959d374810ab1d5e82d3017b91e678d50e4a2d
+              body: >
+                When accessing a test device as part of a fleet, a cloud API key
+                is
+
+                required in order to generate an SSH key and access the device through
+
+                the VPN. However, when accessing a device locally, such as a QEMU
+
+                instance running on the workstation itself, we have a direct path, and
+
+                no VPN is necessary.
+
+
+                Make the apiKey optional, and don't login when it's not specified. This
+
+                allows direct connections to work without it.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Joseph Kogut <joseph@balena.io>
+                signed-off-by: Joseph Kogut <joseph@balena.io>
+              author: Joseph Kogut
+              nested: []
+          version: meta-balena-2.99.20
+          title: "'tests: os: make apiKey an optional parameter'"
+          date: 2022-06-24T20:23:18.792Z
+        - commits:
+            - subject: "tests: os: purge-data: reduce intervals in waitUntil"
+              hash: 1d1bc06cfbaf7be838190cf33427aa63f5b61788
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Joseph Kogut <joseph@balena.io>
+                signed-off-by: Joseph Kogut <joseph@balena.io>
+              author: Joseph Kogut
+              nested: []
+          version: meta-balena-2.99.19
+          title: "'tests: os: purge-data: reduce intervals in waitUntil'"
+          date: 2022-06-24T02:35:03.988Z
+  version: 2.99.20
+  title: "'Update layers/meta-balena digest to 34e139b'"
+  date: 2022-06-25T00:15:32.271Z
+- commits:
     - subject: Update layers/meta-balena to 16898dbf4b204482fc0018bef3d823599a504c36
       hash: 91cd765c59ad498bd67ee561bfbe7a510c2ae10d
       body: Update layers/meta-balena
