@@ -1,6 +1,31 @@
 Change log
 -----------
 
+# v2.99.23
+## (2022-06-28)
+
+
+<details>
+<summary> Update layers/meta-balena to d44b153e75f61c8a18d5149f37412f1fc1e577d9 [renovate[bot]] </summary>
+
+> ## meta-balena-2.99.23
+> ### (2022-06-27)
+> 
+> * Update: update balena-io/balena-supervisor to v14.0.8 [renovate[bot]]
+> 
+> ## meta-balena-2.99.22
+> ### (2022-06-27)
+> 
+> * balena-supervisor: Replace BOOT_MOUNTPOINT with BALENA_BOOT_MOUNTPOINT [Alex Gonzalez]
+> * balena-config-vars: Remove BOOT_MOUNTPOINT from configuration environment [Alex Gonzalez]
+> 
+> ## meta-balena-2.99.21
+> ### (2022-06-27)
+> 
+> * balena-config-vars: Do not use systemctl to list unit files [Alex Gonzalez]
+> 
+</details>
+
 # v2.99.20
 ## (2022-06-25)
 

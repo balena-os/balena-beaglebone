@@ -1,4 +1,79 @@
 - commits:
+    - subject: Update layers/meta-balena to d44b153e75f61c8a18d5149f37412f1fc1e577d9
+      hash: 5d8a6971af479043483216d8770e4dabc9e7ec17
+      body: Update layers/meta-balena
+      footer:
+        Changelog-entry: Update layers/meta-balena to d44b153e75f61c8a18d5149f37412f1fc1e577d9
+        changelog-entry: Update layers/meta-balena to d44b153e75f61c8a18d5149f37412f1fc1e577d9
+      author: renovate[bot]
+      nested:
+        - commits:
+            - subject: "Update: update balena-io/balena-supervisor to v14.0.8"
+              hash: 87b9883c5cef60d2e00d566cc3bc83ac18bb737d
+              body: Update balena-io/balena-supervisor
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: renovate[bot]
+              nested: []
+          version: meta-balena-2.99.23
+          title: "'Update: update balena-io/balena-supervisor to v14.0.8'"
+          date: 2022-06-27T23:40:10.965Z
+        - commits:
+            - subject: "balena-supervisor: Replace BOOT_MOUNTPOINT with
+                BALENA_BOOT_MOUNTPOINT"
+              hash: 8e4ed15d512304498540fd30c280a5f000dc4ba9
+              body: >
+                BOOT_MOUNTPOINT is no longer exported in the configuration
+                environment.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+            - subject: "balena-config-vars: Remove BOOT_MOUNTPOINT from configuration
+                environment"
+              hash: 5ae6971c2574f4cc7a26ea420d25f2e36d80a965
+              body: >
+                BALENA_BOOT_MOUNTPOINT is used in 32 places in the OS, while
+
+                BOOT_MOUNTPOINT is used in 5.
+
+
+                This commit replaces BOOT_MOUNTPOINT with BALENA_BOOT_MOUNTPOINT to
+
+                remove the duplication.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+          version: meta-balena-2.99.22
+          title: "'Replace BOOT_MOUNTPOINT with BALENA_BOOT_MOUNTPOINT'"
+          date: 2022-06-27T18:01:12.674Z
+        - commits:
+            - subject: "balena-config-vars: Do not use systemctl to list unit files"
+              hash: efcc9a0f876dc9b0955189cab535bc4a1926554d
+              body: |
+                On occassions, this fails with a broken pipe error.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+          version: meta-balena-2.99.21
+          title: "'balena-config-vars: Do not use systemctl to list unit files'"
+          date: 2022-06-27T09:18:07.649Z
+  version: 2.99.23
+  title: "'Update layers/meta-balena digest to d44b153'"
+  date: 2022-06-28T04:03:48.629Z
+- commits:
     - subject: Update layers/meta-balena to 34e139b190f7aef385f9d7a831fe90e5efee007d
       hash: 819d16af2af8142ed727aaba2c53c642984dc009
       body: Update layers/meta-balena
