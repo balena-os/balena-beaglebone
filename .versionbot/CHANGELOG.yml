@@ -1,4 +1,63 @@
 - commits:
+    - subject: Update balena-yocto-scripts to 5e003d52ac8e118af3cce662362d45f780ade704
+      hash: 0b8e388622c7a13a66a75ddd9a9660809946c6ad
+      body: Update balena-yocto-scripts
+      footer:
+        Changelog-entry: Update balena-yocto-scripts to 5e003d52ac8e118af3cce662362d45f780ade704
+        changelog-entry: Update balena-yocto-scripts to 5e003d52ac8e118af3cce662362d45f780ade704
+      author: renovate[bot]
+      nested:
+        - commits:
+            - subject: "balena-deploy: Use balena-img instead of resin-img"
+              hash: 93a91f27b8538d60b45d0f25eb1fddf512e31e52
+              body: >
+                The resin-img is no longer maintained and the deployment of raw
+                images
+
+                as well as flasher requires features only available in balena-img.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+            - subject: Global rename from dockerhub resin to balena accounts
+              hash: 6f28a6fed6d28f713312b8e856cf6bc6a8bba045
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+            - subject: "automation: Stop deploying images to dockerhub"
+              hash: 988886a34945b9e9993abbcf651824b774910740
+              body: |
+                We are now using just the internal registry.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+          version: balena-yocto-scripts-1.19.10
+          title: "'Global rename from dockerhub resin to balena accounts'"
+          date: 2022-06-29T14:41:44.861Z
+    - subject: Update layers/meta-balena to b76de1e01b5e49196a800340335a3fb2c814b931
+      hash: e07b4be99d4f1668b1de6dfbeff013770604f9ea
+      body: Update layers/meta-balena
+      footer:
+        Changelog-entry: Update layers/meta-balena to b76de1e01b5e49196a800340335a3fb2c814b931
+        changelog-entry: Update layers/meta-balena to b76de1e01b5e49196a800340335a3fb2c814b931
+      author: renovate[bot]
+      nested: []
+  version: 2.99.25
+  title: "'Update balena-yocto-scripts digest to 5e003d5'"
+  date: 2022-06-29T18:20:36.329Z
+- commits:
     - subject: Update balena-yocto-scripts to 29b218350eb1553f0f2c4da2753e9f6722226f41
       hash: a4a26994bc2f2964ab58fe975184c83f66be9fd5
       body: Update balena-yocto-scripts
