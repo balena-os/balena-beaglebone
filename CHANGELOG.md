@@ -1,6 +1,20 @@
 Change log
 -----------
 
+# v2.99.26
+## (2022-06-29)
+
+
+<details>
+<summary> Update layers/meta-balena to 1f79bcbb751f8715c49b207fdf737a2a089aff4c [renovate[bot]] </summary>
+
+> ## meta-balena-2.99.26
+> ### (2022-06-29)
+> 
+> * tests: cloud: Wait for random triggers to be updated [Kyle Harding]
+> 
+</details>
+
 # v2.99.25
 ## (2022-06-29)
 
