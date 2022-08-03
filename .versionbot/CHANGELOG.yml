@@ -1,4 +1,31 @@
 - commits:
+    - subject: Update layers/meta-balena to 7a62296718a363abd393107933f30e611ec27d1e
+      hash: 205d70634bdecd9bf1ae45dcb46d6141c44fce63
+      body: Update layers/meta-balena
+      footer:
+        Changelog-entry: Update layers/meta-balena to 7a62296718a363abd393107933f30e611ec27d1e
+        changelog-entry: Update layers/meta-balena to 7a62296718a363abd393107933f30e611ec27d1e
+      author: renovate[bot]
+      nested:
+        - commits:
+            - subject: "os-config: Update os-config from v1.2.1 to v1.2.10"
+              hash: 1663c7d601882813f9219209fefee6bfb3eb2e6d
+              body: |
+                The tool now has optimized binary size in release builds
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Zahari Petkov <zahari@balena.io>
+                signed-off-by: Zahari Petkov <zahari@balena.io>
+              author: Zahari Petkov
+              nested: []
+          version: meta-balena-2.101.1
+          title: "'Optimize binary size in release builds for Rust tools'"
+          date: 2022-08-01T14:48:59.790Z
+  version: 2.101.1
+  title: "'Update layers/meta-balena digest to 7a62296'"
+  date: 2022-08-03T16:57:16.422Z
+- commits:
     - subject: Remove final argument from build and deploy workflow
       hash: 9ba82f258c487fea7af3f139b1a984f53064a745
       body: |
