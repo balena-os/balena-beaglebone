@@ -1,4 +1,38 @@
 - commits:
+    - subject: Update contracts to b48eaf24e3b0cf67116e4adbe1a12d349825fda5
+      hash: 71ddd17e27aa348c2871d0d1febad916b7d530ff
+      body: Update contracts
+      footer:
+        Changelog-entry: Update contracts to b48eaf24e3b0cf67116e4adbe1a12d349825fda5
+        changelog-entry: Update contracts to b48eaf24e3b0cf67116e4adbe1a12d349825fda5
+      author: renovate[bot]
+      nested:
+        - commits:
+            - subject: Update dotnet contract to latest v6.x and v3.x
+              hash: 8723082c3e626e277d24a6ed4e8667fc2324377a
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Trong Nghia Nguyen <nghiant2710@gmail.com>
+                signed-off-by: Trong Nghia Nguyen <nghiant2710@gmail.com>
+              author: Trong Nghia Nguyen
+            - subject: Add node v18.7.0
+              hash: 71c4516bc9af8b65fae9f9f25ceca6e3f61eddc0
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Trong Nghia Nguyen <nghiant2710@gmail.com>
+                signed-off-by: Trong Nghia Nguyen <nghiant2710@gmail.com>
+              author: Trong Nghia Nguyen
+          version: contracts-2.0.8
+          title: "'Few base images updates'"
+          date: 2022-08-03T00:13:19.196Z
+  version: 2.101.0+rev2
+  title: "'Update contracts digest to b48eaf2'"
+  date: 2022-08-03T02:25:51.668Z
+- commits:
     - subject: Update balena-yocto-scripts to 09e4514953fed499a69c224b47969fd2c3fb7ab8
       hash: 7283244aa95f9bab81224a246d933476cecc8096
       body: Update balena-yocto-scripts
