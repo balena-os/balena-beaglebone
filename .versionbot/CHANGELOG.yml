@@ -1,4 +1,29 @@
 - commits:
+    - subject: Update contracts to 91807ae538dccedb69877eed28ae6752287e2f21
+      hash: 7b4a7611f97ebd581bbeefa752b98d40acc1d340
+      body: Update contracts
+      footer:
+        Changelog-entry: Update contracts to 91807ae538dccedb69877eed28ae6752287e2f21
+        changelog-entry: Update contracts to 91807ae538dccedb69877eed28ae6752287e2f21
+      author: renovate[bot]
+      nested:
+        - commits:
+            - subject: "generic-amd64: update logo to be vendor agnostic"
+              hash: 77be9ac931237432f35a993cfe30395c04f4c27e
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Joseph Kogut <joseph@balena.io>
+                signed-off-by: Joseph Kogut <joseph@balena.io>
+              author: Joseph Kogut
+          version: contracts-2.0.11
+          title: "'generic-amd64: update logo to be vendor agnostic'"
+          date: 2022-08-10T23:53:37.506Z
+  version: 2.101.4+rev2
+  title: "'Update contracts digest to 91807ae'"
+  date: 2022-08-11T19:17:05.934Z
+- commits:
     - subject: Update balena-yocto-scripts to 99807501efffc8c5034c88361049650a02511a78
       hash: 87350f20a1e726ecd876f2a6d5908eb299f1a55a
       body: Update balena-yocto-scripts
