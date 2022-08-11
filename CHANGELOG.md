@@ -1,6 +1,20 @@
 Change log
 -----------
 
+# v2.101.3+rev1
+## (2022-08-10)
+
+
+<details>
+<summary> Update contracts to d82f4b2d9f182bab4f5b39b4906e0ca17154fa04 [renovate[bot]] </summary>
+
+> ## contracts-2.0.10
+> ### (2022-08-10)
+> 
+> * generic-amd64: disable private [Joseph Kogut]
+> 
+</details>
+
 # v2.101.3
 ## (2022-08-06)
 

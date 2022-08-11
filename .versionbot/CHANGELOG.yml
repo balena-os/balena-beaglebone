@@ -1,4 +1,30 @@
 - commits:
+    - subject: Update contracts to d82f4b2d9f182bab4f5b39b4906e0ca17154fa04
+      hash: 664803b14915ad5df737ea209f01421d2f53c5fc
+      body: Update contracts
+      footer:
+        Changelog-entry: Update contracts to d82f4b2d9f182bab4f5b39b4906e0ca17154fa04
+        changelog-entry: Update contracts to d82f4b2d9f182bab4f5b39b4906e0ca17154fa04
+      author: renovate[bot]
+      nested:
+        - commits:
+            - subject: "generic-amd64: disable private"
+              hash: fecb953bc4ea8162f476fb0f498febd9ce332813
+              body: |
+                This device type should be public
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Joseph Kogut <joseph@balena.io>
+                signed-off-by: Joseph Kogut <joseph@balena.io>
+              author: Joseph Kogut
+          version: contracts-2.0.10
+          title: "'generic-amd64: disable private'"
+          date: 2022-08-10T23:34:11.931Z
+  version: 2.101.3+rev1
+  title: "'Update contracts digest to d82f4b2'"
+  date: 2022-08-10T23:59:17.641Z
+- commits:
     - subject: Update layers/meta-balena to afcbee0c5dad04f02ba2a3ecb5d6d7db21f7ebe4
       hash: 514725369a15120ad4e0dd7f351e0050932d959e
       body: Update layers/meta-balena
