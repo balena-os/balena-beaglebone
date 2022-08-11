@@ -1,6 +1,20 @@
 Change log
 -----------
 
+# v2.101.4+rev1
+## (2022-08-11)
+
+
+<details>
+<summary> Update balena-yocto-scripts to 99807501efffc8c5034c88361049650a02511a78 [renovate[bot]] </summary>
+
+> ## balena-yocto-scripts-1.19.12
+> ### (2022-08-08)
+> 
+> * barys: Add balena-rust to syntax conversion step [Alex Gonzalez]
+> 
+</details>
+
 # v2.101.4
 ## (2022-08-11)
 
