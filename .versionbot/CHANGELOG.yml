@@ -1,4 +1,39 @@
 - commits:
+    - subject: Update layers/meta-balena to 771593f49920c4ae0ef101d2328f03f033449a9e
+      hash: 75444ae840f305ea8415892aeda0a438495461d2
+      body: Update layers/meta-balena
+      footer:
+        Changelog-entry: Update layers/meta-balena to 771593f49920c4ae0ef101d2328f03f033449a9e
+        changelog-entry: Update layers/meta-balena to 771593f49920c4ae0ef101d2328f03f033449a9e
+      author: renovate[bot]
+      nested:
+        - commits:
+            - subject: "meta-balena-rust: Link to meta-rust"
+              hash: 83bd38733af9063c5d29d90fc0695838e4b718d3
+              body: >
+                This is a temporary way that will allow to update the
+                bblayers.conf of
+
+                device type repositories to include meta-balena/meta-balena-rust while
+
+                still building.
+
+
+                This change will be reverted with the meta-balena-rust layer.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+          version: meta-balena-2.101.5
+          title: "'meta-balena-rust: Link to meta-rust'"
+          date: 2022-08-12T08:01:52.474Z
+  version: 2.101.5
+  title: "'Update layers/meta-balena digest to 771593f'"
+  date: 2022-08-15T12:06:24.093Z
+- commits:
     - subject: Update contracts to 91807ae538dccedb69877eed28ae6752287e2f21
       hash: 7b4a7611f97ebd581bbeefa752b98d40acc1d340
       body: Update contracts

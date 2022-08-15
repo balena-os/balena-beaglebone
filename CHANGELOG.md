@@ -1,6 +1,20 @@
 Change log
 -----------
 
+# v2.101.5
+## (2022-08-15)
+
+
+<details>
+<summary> Update layers/meta-balena to 771593f49920c4ae0ef101d2328f03f033449a9e [renovate[bot]] </summary>
+
+> ## meta-balena-2.101.5
+> ### (2022-08-12)
+> 
+> * meta-balena-rust: Link to meta-rust [Alex Gonzalez]
+> 
+</details>
+
 # v2.101.4+rev2
 ## (2022-08-11)
 
