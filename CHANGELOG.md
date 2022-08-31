@@ -1,6 +1,43 @@
 Change log
 -----------
 
+# v2.102.3
+## (2022-08-30)
+
+
+<details>
+<summary> Update layers/meta-balena to a24e52592b2fbc1c60e6a6fc39c61470219f61b1 [renovate[bot]] </summary>
+
+> ## meta-balena-2.102.3
+> ### (Invalid date)
+> 
+> * renovate: Restore default commit body [Kyle Harding]
+> 
+> ## meta-balena-2.102.2
+> ### (2022-08-29)
+> 
+> * Renovate: Fix package rules for balena supervisor [Kyle Harding]
+> 
+> ## meta-balena-2.102.1
+> ### (2022-08-29)
+> 
+> * meta-balena-thud: initramfs: Fix building with latest meta-balena [Alex Gonzalez]
+> 
+> ## meta-balena-2.102.0
+> ### (2022-08-25)
+> 
+> * meta-balena-common: distro: Add rust preferred versions [Alex Gonzalez]
+> * meta-balena-common: os-config: Update to v1.2.11 [Alex Gonzalez]
+> * meta-balena-integration: Replace parallel_make_argument() [Alex Gonzalez]
+> * meta-balena-integration: Update cmake for versions below Zeus [Alex Gonzalez]
+> * meta-balena-rust: Add condition check for parallel_make_argument() use [Alex Gonzalez]
+> * meta-balena-rust: Provide crate fetcher for Yocto versions without it [Alex Gonzalez]
+> * meta-balena-rust: Modify to use without oe.rust.arch_to_rust_arch() support [Alex Gonzalez]
+> * meta-balena-rust: Add rust recipes to keep the rust version a distribution config [Alex Gonzalez]
+> * meta-balena-rust: Add compatibility layer [Alex Gonzalez]
+> 
+</details>
+
 # v2.101.11+rev1
 ## (2022-08-26)
 
