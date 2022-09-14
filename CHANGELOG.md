@@ -1,6 +1,48 @@
 Change log
 -----------
 
+# v2.103.1
+## (2022-09-14)
+
+
+<details>
+<summary> Update layers/meta-balena to 2f207a3dbc3f142d4d1e0b9fdbd6136bcfb40dac [renovate[bot]] </summary>
+
+> ## meta-balena-2.103.1
+> ### (2022-09-13)
+> 
+> * tests: os: only do hdmi test if has capture device [rcooke-warwick]
+> 
+> ## meta-balena-2.103.0
+> ### (2022-09-12)
+> 
+> * README: Add kirkstone support [Alex Gonzalez]
+> * layer.conf: Add kirkstone support [Alex Gonzalez]
+> * kernel-balena-noimage: Remove kernel-image packages from image [Alex Gonzalez]
+> * meta-balena-kirkstone: plymouth: Adapt custom patches [Alex Gonzalez]
+> * meta-balena-kirkstone: systemd: Ammend patches to remove fuzziness warning [Alex Gonzalez]
+> * meta-balena-kirkstone: replace honister with kirkstone [Alex Gonzalez]
+> * meta-balena-kirkstone: use upstream kernel-devsrc recipe [Alex Gonzalez]
+> * meta-balena-kirkstone: use the procps recipe from upstream [Alex Gonzalez]
+> * meta-balena-kirkstone: Add kirkstone integration layer [Alex Gonzalez]
+> * classes: image-balena: Fix journal blocks calculation [Alex Gonzalez]
+> * packagegroup-resin: Move libnss-ato out of packagegroup to avoid build error [Alex Gonzalez]
+> * openvpn: update to version 2.5.6 [Alex Gonzalez]
+> * balena-supervisor: Allow network use in install task [Alex Gonzalez]
+> * docker-disk: Allow compile task to use network [Alex Gonzalez]
+> * chrony: update to version 4.1 to match kirkstone's version [Alex Gonzalez]
+> * os-config: Adapt to kirkstone [Alex Gonzalez]
+> * healthdog: Adapt to kirkstone [Alex Gonzalez]
+> * compatibility: Do not update tpm2-tss below Dunfell [Alex Gonzalez]
+> * tpm2-tss: update to kirkstone [Alex Gonzalez]
+> * tpm2-tools: update to kirkstone [Alex Gonzalez]
+> * tpm2-abrmd: update to kirkstone [Alex Gonzalez]
+> * meta-balena-common: Assure all recipes have branch and protocol in SRC_URI [Alex Gonzalez]
+> * bluez5: update to 5.64 [Alex Gonzalez]
+> * efi-tools: Replace SSTATE_DUPWHITELIST with SSTATE_ALLOW_OVERLAP_FILES [Alex Gonzalez]
+> 
+</details>
+
 # v2.102.6
 ## (2022-09-08)
 
