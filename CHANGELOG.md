@@ -1,6 +1,31 @@
 Change log
 -----------
 
+# v2.104.1
+## (2022-09-20)
+
+
+<details>
+<summary> Update layers/meta-balena to 226aa0d60a8e7d69ae2b17c5bc3efff1559a6bda [renovate[bot]] </summary>
+
+> ## meta-balena-2.104.1
+> ### (2022-09-20)
+> 
+> * balena: remove kernel-module-nf-nat-native dependency for host build [Alexandru Costache]
+> 
+</details>
+
+
+<details>
+<summary> Update layers/meta-balena to 09435bc8b96abc8fcd245eaa5e1ead0fe626cae5 [renovate[bot]] </summary>
+
+> ## meta-balena-2.104.1
+> ### (2022-09-20)
+> 
+> * balena: remove kernel-module-nf-nat-native dependency for host build [Alexandru Costache]
+> 
+</details>
+
 # v2.103.5
 ## (2022-09-19)
 

@@ -1,4 +1,68 @@
 - commits:
+    - subject: Update layers/meta-balena to 226aa0d60a8e7d69ae2b17c5bc3efff1559a6bda
+      hash: c362e1014e693a4e866d8918360bd5644af43908
+      body: Update layers/meta-balena
+      footer:
+        Changelog-entry: Update layers/meta-balena to 226aa0d60a8e7d69ae2b17c5bc3efff1559a6bda
+        changelog-entry: Update layers/meta-balena to 226aa0d60a8e7d69ae2b17c5bc3efff1559a6bda
+      author: renovate[bot]
+      nested:
+        - commits:
+            - subject: "balena: remove kernel-module-nf-nat-native dependency for host build"
+              hash: bd36b84df9281ddfc61920189968f51cb691ac16
+              body: >
+                This fixes the following error when building mkfs-hostapp-native
+
+                with Honister for a Variscite iMX8MM which only has Hardknott support:
+
+
+                mkfs-hostapp-native-1.0-r0 do_prepare_recipe_sysroot:
+                  Manifest /work/build/tmp/sstate-control/manifest-x86_64_x86_64-nativesdk-linux-libc-headers.populate_sysroot not found
+                  in cortexa53 armv8a-crc armv8a aarch64 allarch x86_64_x86_64-nativesdk (variant '')?
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+              nested: []
+          version: meta-balena-2.104.1
+          title: "'balena: remove kernel-module-nf-nat-native dependency for host build'"
+          date: 2022-09-20T08:10:10.709Z
+    - subject: Update layers/meta-balena to 09435bc8b96abc8fcd245eaa5e1ead0fe626cae5
+      hash: 0bf5016ab93e59682ffe9ed36bdf2625c1d19e38
+      body: Update layers/meta-balena
+      footer:
+        Changelog-entry: Update layers/meta-balena to 09435bc8b96abc8fcd245eaa5e1ead0fe626cae5
+        changelog-entry: Update layers/meta-balena to 09435bc8b96abc8fcd245eaa5e1ead0fe626cae5
+      author: renovate[bot]
+      nested:
+        - commits:
+            - subject: "balena: remove kernel-module-nf-nat-native dependency for host build"
+              hash: bd36b84df9281ddfc61920189968f51cb691ac16
+              body: >
+                This fixes the following error when building mkfs-hostapp-native
+
+                with Honister for a Variscite iMX8MM which only has Hardknott support:
+
+
+                mkfs-hostapp-native-1.0-r0 do_prepare_recipe_sysroot:
+                  Manifest /work/build/tmp/sstate-control/manifest-x86_64_x86_64-nativesdk-linux-libc-headers.populate_sysroot not found
+                  in cortexa53 armv8a-crc armv8a aarch64 allarch x86_64_x86_64-nativesdk (variant '')?
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+              nested: []
+          version: meta-balena-2.104.1
+          title: "'balena: remove kernel-module-nf-nat-native dependency for host build'"
+          date: 2022-09-20T08:10:10.709Z
+  version: 2.104.1
+  title: "'Update layers/meta-balena digest to 226aa0d'"
+  date: 2022-09-20T15:24:37.809Z
+- commits:
     - subject: Update layers/meta-balena to 33e0b4caf72baa5b416574b91ddcf603eded1188
       hash: a7ef49ad1606368355effb033bc5494fad5c9a7f
       body: Update layers/meta-balena
