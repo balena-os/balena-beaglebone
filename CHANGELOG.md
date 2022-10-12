@@ -1,6 +1,20 @@
 Change log
 -----------
 
+# v2.105.9
+## (2022-10-11)
+
+
+<details>
+<summary> Update layers/meta-balena to cf01401eff54d9fd3a4fd1247f4d3f059619c2d3 [renovate[bot]] </summary>
+
+> ## meta-balena-2.105.9
+> ### (2022-10-11)
+> 
+> * meta-balena-rust: Fix ABI for arm [Alex Gonzalez]
+> 
+</details>
+
 # v2.105.8
 ## (2022-10-11)
 
