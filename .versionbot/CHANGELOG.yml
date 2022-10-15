@@ -1,4 +1,53 @@
 - commits:
+    - subject: Update layers/meta-balena to 433b72275aa61da736904aa3f55c7b987824d523
+      hash: badafd26e4b89b73f472773e65d412ccd74e9ae7
+      body: Update layers/meta-balena
+      footer:
+        Changelog-entry: Update layers/meta-balena to 433b72275aa61da736904aa3f55c7b987824d523
+        changelog-entry: Update layers/meta-balena to 433b72275aa61da736904aa3f55c7b987824d523
+      author: renovate[bot]
+      nested:
+        - commits:
+            - subject: Update balena-os/balena-supervisor to v14.2.10
+              hash: e6a6abbb3994937bbb5e5d2e1479e97a76faec88
+              body: Update balena-supervisor
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: renovate[bot]
+              nested: []
+          version: meta-balena-2.105.11
+          title: ""
+          date: 2022-10-13T20:48:28.279Z
+        - commits:
+            - subject: "classes: kernel-balena: improve aufs branch selection"
+              hash: 83f866691184df43c5b08b9da646a5bf99227b7b
+              body: >
+                The task that applies the aufs patches is still required to support
+
+                hostOS updates between aufs and overlay2 balenaOS versions.
+
+
+                This commit adds support for 5.15 kernels and improves the branch
+
+                selection logic to cover some corner cases.
+
+
+                It also adds a test task so that we can test regressions.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+          version: meta-balena-2.105.10
+          title: ""
+          date: 2022-10-12T13:48:37.596Z
+  version: 2.105.11
+  title: ""
+  date: 2022-10-15T10:45:02.918Z
+- commits:
     - subject: Switch from balenaCI to flowzone
       hash: 7fcb6dc26f53a91159f5ad45c2a5dc4784fb0e73
       body: ""

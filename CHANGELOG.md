@@ -1,6 +1,25 @@
 Change log
 -----------
 
+# v2.105.11
+## (2022-10-15)
+
+
+<details>
+<summary> Update layers/meta-balena to 433b72275aa61da736904aa3f55c7b987824d523 [renovate[bot]] </summary>
+
+> ## meta-balena-2.105.11
+> ### (2022-10-13)
+> 
+> * Update balena-os/balena-supervisor to v14.2.10 [renovate[bot]]
+> 
+> ## meta-balena-2.105.10
+> ### (2022-10-12)
+> 
+> * classes: kernel-balena: improve aufs branch selection [Alex Gonzalez]
+> 
+</details>
+
 # v2.105.9+rev2
 ## (2022-10-14)
 
