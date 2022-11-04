@@ -1,4 +1,28 @@
 - commits:
+    - subject: Update layers/meta-balena to 397943469235f9eb67a55ce5c98e01e8afbc641e
+      hash: f3ae37c25263762355ed51028065a3d93fee35f9
+      body: Update layers/meta-balena
+      footer:
+        Changelog-entry: Update layers/meta-balena to 397943469235f9eb67a55ce5c98e01e8afbc641e
+        changelog-entry: Update layers/meta-balena to 397943469235f9eb67a55ce5c98e01e8afbc641e
+      author: renovate[bot]
+      nested:
+        - commits:
+            - subject: "patch: Skip HUP suite if no releases found"
+              hash: 40a12706d64383f5b5f1f41cecc6331d1c2fcc79
+              body: ""
+              footer:
+                Signed-off-by: Vipul Gupta (@vipulgupta2048) <vipul@balena.io>
+                signed-off-by: Vipul Gupta (@vipulgupta2048) <vipul@balena.io>
+              author: Vipul Gupta (@vipulgupta2048)
+              nested: []
+          version: meta-balena-2.105.26
+          title: ""
+          date: 2022-11-04T10:56:57.967Z
+  version: 2.105.26
+  title: ""
+  date: 2022-11-04T13:58:57.352Z
+- commits:
     - subject: Update layers/meta-balena to 81cdced65f90570af857c9cf012775558003c1c5
       hash: bb7f5039be51125b0d8749d9960d29bdcb9dd541
       body: Update layers/meta-balena
