@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.105.28+rev1
+## (2022-11-07)
+
+* Update contracts to c33f181741d3a3a8eb1d99fe24360c38114db96f [renovate[bot]]
+
 # v2.105.28
 ## (2022-11-06)
 

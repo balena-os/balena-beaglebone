@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update contracts to c33f181741d3a3a8eb1d99fe24360c38114db96f
+      hash: c73865012617ed63f81746fdbc8919e7ac87e75b
+      body: Update contracts
+      footer:
+        Changelog-entry: Update contracts to c33f181741d3a3a8eb1d99fe24360c38114db96f
+        changelog-entry: Update contracts to c33f181741d3a3a8eb1d99fe24360c38114db96f
+      author: renovate[bot]
+      nested: []
+  version: 2.105.28+rev1
+  title: ""
+  date: 2022-11-07T13:10:05.664Z
+- commits:
     - subject: Update layers/meta-balena to 496bde37adf3bdabcf3baa3c3dbbaba8ed2c59e1
       hash: 47442530fd915fb239d55759232a9c51b9ad5e2e
       body: Update layers/meta-balena
