@@ -1,4 +1,30 @@
 - commits:
+    - subject: Update layers/meta-balena to bf237c4f76c4026ed3aea2f30edc7c6a484fcef6
+      hash: a2d9705bf7fbe84eaf55c7e0e6f64d55e42ff1c1
+      body: Update layers/meta-balena
+      footer:
+        Changelog-entry: Update layers/meta-balena to bf237c4f76c4026ed3aea2f30edc7c6a484fcef6
+        changelog-entry: Update layers/meta-balena to bf237c4f76c4026ed3aea2f30edc7c6a484fcef6
+      author: renovate[bot]
+      nested:
+        - commits:
+            - subject: "tests: cloud: use cloud ssh to avoid race cond"
+              hash: 970d504c2fec7f82d8a87b1203702cb4320fbe9b
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Ryan Cooke <ryan@balena.io>
+                signed-off-by: Ryan Cooke <ryan@balena.io>
+              author: rcooke-warwick
+              nested: []
+          version: meta-balena-2.106.1
+          title: ""
+          date: 2022-11-10T17:19:31.839Z
+  version: 2.106.1
+  title: ""
+  date: 2022-11-10T22:21:04.524Z
+- commits:
     - subject: Update layers/meta-balena to c5f580c7bd8e7d1391331c1611ab340be68d8d6a
       hash: e24f158cce919b815505e36be1bedf2ba036da1a
       body: Update layers/meta-balena
