@@ -1,6 +1,25 @@
 Change log
 -----------
 
+# v2.107.1
+## (2022-11-18)
+
+
+<details>
+<summary> Update layers/meta-balena to df352d2fcc6c70f7eb00e5276208510fe7ec9822 [renovate[bot]] </summary>
+
+> ## meta-balena-2.107.1
+> ### (2022-11-17)
+> 
+> * docs: add RAID setup info [Joseph Kogut]
+> 
+> ## meta-balena-2.107.0
+> ### (2022-11-17)
+> 
+> * Update balena-os/balena-supervisor to v14.4.0 [renovate[bot]]
+> 
+</details>
+
 # v2.106.8
 ## (2022-11-17)
 
