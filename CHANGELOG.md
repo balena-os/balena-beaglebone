@@ -1,6 +1,20 @@
 Change log
 -----------
 
+# v2.107.4
+## (2022-11-20)
+
+
+<details>
+<summary> Update layers/meta-balena to 62205779cf90d2ea1c05e95c0a27074822e6e10f [renovate[bot]] </summary>
+
+> ## meta-balena-2.107.4
+> ### (2022-11-19)
+> 
+> * Update balena-os/balena-supervisor to v14.4.1 [renovate[bot]]
+> 
+</details>
+
 # v2.107.3
 ## (2022-11-19)
 
