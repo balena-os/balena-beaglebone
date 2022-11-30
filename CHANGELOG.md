@@ -1,6 +1,91 @@
 Change log
 -----------
 
+# v2.107.14
+## (2022-11-30)
+
+
+<details>
+<summary> Update layers/meta-balena to 8ea20f929eeb3f52b23874c3bd951c961329ad29 [renovate[bot]] </summary>
+
+> ## meta-balena-2.107.14
+> ### (Invalid date)
+> 
+> * test: os: fix search for active interface [rcooke-warwick]
+> 
+> ## meta-balena-2.107.13
+> ### (2022-11-29)
+> 
+> * balena-image-flasher: Include LUKS variant of GRUB config with FDE in place [Michal Toman]
+> 
+> ## meta-balena-2.107.12
+> ### (2022-11-28)
+> 
+> 
+> <details>
+> <summary> Update tests/leviathan digest to 61016ad [renovate[bot]] </summary>
+> 
+>> ### leviathan-2.10.4
+>> #### (2022-11-25)
+>> 
+>> * bump contracts to 2.0.27 [rcooke-warwick]
+>> 
+>> ### leviathan-2.10.3
+>> #### (2022-11-24)
+>> 
+>> * On Apple Silicon we should install balena CLI via npm [Kyle Harding]
+>> 
+> </details>
+> 
+> 
+> ## meta-balena-2.107.11
+> ### (2022-11-25)
+> 
+> * add os testing docs [rcooke-warwick]
+> 
+</details>
+
+
+<details>
+<summary> Update layers/meta-balena to fbf651fead37336e826d709f48255897962bdbd5 [renovate[bot]] </summary>
+
+> ## meta-balena-2.107.14
+> ### (Invalid date)
+> 
+> * test: os: fix search for active interface [rcooke-warwick]
+> 
+> ## meta-balena-2.107.13
+> ### (2022-11-29)
+> 
+> * balena-image-flasher: Include LUKS variant of GRUB config with FDE in place [Michal Toman]
+> 
+> ## meta-balena-2.107.12
+> ### (2022-11-28)
+> 
+> 
+> <details>
+> <summary> Update tests/leviathan digest to 61016ad [renovate[bot]] </summary>
+> 
+>> ### leviathan-2.10.4
+>> #### (2022-11-25)
+>> 
+>> * bump contracts to 2.0.27 [rcooke-warwick]
+>> 
+>> ### leviathan-2.10.3
+>> #### (2022-11-24)
+>> 
+>> * On Apple Silicon we should install balena CLI via npm [Kyle Harding]
+>> 
+> </details>
+> 
+> 
+> ## meta-balena-2.107.11
+> ### (2022-11-25)
+> 
+> * add os testing docs [rcooke-warwick]
+> 
+</details>
+
 # v2.107.9
 ## (2022-11-24)
 
