@@ -1,6 +1,173 @@
 Change log
 -----------
 
+# v2.107.35
+## (2022-12-15)
+
+
+<details>
+<summary> Update layers/meta-balena to 6bba8a6b779d93ad1765708ca6704db90ec81769 [renovate[bot]] </summary>
+
+> ## meta-balena-2.107.35
+> ### (2022-12-15)
+> 
+> * patch: Add default debug object to test config [Vipul Gupta (@vipulgupta2048)]
+> 
+> ## meta-balena-2.107.34
+> ### (2022-12-14)
+> 
+> * initrdscripts: Wait for udev processing to complete when unlocking LUKS devices [Michal Toman]
+> 
+> ## meta-balena-2.107.33
+> ### (2022-12-14)
+> 
+> * tests: hup: clean up inactive partition pre hup [rcooke-warwick]
+> 
+> ## meta-balena-2.107.32
+> ### (2022-12-14)
+> 
+> * tests/cloud: Increase the wait time for services to start [Kyle Harding]
+> 
+> ## meta-balena-2.107.31
+> ### (2022-12-14)
+> 
+> 
+> <details>
+> <summary> Update tests/leviathan digest to 27b78a4 [renovate[bot]] </summary>
+> 
+>> ### leviathan-2.10.10
+>> #### (2022-12-13)
+>> 
+>> * Enable external contributions via flowzone [Kyle Harding]
+>> 
+> 
+> </details>
+> 
+> 
+> ## meta-balena-2.107.30
+> ### (2022-12-13)
+> 
+> * extra-udev-rules: Update teensy.rules [Alex Gonzalez]
+> * extra-udev-rules: Rename recipe [Alex Gonzalez]
+> 
+> ## meta-balena-2.107.29
+> ### (2022-12-13)
+> 
+> * balena-image-initramfs: disable redundant compression [Joseph Kogut]
+> 
+> ## meta-balena-2.107.28
+> ### (2022-12-12)
+> 
+> * initrdscripts: Only unlock LUKS partitions on the OS drive [Michal Toman]
+> 
+> ## meta-balena-2.107.27
+> ### (2022-12-12)
+> 
+> * chrony: disable reverse dns lookups in healthcheck [Ken Bannister]
+> 
+> ## meta-balena-2.107.26
+> ### (2022-12-12)
+> 
+> * connectivity: Add linux firmware for iwlwifi 9260 [Alex Gonzalez]
+> 
+> ## meta-balena-2.107.25
+> ### (2022-12-11)
+> 
+> * image_types_balena: fix inconsistency with flasher image partition naming [Alex Gonzalez]
+> 
+> ## meta-balena-2.107.24
+> ### (2022-12-09)
+> 
+> * Update balena-os/balena-supervisor to v14.4.6 [renovate[bot]]
+> 
+> ## meta-balena-2.107.23
+> ### (2022-12-09)
+> 
+> * patch: Add product documentation [Vipul Gupta (@vipulgupta2048)]
+> 
+> ## meta-balena-2.107.22
+> ### (2022-12-09)
+> 
+> * tests: os: fsck: make compatible with old yocto releaes [rcooke-warwick]
+> 
+> ## meta-balena-2.107.21
+> ### (2022-12-08)
+> 
+> * tests/connectivity: Run the proxy tests with the actual redsocks uid of the DUT [Florin Sarbu]
+> 
+> ## meta-balena-2.107.20
+> ### (2022-12-07)
+> 
+> * kernel-balena: enable zstd compression [Joseph Kogut]
+> 
+> ## meta-balena-2.107.19
+> ### (2022-12-06)
+> 
+> * image_types_balena: generate bmap file [Joseph Kogut]
+> * flasher: write disk image skipping sparse blocks [Joseph Kogut]
+> * image_types_balena: create sparse disk image [Joseph Kogut]
+> 
+> ## meta-balena-2.107.18
+> ### (2022-12-04)
+> 
+> 
+> <details>
+> <summary> Update tests/leviathan digest to fe4d6a1 [renovate[bot]] </summary>
+> 
+>> ### leviathan-2.10.9
+>> #### (2022-12-02)
+>> 
+>> * Revert "docker-compose: stop using the default docker bridge" [Kyle Harding]
+>> 
+> 
+> </details>
+> 
+> 
+> ## meta-balena-2.107.17
+> ### (2022-12-02)
+> 
+> 
+> <details>
+> <summary> Update tests/leviathan digest to de97fa2 [renovate[bot]] </summary>
+> 
+>> ### leviathan-2.10.8
+>> #### (Invalid date)
+>> 
+>> * patch: Improve archivelogs journalctl command [Vipul Gupta (@vipulgupta2048)]
+>> * core: Reduce to 30 the retries number when trying to get the IP address of the DUT [Florin Sarbu]
+>> 
+>> ### leviathan-2.10.7
+>> #### (Invalid date)
+>> 
+>> * docker-compose: stop using the default docker bridge [Alex Gonzalez]
+>> 
+>> ### leviathan-2.10.6
+>> #### (2022-11-29)
+>> 
+>> * os/balenaos: Remove hidden attribute from DUT wireless connection file [Alexandru Costache]
+>> 
+>> ### leviathan-2.10.5
+>> #### (2022-11-29)
+>> 
+>> * patch: Add debug: unstable to docs [Vipul Gupta (@vipulgupta2048)]
+>> 
+> 
+> </details>
+> 
+> 
+> ## meta-balena-2.107.16
+> ### (2022-12-01)
+> 
+> * Refactor and clean up the purge data tests [Kyle Harding]
+> 
+> ## meta-balena-2.107.15
+> ### (2022-12-01)
+> 
+> * Updated CBS Docs Updated link to the CDS Product Repo [Ryan H]
+> 
+
+</details>
+
 # v2.107.14+rev1
 ## (2022-12-01)
 

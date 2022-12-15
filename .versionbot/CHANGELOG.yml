@@ -1,4 +1,550 @@
 - commits:
+    - subject: Update layers/meta-balena to 6bba8a6b779d93ad1765708ca6704db90ec81769
+      hash: c3dc0e90a47dac6764e6c1d9d46de0d9ffd3c17a
+      body: Update layers/meta-balena
+      footer:
+        Changelog-entry: Update layers/meta-balena to 6bba8a6b779d93ad1765708ca6704db90ec81769
+        changelog-entry: Update layers/meta-balena to 6bba8a6b779d93ad1765708ca6704db90ec81769
+      author: renovate[bot]
+      nested:
+        - commits:
+            - subject: "patch: Add default debug object to test config"
+              hash: 3def4d69a63952eac4a5c3fb6bd94fe03b666eda
+              body: ""
+              footer:
+                Signed-off-by: Vipul Gupta (@vipulgupta2048) <vipul@balena.io>
+                signed-off-by: Vipul Gupta (@vipulgupta2048) <vipul@balena.io>
+              author: Vipul Gupta (@vipulgupta2048)
+              nested: []
+          version: meta-balena-2.107.35
+          title: ""
+          date: 2022-12-15T00:03:58.037Z
+        - commits:
+            - subject: "initrdscripts: Wait for udev processing to complete when unlocking
+                LUKS devices"
+              hash: dc31885048db9a1ef5e1aaa705af9bf3d04052a3
+              body: >
+                When unlocking LUKS devices, udev events initializing the DM devices are
+                still
+
+                generated in the background even after cryptsetup luksOpen returns. We need to
+
+                wait for the udev processing to finish before killing udev and cleaning up
+
+                the udev database to avoid having to deal with partially initialized devices
+
+                or corrupted udev database in the target OS.
+              footer:
+                Fixes: "#2857"
+                fixes: "#2857"
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Michal Toman <michalt@balena.io>
+                signed-off-by: Michal Toman <michalt@balena.io>
+              author: Michal Toman
+              nested: []
+          version: meta-balena-2.107.34
+          title: ""
+          date: 2022-12-14T18:02:58.755Z
+        - commits:
+            - subject: "tests: hup: clean up inactive partition pre hup"
+              hash: 1356c4f244be8b67fac9da9e15d2dee8c3816611
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Ryan Cooke <ryan@balena.io>
+                signed-off-by: Ryan Cooke <ryan@balena.io>
+              author: rcooke-warwick
+              nested: []
+          version: meta-balena-2.107.33
+          title: ""
+          date: 2022-12-14T13:22:43.735Z
+        - commits:
+            - subject: "tests/cloud: Increase the wait time for services to start"
+              hash: 99799e83e492f149ff30f956faead7cf34aeeea6
+              body: |
+                Also reduce the interval to 1s.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Kyle Harding <kyle@balena.io>
+                signed-off-by: Kyle Harding <kyle@balena.io>
+              author: Kyle Harding
+              nested: []
+          version: meta-balena-2.107.32
+          title: ""
+          date: 2022-12-14T06:01:21.542Z
+        - commits:
+            - subject: Update tests/leviathan digest to 27b78a4
+              hash: b3b219aae0e3aeed8ac72ce2c5ac9f156d1a4279
+              body: Update tests/leviathan
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: renovate[bot]
+              nested:
+                - commits:
+                    - subject: Enable external contributions via flowzone
+                      hash: 8e2489e75fd2d750dec077699f2410335995a6b2
+                      body: ""
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: Kyle Harding <kyle@balena.io>
+                        signed-off-by: Kyle Harding <kyle@balena.io>
+                      author: Kyle Harding
+                      nested: []
+                  version: leviathan-2.10.10
+                  title: ""
+                  date: 2022-12-13T19:44:28.072Z
+          version: meta-balena-2.107.31
+          title: ""
+          date: 2022-12-14T00:00:25.148Z
+        - commits:
+            - subject: "extra-udev-rules: Update teensy.rules"
+              hash: 9d10e815e773e47f86decaac1358490c5f0959c7
+              body: |
+                Updated rules from https://www.pjrc.com/teensy/00-teensy.rules
+
+                Fixes #2247
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+            - subject: "extra-udev-rules: Rename recipe"
+              hash: dcc6f5c793982c04a9ca0235d6542334cbbf5431
+              body: |
+                Remove the resin prefix.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+          version: meta-balena-2.107.30
+          title: ""
+          date: 2022-12-13T14:16:24.113Z
+        - commits:
+            - subject: "balena-image-initramfs: disable redundant compression"
+              hash: 91213a65ab83794be274757c8598c4c3495ceece
+              body: >
+                Our initramfs is built into the kernel, which is always compressed.
+
+                Disable redundant initramfs compression, which should save some CPU
+
+                cycles during build and boot, as well as improving compression ratio.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Joseph Kogut <joseph@balena.io>
+                signed-off-by: Joseph Kogut <joseph@balena.io>
+              author: Joseph Kogut
+              nested: []
+          version: meta-balena-2.107.29
+          title: ""
+          date: 2022-12-13T07:13:16.319Z
+        - commits:
+            - subject: "initrdscripts: Only unlock LUKS partitions on the OS drive"
+              hash: f5e8488e7b87c38829d241f788413433526d2f78
+              body: >
+                In the current state the cryptsetup initrd script tries to unlock all
+
+                LUKS volumes in the system using the TPM. This includes user-defined LUKS
+
+                volumes that, if present, fail to unlock and make the system unbootable.
+
+                We should also not touch user-defined volumes in the first place.
+
+
+                This patch modifies the cryptsetup script to only unlock LUKS volumes
+
+                that are on the OS drive (same block device as the EFI partition).
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Michal Toman <michalt@balena.io>
+                signed-off-by: Michal Toman <michalt@balena.io>
+              author: Michal Toman
+              nested: []
+          version: meta-balena-2.107.28
+          title: ""
+          date: 2022-12-12T21:10:45.792Z
+        - commits:
+            - subject: "chrony: disable reverse dns lookups in healthcheck"
+              hash: aa303afe9e3528023e6986bf5ceccc8bf8b5433f
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Ken Bannister <kb2ma@runbox.com>
+                signed-off-by: Ken Bannister <kb2ma@runbox.com>
+              author: Ken Bannister
+              nested: []
+          version: meta-balena-2.107.27
+          title: ""
+          date: 2022-12-12T13:55:20.224Z
+        - commits:
+            - subject: "connectivity: Add linux firmware for iwlwifi 9260"
+              hash: 6857496c1a03282375f40a5621ea1ee39171cb0d
+              body: >
+                Some device types are being sold with this WiFi chipset so let's include
+
+                the firmware.
+
+
+                Fixes #2059
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+          version: meta-balena-2.107.26
+          title: ""
+          date: 2022-12-12T06:07:30.516Z
+        - commits:
+            - subject: "image_types_balena: fix inconsistency with flasher image partition
+                naming"
+              hash: 795e2427821d28fcf894da1cba9afc245efc38b3
+              body: >
+                Partitions in flasher images are being created with different LABEL and
+
+                PARTLABEL, for example:
+
+                ```
+
+                /dev/sdd2: LABEL="flash-rootA" UUID="5585296a-c183-4b10-89ae-20607e5604be" TYPE="ext4" PARTLABEL="resin-rootA" PARTUUID="582478f2-be4b-4279-9124-536385c9551d"
+
+                ```
+
+
+                This commit fixes the inconsistency as the PARTLABEL is used as a fallback
+
+                method to identify devices.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+          version: meta-balena-2.107.25
+          title: ""
+          date: 2022-12-11T20:05:22.123Z
+        - commits:
+            - subject: Update balena-os/balena-supervisor to v14.4.6
+              hash: 70a888685d33267af60e53ac70a6169b744416bd
+              body: Update balena-supervisor
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: renovate[bot]
+              nested: []
+          version: meta-balena-2.107.24
+          title: ""
+          date: 2022-12-09T20:45:04.709Z
+        - commits:
+            - subject: "patch: Add product documentation"
+              hash: a081ff2439838073afbaa28f38f3e7f6850dddfe
+              body: ""
+              footer:
+                Signed-off-by: Vipul Gupta (@vipulgupta2048) <vipul@balena.io>
+                signed-off-by: Vipul Gupta (@vipulgupta2048) <vipul@balena.io>
+              author: Vipul Gupta (@vipulgupta2048)
+              nested: []
+          version: meta-balena-2.107.23
+          title: ""
+          date: 2022-12-09T14:41:44.836Z
+        - commits:
+            - subject: "tests: os: fsck: make compatible with old yocto releaes"
+              hash: 1e57154d1f3eedd82c20bbe463006783d63bc668
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Ryan Cooke <ryan@balena.io>
+                signed-off-by: Ryan Cooke <ryan@balena.io>
+              author: rcooke-warwick
+              nested: []
+          version: meta-balena-2.107.22
+          title: ""
+          date: 2022-12-09T12:55:56.317Z
+        - commits:
+            - subject: "tests/connectivity: Run the proxy tests with the actual redsocks uid
+                of the DUT"
+              hash: 17b49075804ea85aadfbb20d557025c1a4c2ee4f
+              body: >
+                Not all the boards we support have the redsocks uid as 995 in their rootfs
+                so let's
+
+                fetch the actual redsocks uid from the DUT before running the proxy tests and
+
+                update that in the docker-compose.yml. We do so because the REDSOCKS_UID value
+
+                isn't substituted in the compose if the variable, even if it is passed trough
+
+                the cli.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Florin Sarbu <florin@balena.io>
+                signed-off-by: Florin Sarbu <florin@balena.io>
+              author: Florin Sarbu
+              nested: []
+          version: meta-balena-2.107.21
+          title: ""
+          date: 2022-12-08T10:39:40.903Z
+        - commits:
+            - subject: "kernel-balena: enable zstd compression"
+              hash: 0473815cdf1210936b2110bdafb5294ae527db50
+              body: >
+                Enabling CONFIG_KERNEL_ZSTD=y improves the compression ratio compared
+
+                to gzip while being faster to decompress. With kernel 5.15 in balenaOS
+
+                v2.105, we see the 24 MB kernel compress to approximately 19 MB.
+
+
+                Zstd support was added in commit 48f7ddf, first introduced in kernel
+
+                v5.9. Enable this config unconditionally in supported kernels.
+
+
+                Note that not every architecture and device support this option, but in
+
+                those cases, Kconfig will automatically disable it as HAVE_ZSTD is also
+
+                missing.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Joseph Kogut <joseph@balena.io>
+                signed-off-by: Joseph Kogut <joseph@balena.io>
+              author: Joseph Kogut
+              nested: []
+          version: meta-balena-2.107.20
+          title: ""
+          date: 2022-12-07T22:06:34.638Z
+        - commits:
+            - subject: "image_types_balena: generate bmap file"
+              hash: 73541251086eeecf19ddfe89f84af432c137f1f1
+              body: >
+                Generate a bmap file from the sparse image to allow for punching holes
+
+                in the disk image ranges that were unmapped after building. This data is
+
+                lost during compression, and the bmapfile allows for recreating,
+
+                writing, and verifying the sparse image.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Joseph Kogut <joseph@balena.io>
+                signed-off-by: Joseph Kogut <joseph@balena.io>
+              author: Joseph Kogut
+              nested: []
+            - subject: "flasher: write disk image skipping sparse blocks"
+              hash: a19ca73cc1b155ac2acec79a853d402a4a69d56b
+              body: |
+                This optimization reduces write wear, and speeds up flashing by
+                approximately 200%.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Joseph Kogut <joseph@balena.io>
+                signed-off-by: Joseph Kogut <joseph@balena.io>
+              author: Joseph Kogut
+              nested: []
+            - subject: "image_types_balena: create sparse disk image"
+              hash: 7d4d1c40fc11088f2b17c3297021c15c31596462
+              body: >
+                Create filesystem images sparsely allocated. Write filesystems to final
+
+                disk image skipping sparse blocks.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Joseph Kogut <joseph@balena.io>
+                signed-off-by: Joseph Kogut <joseph@balena.io>
+              author: Joseph Kogut
+              nested: []
+          version: meta-balena-2.107.19
+          title: ""
+          date: 2022-12-06T15:14:03.293Z
+        - commits:
+            - subject: Update tests/leviathan digest to fe4d6a1
+              hash: 1d95e19ed302bc281db4dc86b0394f7ce8ef74f3
+              body: Update tests/leviathan
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: renovate[bot]
+              nested:
+                - commits:
+                    - subject: 'Revert "docker-compose: stop using the default docker bridge"'
+                      hash: 957acc6a86c610835a9567fca172a812ff1d54bd
+                      body: >
+                        This reverts commit eb69ff445fe0cac4f2060e67fa6994e61c3ca4b9.
+
+
+                        Hardcoding the bridge address like this results in conflicts
+
+                        when multiple instances are running on one jenkins node.
+
+
+                        A new solution for local workstation testing will have to be
+
+                        considered.
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: Kyle Harding <kyle@balena.io>
+                        signed-off-by: Kyle Harding <kyle@balena.io>
+                      author: Kyle Harding
+                      nested: []
+                  version: leviathan-2.10.9
+                  title: ""
+                  date: 2022-12-02T20:15:29.352Z
+          version: meta-balena-2.107.18
+          title: ""
+          date: 2022-12-04T18:41:52.812Z
+        - commits:
+            - subject: Update tests/leviathan digest to de97fa2
+              hash: 050b88febd7ae6d9e548abfd95a5681b04928049
+              body: Update tests/leviathan
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: renovate[bot]
+              nested:
+                - commits:
+                    - subject: "patch: Improve archivelogs journalctl command"
+                      hash: 30ba7b601fd06182d4383bb0a5ebb3caadfccc27
+                      body: ""
+                      footer:
+                        Signed-off-by: Vipul Gupta (@vipulgupta2048) <vipul@balena.io>
+                        signed-off-by: Vipul Gupta (@vipulgupta2048) <vipul@balena.io>
+                      author: Vipul Gupta (@vipulgupta2048)
+                      nested: []
+                    - subject: "core: Reduce to 30 the retries number when trying to get the IP
+                        address of the DUT"
+                      hash: 02b270e1c55429c7316a9c65f70362185bbe3aec
+                      body: >
+                        Instead of retrying to get the DUT IP address 120 times on a 1 seconds
+                        interval,
+
+                        let's reduce it to 30 times because the resolveLocalTarget which we call will
+
+                        timeout too in 15 seconds:
+
+
+                        https://github.com/balena-os/leviathan-worker/blob/master/lib/helpers/index.ts#L162
+
+
+                        So reducing the retries number to 30 will effectly bring the total combined timeout to a maximum of 8 minutes.
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: Florin Sarbu <florin@balena.io>
+                        signed-off-by: Florin Sarbu <florin@balena.io>
+                      author: Florin Sarbu
+                      nested: []
+                  version: leviathan-2.10.8
+                  title: ""
+                  date: 2022-11-30T20:29:13.571Z
+                - commits:
+                    - subject: "docker-compose: stop using the default docker bridge"
+                      hash: eb69ff445fe0cac4f2060e67fa6994e61c3ca4b9
+                      body: >
+                        This causes problems for make-local tests when the user apps in the
+
+                        DUT also uses the default docker bridge network range.
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                        signed-off-by: Alex Gonzalez <alexg@balena.io>
+                      author: Alex Gonzalez
+                      nested: []
+                  version: leviathan-2.10.7
+                  title: ""
+                  date: 2022-11-30T13:06:01.741Z
+                - commits:
+                    - subject: "os/balenaos: Remove hidden attribute from DUT wireless connection
+                        file"
+                      hash: 5046eaae99fb0ba2edf8c15ef6ad2e34e54260d8
+                      body: >
+                        The testbot AP is visible and is discovered during a scan.
+
+                        Let's remove the hidden attribute as it may cause problems
+
+                        for the 243390-rpi wireless tests.
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                        signed-off-by: Alexandru Costache <alexandru@balena.io>
+                      author: Alexandru Costache
+                      nested: []
+                  version: leviathan-2.10.6
+                  title: ""
+                  date: 2022-11-29T15:23:45.559Z
+                - commits:
+                    - subject: "patch: Add debug: unstable to docs"
+                      hash: ea6fc63f1848540f5af7e011920afe13e18e82d1
+                      body: ""
+                      footer:
+                        Signed-off-by: Vipul Gupta (@vipulgupta2048) <vipul@balena.io>
+                        signed-off-by: Vipul Gupta (@vipulgupta2048) <vipul@balena.io>
+                      author: Vipul Gupta (@vipulgupta2048)
+                      nested: []
+                  version: leviathan-2.10.5
+                  title: ""
+                  date: 2022-11-29T11:26:46.125Z
+          version: meta-balena-2.107.17
+          title: ""
+          date: 2022-12-02T06:49:15.345Z
+        - commits:
+            - subject: Refactor and clean up the purge data tests
+              hash: 65b0e02ec72ab1b68448f9546e5e5c570b1fe01a
+              body: |
+                Clean up some duplicated code and avoid test comments
+                that to not write to logs when called but instead await
+                the next test command.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Kyle Harding <kyle@balena.io>
+                signed-off-by: Kyle Harding <kyle@balena.io>
+              author: Kyle Harding
+              nested: []
+          version: meta-balena-2.107.16
+          title: ""
+          date: 2022-12-01T23:40:57.700Z
+        - commits:
+            - subject: Updated CBS Docs Updated link to the CDS Product Repo
+              hash: 8513275e98d0fec277c0b4dd98acc20fa90812f7
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Ryan Hampton (@rhampt) <rhampt@balena.io>
+                signed-off-by: Ryan Hampton (@rhampt) <rhampt@balena.io>
+              author: Ryan H
+              nested: []
+          version: meta-balena-2.107.15
+          title: ""
+          date: 2022-12-01T16:39:52.944Z
+  version: 2.107.35
+  title: ""
+  date: 2022-12-15T06:05:57.705Z
+- commits:
     - subject: Update contracts to 5d83fa7ad3a0c95db49ee465c9a77845611f3a3b
       hash: 17f5e7c4d8526cd796cb3f568e2a20487a81700b
       body: Update contracts
