@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.108.0+rev1
+## (2022-12-19)
+
+* Add am335x-boneblack-uboot-univ to rootfs for people using gpios on BeagleBone Black [Aodhan Murray]
+
 # v2.108.0
 ## (2022-12-17)
 

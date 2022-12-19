@@ -1,4 +1,23 @@
 - commits:
+    - subject: Add am335x-boneblack-uboot-univ to rootfs for people using gpios on
+        BeagleBone Black
+      hash: 41b359e6e39c0bcc1bccfd85ef886bade4f6177c
+      body: >
+        Include this overlay so that users of BeagleBone Black can load it and use
+        the gpios.
+      footer:
+        Changelog-entry: Add am335x-boneblack-uboot-univ to rootfs for people using
+          gpios on BeagleBone Black
+        changelog-entry: Add am335x-boneblack-uboot-univ to rootfs for people using
+          gpios on BeagleBone Black
+        Signed-off-by: Aodhan Murray <aodhan.murray@gmail.com>
+        signed-off-by: Aodhan Murray <aodhan.murray@gmail.com>
+      author: Aodhan Murray
+      nested: []
+  version: 2.108.0+rev1
+  title: ""
+  date: 2022-12-19T03:40:07.268Z
+- commits:
     - subject: Update layers/meta-balena to 1b3b0a273b8aeb2ac69805253657c7ec2ec670b4
       hash: 41c994727b24b015c348e0bd2dde5ac2a87dca79
       body: Update layers/meta-balena
