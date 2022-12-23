@@ -1,6 +1,35 @@
 Change log
 -----------
 
+# v2.108.5+rev1
+## (2022-12-23)
+
+
+<details>
+<summary> Update balena-yocto-scripts to 0f1d0265bbabdb2b869f6cf9363d418b52681ffc [renovate[bot]] </summary>
+
+> ## balena-yocto-scripts-1.19.17
+> ### (2022-12-23)
+> 
+> * jenkins_generate_ami: support using both live and installer images as AMIs [Alex Gonzalez]
+> * balena-generate-ami: Enable nitroTPM support [Alex Gonzalez]
+> * jenkins_build: add argument to build OS development images [Alex Gonzalez]
+> 
+> ## balena-yocto-scripts-1.19.16
+> ### (2022-12-16)
+> 
+> * dockerfile: balena-push-env: update balena CLI version to v14.5.15 [Alex Gonzalez]
+> * jenkins_generate_ami: add balena org for preloaded app [Alex Gonzalez]
+> * jenkins_generate_ami: distinguish between staging and production [Alex Gonzalez]
+> 
+> ## balena-yocto-scripts-1.19.15
+> ### (2022-12-16)
+> 
+> * workflows: add flowzone [Alex Gonzalez]
+> 
+
+</details>
+
 # v2.108.5
 ## (2022-12-22)
 
