@@ -1,6 +1,68 @@
 Change log
 -----------
 
+# v2.108.17
+## (2023-01-09)
+
+
+<details>
+<summary> Update layers/meta-balena to 8347887ab69018c1e4bcf0a7aecbf6faf85af2bd [renovate[bot]] </summary>
+
+> ## meta-balena-2.108.17
+> ### (2023-01-09)
+> 
+> * Update balena-os/balena-supervisor to v14.4.10 [renovate[bot]]
+> 
+> ## meta-balena-2.108.16
+> ### (2023-01-09)
+> 
+> * balena-supervisor: Set the supervisor package version [Kyle Harding]
+> 
+> ## meta-balena-2.108.15
+> ### (2023-01-05)
+> 
+> 
+> <details>
+> <summary> Update tests/leviathan digest to e23c1bb [renovate[bot]] </summary>
+> 
+>> ### leviathan-2.14.8
+>> #### (2023-01-05)
+>> 
+>> * chore(deps): update dependency eslint-config-standard to 17.0.0 [renovate[bot]]
+>> 
+>> ### leviathan-2.14.7
+>> #### (2023-01-05)
+>> 
+>> * worker: Deprecate the WORKER_RELEASE env var [Kyle Harding]
+>> 
+>> ### leviathan-2.14.6
+>> #### (2023-01-05)
+>> 
+>> * e2e: Switch from rpi4 to rpi3 for e2e tests [Kyle Harding]
+>> * core: Increase the default timeout for worker connections to 30s [Kyle Harding]
+>> 
+>> ### leviathan-2.14.5
+>> #### (2023-01-04)
+>> 
+>> * renovate: Disable automerge for major and minor updates [Kyle Harding]
+>> 
+>> ### leviathan-2.14.4
+>> #### (2023-01-04)
+>> 
+>> * chore(deps): update dependency typedoc to 0.23.23 [renovate[bot]]
+>> 
+> 
+> </details>
+> 
+> 
+> ## meta-balena-2.108.14
+> ### (2023-01-04)
+> 
+> * tests: os: chrony: disable NTP w/ dnsmasq dbus API [Joseph Kogut]
+> 
+
+</details>
+
 # v2.108.13
 ## (2023-01-04)
 
