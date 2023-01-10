@@ -1,6 +1,25 @@
 Change log
 -----------
 
+# v2.108.18+rev1
+## (2023-01-10)
+
+
+<details>
+<summary> Update contracts to cbc450a40296e716e50344b3d625fb9a9b6975f6 [renovate[bot]] </summary>
+
+> ## contracts-2.0.38
+> ### (2023-01-07)
+> 
+> * Forecr DSBOARD NX2 Xavier NX eMMC: Add community device-type [Alexandru Costache]
+> 
+> ## contracts-2.0.37
+> ### (2023-01-07)
+> 
+> * Add node v18.13.0 and v19.4.0 [Trong Nghia Nguyen]
+> 
+</details>
+
 # v2.108.18
 ## (2023-01-10)
 
