@@ -1,4 +1,32 @@
 - commits:
+    - subject: Update balena-yocto-scripts to 56bb055d91481023a6b6cff92d61ebfffa884139
+      hash: 4626cb619975594fa47228f92b3dad82e0063568
+      body: Update balena-yocto-scripts
+      footer:
+        Changelog-entry: Update balena-yocto-scripts to 56bb055d91481023a6b6cff92d61ebfffa884139
+        changelog-entry: Update balena-yocto-scripts to 56bb055d91481023a6b6cff92d61ebfffa884139
+      author: renovate[bot]
+      nested:
+        - commits:
+            - subject: "balena-generate-ami: Enable TPM support on x86_64 only"
+              hash: 7ee973096d3d93f0006816c310cf41d0d5097d86
+              body: |
+                On aarch64 this fails with
+                "Invalid machineArchitecture value 'arm64' for tpmSupport."
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Michal Toman <michalt@balena.io>
+                signed-off-by: Michal Toman <michalt@balena.io>
+              author: Michal Toman
+              nested: []
+          version: balena-yocto-scripts-1.19.18
+          title: ""
+          date: 2023-01-09T08:14:37.524Z
+  version: 2.108.17+rev1
+  title: ""
+  date: 2023-01-10T08:47:08.197Z
+- commits:
     - subject: Update layers/meta-balena to 8347887ab69018c1e4bcf0a7aecbf6faf85af2bd
       hash: 16686a64a047486a067273cbb6f93de56a3fbaaa
       body: Update layers/meta-balena
