@@ -1,4 +1,18 @@
 - commits:
+    - subject: Prevent duplicate CI workflow executions
+      hash: f6334da38851ad878545163cc7f29f76c6165161
+      body: ""
+      footer:
+        Changelog-entry: Prevent duplicate CI workflow executions
+        changelog-entry: Prevent duplicate CI workflow executions
+        Signed-off-by: Kyle Harding <kyle@balena.io>
+        signed-off-by: Kyle Harding <kyle@balena.io>
+      author: Kyle Harding
+      nested: []
+  version: 2.112.14+rev2
+  title: ""
+  date: 2023-03-16T19:06:25.834Z
+- commits:
     - subject: Update balena-yocto-scripts to 93f94ff88593966c1f417861b235e729d5192ba6
       hash: 8d3cdb3519665e6f8f186d6adbf21f97a1f6b65d
       body: Update balena-yocto-scripts
