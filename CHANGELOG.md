@@ -1,6 +1,70 @@
 Change log
 -----------
 
+# v2.113.25
+## (2023-03-23)
+
+
+<details>
+<summary> Update layers/meta-balena to 71c0d9581c2d5285b91c66675317edbcbb7b8ef9 [Renovate Bot] </summary>
+
+> ## meta-balena-2.113.25
+> ### (2023-03-23)
+> 
+> * kernel-balena: Include NFS V2, V3 and V4 client and server modules [Alexandru Costache]
+> 
+> ## meta-balena-2.113.24
+> ### (2023-03-22)
+> 
+> * dunfell+: remove obsolete systemd patch [Joseph Kogut]
+> * plymouth: replace duplicated patches w/ shared drop-ins [Joseph Kogut]
+> * systemd: mask systemd-getty-generator instead of patching [Joseph Kogut]
+> * systemd: replace duplicated patch w/ shared drop-ins [Joseph Kogut]
+> 
+> ## meta-balena-2.113.23
+> ### (2023-03-22)
+> 
+> * pyro/sumo: initrdscripts: fix migrate module for older Yocto versions [Alex Gonzalez]
+> * networkmanager: do not update to latest version in sumo [Alex Gonzalez]
+> 
+> ## meta-balena-2.113.22
+> ### (2023-03-21)
+> 
+> 
+> <details>
+> <summary> Update tests/leviathan digest to ad4f908 [Renovate Bot] </summary>
+> 
+>> ### leviathan-2.23.1
+>> #### (2023-03-14)
+>> 
+>> * compose: qemu: add FLASHER_SECUREBOOT var [Joseph Kogut]
+>> * swtpm: fix abort on exit [Joseph Kogut]
+>> 
+> 
+> </details>
+> 
+> 
+> ## meta-balena-2.113.21
+> ### (2023-03-20)
+> 
+> * tests: os: secureboot: add integrity checks [Joseph Kogut]
+> * tests: configure flasher secure boot opt-in [Joseph Kogut]
+> 
+> ## meta-balena-2.113.20
+> ### (2023-03-20)
+> 
+> * tests: os: disable unwrapping [Joseph Kogut]
+> * tests: hup: disable unwrapping [Joseph Kogut]
+> * tests: cloud: disable unwrapping [Joseph Kogut]
+> 
+> ## meta-balena-2.113.19
+> ### (2023-03-20)
+> 
+> * resin-u-boot.bbclass: Default to u-boot Kconfig support [Florin Sarbu]
+> 
+
+</details>
+
 # v2.113.18
 ## (2023-03-17)
 
