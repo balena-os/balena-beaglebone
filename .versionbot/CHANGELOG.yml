@@ -1,4 +1,31 @@
 - commits:
+    - subject: Update contracts to fa51fae4b720521334626045c25f754a046f6228
+      hash: 1717997921a7993c0c8bfd87b815153b0c72a91a
+      body: Update contracts
+      footer:
+        Changelog-entry: Update contracts to fa51fae4b720521334626045c25f754a046f6228
+        changelog-entry: Update contracts to fa51fae4b720521334626045c25f754a046f6228
+      author: Renovate Bot
+      nested:
+        - commits:
+            - subject: "iot-gate-imx8plus: Update provisioning instructions"
+              hash: 25cbb9cb1c96a96367a1d35615f6b679e4a20df5
+              body: |
+                Bring in the latest updates from the coffee file
+                in the device repository.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru
+          version: contracts-2.0.55
+          title: ""
+          date: 2023-03-29T18:35:00.091Z
+  version: 2.113.25+rev1
+  title: ""
+  date: 2023-03-31T15:59:48.082Z
+- commits:
     - subject: Update layers/meta-balena to 71c0d9581c2d5285b91c66675317edbcbb7b8ef9
       hash: 82942c24fed9f295470e5807c19dcb4e7e778043
       body: Update layers/meta-balena
