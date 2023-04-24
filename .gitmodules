@@ -13,9 +13,6 @@
 [submodule "balena-yocto-scripts"]
 	path = balena-yocto-scripts
 	url = https://github.com/balena-os/balena-yocto-scripts.git
-[submodule "layers/meta-rust"]
-	path = layers/meta-rust
-	url = https://github.com/meta-rust/meta-rust.git
 [submodule "layers/meta-arm"]
 	path = layers/meta-arm
 	url = git://git.yoctoproject.org/meta-arm
