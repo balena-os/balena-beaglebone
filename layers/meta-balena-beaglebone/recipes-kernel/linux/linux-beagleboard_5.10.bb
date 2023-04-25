@@ -1,16 +1,16 @@
 SECTION = "kernel"
 DESCRIPTION = "Linux kernel for beaglebone boards"
 LICENSE = "GPLv2"
-LIC_FILES_CHKSUM = "file://COPYING;md5=bbea815ee2795b2f4230826c0c6b8814"
+LIC_FILES_CHKSUM = "file://COPYING;md5=6bc538ed5bd9a7fc9398086aedcd7e46"
 
-inherit kernel kernel-resin
+inherit kernel
 
 require recipes-kernel/linux/setup-defconfig.inc
 
 DEPENDS += "lzop-native"
 
 # Look in the generic major.minor directory for files
-FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}-5.4:"
+FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}-5.10:"
 
 KERNEL_DEVICETREE:beaglebone = "am335x-bone.dtb am335x-boneblack.dtb am335x-boneblack-uboot-univ.dtb am335x-boneblack-wireless.dtb am335x-boneblue.dtb am335x-bonegreen.dtb am335x-bonegreen-wireless.dtb am335x-bonegreen-wireless-uboot-univ.dtb"
 
@@ -20,9 +20,9 @@ COMPATIBLE_MACHINE = "beaglebone|beagleboard-xm"
 
 S = "${WORKDIR}/git"
 
-TAG = "5.4.70-ti-r21"
+TAG = "5.10.162-ti-r59"
 
-PV = "5.4.70+git${SRCPV}"
+PV = "5.10.162+git${SRCPV}"
 
 # Append to the MACHINE_KERNEL_PR so that a new SRCREV will cause a rebuild
 MACHINE_KERNEL_PR:append = "b"
@@ -40,10 +40,10 @@ KERNEL_GIT_URI = "git://github.com/beagleboard/linux.git"
 KERNEL_GIT_PROTOCOL = "https"
 SRC_URI += " \
     ${KERNEL_GIT_URI};protocol=${KERNEL_GIT_PROTOCOL};tag=${TAG};nobranch=1 \
-    file://0001-Revert-random-fix-crng_ready-test.patch \
+    file://0001-PATCH-Add-hm3301-driver-from-Seeed.patch \
     file://defconfig \
     "
 
 do_install:append() {
-    rm -rf ${D}/lib/modules/5.4.70+/modules.builtin.modinfo
+    rm -rf ${D}/lib/modules/5.10.162+/modules.builtin.modinfo
 }

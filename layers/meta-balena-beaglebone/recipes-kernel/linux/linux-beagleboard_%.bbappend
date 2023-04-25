@@ -1,3 +1,5 @@
+inherit kernel-balena
+
 # disable modules compression
 BALENA_CONFIGS:append = " no_modules_compression"
 BALENA_CONFIGS[no_modules_compression]=" \
@@ -12,7 +14,6 @@ KERNEL_DEVICETREE:beaglebone += " \
 
 SRC_URI:append:beaglebone = " \
 	file://rtc-omap-Prevent-kernel-panic-and-reboot-on-shutdown.patch \
-        file://0001-Revert-net-ethernet-ti-cpsw-fix-min-eth-packet-size.patch \
 "
 
 SRC_URI:append:beagleboard-xm = " \
