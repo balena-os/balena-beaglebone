@@ -1,4 +1,3 @@
-UBOOT_KCONFIG_SUPPORT = "1"
 inherit resin-u-boot
 
 FILESEXTRAPATHS_append := ":${THISDIR}/${PN}"
@@ -10,9 +9,7 @@ SRC_URI += " \
 "
 
 # Added u-boot overlay and capemgr support patches from https://github.com/RobertCNelson/Bootloader-Builder/tree/master/patches/v2019.14
-SRC_URI_remove = "file://resin-specific-env-integration-kconfig.patch"
 SRC_URI += " \
-	file://0003-resin-specific-env-integration-kconfig_REWORKED.patch \
 	file://0001-beaglebone-black-Use-Balena-vars-for-mmc-boot.patch \
 	file://0001-Load-uboot-device-tree-overlays.patch \
 	file://0005-env_default.h-Add-support-for-OS_KERNEL_CMDLINE.patch \
