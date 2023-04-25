@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.113.25+rev3
+## (2023-04-25)
+
+* Remove the redundant layers/meta-rust submodule [Florin Sarbu]
+
 # v2.113.25+rev2
 ## (2023-04-24)
 
