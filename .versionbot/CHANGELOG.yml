@@ -1,4 +1,53 @@
 - commits:
+    - subject: Update contracts to 777cd35ffb8bebb2a9d8a2ec6b88a45b2c937193
+      hash: c170d1120c08fe38b03660e4e4a60e93a18e1866
+      body: Update contracts
+      footer:
+        Changelog-entry: Update contracts to 777cd35ffb8bebb2a9d8a2ec6b88a45b2c937193
+        changelog-entry: Update contracts to 777cd35ffb8bebb2a9d8a2ec6b88a45b2c937193
+      author: Renovate Bot
+      nested:
+        - commits:
+            - subject: "debian/ubuntu jetson-orin-nx-xavier-nx-devkit: Add distro configs"
+              hash: ad9d69f447d9091f1ae2a582b02941472efb0539
+              body: |
+                The Orin NX modules uses L4T 35.2
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: Alexandru Costache
+            - subject: "Orin NX: Update flashing steps"
+              hash: c7e77638474694870874afa17a453b727b3797d3
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+          version: contracts-2.0.57
+          title: ""
+          date: 2023-04-07T12:53:58.620Z
+        - commits:
+            - subject: "jetson-orin-nx-xavier-nx-devkit: Add contract for device type"
+              hash: ddae0174c36b0893d723308d948d72c276787ed5
+              body: |
+                The provisioning instructions are incomplete at this time, they
+                will be updated once the balenaOS integration is complete. The
+                device needs to be inspected in staging first.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+          version: contracts-2.0.56
+          title: ""
+          date: 2023-04-04T08:46:42.967Z
+  version: 2.113.25+rev4
+  title: ""
+  date: 2023-04-26T21:42:23.949Z
+- commits:
     - subject: Remove the redundant layers/meta-rust submodule
       hash: d5f0a964b5fce2279b79906c52bbabd330aa02be
       body: |
