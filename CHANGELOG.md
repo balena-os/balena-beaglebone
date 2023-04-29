@@ -1,6 +1,21 @@
 Change log
 -----------
 
+# v2.113.25+rev5
+## (2023-04-29)
+
+
+<details>
+<summary> Update contracts to 6c6ed28d459bc48102a69cdf0850d2eb4c778ce7 [Renovate Bot] </summary>
+
+> ## contracts-2.0.58
+> ### (2023-04-27)
+> 
+> * jetson-agx-orin-devkit: Mention the RAM configuration in the device name [Alexandru Costache]
+> 
+
+</details>
+
 # v2.113.25+rev4
 ## (2023-04-26)
 

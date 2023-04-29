@@ -1,4 +1,34 @@
 - commits:
+    - subject: Update contracts to 6c6ed28d459bc48102a69cdf0850d2eb4c778ce7
+      hash: e27d4d70069cfc42ccdfb6ce3f53ed4c5f65663f
+      body: Update contracts
+      footer:
+        Changelog-entry: Update contracts to 6c6ed28d459bc48102a69cdf0850d2eb4c778ce7
+        changelog-entry: Update contracts to 6c6ed28d459bc48102a69cdf0850d2eb4c778ce7
+      author: Renovate Bot
+      nested:
+        - commits:
+            - subject: "jetson-agx-orin-devkit: Mention the RAM configuration in the device
+                name"
+              hash: 82d3a94938956376eeafa518a863a344acd2190b
+              body: |
+                By default the AGX Orin Devkit has 32GB RAM, however, new
+                production modules have been released with L4T 35.3.1 so we
+                should emphasize that newer modules may not work with this
+                image.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+          version: contracts-2.0.58
+          title: ""
+          date: 2023-04-27T11:52:02.405Z
+  version: 2.113.25+rev5
+  title: ""
+  date: 2023-04-29T10:12:53.490Z
+- commits:
     - subject: Update contracts to 777cd35ffb8bebb2a9d8a2ec6b88a45b2c937193
       hash: c170d1120c08fe38b03660e4e4a60e93a18e1866
       body: Update contracts
