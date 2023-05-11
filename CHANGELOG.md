@@ -1,6 +1,292 @@
 Change log
 -----------
 
+# v2.114.23
+## (2023-05-11)
+
+
+<details>
+<summary> Update layers/meta-balena to 3f2f215e39c39fc3ef227db665c99fb8ad77ee08 [Renovate Bot] </summary>
+
+> ## meta-balena-2.114.23
+> ### (2023-05-06)
+> 
+> * tests: suites: remove default migration force configuration [Alex Gonzalez]
+> * resin-init-flasher: avoid partition labels clashes [Alex Gonzalez]
+> * initrdscripts: recovery: set adb default timeouts in minutes [Alex Gonzalez]
+> * tests: move installerForceMigration suite configuration to balenaOS section [Alex Gonzalez]
+> * tests: simplify accessing config.json data [Alex Gonzalez]
+> 
+> ## meta-balena-2.114.22
+> ### (2023-05-05)
+> 
+> 
+> <details>
+> <summary> Update balena-engine to v20.10.36 [Renovate Bot] </summary>
+> 
+>> ### balena-engine-20.10.36
+>> #### (2023-05-04)
+>> 
+>> * Further improve resilience of image pulls [Leandro Motta Barros]
+>> 
+> 
+> </details>
+> 
+> 
+> ## meta-balena-2.114.21
+> ### (2023-05-05)
+> 
+> 
+> <details>
+> <summary> Update tests/leviathan digest to 256b844 [Renovate Bot] </summary>
+> 
+>> ### leviathan-2.25.6
+>> #### (2023-05-04)
+>> 
+>> * suite: move installer configuration to balenaOS configuration section [Alex Gonzalez]
+>> 
+> 
+> </details>
+> 
+> 
+> ## meta-balena-2.114.20
+> ### (2023-05-04)
+> 
+> * Updated the CDS link [Ryan]
+> 
+> ## meta-balena-2.114.19
+> ### (2023-05-04)
+> 
+> 
+> <details>
+> <summary> Update tests/leviathan digest to e6180e9 [Renovate Bot] </summary>
+> 
+>> ### leviathan-2.25.5
+>> #### (2023-05-03)
+>> 
+>> * Update core/contracts digest to 75cd5e9 [Renovate Bot]
+>> 
+>> ### leviathan-2.25.4
+>> #### (2023-05-01)
+>> 
+>> * Update balena-os/leviathan-worker to v2.9.6 [Renovate Bot]
+>> 
+>> ### leviathan-2.25.3
+>> #### (2023-05-01)
+>> 
+>> * Update core/contracts digest to 6c6ed28 [Renovate Bot]
+>> 
+>> ### leviathan-2.25.2
+>> #### (2023-04-26)
+>> 
+>> * suite: add installerForceMigration configuration [Alex Gonzalez]
+>> 
+>> ### leviathan-2.25.1
+>> #### (2023-04-25)
+>> 
+>> * Update balena-os/leviathan-worker to v2.9.4 [Renovate Bot]
+>> 
+>> ### leviathan-2.25.0
+>> #### (2023-04-20)
+>> 
+>> * Update Node.js to v18.16.0 [Renovate Bot]
+>> 
+>> ### leviathan-2.24.5
+>> #### (2023-04-20)
+>> 
+>> * Update alpine Docker tag to v3.17.3 [Renovate Bot]
+>> 
+>> ### leviathan-2.24.4
+>> #### (2023-04-20)
+>> 
+>> * Update core/contracts digest to 777cd35 [Renovate Bot]
+>> 
+>> ### leviathan-2.24.3
+>> #### (2023-04-17)
+>> 
+>> * Update balena-os/leviathan-worker to v2.9.2 [Renovate Bot]
+>> 
+>> ### leviathan-2.24.2
+>> #### (2023-04-15)
+>> 
+>> * docker-compose-qemu: allow to configure internal disk [Alex Gonzalez]
+>> 
+> 
+> </details>
+> 
+> 
+> ## meta-balena-2.114.18
+> ### (2023-05-03)
+> 
+> 
+> <details>
+> <summary> Update balena-supervisor to v14.10.10 [Renovate Bot] </summary>
+> 
+>> ### balena-supervisor-14.10.10
+>> #### (2023-05-03)
+>> 
+>> * mount-partitions.sh: Add support for encrypted partitions [Michal Toman]
+>> 
+>> ### balena-supervisor-14.10.9
+>> #### (2023-05-03)
+>> 
+>> * Run test supervisor under a different service name [Kyle Harding]
+>> 
+> 
+> </details>
+> 
+> 
+> ## meta-balena-2.114.17
+> ### (2023-05-03)
+> 
+> * test: append installer configuration instead of replacing it [Alex Gonzalez]
+> * test: os: use boolean for installer migration flag [Alex Gonzalez]
+> 
+
+</details>
+
+* Unset CONFIG_DEFAULT_SECURITY_APPARMOR in kernel defconfig [Florin Sarbu]
+
+<details>
+<summary> Update layers/meta-balena to 43bf9f98db7de74bce36141f5e55c4dcffb7e060 [Renovate Bot] </summary>
+
+> ## meta-balena-2.114.23
+> ### (2023-05-06)
+> 
+> * tests: suites: remove default migration force configuration [Alex Gonzalez]
+> * resin-init-flasher: avoid partition labels clashes [Alex Gonzalez]
+> * initrdscripts: recovery: set adb default timeouts in minutes [Alex Gonzalez]
+> * tests: move installerForceMigration suite configuration to balenaOS section [Alex Gonzalez]
+> * tests: simplify accessing config.json data [Alex Gonzalez]
+> 
+> ## meta-balena-2.114.22
+> ### (2023-05-05)
+> 
+> 
+> <details>
+> <summary> Update balena-engine to v20.10.36 [Renovate Bot] </summary>
+> 
+>> ### balena-engine-20.10.36
+>> #### (2023-05-04)
+>> 
+>> * Further improve resilience of image pulls [Leandro Motta Barros]
+>> 
+> 
+> </details>
+> 
+> 
+> ## meta-balena-2.114.21
+> ### (2023-05-05)
+> 
+> 
+> <details>
+> <summary> Update tests/leviathan digest to 256b844 [Renovate Bot] </summary>
+> 
+>> ### leviathan-2.25.6
+>> #### (2023-05-04)
+>> 
+>> * suite: move installer configuration to balenaOS configuration section [Alex Gonzalez]
+>> 
+> 
+> </details>
+> 
+> 
+> ## meta-balena-2.114.20
+> ### (2023-05-04)
+> 
+> * Updated the CDS link [Ryan]
+> 
+> ## meta-balena-2.114.19
+> ### (2023-05-04)
+> 
+> 
+> <details>
+> <summary> Update tests/leviathan digest to e6180e9 [Renovate Bot] </summary>
+> 
+>> ### leviathan-2.25.5
+>> #### (2023-05-03)
+>> 
+>> * Update core/contracts digest to 75cd5e9 [Renovate Bot]
+>> 
+>> ### leviathan-2.25.4
+>> #### (2023-05-01)
+>> 
+>> * Update balena-os/leviathan-worker to v2.9.6 [Renovate Bot]
+>> 
+>> ### leviathan-2.25.3
+>> #### (2023-05-01)
+>> 
+>> * Update core/contracts digest to 6c6ed28 [Renovate Bot]
+>> 
+>> ### leviathan-2.25.2
+>> #### (2023-04-26)
+>> 
+>> * suite: add installerForceMigration configuration [Alex Gonzalez]
+>> 
+>> ### leviathan-2.25.1
+>> #### (2023-04-25)
+>> 
+>> * Update balena-os/leviathan-worker to v2.9.4 [Renovate Bot]
+>> 
+>> ### leviathan-2.25.0
+>> #### (2023-04-20)
+>> 
+>> * Update Node.js to v18.16.0 [Renovate Bot]
+>> 
+>> ### leviathan-2.24.5
+>> #### (2023-04-20)
+>> 
+>> * Update alpine Docker tag to v3.17.3 [Renovate Bot]
+>> 
+>> ### leviathan-2.24.4
+>> #### (2023-04-20)
+>> 
+>> * Update core/contracts digest to 777cd35 [Renovate Bot]
+>> 
+>> ### leviathan-2.24.3
+>> #### (2023-04-17)
+>> 
+>> * Update balena-os/leviathan-worker to v2.9.2 [Renovate Bot]
+>> 
+>> ### leviathan-2.24.2
+>> #### (2023-04-15)
+>> 
+>> * docker-compose-qemu: allow to configure internal disk [Alex Gonzalez]
+>> 
+> 
+> </details>
+> 
+> 
+> ## meta-balena-2.114.18
+> ### (2023-05-03)
+> 
+> 
+> <details>
+> <summary> Update balena-supervisor to v14.10.10 [Renovate Bot] </summary>
+> 
+>> ### balena-supervisor-14.10.10
+>> #### (2023-05-03)
+>> 
+>> * mount-partitions.sh: Add support for encrypted partitions [Michal Toman]
+>> 
+>> ### balena-supervisor-14.10.9
+>> #### (2023-05-03)
+>> 
+>> * Run test supervisor under a different service name [Kyle Harding]
+>> 
+> 
+> </details>
+> 
+> 
+> ## meta-balena-2.114.17
+> ### (2023-05-03)
+> 
+> * test: append installer configuration instead of replacing it [Alex Gonzalez]
+> * test: os: use boolean for installer migration flag [Alex Gonzalez]
+> 
+
+</details>
+
 # v2.113.25+rev5
 ## (2023-04-29)
 
