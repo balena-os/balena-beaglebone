@@ -1,4 +1,31 @@
 - commits:
+    - subject: Update contracts to c777910763b2476da6648200ab00629755b24da2
+      hash: af041383ca5b8a6282060cf2a3a697c8af18372f
+      body: Update contracts
+      footer:
+        Changelog-entry: Update contracts to c777910763b2476da6648200ab00629755b24da2
+        changelog-entry: Update contracts to c777910763b2476da6648200ab00629755b24da2
+      author: Self-hosted Renovate Bot
+      nested:
+        - commits:
+            - subject: "hw/device-type: Update contract.json for iot-gate-imx8"
+              hash: 295b0d72700669fa48289117cbb90dca7f6bf882
+              body: >
+                To specify that the iot-gate-imx8 doesn't have an identification
+                LED
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+          version: contracts-2.0.61
+          title: ""
+          date: 2023-06-14T13:53:16.158Z
+  version: 2.115.12+rev2
+  title: ""
+  date: 2023-06-24T03:07:04.976Z
+- commits:
     - subject: Update balena-yocto-scripts to 91474e62b74d6390c285d1033b34f77092fe1824
       hash: 0a71b1768328037ca42cdee2d6bbe0cd889fbd5e
       body: Update balena-yocto-scripts
