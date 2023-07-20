@@ -1,6 +1,204 @@
 Change log
 -----------
 
+# v3.0.13
+## (2023-07-20)
+
+
+<details>
+<summary> Update layers/meta-balena to 8d432e761bf29b2f9f3f8f9f711b087f9133cfa6 [Self-hosted Renovate Bot] </summary>
+
+> ## meta-balena-3.0.13
+> ### (2023-07-19)
+> 
+> 
+> <details>
+> <summary> Update tests/leviathan digest to 4e4c1bb [Self-hosted Renovate Bot] </summary>
+> 
+>> ### leviathan-2.28.8
+>> #### (2023-07-19)
+>> 
+>> * Update balena-os/leviathan-worker to v2.9.13 [Self-hosted Renovate Bot]
+>> 
+>> ### leviathan-2.28.7
+>> #### (2023-07-18)
+>> 
+>> * update e2e tests to use sshconfig [rcooke-warwick]
+>> * core: allow configurable ssh target [rcooke-warwick]
+>> 
+> 
+> </details>
+> 
+> 
+> ## meta-balena-3.0.12
+> ### (2023-07-16)
+> 
+> * tests/os: skip boot switch during provisioning [Alexandru Costache]
+> 
+> ## meta-balena-3.0.11
+> ### (2023-07-14)
+> 
+> * .github/workflows: Replace GitHub PAT with ephemeral app tokens [Kyle Harding]
+> 
+> ## meta-balena-3.0.10
+> ### (2023-07-14)
+> 
+> * initrdscripts: make initramfs-module-cryptsetup pull libgcc in [Michal Toman]
+> 
+> ## meta-balena-3.0.9
+> ### (2023-07-13)
+> 
+> 
+> <details>
+> <summary> Update tests/leviathan digest to b1581a2 [Self-hosted Renovate Bot] </summary>
+> 
+>> ### leviathan-2.28.6
+>> #### (2023-07-13)
+>> 
+>> * Update balena-os/leviathan-worker to v2.9.12 [Self-hosted Renovate Bot]
+>> 
+>> ### leviathan-2.28.5
+>> #### (2023-07-13)
+>> 
+>> * Update balena-os/leviathan-worker to v2.9.11 [Self-hosted Renovate Bot]
+>> 
+> 
+> </details>
+> 
+> 
+> ## meta-balena-3.0.8
+> ### (2023-07-10)
+> 
+> 
+> <details>
+> <summary> Update tests/leviathan digest to e081190 [Self-hosted Renovate Bot] </summary>
+> 
+>> ### leviathan-2.28.4
+>> #### (2023-07-07)
+>> 
+>> * Update balena-os/leviathan-worker to v2.9.10 [Self-hosted Renovate Bot]
+>> 
+> 
+> </details>
+> 
+> 
+> ## meta-balena-3.0.7
+> ### (2023-07-06)
+> 
+> * bail out in kexec initramfs hook on failure [Joseph Kogut]
+> 
+> ## meta-balena-3.0.6
+> ### (2023-07-06)
+> 
+> * kernel-devsrc: fix for v6.1+ [Alex Gonzalez]
+> 
+> ## meta-balena-3.0.5
+> ### (2023-07-06)
+> 
+> 
+> <details>
+> <summary> Update balena-supervisor to v14.11.10 [Self-hosted Renovate Bot] </summary>
+> 
+>> ### balena-supervisor-14.11.10
+>> #### (2023-07-05)
+>> 
+>> * Add revpi-connect-s to Raspberry Pi variants [Florin Sarbu]
+>> 
+> 
+> </details>
+> 
+> 
+> ## meta-balena-3.0.4
+> ### (2023-07-05)
+> 
+> 
+> <details>
+> <summary> Update balena-engine to v20.10.38 [Self-hosted Renovate Bot] </summary>
+> 
+>> ### balena-engine-20.10.38
+>> #### (2023-07-03)
+>> 
+>> * Document a couple of troubleshooting tips [Leandro Motta Barros]
+>> 
+> 
+> </details>
+> 
+> 
+> ## meta-balena-3.0.3
+> ### (2023-07-05)
+> 
+> 
+> <details>
+> <summary> Update balena-supervisor to v14.11.9 [Self-hosted Renovate Bot] </summary>
+> 
+>> ### balena-supervisor-14.11.9
+>> #### (2023-06-28)
+>> 
+>> * Remove the 'Stopped' status for services [Christina Ying Wang]
+>> 
+> 
+> </details>
+> 
+> 
+> ## meta-balena-3.0.2
+> ### (2023-07-05)
+> 
+> 
+> <details>
+> <summary> Update tests/leviathan digest to 498d4cb [Self-hosted Renovate Bot] </summary>
+> 
+>> ### leviathan-2.28.3
+>> #### (2023-07-05)
+>> 
+>> * Update balena-os/leviathan-worker to v2.9.9 [Self-hosted Renovate Bot]
+>> 
+>> ### leviathan-2.28.2
+>> #### (2023-07-05)
+>> 
+>> * Update core/contracts digest to 6e3d563 [Self-hosted Renovate Bot]
+>> 
+>> ### leviathan-2.28.1
+>> #### (2023-07-05)
+>> 
+>> * patch: Pass env variables to client [Vipul Gupta (@vipulgupta2048)]
+>> 
+>> ### leviathan-2.28.0
+>> #### (Invalid date)
+>> 
+>> * minor: Make client work with different balenaCloud environments [Vipul Gupta (@vipulgupta2048)]
+>> 
+> 
+> </details>
+> 
+> 
+> ## meta-balena-3.0.1
+> ### (2023-07-04)
+> 
+> * docs: Explain TPM ownership and possible TPM fill-up with secure boot [Michal Toman]
+> * docs: Recommend BIOS password and no F-key shortcuts with secure boot [Michal Toman]
+> 
+> ## meta-balena-3.0.0
+> ### (2023-07-04)
+> 
+> * mkfs-hostapp-native: Allow the compile task to access the network [Alex Gonzalez]
+> * mkfs-hostapp-native: Use image tags instead of parsing docker output [Alex Gonzalez]
+> * kernel-headers-test: Use image tags instead of parsing docker output [Alex Gonzalez]
+> * kernel-headers-test: Allow network access for compile task [Alex Gonzalez]
+> * kernel-modules-headers: use kernel-devsrc to provide kernel headers [Alex Gonzalez]
+> 
+> ## meta-balena-2.115.18
+> ### (2023-06-29)
+> 
+> * resin-init-flasher: Increase size of LUKS header to 16MB [Michal Toman]
+> 
+> ## meta-balena-2.115.17
+> ### (2023-06-28)
+> 
+> * balena-keys: add SIGN_KMOD_KEY_APPEND [Joseph Kogut]
+> 
+
+</details>
+
 # v2.115.16
 ## (2023-06-28)
 

@@ -1,4 +1,606 @@
 - commits:
+    - subject: Update layers/meta-balena to 8d432e761bf29b2f9f3f8f9f711b087f9133cfa6
+      hash: d4e886597eb1a98e484e2c99035fad36993b87a4
+      body: Update layers/meta-balena
+      footer:
+        Changelog-entry: Update layers/meta-balena to 8d432e761bf29b2f9f3f8f9f711b087f9133cfa6
+        changelog-entry: Update layers/meta-balena to 8d432e761bf29b2f9f3f8f9f711b087f9133cfa6
+      author: Self-hosted Renovate Bot
+      nested:
+        - commits:
+            - subject: Update tests/leviathan digest to 4e4c1bb
+              hash: ea0654d17b9ddf5babc8e647a919199b36f26e09
+              body: Update tests/leviathan
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: Self-hosted Renovate Bot
+              nested:
+                - commits:
+                    - subject: Update balena-os/leviathan-worker to v2.9.13
+                      hash: ea149d835fd8b170ae9a8554e063e964c4b34af6
+                      body: |
+                        Update balena-os/leviathan-worker from 2.9.12 to 2.9.13
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: Self-hosted Renovate Bot
+                      nested: []
+                  version: leviathan-2.28.8
+                  title: ""
+                  date: 2023-07-19T09:05:02.721Z
+                - commits:
+                    - subject: update e2e tests to use sshconfig
+                      hash: 1f44580c2010f0e88eb395da951cb539b6afbcdb
+                      body: ""
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: Ryan Cooke <ryan@balena.io>
+                        signed-off-by: Ryan Cooke <ryan@balena.io>
+                      author: rcooke-warwick
+                      nested: []
+                    - subject: "core: allow configurable ssh target"
+                      hash: 3b72e4963586aa9687aad5f6339910f587201fc2
+                      body: ""
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: Ryan Cooke <ryan@balena.io>
+                        signed-off-by: Ryan Cooke <ryan@balena.io>
+                      author: rcooke-warwick
+                      nested: []
+                  version: leviathan-2.28.7
+                  title: ""
+                  date: 2023-07-18T14:08:01.343Z
+          version: meta-balena-3.0.13
+          title: ""
+          date: 2023-07-19T18:45:09.490Z
+        - commits:
+            - subject: "tests/os: skip boot switch during provisioning"
+              hash: 7320af76d0a64561ff563384e5710f37c27a5852
+              body: |
+                The imx8mm-var-dart-plt also uses a custom implementation
+                for detecting the boot switch, so let's make use of the
+                existing support in meta-balena for the testbot provisioning
+                use-case and add this DT in the Autokit.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io
+                signed-off-by: Alexandru Costache <alexandru@balena.io
+              author: Alexandru Costache
+              nested: []
+          version: meta-balena-3.0.12
+          title: ""
+          date: 2023-07-16T10:42:23.885Z
+        - commits:
+            - subject: ".github/workflows: Replace GitHub PAT with ephemeral app tokens"
+              hash: d62f8a2d4450b588147c3065e1437af741185418
+              body: |
+                GitHub App installation tokens are short-lived and do not
+                need to be rotated the same way PATs do.
+
+                The default app ID and installation ID correspond to
+                flowzone-bot[app] installed in the balena-os Org.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Kyle Harding <kyle@balena.io>
+                signed-off-by: Kyle Harding <kyle@balena.io>
+              author: Kyle Harding
+              nested: []
+          version: meta-balena-3.0.11
+          title: ""
+          date: 2023-07-14T12:47:33.615Z
+        - commits:
+            - subject: "initrdscripts: make initramfs-module-cryptsetup pull libgcc in"
+              hash: 046a17ec1494fe15da45e3accb1de562ff7e976e
+              body: >
+                cryptsetup lazily depends on libgcc. With libgcc missing,
+                certain
+
+                operations, especially luksOpen will fail with
+
+                `libgcc_s.so.1 must be installed for pthread_exit to work`
+
+                which panics the kernel and triggers a reboot loop indistinguishable
+
+                from a "device has been tampered with" state on regular builds
+
+                with no console output.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Michal Toman <michalt@balena.io>
+                signed-off-by: Michal Toman <michalt@balena.io>
+              author: Michal Toman
+              nested: []
+          version: meta-balena-3.0.10
+          title: ""
+          date: 2023-07-14T11:06:57.107Z
+        - commits:
+            - subject: Update tests/leviathan digest to b1581a2
+              hash: 4db34bf47ba5a581d427d6c897e7b57424c2485b
+              body: Update tests/leviathan
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: Self-hosted Renovate Bot
+              nested:
+                - commits:
+                    - subject: Update balena-os/leviathan-worker to v2.9.12
+                      hash: 5cf43a3e84d16110d16df6a9d740781294a10879
+                      body: |
+                        Update balena-os/leviathan-worker from 2.9.11 to 2.9.12
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: Self-hosted Renovate Bot
+                      nested: []
+                  version: leviathan-2.28.6
+                  title: ""
+                  date: 2023-07-13T13:06:30.963Z
+                - commits:
+                    - subject: Update balena-os/leviathan-worker to v2.9.11
+                      hash: 94444ca4ab7b5878c2b02981a80b633b17e5d1ac
+                      body: |
+                        Update balena-os/leviathan-worker from 2.9.10 to 2.9.11
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: Self-hosted Renovate Bot
+                      nested: []
+                  version: leviathan-2.28.5
+                  title: ""
+                  date: 2023-07-13T11:59:23.815Z
+          version: meta-balena-3.0.9
+          title: ""
+          date: 2023-07-13T17:21:31.286Z
+        - commits:
+            - subject: Update tests/leviathan digest to e081190
+              hash: c45feeb0b15c8aeb0fc91376c39bbff9ea94bc00
+              body: Update tests/leviathan
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: Self-hosted Renovate Bot
+              nested:
+                - commits:
+                    - subject: Update balena-os/leviathan-worker to v2.9.10
+                      hash: 9392a57b4ca3ddf3d259fc468af532ce24b8eb4c
+                      body: |
+                        Update balena-os/leviathan-worker from 2.9.9 to 2.9.10
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: Self-hosted Renovate Bot
+                      nested: []
+                  version: leviathan-2.28.4
+                  title: ""
+                  date: 2023-07-07T14:42:57.471Z
+          version: meta-balena-3.0.8
+          title: ""
+          date: 2023-07-10T08:46:22.093Z
+        - commits:
+            - subject: bail out in kexec initramfs hook on failure
+              hash: 87e9fad4dc9e6954c9edc36a233e849c8adb6d41
+              body: >
+                Kexec is used to boot into the decrypted kernel in the hostapp
+                on
+
+                systems with secure boot and full-disk encryption.
+
+
+                If kexec fails, we don't want to continue with the rest of the boot
+
+                process in the first stage kernel, so bail out on failure.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Joseph Kogut <joseph@balena.io>
+                signed-off-by: Joseph Kogut <joseph@balena.io>
+              author: Joseph Kogut
+              nested: []
+          version: meta-balena-3.0.7
+          title: ""
+          date: 2023-07-06T19:15:08.317Z
+        - commits:
+            - subject: "kernel-devsrc: fix for v6.1+"
+              hash: 1687110706cbde4a4d968afb04b3abc07e5c7eaa
+              body: >
+                Adapted as a bbappend from:
+
+                https://git.yoctoproject.org/poky/commit/meta/recipes-kernel/linux/kernel-devsrc.bb?id=2be1b5d7d38d72c35ec593b98366d128fe5ce12c
+
+
+                The 6.1 kernel has a number of Kbuild and architecture changes
+
+                that required us to update our devsrc recipe. With these changes
+
+                we are once again able to build on target modules for all
+
+                supported archectures.
+
+
+                (From OE-Core rev: a3972b3f919400a12bb9a546ae98092cbfdcdbb8)
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+          version: meta-balena-3.0.6
+          title: ""
+          date: 2023-07-06T09:59:05.261Z
+        - commits:
+            - subject: Update balena-supervisor to v14.11.10
+              hash: ff0ccecb9211bccf482105bc40d453f82a44d3f9
+              body: |
+                Update balena-supervisor from 14.11.9 to 14.11.10
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: Self-hosted Renovate Bot
+              nested:
+                - commits:
+                    - subject: Add revpi-connect-s to Raspberry Pi variants
+                      hash: 8d2b310af840d86ed9b96ac5bb4c5bc74e52e7ff
+                      body: >
+                        We need the supervisor to be able to manage config.txt
+                        changes for the
+
+                        Revolution Pi Connect S.
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: Florin Sarbu <florin@balena.io>
+                        signed-off-by: Florin Sarbu <florin@balena.io>
+                      author: Florin Sarbu
+                      nested: []
+                  version: balena-supervisor-14.11.10
+                  title: ""
+                  date: 2023-07-05T19:00:39.117Z
+          version: meta-balena-3.0.5
+          title: ""
+          date: 2023-07-06T01:55:50.942Z
+        - commits:
+            - subject: Update balena-engine to v20.10.38
+              hash: 74c07c2f4979b78eac4bc95a70fe6988bcd44590
+              body: |
+                Update balena-engine from 20.10.37 to 20.10.38
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: Self-hosted Renovate Bot
+              nested:
+                - commits:
+                    - subject: Document a couple of troubleshooting tips
+                      hash: c8cc7e6e22d65ece306d125fee17e65b51bde84a
+                      body: >
+                        These are some smaller things I do every now and then
+                        when
+
+                        troubleshooting and are worth documenting.
+                      footer:
+                        Signed-off-by: Leandro Motta Barros <leandro@balena.io>
+                        signed-off-by: Leandro Motta Barros <leandro@balena.io>
+                        Change-type: patch
+                        change-type: patch
+                      author: Leandro Motta Barros
+                      nested: []
+                  version: balena-engine-20.10.38
+                  title: ""
+                  date: 2023-07-03T14:00:04.969Z
+          version: meta-balena-3.0.4
+          title: ""
+          date: 2023-07-05T21:55:41.168Z
+        - commits:
+            - subject: Update balena-supervisor to v14.11.9
+              hash: ea7301f6c8a24b2090adec21074598f9bd644dda
+              body: |
+                Update balena-supervisor from 14.11.8 to 14.11.9
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: Self-hosted Renovate Bot
+              nested:
+                - commits:
+                    - subject: Remove the 'Stopped' status for services
+                      hash: 38fe8dae75cd05bf313626b968e208dcfb6f307c
+                      body: >
+                        It's not an official status from container inspects, and
+                        the Supervisor
+
+                        doesn't set it internally anywhere. It's better to remove it entirely as the
+
+                        method by which Supervisor sets internal service statuses is by using a global
+
+                        event emitter (reportNewStatus) which makes things difficult to test.
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: Christina Ying Wang <christina@balena.io>
+                        signed-off-by: Christina Ying Wang <christina@balena.io>
+                      author: Christina Ying Wang
+                      nested: []
+                  version: balena-supervisor-14.11.9
+                  title: ""
+                  date: 2023-06-28T21:01:03.352Z
+          version: meta-balena-3.0.3
+          title: ""
+          date: 2023-07-05T17:50:36.341Z
+        - commits:
+            - subject: Update tests/leviathan digest to 498d4cb
+              hash: f4a1b8bd1c044e3a49d66bb3a820bc03cfc6faeb
+              body: Update tests/leviathan
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: Self-hosted Renovate Bot
+              nested:
+                - commits:
+                    - subject: Update balena-os/leviathan-worker to v2.9.9
+                      hash: 637c10800ffbd5c514f11b83768178716ab110ad
+                      body: |
+                        Update balena-os/leviathan-worker from 2.9.8 to 2.9.9
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: Self-hosted Renovate Bot
+                      nested: []
+                  version: leviathan-2.28.3
+                  title: ""
+                  date: 2023-07-05T11:03:27.568Z
+                - commits:
+                    - subject: Update core/contracts digest to 6e3d563
+                      hash: cf53ba6f0d58dce5b6d8e94a799600f52dbfe75d
+                      body: |
+                        Update core/contracts
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: Self-hosted Renovate Bot
+                      nested: []
+                  version: leviathan-2.28.2
+                  title: ""
+                  date: 2023-07-05T10:03:26.492Z
+                - commits:
+                    - subject: "patch: Pass env variables to client"
+                      hash: 09086c9c1c3471c8c803e6a91cbd72b09f1c9210
+                      body: ""
+                      footer:
+                        Signed-off-by: Vipul Gupta (@vipulgupta2048) <vipulgupta2048@gmail.com>
+                        signed-off-by: Vipul Gupta (@vipulgupta2048) <vipulgupta2048@gmail.com>
+                      author: Vipul Gupta (@vipulgupta2048)
+                      nested: []
+                  version: leviathan-2.28.1
+                  title: ""
+                  date: 2023-07-05T09:00:56.929Z
+                - commits:
+                    - subject: "minor: Make client work with different balenaCloud environments"
+                      hash: d975cfff5f15cfdffffa81202de5ad6fd8d41d87
+                      body: ""
+                      footer:
+                        Signed-off-by: Vipul Gupta (@vipulgupta2048) <vipulgupta2048@gmail.com>
+                        signed-off-by: Vipul Gupta (@vipulgupta2048) <vipulgupta2048@gmail.com>
+                      author: Vipul Gupta (@vipulgupta2048)
+                      nested: []
+                  version: leviathan-2.28.0
+                  title: ""
+                  date: 2023-06-30T15:07:41.244Z
+          version: meta-balena-3.0.2
+          title: ""
+          date: 2023-07-05T13:49:59.489Z
+        - commits:
+            - subject: "docs: Explain TPM ownership and possible TPM fill-up with secure boot"
+              hash: 3770f5898cef8fc5ba70276056bf534e8c197186
+              body: >
+                Explain that balenaOS does not take control of the TPM and that
+                it
+
+                is possible to fill all the key slots with enough provisioning cycles.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Michal Toman <michalt@balena.io>
+                signed-off-by: Michal Toman <michalt@balena.io>
+              author: Michal Toman
+              nested: []
+            - subject: "docs: Recommend BIOS password and no F-key shortcuts with secure boot"
+              hash: 586a46f447f859ec5866a78abddb85e6a2441451
+              body: >
+                We have seen devices that won't change PCR1 hash when a
+                temporary boot
+
+                order override was applied or secure boot was disabled via BIOS setup.
+
+                The implementation of what PCR1 actually measures is very
+
+                device-specific, but many of the risks can be mitigated by setting up
+
+                a BIOS password and disabling F-key shortcuts for interacting with
+
+                the firmware.
+
+
+                [skip ci]
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Michal Toman <michalt@balena.io>
+                signed-off-by: Michal Toman <michalt@balena.io>
+              author: Michal Toman
+              nested: []
+          version: meta-balena-3.0.1
+          title: ""
+          date: 2023-07-04T20:47:23.997Z
+        - commits:
+            - subject: "mkfs-hostapp-native: Allow the compile task to access the network"
+              hash: 92fe10a9db2eb32ca1ac1909e37a1ab2f4b3328d
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+            - subject: "mkfs-hostapp-native: Use image tags instead of parsing docker output"
+              hash: 2597705df7f8a153f878075a5373c45d28b624b8
+              body: >
+                From docker 23.0 `docker build` is an alias to `docker buildkit
+                build`
+
+                and the output is not parseable in the same way.
+
+
+                To avoid using unstable outputs as API, use image tags instead.
+
+
+                Fixes #3035
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+            - subject: "kernel-headers-test: Use image tags instead of parsing docker output"
+              hash: b69d24466bd973e08224d9238f748dd117262d82
+              body: >
+                From docker 23.0 `docker build` is an alias to `docker buildkit
+                build`
+
+                and the output is not parseable in the same way.
+
+
+                To avoid using unstable outputs as API, use image tags instead.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+            - subject: "kernel-headers-test: Allow network access for compile task"
+              hash: 12d8df5344b017ee1ddce568870f31e32974e51b
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+            - subject: "kernel-modules-headers: use kernel-devsrc to provide kernel headers"
+              hash: 9143fbe4f99fdfd5d61502b1ca630f6055027dce
+              body: >
+                Both `kernel-modules-headers` and `kernel-devsrc` provide kernel
+                headers
+
+                since Yocto Thud switched `kernel-devsrc` from full source to just
+
+                kernel headers.
+
+
+                The only difference between them is that `kernel-modules-headers` builds
+
+                some target binaries which need to be built with `make modules_prepare`
+
+                when using `kernel-devsrc` headers. These binaries depend on libc version
+
+                matching though so they have shown to be problematic.
+
+
+                This commit removes the `kernel-modules-headers` recipe and modifies
+
+                `kernel-devsrc` to replace it. The deployed artifact remains named as
+
+                `kernel-modules-headers` as it's a more descriptive name.
+
+
+                This introduces a breaking change in the balenaOS API as customers that
+
+                are using `kernel-modules-headers` to build external kernel modules will
+
+                now need to issue a `make modules_prepare` as part of their build scripts.
+
+
+                Fixes #1822
+              footer:
+                Change-type: major
+                change-type: major
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+          version: meta-balena-3.0.0
+          title: ""
+          date: 2023-07-04T12:58:06.352Z
+        - commits:
+            - subject: "resin-init-flasher: Increase size of LUKS header to 16MB"
+              hash: 024a6dfc244247f739f5c6bf72c8bf55cbe8b6e1
+              body: >
+                After switching to LUKS2, the header size increased from 2MB to
+                16MB.
+
+                While HUP of older systems works, it is impossible to provision
+
+                new encrypted systems.
+
+
+                This patch fixes the header size in flasher.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Michal Toman <michalt@balena.io>
+                signed-off-by: Michal Toman <michalt@balena.io>
+              author: Michal Toman
+              nested: []
+          version: meta-balena-2.115.18
+          title: ""
+          date: 2023-06-29T08:26:11.052Z
+        - commits:
+            - subject: "balena-keys: add SIGN_KMOD_KEY_APPEND"
+              hash: 981a4eec5106bc41643dc708bd64470093ad741c
+              body: >
+                This variable accepts the base64 encoded public key of a kernel
+                module
+
+                signing keypair and appends it to the list of trusted keys the kernel
+
+                will use to validate signed modules. Multiple keys may be appended,
+
+                delimited with a semicolon.
+
+
+                A PEM file can be used like so:
+
+
+                SIGN_KMOD_KEY_APPEND="$( sed -e '/-----BEGIN CERTIFICATE-----/d' \
+                                             -e 's/-----END CERTIFICATE-----/;/g' \
+                                             -e '$d' signing_key.pem \
+                                         | tr -d '\n' )"
+
+                balena-yocto-scripts/build/balena-build.sh \
+                    -g "-a SIGN_KMOD_KEY_APPEND=${SIGN_KMOD_KEY_APPEND}" \
+                    ...
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Joseph Kogut <joseph@balena.io>
+                signed-off-by: Joseph Kogut <joseph@balena.io>
+              author: Joseph Kogut
+              nested: []
+          version: meta-balena-2.115.17
+          title: ""
+          date: 2023-06-28T20:35:09.852Z
+  version: 3.0.13
+  title: ""
+  date: 2023-07-20T01:00:41.981Z
+- commits:
     - subject: Update layers/meta-balena to c2004fe8aea1c95bccb4151079cbfb63c07e864c
       hash: f52227c3a188e54953f630697bed2d46ef63989a
       body: Update layers/meta-balena
