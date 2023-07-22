@@ -1,4 +1,134 @@
 - commits:
+    - subject: Update layers/meta-balena to e1f474a9b8d28d5b0a0b993dd52108c214a376ea
+      hash: d4f15f545e632cec04070f2bcb135013472aebae
+      body: Update layers/meta-balena
+      footer:
+        Changelog-entry: Update layers/meta-balena to e1f474a9b8d28d5b0a0b993dd52108c214a376ea
+        changelog-entry: Update layers/meta-balena to e1f474a9b8d28d5b0a0b993dd52108c214a376ea
+      author: Self-hosted Renovate Bot
+      nested:
+        - commits:
+            - subject: "modemmanager: increase qmi port open timeout"
+              hash: d3358a33b29cf1c8404f2a0c266bbb2023235f84
+              body: |
+                The SIM7600G modem will fail to connect using
+                QMI and the default 45s timeout, nor will it work
+                with a 65s one. The value we found to work consistently
+                with this modem connected over pcie is 95s.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+              nested: []
+            - subject: Update ModemManager to v1.20.6
+              hash: 0d629552a0caf3745e9e3738b3e74bbf802b020c
+              body: |
+                Also updated are the dependencies libqmi and libmbim.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Changelog-entry: Update ModemManager to v1.20.6
+                changelog-entry: Update ModemManager to v1.20.6
+                Signed-off-by: Zahari Petkov <zahari@balena.io>
+                signed-off-by: Zahari Petkov <zahari@balena.io>
+              author: Zahari Petkov
+              nested: []
+          version: meta-balena-3.0.16
+          title: ""
+          date: 2023-07-22T05:19:59.203Z
+        - commits:
+            - subject: "tests: cloud: sv-timer: account for conn. error"
+              hash: 11464aad53779c62199efb0b19f835835e332c72
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Ryan Cooke <ryan@balena.io>
+                signed-off-by: Ryan Cooke <ryan@balena.io>
+              author: rcooke-warwick
+              nested: []
+            - subject: "tests: cloud: use local ssh for sv timer test"
+              hash: d7ece01f84ebec41fe094cf5dbf8175e043c38e3
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Ryan Cooke <ryan@balena.io>
+                signed-off-by: Ryan Cooke <ryan@balena.io>
+              author: rcooke-warwick
+              nested: []
+            - subject: "tests: cloud: remove preload log check"
+              hash: 4d0a75a4dab16efe919ad040578b19bc7de19439
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Ryan Cooke <ryan@balena.io>
+                signed-off-by: Ryan Cooke <ryan@balena.io>
+              author: rcooke-warwick
+              nested: []
+            - subject: "tests: allow for configurable BC env"
+              hash: be732d8955e661116477a8aca59697bec748f306
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Ryan Cooke <ryan@balena.io>
+                signed-off-by: Ryan Cooke <ryan@balena.io>
+              author: rcooke-warwick
+              nested: []
+          version: meta-balena-3.0.15
+          title: ""
+          date: 2023-07-20T15:06:12.237Z
+        - commits:
+            - subject: Update balena-supervisor to v14.11.12
+              hash: dd6b9c93a5cfc4f4a04e190700284c79d4bd9f9a
+              body: |
+                Update balena-supervisor from 14.11.10 to 14.11.12
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: Self-hosted Renovate Bot
+              nested:
+                - commits:
+                    - subject: "mount-partitions: do not hardcode partition types"
+                      hash: cc2ca84448e2a3894294c39b8078c050c0237b87
+                      body: >
+                        Query instead the device for its filesystem type before
+                        mounting.
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                        signed-off-by: Alex Gonzalez <alexg@balena.io>
+                      author: Alex Gonzalez
+                      nested: []
+                  version: balena-supervisor-14.11.12
+                  title: ""
+                  date: 2023-07-19T07:55:53.054Z
+                - commits:
+                    - subject: "backends: Add Jetson Orin NANO custom device-tree support"
+                      hash: 512240c54490ccd0cb83c13f0c6e8cae43fe9a88
+                      body: ""
+                      footer:
+                        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                        signed-off-by: Alexandru Costache <alexandru@balena.io>
+                        Change-type: patch
+                        change-type: patch
+                      author: Alexandru Costache
+                      nested: []
+                  version: balena-supervisor-14.11.11
+                  title: ""
+                  date: 2023-07-12T08:35:23.009Z
+          version: meta-balena-3.0.14
+          title: ""
+          date: 2023-07-20T06:59:16.510Z
+  version: 3.0.16
+  title: ""
+  date: 2023-07-22T10:56:07.183Z
+- commits:
     - subject: Update layers/meta-balena to 8d432e761bf29b2f9f3f8f9f711b087f9133cfa6
       hash: d4e886597eb1a98e484e2c99035fad36993b87a4
       body: Update layers/meta-balena
