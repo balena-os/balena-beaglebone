@@ -1,6 +1,51 @@
 Change log
 -----------
 
+# v3.0.16
+## (2023-07-22)
+
+
+<details>
+<summary> Update layers/meta-balena to e1f474a9b8d28d5b0a0b993dd52108c214a376ea [Self-hosted Renovate Bot] </summary>
+
+> ## meta-balena-3.0.16
+> ### (2023-07-22)
+> 
+> * modemmanager: increase qmi port open timeout [Alexandru Costache]
+> * Update ModemManager to v1.20.6 [Zahari Petkov]
+> 
+> ## meta-balena-3.0.15
+> ### (2023-07-20)
+> 
+> * tests: cloud: sv-timer: account for conn. error [rcooke-warwick]
+> * tests: cloud: use local ssh for sv timer test [rcooke-warwick]
+> * tests: cloud: remove preload log check [rcooke-warwick]
+> * tests: allow for configurable BC env [rcooke-warwick]
+> 
+> ## meta-balena-3.0.14
+> ### (2023-07-20)
+> 
+> 
+> <details>
+> <summary> Update balena-supervisor to v14.11.12 [Self-hosted Renovate Bot] </summary>
+> 
+>> ### balena-supervisor-14.11.12
+>> #### (2023-07-19)
+>> 
+>> * mount-partitions: do not hardcode partition types [Alex Gonzalez]
+>> 
+>> ### balena-supervisor-14.11.11
+>> #### (2023-07-12)
+>> 
+>> * backends: Add Jetson Orin NANO custom device-tree support [Alexandru Costache]
+>> 
+> 
+> </details>
+> 
+> 
+
+</details>
+
 # v3.0.13
 ## (2023-07-20)
 
