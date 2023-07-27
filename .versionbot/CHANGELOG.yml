@@ -1,4 +1,206 @@
 - commits:
+    - subject: Update layers/meta-balena to 3df341dcfa5681fc27d0713814635ddfe20d6a17
+      hash: e652de01dfdb0665f715ed1fb85bed295a59245f
+      body: Update layers/meta-balena
+      footer:
+        Changelog-entry: Update layers/meta-balena to 3df341dcfa5681fc27d0713814635ddfe20d6a17
+        changelog-entry: Update layers/meta-balena to 3df341dcfa5681fc27d0713814635ddfe20d6a17
+      author: Self-hosted Renovate Bot
+      nested:
+        - commits:
+            - subject: "resin-init-flasher: Install the dispatcher scripts to installation
+                media"
+              hash: 77d61290946ed69f348f05887334b28fc2aa0435
+              body: >
+                The flasher/installer image can be configured by the user and
+                that
+
+                configuration finishes up in the installed image. Add the dispatcher
+
+                scripts to this existing mechanim.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+            - subject: "balena-net-config: populate the dispatcher bind mount"
+              hash: 0d1798d8742f34d92fd0d98314d349ba4b5dc54a
+              body: >
+                On boot, the dispatcher script are copied from the boot
+                partition where
+
+                the user has configured them, to the bind mount used by the running
+
+                applications.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+            - subject: "resin-mounts: add dispatcher.d bind mount"
+              hash: 32abffb44d74fc0be6949ed6e893ee3476ffcf2e
+              body: >
+                This allows for user configuration of NetworkManager's
+                dispatcher
+
+                scripts.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+          version: meta-balena-3.1.3
+          title: ""
+          date: 2023-07-28T11:36:17.599Z
+        - commits:
+            - subject: "grub-conf: Do not hardcode the path for grub_extraenv"
+              hash: f7ec67bd53e0998c12bcbdcaccea99f1f6856bcf
+              body: >
+                At this moment grub.cfg sources /grub/grub_extraenv which works
+                fine
+
+                on MBR systems, however on EFI systems this does not work because GRUB
+
+                is installed in /EFI/BOOT/ rather than /grub/.
+
+
+                This patch replaces the hardcoded /grub with ${prefix} which should
+
+                expand to the appropriate directory regardless of the platform. It also
+
+                removes the loading of grub_extraenv from the secure boot variant
+
+                of the GRUB config since this would not load without a signature anyway.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Michal Toman <michalt@balena.io>
+                signed-off-by: Michal Toman <michalt@balena.io>
+              author: Michal Toman
+              nested: []
+          version: meta-balena-3.1.2
+          title: ""
+          date: 2023-07-27T15:15:34.234Z
+        - commits:
+            - subject: "linux/kernel-devsrc: Fix aarch64 kernel-headers-test build"
+              hash: 65abb381ec266066b24f53fa3119dd47ec8af1a3
+              body: >
+                This fix has been ported from the following upstream
+
+                change: https://patchwork.yoctoproject.org/project/oe-core/patch/002c31d6add77e1002fb1ccd4050ce826a654170.1659653543.git.bruce.ashfield@gmail.com/
+
+                and fixes the following compilation error on generic-aarch64:
+
+                    make[1]: *** No rule to make target 'arch/arm64/tools/gen-sysreg.awk',
+                    needed by 'arch/arm64/include/generated/asm/sysreg-defs.h'.  Stop.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+              nested: []
+          version: meta-balena-3.1.1
+          title: ""
+          date: 2023-07-26T18:12:23.719Z
+        - commits:
+            - subject: "linux-firmware: upgrade 20210511 -> 20230404"
+              hash: 6035e749c4bd989f7b8d23a5f48848af7d75efd8
+              body: ""
+              footer:
+                Change-type: minor
+                change-type: minor
+                Signed-off-by: Joseph Kogut <joseph@balena.io>
+                signed-off-by: Joseph Kogut <joseph@balena.io>
+              author: Joseph Kogut
+              nested: []
+            - subject: "common: firmware: repackage iwlwifi-quz-a0-hr-b0"
+              hash: 1bf5489acc3e4c3696bccdae98ea95653ec0d8b7
+              body: |
+                Package all subversions of this firmware
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Joseph Kogut <joseph@balena.io>
+                signed-off-by: Joseph Kogut <joseph@balena.io>
+              author: Joseph Kogut
+              nested: []
+            - subject: "common: firmware: repackage iwlwifi-cc-a0"
+              hash: 1336cb0802c8589439557afca0c28d2aee248e60
+              body: >
+                Repackage iwlwifi-cc-a0 to include all firmware versions shipped
+
+                upstream, rather than only an older version (48) that's no longer
+
+                shipped as of 20230404.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Joseph Kogut <joseph@balena.io>
+                signed-off-by: Joseph Kogut <joseph@balena.io>
+              author: Joseph Kogut
+              nested: []
+            - subject: "compat: connectivity: drop deprecated iwlwifi files"
+              hash: daef22bbb706898721eee131872862a5e2d7709e
+              body: >
+                linux-firmware-20230404 no longer ships several older firmware
+                versions,
+
+                remove them.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Joseph Kogut <joseph@balena.io>
+                signed-off-by: Joseph Kogut <joseph@balena.io>
+              author: Joseph Kogut
+              nested: []
+            - subject: "compat: install linux-firmware-iwlwifi-3160"
+              hash: 9442d98a51bb0ef62991bd4292717e2052cd39ef
+              body: >
+                Replace older versioned iwlwifi packages with
+
+                linux-firmware-iwlwifi-3160 package that includes all versions shipped
+
+                in linux-firmware.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Joseph Kogut <joseph@balena.io>
+                signed-off-by: Joseph Kogut <joseph@balena.io>
+              author: Joseph Kogut
+              nested: []
+          version: meta-balena-3.1.0
+          title: ""
+          date: 2023-07-25T21:09:07.177Z
+        - commits:
+            - subject: "balena-image: Install extra_uEnv for all boards that use u-boot"
+              hash: c9d665f0c2a0454a84d9890d56e4d93f57bf93ad
+              body: >
+                Some board BSPs may define UBOOT_MACHINE, others UBOOT_CONFIG,
+
+                let's make sure we include the extra_uEnv.txt file in the non-flasher
+
+                image for both cases.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+              nested: []
+          version: meta-balena-3.0.17
+          title: ""
+          date: 2023-07-25T13:45:11.862Z
+  version: 3.1.3
+  title: ""
+  date: 2023-07-28T16:27:09.031Z
+- commits:
     - subject: Update layers/meta-balena to e1f474a9b8d28d5b0a0b993dd52108c214a376ea
       hash: d4f15f545e632cec04070f2bcb135013472aebae
       body: Update layers/meta-balena

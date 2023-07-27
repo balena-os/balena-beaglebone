@@ -10,9 +10,9 @@ SRC_URI = " \
 
 inherit allarch systemd
 
-RDEPENDS_${PN} = "bash"
+RDEPENDS:${PN} = "bash"
 
-FILES_${PN} += "/lib/firmware/ti-connectivity/TIInit_11.8.32.bts"
+FILES:${PN} += "/lib/firmware/ti-connectivity/TIInit_11.8.32.bts"
 
 do_install() {
 	install -d ${D}/usr/bin
@@ -23,4 +23,4 @@ do_install() {
 	install -m 0644 ${WORKDIR}/TIInit_11.8.32.bts ${D}/lib/firmware/ti-connectivity/TIInit_11.8.32.bts
 }
 
-SYSTEMD_SERVICE_${PN} = "bb-wl18xx-bluetooth.service"
+SYSTEMD_SERVICE:${PN} = "bb-wl18xx-bluetooth.service"
