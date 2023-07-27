@@ -13,6 +13,6 @@ do_install() {
     install -m 0644 ${WORKDIR}/99-beagle-serial.rules ${D}${base_libdir}/udev/rules.d
 }
 
-FILES_${PN} = " \
+FILES:${PN} = " \
   /lib/udev/rules.d/99-beagle-serial.rules \
 "

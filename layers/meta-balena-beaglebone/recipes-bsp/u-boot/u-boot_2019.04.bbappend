@@ -1,6 +1,6 @@
 inherit resin-u-boot
 
-FILESEXTRAPATHS_append := ":${THISDIR}/${PN}"
+FILESEXTRAPATHS:append := ":${THISDIR}/${PN}"
 
 SRC_URI += " \
     file://0001-am335x_evm-uEnv.txt-bootz-n-fixes.patch \
@@ -9,6 +9,7 @@ SRC_URI += " \
 "
 
 # Added u-boot overlay and capemgr support patches from https://github.com/RobertCNelson/Bootloader-Builder/tree/master/patches/v2019.14
+
 SRC_URI += " \
 	file://0001-beaglebone-black-Use-Balena-vars-for-mmc-boot.patch \
 	file://0001-Load-uboot-device-tree-overlays.patch \
@@ -17,16 +18,16 @@ SRC_URI += " \
 	file://0006-Fix-boot-with-cape.patch \
 "
 
-SRC_URI_append_beaglebone-pocket = " \
+SRC_URI:append:beaglebone-pocket = " \
 	file://am335x_evm-autoboot-zero.patch \
 "
 
-SRC_URI_append_beagleboard-xm = " \
+SRC_URI:append:beagleboard-xm = " \
 	file://0001-all-mem.patch \
 	file://beagle-xm--Balena-environment.patch \
 "
 
-do_deploy_append() {
+do_deploy:append() {
     install ${B}/MLO ${DEPLOYDIR}
     install ${B}/u-boot.img ${DEPLOYDIR}
     install ${WORKDIR}/uEnv.txt_internal ${DEPLOYDIR}
@@ -35,4 +36,4 @@ do_deploy_append() {
 UBOOT_MACHINE = "am335x_boneblack_config"
 
 # Necessary for Bluetooth to work on this board
-OS_KERNEL_CMDLINE_append = " coherent_pool=1M net.ifnames=0  lpj=1990656 rng_core.default_quality=100 "
+OS_KERNEL_CMDLINE:append = " coherent_pool=1M net.ifnames=0  lpj=1990656 rng_core.default_quality=100 "

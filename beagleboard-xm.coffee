@@ -19,7 +19,7 @@ module.exports =
 		machine: 'beagleboard-xm'
 		image: 'balena-image'
 		fstype: 'balenaos-img'
-		version: 'yocto-dunfell'
+		version: 'yocto-kirkstone'
 		deployArtifact: 'balena-image-beagleboard-xm.balenaos-img'
 		compressed: true
 
