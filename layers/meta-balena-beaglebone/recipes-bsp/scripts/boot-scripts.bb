@@ -1,4 +1,4 @@
-FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
+FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
 
 DESCRIPTION = "Startup and config files for enabling usb related functionality for am335x, like for instance usb ethernet"
 LICENSE = "MIT"
@@ -11,14 +11,14 @@ SRCREV = "e9bcff232834702c1c810710706ee815d77b080b"
 
 SRC_URI[md5sum] = "06ba0d39f677f1ed62b25ee1976f96f3"
 
-SRC_URI_append = " \
+SRC_URI:append = " \
     file://0001-Adapted-scripts-for-Balena-usage.patch \
     file://usb-eth-startup.service \
     "
 
-RDEPENDS_${PN} = " bash systemd"
+RDEPENDS:${PN} = " bash systemd"
 
-FILES_${PN} = " \
+FILES:${PN} = " \
     /opt/scripts/boot/am335x_evm.sh \
     "
 
@@ -31,6 +31,6 @@ do_install () {
    install -m 0755 ${WORKDIR}/usb-eth-startup.service ${D}/${systemd_unitdir}/system/usb-eth-startup.service
 }
 
-SYSTEMD_SERVICE_${PN} = "usb-eth-startup.service"
+SYSTEMD_SERVICE:${PN} = "usb-eth-startup.service"
 
 COMPATIBLE_MACHINE = "beaglebone-pocket"

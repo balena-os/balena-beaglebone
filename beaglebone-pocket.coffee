@@ -25,7 +25,7 @@ module.exports =
 		machine: 'beaglebone-pocket'
 		image: 'balena-image'
 		fstype: 'balenaos-img'
-		version: 'yocto-dunfell'
+		version: 'yocto-kirkstone'
 		deployArtifact: 'balena-image-beaglebone-pocket.balenaos-img'
 		compressed: true
 

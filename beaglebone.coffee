@@ -37,7 +37,7 @@ module.exports =
 		machine: 'beaglebone'
 		image: 'balena-image-flasher'
 		fstype: 'balenaos-img'
-		version: 'yocto-dunfell'
+		version: 'yocto-kirkstone'
 		deployArtifact: 'balena-image-flasher-beaglebone.balenaos-img'
 		compressed: true
 
