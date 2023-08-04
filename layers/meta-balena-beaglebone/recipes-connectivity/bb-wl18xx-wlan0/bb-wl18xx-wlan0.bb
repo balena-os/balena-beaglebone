@@ -9,7 +9,7 @@ SRC_URI = " \
 
 inherit allarch systemd
 
-RDEPENDS_${PN} = "bash"
+RDEPENDS:${PN} = "bash"
 
 do_install() {
 	install -d ${D}/usr/bin
@@ -18,4 +18,4 @@ do_install() {
 	install -m 0644 ${WORKDIR}/bb-wl18xx-wlan0.service ${D}${systemd_unitdir}/system
 }
 
-SYSTEMD_SERVICE_${PN} = "bb-wl18xx-wlan0.service"
+SYSTEMD_SERVICE:${PN} = "bb-wl18xx-wlan0.service"
