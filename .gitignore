@@ -14,3 +14,12 @@ shared-*/
 
 # dynamically created by the build script
 conf-notes.txt
+
+#ignore barys-build
+barys_build/
+
+#ignore jetbrains .idea files
+.idea
+
+#ignore all emacs droppings
+*~
