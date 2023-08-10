@@ -1,4 +1,23 @@
 - commits:
+    - subject: "beagleboard-xm: Discontinue device"
+      hash: adcaf06596c8a8a58771cbe3128ab516de585944
+      body: >
+        As per the internal thread
+        https://balena.zulipchat.com/#narrow/stream/360838-balena-io.2Fos.2Fdevices/topic/Beagleboard.20XM.20discontinuation/near/381916302
+
+
+        The platform used for this device ype has been deprecated and will no longer be supported in upstream. See https://git.yoctoproject.org/meta-ti/commit/?id=209da2791f911235faaf4104ebf289b0e11d975b
+      footer:
+        Changelog-entry: "beagleboard-xm: Discontinue device"
+        changelog-entry: "beagleboard-xm: Discontinue device"
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+  version: 3.1.8
+  title: ""
+  date: 2023-08-10T16:10:09.083Z
+- commits:
     - subject: Update layers/meta-balena to 3df341dcfa5681fc27d0713814635ddfe20d6a17
       hash: e652de01dfdb0665f715ed1fb85bed295a59245f
       body: Update layers/meta-balena
