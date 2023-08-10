@@ -6,7 +6,7 @@ module.exports =
 	slug: 'beagleboard-xm'
 	name: 'BeagleBoard-XM'
 	arch: 'armv7hf'
-	state: 'released'
+	state: 'discontinued'
 
 	instructions: commonImg.instructions
 
