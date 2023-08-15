@@ -8,8 +8,15 @@ SRC_URI:append = " \
     file://0002-am335x_evm_defconfig-Reduce-SPL-.rodata-size.patch \
     file://0005-Autoboot-keyboard-beaglebone-fixes.patch \
     file://0001-Add-support-for-BeagleBoard.org-PocketBeagle.patch \
+
+UBOOT_MACHINE = "am335x_evm_config"
+UBOOT_MACHINE:beaglebone-play = "am62x_evm_a53_defconfig"
+UBOOT_MACHINE:beaglebone-play-k3r5 = "am62x_evm_r5_defconfig"
+
+
+SRC_URI += " \
     file://uEnv.txt_internal \
-    "
+"
 
 SRC_URI:append:beaglebone-ai64 = " \
     file://0001-Use-the-BBONEAI-64-B0-as-default-board.patch \

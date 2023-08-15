@@ -23,3 +23,7 @@ barys_build/
 
 #ignore all emacs droppings
 *~
+*#
+
+.idea
+
