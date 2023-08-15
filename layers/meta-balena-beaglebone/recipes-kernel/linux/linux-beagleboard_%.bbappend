@@ -5,7 +5,7 @@ BALENA_CONFIGS[no_modules_compression]=" \
     CONFIG_MODULE_COMPRESS_XZ=n \
 "
 
-KERNEL_DEVICETREE_beaglebone += " \
+KERNEL_DEVICETREE:beaglebone += " \
 	am335x-boneblack-uboot.dtb \
 	am335x-bonegreen-gateway.dtb \
 "

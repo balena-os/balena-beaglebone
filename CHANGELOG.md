@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v3.1.8
+## (2023-08-10)
+
+* beagleboard-xm: Discontinue device [Alexandru Costache]
+
 # v3.1.3
 ## (2023-07-28)
 

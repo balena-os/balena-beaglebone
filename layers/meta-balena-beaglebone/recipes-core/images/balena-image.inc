@@ -5,12 +5,12 @@ IMAGE_FSTYPES:append:beaglebone-play = " balenaos-img"
 IMAGE_FSTYPES:append:beaglebone-play-k3r5 = " balenaos-img"
 
 # Customize balenaos-img
-BALENA_BOOT_PARTITION_FILES_beaglebone = " \
+BALENA_BOOT_PARTITION_FILES:beaglebone = " \
     MLO: \
     u-boot.img: \
     "
 
-BALENA_BOOT_PARTITION_FILES_beagleboard-xm = " \
+BALENA_BOOT_PARTITION_FILES:beagleboard-xm = " \
     MLO: \
     u-boot.img: \
 "
