@@ -1,6 +1,8 @@
 IMAGE_FSTYPES:append:beaglebone = " balenaos-img balenaos-img.bmap"
 IMAGE_FSTYPES:append:beaglebone-pocket = " balenaos-img"
 IMAGE_FSTYPES:append:beagleboard-xm = " balenaos-img"
+IMAGE_FSTYPES:append:beaglebone-play = " balenaos-img"
+IMAGE_FSTYPES:append:beaglebone-play-k3r5 = " balenaos-img"
 
 # Customize balenaos-img
 BALENA_BOOT_PARTITION_FILES_beaglebone = " \
@@ -12,6 +14,17 @@ BALENA_BOOT_PARTITION_FILES_beagleboard-xm = " \
     MLO: \
     u-boot.img: \
 "
+
+BALENA_BOOT_PARTITION_FILES_beaglebone-play = " \
+    MLO: \
+    u-boot.img: \
+"
+
+BALENA_BOOT_PARTITION_FILES_beaglebone-play-k3r5 = " \
+    MLO: \
+    u-boot.img: \
+"
+
 
 # Beaglebone expects the kernel and dtbs on rootfs
 IMAGE_INSTALL:append = " kernel-image-initramfs kernel-devicetree wlconf"
