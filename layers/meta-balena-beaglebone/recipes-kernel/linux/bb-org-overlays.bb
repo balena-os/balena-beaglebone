@@ -21,9 +21,9 @@ S = "${WORKDIR}/git"
 inherit autotools-brokensep
 
 PACKAGES = "${PN}"
-FILES_${PN} += "/boot/overlays"
+FILES:${PN} += "/boot/overlays"
 
-do_compile_prepend () {
+do_compile:prepend () {
     cp ${WORKDIR}/BB-I2C2N-00A0.dts ${S}/src/arm/
     cp ${WORKDIR}/SDS-CAPE-00A0.dts ${S}/src/arm/
 }
