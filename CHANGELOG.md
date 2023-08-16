@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v3.1.8+rev1
+## (2023-08-16)
+
+* Update layer to kirkstone [Lisandro Damián Nicanor Pérez Meyer]
+
 # v3.1.8
 ## (2023-08-10)
 

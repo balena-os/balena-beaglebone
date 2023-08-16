@@ -1,4 +1,45 @@
 - commits:
+    - subject: Update layer to kirkstone
+      hash: 610ae259705bbfdd41987f218cfdbce9111e0d35
+      body: >
+        In order to make the beaglebone-ai64 to work it is first required to
+
+        switch to meta-ti's kirkstone branch, so we need to update all the
+
+        relevant layers.
+
+
+        We also need to manually remove kernel-related image/headers from
+
+        MACHINE_ESSENTIAL_EXTRA_RDEPENDS.
+
+
+        On kirkstone meta-ti uses linux-bb.org, so we created a bbappend in
+
+        order for it to inherit kernel-balena. This kernel might probably be
+
+        used with the beaglebone AI64.
+
+
+        The kernel-modules-headers' bbappend is removed because the base recipe
+
+        does not exists anymore on any layer.
+
+
+        Also remove beagleboard-xm.coffee, support was dropped by meta-ti on
+
+        https://git.yoctoproject.org/meta-ti/commit/?id=209da2791f911235faaf4104ebf289b0e11d975b
+      footer:
+        Changelog-entry: Update layer to kirkstone
+        changelog-entry: Update layer to kirkstone
+        Signed-off-by: Lisandro Pérez Meyer <lperezmeyer@ics.com>
+        signed-off-by: Lisandro Pérez Meyer <lperezmeyer@ics.com>
+      author: Lisandro Damián Nicanor Pérez Meyer
+      nested: []
+  version: 3.1.8+rev1
+  title: ""
+  date: 2023-08-16T15:00:21.962Z
+- commits:
     - subject: "beagleboard-xm: Discontinue device"
       hash: adcaf06596c8a8a58771cbe3128ab516de585944
       body: >
