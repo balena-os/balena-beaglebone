@@ -8,12 +8,12 @@ UBOOT_MACHINE:beaglebone-play-k3r5 = "am62x_evm_r5_defconfig"
 FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
 
 SRC_URI:append = " \
-    file://0001-Integrate-with-Balena-environment-configuration.patch \
-    file://0002-am335x_evm_defconfig-Reduce-SPL-.rodata-size.patch \
-    file://0005-Autoboot-keyboard-beaglebone-fixes.patch \
-    file://0001-Add-support-for-BeagleBoard.org-PocketBeagle.patch \
     file://uEnv.txt_internal \
 "
+
+SSTATE_ALLOW_OVERLAP_FILES += "${DEPLOYDIR}/extra_uEnv.txt"
+SSTATE_ALLOW_OVERLAP_FILES += "${DEPLOYDIR}/uEnv.txt_internal"
+
 
 SRC_URI:append:beaglebone-pocket = " \
     file://0001-u-boot-Disable-logging-on-UART0.patch \
