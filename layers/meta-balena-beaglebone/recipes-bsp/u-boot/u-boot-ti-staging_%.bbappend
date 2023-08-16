@@ -28,6 +28,9 @@ do_deploy:append:beaglebone-ai64 () {
     rm -vf ${DEPLOYDIR}/extra_uEnv.txt
 }
 
+SSTATE_ALLOW_OVERLAP_FILES += "${DEPLOYDIR}/extra_uEnv.txt"
+SSTATE_ALLOW_OVERLAP_FILES += "${DEPLOYDIR}/uEnv.txt_internal"
+
 
 SRC_URI:append:beaglebone-pocket = " \
     file://0001-u-boot-Disable-logging-on-UART0.patch \
