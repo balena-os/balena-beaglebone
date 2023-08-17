@@ -1,6 +1,82 @@
 Change log
 -----------
 
+# v3.2.0
+## (2023-08-17)
+
+
+<details>
+<summary> Update layers/meta-balena to 87546c158a40798749c94fdab9355e3c39920490 [Self-hosted Renovate Bot] </summary>
+
+> ## meta-balena-3.2.0
+> ### (2023-08-17)
+> 
+> 
+> <details>
+> <summary> Update balena-supervisor to v14.12.0 [Self-hosted Renovate Bot] </summary>
+> 
+>> ### balena-supervisor-14.12.0
+>> #### (2023-08-17)
+>> 
+>> * Update README [Felipe Lalanne]
+>> * Replace node-dbus with @balena/systemd [Felipe Lalanne]
+>> * Replace dbus test service with mock-systemd-bus [Felipe Lalanne]
+>> * Update to nodejs 18 [Pagan Gazzard]
+>> 
+> 
+> </details>
+> 
+> 
+> ## meta-balena-3.1.13
+> ### (2023-08-16)
+> 
+> * Integration layers: mobile-broadband-provider: fix fetch failure [Alex Gonzalez]
+> 
+> ## meta-balena-3.1.12
+> ### (2023-08-15)
+> 
+> 
+> <details>
+> <summary> Update balena-supervisor to v14.11.14 [Self-hosted Renovate Bot] </summary>
+> 
+>> ### balena-supervisor-14.11.14
+>> #### (2023-08-14)
+>> 
+>> * Update balena-io/deploy-to-balena-action to v0.28.0 [Self-hosted Renovate Bot]
+>> 
+> 
+> </details>
+> 
+> 
+> ## meta-balena-3.1.11
+> ### (2023-08-12)
+> 
+> 
+> <details>
+> <summary> Update balena-supervisor to v14.11.13 [Self-hosted Renovate Bot] </summary>
+> 
+>> ### balena-supervisor-14.11.13
+>> #### (2023-08-10)
+>> 
+>> * patch: Remove reference of override_lock variable [Vipul Gupta]
+>> 
+> 
+> </details>
+> 
+> 
+> ## meta-balena-3.1.10
+> ### (2023-08-12)
+> 
+> * hostapp-update: bind-mount /sys for Jetson efivars [Alexandru Costache]
+> 
+> ## meta-balena-3.1.9
+> ### (2023-08-10)
+> 
+> * tests: secureboot: add test for module signing [Joseph Kogut]
+> 
+
+</details>
+
 # v3.1.8+rev1
 ## (2023-08-16)
 
