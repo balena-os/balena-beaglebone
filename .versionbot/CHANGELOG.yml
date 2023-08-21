@@ -1,4 +1,108 @@
 - commits:
+    - subject: Update contracts to d09ff464591acafff8da686110ecc315f94745fa
+      hash: 71311c7284c374317ecfbdb30d244a7dc9633977
+      body: Update contracts
+      footer:
+        Changelog-entry: Update contracts to d09ff464591acafff8da686110ecc315f94745fa
+        changelog-entry: Update contracts to d09ff464591acafff8da686110ecc315f94745fa
+      author: Self-hosted Renovate Bot
+      nested:
+        - commits:
+            - subject: "iot-gate-imx8plus: Improve provisioning instructions for Windows"
+              hash: dbfd03e791d69c657a295d92cd823e32f4bf2369
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+          version: contracts-2.0.68
+          title: ""
+          date: 2023-08-15T07:20:27.206Z
+        - commits:
+            - subject: Fix conditional when installing libssl1.1
+              hash: 29e5a99050fb93fcea404fd48d2db029acf4acb3
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Kyle Harding <kyle@balena.io>
+                signed-off-by: Kyle Harding <kyle@balena.io>
+              author: Kyle Harding
+          version: contracts-2.0.67
+          title: ""
+          date: 2023-08-03T20:27:02.315Z
+        - commits:
+            - subject: Fix a condition where /etc/nsswitch.conf exists and the build fails
+              hash: c8c521ae9fdb908fb37642154d5fbe73a2849985
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Kyle Harding <kyle@balena.io>
+                signed-off-by: Kyle Harding <kyle@balena.io>
+              author: Kyle Harding
+          version: contracts-2.0.66
+          title: ""
+          date: 2023-08-03T20:04:14.870Z
+        - commits:
+            - subject: Replace ifupdown with ifupdown-ng for alpine edge
+              hash: cf7dde1ae72cd0edaa94c783da271b1bf22542ea
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Kyle Harding <kyle@balena.io>
+                signed-off-by: Kyle Harding <kyle@balena.io>
+              author: Kyle Harding
+          version: contracts-2.0.65
+          title: ""
+          date: 2023-08-02T20:23:30.063Z
+        - commits:
+            - subject: Remove OpenJDK v7 as it has been removed from alpine edge
+              hash: 343a2f5d0a08de2f9bb5ad1013150e98f23feb2c
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Kyle Harding <kyle@balena.io>
+                signed-off-by: Kyle Harding <kyle@balena.io>
+              author: Kyle Harding
+          version: contracts-2.0.64
+          title: ""
+          date: 2023-08-02T20:02:24.824Z
+        - commits:
+            - subject: "sw.os+hw.device-type: Add ubuntu and debian distro configs for Orin
+                Nano"
+              hash: e0d622addd9484046c2f77c6745adbb0e166709b
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+          version: contracts-2.0.63
+          title: ""
+          date: 2023-06-29T14:15:50.808Z
+        - commits:
+            - subject: "hw.device-type: Add Jetson Orin Nano Devkit 8GB (SD) module"
+              hash: ffa98b5a136997b6cc187751d0133a9e7d8fa8cd
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+          version: contracts-2.0.62
+          title: ""
+          date: 2023-06-27T10:51:03.778Z
+  version: 3.2.3+rev1
+  title: ""
+  date: 2023-08-21T22:52:57.728Z
+- commits:
     - subject: Update layers/meta-balena to ab4a4bdbce4c33a63a24f9d969f18711ddbfdc96
       hash: ae7d16f2187cb757c5e2f530a4482715fe04cb33
       body: Update layers/meta-balena
