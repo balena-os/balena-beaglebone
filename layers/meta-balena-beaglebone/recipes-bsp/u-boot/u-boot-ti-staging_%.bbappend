@@ -11,13 +11,9 @@ SRC_URI:append = " \
     file://uEnv.txt_internal \
 "
 
-SSTATE_ALLOW_OVERLAP_FILES += "${DEPLOYDIR}/extra_uEnv.txt"
-SSTATE_ALLOW_OVERLAP_FILES += "${DEPLOYDIR}/uEnv.txt_internal"
+SSTATE_ALLOW_OVERLAP_FILES += "${DEPLOY_DIR_IMAGE}/extra_uEnv.txt"
+SSTATE_ALLOW_OVERLAP_FILES += "${DEPLOY_DIR_IMAGE}/uEnv.txt_internal"
 
-
-SRC_URI:append:beaglebone-pocket = " \
-    file://0001-u-boot-Disable-logging-on-UART0.patch \
-    "
 
 do_deploy:append () {
     install ${WORKDIR}/uEnv.txt_internal ${DEPLOYDIR}

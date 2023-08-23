@@ -15,13 +15,13 @@ BALENA_BOOT_PARTITION_FILES:beagleboard-xm = " \
     u-boot.img: \
 "
 
-BALENA_BOOT_PARTITION_FILES_beaglebone-play = " \
-    MLO: \
+BALENA_BOOT_PARTITION_FILES:beaglebone-play = " \
+    ${SPL_BINARY}: \
     u-boot.img: \
 "
 
-BALENA_BOOT_PARTITION_FILES_beaglebone-play-k3r5 = " \
-    MLO: \
+BALENA_BOOT_PARTITION_FILES:beaglebone-play-k3r5 = " \
+    ${SPL_BINARY}: \
     u-boot.img: \
 "
 
