@@ -30,11 +30,13 @@ BALENA_BOOT_PARTITION_FILES:beagleboard-xm = " \
 BALENA_BOOT_PARTITION_FILES:beaglebone-play = " \
     ${SPL_BINARY}: \
     u-boot.img: \
+    tiboot3.bin: \
 "
 
 BALENA_BOOT_PARTITION_FILES:beaglebone-play-k3r5 = " \
     ${SPL_BINARY}: \
     u-boot.img: \
+    tiboot3.bin: \
 "
 
 

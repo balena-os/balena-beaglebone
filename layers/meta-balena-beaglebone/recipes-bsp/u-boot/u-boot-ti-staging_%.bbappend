@@ -16,6 +16,7 @@ UBOOT_MACHINE:beaglebone-play-k3r5 = "am62x_evm_r5_defconfig"
 
 SRC_URI += " \
     file://uEnv.txt_internal \
+    file://balenaos_disableuefi.cfg \
 "
 
 SRC_URI:append:beaglebone-ai64 = " \
