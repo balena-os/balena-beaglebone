@@ -6,9 +6,9 @@ UBOOT_MACHINE:beaglebone-play = "am62x_evm_a53_defconfig"
 UBOOT_MACHINE:beaglebone-play-k3r5 = "am62x_evm_r5_defconfig"
 
 # Use BeagleBone's u-boot until u-boot-ti-staging has the BBAI64 support upstreamed.
-BRANCH:beaglebone-play= "v2023.04-ti-09.00.00.007"
+BRANCH:beaglebone-play= "v2021.01-ti-BeaglePlay-Release"
 UBOOT_GIT_URI:beaglebone-play = "git://git.beagleboard.org/beagleboard/u-boot.git"
-SRCREV:beaglebone-play = "354f64f67e5b36df0027dbfbf071503b0071f4ed"
+SRCREV:beaglebone-play = "f036fbdc25941d7585182d2552c767edb9b04114"
 
 
 FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
