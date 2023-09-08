@@ -1,6 +1,37 @@
 Change log
 -----------
 
+# v4.0.1
+## (2023-09-08)
+
+
+<details>
+<summary> Update layers/meta-balena to 6db6c7c9774bf58dc4676816280f81fae83df78e [Self-hosted Renovate Bot] </summary>
+
+> ## meta-balena-4.0.1
+> ### (2023-09-08)
+> 
+> * classes: sign: add a retry to the signing call [Alex Gonzalez]
+> 
+> ## meta-balena-4.0.0
+> ### (2023-09-06)
+> 
+> * Update actions/checkout action to v4 [Self-hosted Renovate Bot]
+> 
+> ## meta-balena-3.2.12
+> ### (2023-09-06)
+> 
+> * timesync-https: skip time sync if connectivity URI is null [Alex Gonzalez]
+> * README: update time in the OS section [Alex Gonzalez]
+> 
+> ## meta-balena-3.2.11
+> ### (2023-09-01)
+> 
+> * Update tibdex/github-app-token action to v1.8.2 [Self-hosted Renovate Bot]
+> 
+
+</details>
+
 # v3.2.10
 ## (2023-09-01)
 
