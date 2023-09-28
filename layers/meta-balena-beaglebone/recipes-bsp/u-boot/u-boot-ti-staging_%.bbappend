@@ -19,9 +19,15 @@ UBOOT_GIT_URI:beaglebone-play = "git://git.beagleboard.org/beagleboard/u-boot.gi
 SRCREV:beaglebone-play = "52a1bfa3073bcdef4e1e0df13021d1b52947b6a7"
 
 SRC_URI += " \
+UBOOT_SIGN_ENABLE:beaglebone-play = "0"
+
+FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
+
+SRC_URI:append = " \
     file://uEnv.txt_internal \
     file://balenaos_disableuefi.cfg \
     file://balenaos_bootcommand.cfg \
+    file://balenaos_env_size.cfg \
 "
 
 SRC_URI:append:beaglebone-ai64 = " \
