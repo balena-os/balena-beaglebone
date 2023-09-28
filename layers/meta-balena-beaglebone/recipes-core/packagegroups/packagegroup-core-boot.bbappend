@@ -1,0 +1,1 @@
+UBOOT_SIGN_ENABLE = "0"

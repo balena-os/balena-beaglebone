@@ -10,6 +10,7 @@ BRANCH:beaglebone-play= "v2023.04-ti-09.00.00.009-BeaglePlay"
 UBOOT_GIT_URI:beaglebone-play = "git://git.beagleboard.org/beagleboard/u-boot.git"
 SRCREV:beaglebone-play = "52a1bfa3073bcdef4e1e0df13021d1b52947b6a7"
 
+UBOOT_SIGN_ENABLE:beaglebone-play = "0"
 
 FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
 
@@ -17,6 +18,7 @@ SRC_URI:append = " \
     file://uEnv.txt_internal \
     file://balenaos_disableuefi.cfg \
     file://balenaos_bootcommand.cfg \
+    file://balenaos_env_size.cfg \
 "
 
 SSTATE_ALLOW_OVERLAP_FILES += "${DEPLOY_DIR_IMAGE}/extra_uEnv.txt"
