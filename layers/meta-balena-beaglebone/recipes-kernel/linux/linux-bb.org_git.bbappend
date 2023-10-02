@@ -9,8 +9,6 @@ BRANCH:aarch64 = "v6.1.46-ti-arm64-r7"
 SRCREV:aarch64 = "51c09b7d81b4531f4846cb6c24f46ac239acd69d"
 PV:aarch64 = "6.1.46+git${SRCPV}"
 
-UBOOT_SIGN_ENABLE="0"
-
 KERNEL_DEVICETREE:aarch64 = " \
 ti/k3-am625-beagleplay.dtb \
 ti/k3-am625-beagleplay-csi2-ov5640.dtbo \

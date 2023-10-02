@@ -27,7 +27,6 @@ SRC_URI:append = " \
     file://uEnv.txt_internal \
     file://balenaos_disableuefi.cfg \
     file://balenaos_bootcommand.cfg \
-    file://balenaos_env_size.cfg \
 "
 
 SRC_URI:append:beaglebone-ai64 = " \
