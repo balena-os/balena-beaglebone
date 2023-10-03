@@ -1,4 +1,32 @@
 - commits:
+    - subject: Update kernel for the beaglebones to version 5.10.162-ti-r59
+      hash: 4a8c03053f9fa74eb31f89feed8fd08aeeb019cb
+      body: >
+        The kernel defconfig is the arch/arm/configs/bb.org_defconfig file
+
+        from the kernel source tree at tag 5.10.162-ti-r59.
+
+
+        Delete 0001-Revert-net-ethernet-ti-cpsw-fix-min-eth-packet-size.patch because
+
+        this has a proper upstream fix now.
+
+
+        Delete linux-ti-staging_%.bbappend since nobody uses it.
+
+
+        Delete 0001-Revert-random-fix-crng_ready-test.patch since it's been fixed upstream.
+      footer:
+        Changelog-entry: Update kernel for the beaglebones to version 5.10.162-ti-r59
+        changelog-entry: Update kernel for the beaglebones to version 5.10.162-ti-r59
+        Signed-off-by: Florin Sarbu <florin@balena.io>
+        signed-off-by: Florin Sarbu <florin@balena.io>
+      author: Florin Sarbu
+      nested: []
+  version: 4.0.16+rev3
+  title: ""
+  date: 2023-10-03T13:34:37.206Z
+- commits:
     - subject: Update balena-os/github-workflows to v0.0.24
       hash: 60e593294aebb458e2f1c97983b58bc3e034c17f
       body: Update balena-os/github-workflows

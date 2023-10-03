@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v4.0.16+rev3
+## (2023-10-03)
+
+* Update kernel for the beaglebones to version 5.10.162-ti-r59 [Florin Sarbu]
+
 # v4.0.16+rev2
 ## (2023-10-03)
 
