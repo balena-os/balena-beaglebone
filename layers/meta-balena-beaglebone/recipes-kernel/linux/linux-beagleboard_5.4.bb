@@ -41,6 +41,7 @@ KERNEL_GIT_PROTOCOL = "https"
 SRC_URI += " \
     ${KERNEL_GIT_URI};protocol=${KERNEL_GIT_PROTOCOL};tag=${TAG};nobranch=1 \
     file://0001-Revert-random-fix-crng_ready-test.patch \
+    file://bn-v3-dt.patch \
     file://defconfig \
     "
 
