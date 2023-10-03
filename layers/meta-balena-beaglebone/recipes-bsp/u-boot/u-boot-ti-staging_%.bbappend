@@ -23,7 +23,7 @@ UBOOT_SIGN_ENABLE:beaglebone-play = "0"
 
 # Generate an extlinux.conf file
 UBOOT_EXTLINUX = "1"
-UBOOT_EXTLINUX_ROOT = "root=PARTUUID=${uuid}"
+UBOOT_EXTLINUX_ROOT = "root=/dev/mmcblk1p2"
 UBOOT_EXTLINUX_KERNEL_ARGS = "rootwait rw rootfstype=ext4"
 UBOOT_EXTLINUX_BOOT_FILES = " \
     extlinux.conf;extlinux/extlinux.conf \
