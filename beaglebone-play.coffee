@@ -12,10 +12,10 @@ postProvisioningInstructions = [
 
 module.exports =
 	version: 1
-	slug: 'beaglebone-black-legacy'
-	aliases: [ 'beaglebone-legacy' ]
-	name: 'BeagleBone Black Legacy'
-	arch: 'armv7hf'
+	slug: 'beaglebone-black'
+	aliases: [ 'beaglebone' ]
+	name: 'BeagleBone Black'
+	arch: 'aarch64'
 	state: 'released'
 
 	stateInstructions:
@@ -34,11 +34,11 @@ module.exports =
 		linux: 'https://docs.resin.io/beaglebone/nodejs/getting-started/#adding-your-first-device'
 
 	yocto:
-		machine: 'beaglebone'
-		image: 'balena-image-flasher'
+		machine: 'beaglebone-play'
+		image: 'balena-image'
 		fstype: 'balenaos-img'
 		version: 'yocto-kirkstone'
-		deployArtifact: 'balena-image-flasher-beaglebone.balenaos-img'
+		deployArtifact: 'balena-image-beaglebone-play.balenaos-img'
 		compressed: true
 
 	options: [ networkOptions.group ]
