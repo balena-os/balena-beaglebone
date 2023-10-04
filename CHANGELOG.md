@@ -1,6 +1,56 @@
 Change log
 -----------
 
+# v4.0.16+rev4
+## (2023-10-04)
+
+
+<details>
+<summary> Update contracts to d68265ebeac98e7814829da7e7f6bb2a9aff8e39 [Self-hosted Renovate Bot] </summary>
+
+> ## contracts-2.0.76
+> ### (2023-10-02)
+> 
+> * hw.device-type: Add Eurotec Lowpad lcbzu9 device [Francois Loubser]
+> 
+> ## contracts-2.0.75
+> ### (2023-09-28)
+> 
+> * raspberrypi5: remove reference to 64bits in display name [Alex Gonzalez]
+> 
+> ## contracts-2.0.74
+> ### (2023-09-28)
+> 
+> * raspberrypi5: Explicitly flag as public for the switch to apply [Alex Gonzalez]
+> 
+> ## contracts-2.0.73
+> ### (2023-09-28)
+> 
+> * raspberrypi5: Add new device type [Florin Sarbu]
+> 
+> ## contracts-2.0.72
+> ### (2023-09-04)
+> 
+> * raspberrypi4-unipi-neuron: Add new device type [Florin Sarbu]
+> 
+> ## contracts-2.0.71
+> ### (2023-08-29)
+> 
+> * Add the BeagleBone AI-64. [Lisandro Damián Nicanor Pérez Meyer]
+> 
+> ## contracts-2.0.70
+> ### (2023-08-23)
+> 
+> * Add alpine 3.18 [Kyle Harding]
+> 
+> ## contracts-2.0.69
+> ### (2023-08-22)
+> 
+> * Remove Ubuntu Impish and Kinetic and add Lunar [Kyle Harding]
+> 
+
+</details>
+
 # v4.0.16+rev3
 ## (2023-10-03)
 
