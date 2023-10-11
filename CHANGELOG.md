@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v4.0.22+rev1
+## (2023-10-11)
+
+* beagleboard-xm: Finish up device discontinuation [Florin Sarbu]
+
 # v4.0.22
 ## (2023-10-10)
 

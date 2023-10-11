@@ -1,4 +1,21 @@
 - commits:
+    - subject: "beagleboard-xm: Finish up device discontinuation"
+      hash: 2217057b63b38ff444717bfe89d4300e108551b3
+      body: |
+        To properly discontinue a device type we need to remove the entire
+        coffee file nowadays. This commit is a follow-up for
+        https://github.com/balena-os/balena-beaglebone/pull/577
+      footer:
+        Changelog-entry: "beagleboard-xm: Finish up device discontinuation"
+        changelog-entry: "beagleboard-xm: Finish up device discontinuation"
+        Signed-off-by: Florin Sarbu <florin@balena.io>
+        signed-off-by: Florin Sarbu <florin@balena.io>
+      author: Florin Sarbu
+      nested: []
+  version: 4.0.22+rev1
+  title: ""
+  date: 2023-10-11T13:26:44.082Z
+- commits:
     - subject: Update layers/meta-balena to 010ff351b1875554aa86fbaa4f1ac5b8f865cc7f
       hash: fdee32f74d12e8a01c06d19f176359f078c34e9f
       body: Update layers/meta-balena
