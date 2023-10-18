@@ -1,4 +1,193 @@
 - commits:
+    - subject: Update balena-yocto-scripts to c9f72aa9d032ab2281b918dab5970f18568a7644
+      hash: 7ba27f59ac45fb939ebb7475df0fca4c4f3d306f
+      body: Update balena-yocto-scripts
+      footer:
+        Changelog-entry: Update balena-yocto-scripts to c9f72aa9d032ab2281b918dab5970f18568a7644
+        changelog-entry: Update balena-yocto-scripts to c9f72aa9d032ab2281b918dab5970f18568a7644
+      author: Self-hosted Renovate Bot
+      nested:
+        - commits:
+            - subject: README.md ChangeType is needed for PR so add to README example
+              hash: 9f554545b218b3d00af08f1b6971605a1617ed22
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex J Lennon <ajlennon@dynamicdevices.co.uk>
+                signed-off-by: Alex J Lennon <ajlennon@dynamicdevices.co.uk>
+              author: Alex J Lennon
+              nested: []
+          version: balena-yocto-scripts-1.19.38
+          title: ""
+          date: 2023-10-11T06:39:29.551Z
+        - commits:
+            - subject: "Dockerfile_yocto-build-env: Add screen"
+              hash: 7ca8164eec0ba2903b5a463166fdb2d9370d3ba4
+              body: |
+                To enable us to use `bitbake -c devshell foo` in container
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex J Lennon <ajlennon@dynamicdevices.co.uk>
+                signed-off-by: Alex J Lennon <ajlennon@dynamicdevices.co.uk>
+              author: Alex J Lennon
+              nested: []
+          version: balena-yocto-scripts-1.19.37
+          title: ""
+          date: 2023-10-10T13:49:21.732Z
+        - commits:
+            - subject: "flowzone: allow external contributions"
+              hash: e44cdd1b12d22ffb6d93408e794defee812436c2
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+          version: balena-yocto-scripts-1.19.36
+          title: ""
+          date: 2023-10-10T12:37:01.374Z
+        - commits:
+            - subject: "balena-deploy: fail if device type not found"
+              hash: 14896d0846e52ce45ed5b14e2b62cb965983c44a
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Ryan Cooke <ryan@balena.io>
+                signed-off-by: Ryan Cooke <ryan@balena.io>
+              author: rcooke-warwick
+              nested: []
+            - subject: "balena-api: Dont assume private if can't get DT"
+              hash: ae7c2e15e7ce6ee3588e1026653f0e54ff7c39f8
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Ryan Cooke <ryan@balena.io>
+                signed-off-by: Ryan Cooke <ryan@balena.io>
+              author: rcooke-warwick
+              nested: []
+          version: balena-yocto-scripts-1.19.35
+          title: ""
+          date: 2023-09-28T08:26:37.671Z
+        - commits:
+            - subject: Remove all traces of --skip-discontinued
+              hash: c0974ffb5f64818dcb5040d233348dd95c8e6c40
+              body: >
+                This option was removed in
+                https://github.com/balena-os/balena-yocto-scripts/pull/313
+              footer:
+                Change-type: patch
+                change-type: patch
+                Changelog-entry: Remove all traces of --skip-discontinued
+                changelog-entry: Remove all traces of --skip-discontinued
+                Signed-off-by: Florin Sarbu <florin@balena.io>
+                signed-off-by: Florin Sarbu <florin@balena.io>
+              author: Florin Sarbu
+              nested: []
+            - subject: "barys: Remove documenting the --skip-discontinued option"
+              hash: 0bd9144ebed207734e7eecb584306b74b25ed53d
+              body: >
+                This option was removed in
+                https://github.com/balena-os/balena-yocto-scripts/pull/313
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Florin Sarbu <florin@balena.io>
+                signed-off-by: Florin Sarbu <florin@balena.io>
+              author: Florin Sarbu
+              nested: []
+          version: balena-yocto-scripts-1.19.34
+          title: ""
+          date: 2023-07-12T07:04:24.994Z
+        - commits:
+            - subject: Update device-types package from v10.3.0 to v10.5.1
+              hash: 4bd1b5ed1298013cc2c4e766822b0e6869e83a47
+              body: |
+                Update device-types package from v10.3.0 to v10.5.1
+              footer:
+                Change-type: patch
+                change-type: patch
+                Changelog-entry: Update device-types package from v10.3.0 to v10.5.1
+                changelog-entry: Update device-types package from v10.3.0 to v10.5.1
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+            - subject: "barys: remove option to skip discontinued device types"
+              hash: a20413eac9cda4c5993841cdd771d904c0e8c0b5
+              body: |
+                A discontinued device type has the coffee file removed from the
+                documentation so there is no need for this argument.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+            - subject: "balena-lib: remove balena_lib_get_dt_state"
+              hash: 2bf60f21a4486859760168ecbf4b35af2eec88a1
+              body: >
+                There is no requirement in balenaCloud to inform about a device
+
+                deprecation. This allows to just remove the coffee file from the
+
+                device repository when a device is deprecated so there will be no
+
+                more releases and no need for checks on a discontinued state.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+            - subject: "jenkins_build: remove discontinued device check"
+              hash: db359a88cf3ada613afef703a969e612b1706c2f
+              body: >
+                There is no requirement in balenaCloud to inform about a device
+
+                deprecation. This allows to just remove the coffee file from the
+
+                device repository when a device is deprecated so there will be no
+
+                more releases and no need for checks on a discontinued state.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+            - subject: "balena-deploy: remove discontinued check"
+              hash: fe94d22851698916f576647b3a3ada3002b6e352
+              body: >
+                There is no requirement in balenaCloud to inform about a device
+
+                deprecation. This allows to just remove the coffee file from the
+
+                device repository when a device is deprecated so there will be no
+
+                more releases and no need for checks on a discontinued state.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+          version: balena-yocto-scripts-1.19.33
+          title: ""
+          date: 2023-07-10T15:29:53.674Z
+  version: 4.0.26+rev3
+  title: ""
+  date: 2023-10-18T01:39:43.131Z
+- commits:
     - subject: Update layers/poky to ef5214f584765810e94a6f61585ccbcd9b909502
       hash: 27204a7d83860374b173b2ba480192322feca8f6
       body: Update layers/poky

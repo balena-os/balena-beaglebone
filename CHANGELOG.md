@@ -1,6 +1,52 @@
 Change log
 -----------
 
+# v4.0.26+rev3
+## (2023-10-18)
+
+
+<details>
+<summary> Update balena-yocto-scripts to c9f72aa9d032ab2281b918dab5970f18568a7644 [Self-hosted Renovate Bot] </summary>
+
+> ## balena-yocto-scripts-1.19.38
+> ### (2023-10-11)
+> 
+> * README.md ChangeType is needed for PR so add to README example [Alex J Lennon]
+> 
+> ## balena-yocto-scripts-1.19.37
+> ### (2023-10-10)
+> 
+> * Dockerfile_yocto-build-env: Add screen [Alex J Lennon]
+> 
+> ## balena-yocto-scripts-1.19.36
+> ### (2023-10-10)
+> 
+> * flowzone: allow external contributions [Alex Gonzalez]
+> 
+> ## balena-yocto-scripts-1.19.35
+> ### (2023-09-28)
+> 
+> * balena-deploy: fail if device type not found [rcooke-warwick]
+> * balena-api: Dont assume private if can't get DT [rcooke-warwick]
+> 
+> ## balena-yocto-scripts-1.19.34
+> ### (2023-07-12)
+> 
+> * Remove all traces of --skip-discontinued [Florin Sarbu]
+> * barys: Remove documenting the --skip-discontinued option [Florin Sarbu]
+> 
+> ## balena-yocto-scripts-1.19.33
+> ### (2023-07-10)
+> 
+> * Update device-types package from v10.3.0 to v10.5.1 [Alex Gonzalez]
+> * barys: remove option to skip discontinued device types [Alex Gonzalez]
+> * balena-lib: remove balena_lib_get_dt_state [Alex Gonzalez]
+> * jenkins_build: remove discontinued device check [Alex Gonzalez]
+> * balena-deploy: remove discontinued check [Alex Gonzalez]
+> 
+
+</details>
+
 # v4.0.26+rev2
 ## (2023-10-17)
 
