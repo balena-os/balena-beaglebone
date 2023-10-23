@@ -8,6 +8,18 @@ BALENA_BOOT_PARTITION_FILES:beaglebone = " \
     u-boot.img: \
     "
 
+BALENA_BOOT_PARTITION_FILES:beaglebone-ai64 = " \
+    sysfw-j721e-gp-evm.itb: \
+    sysfw-j721e_sr1_1-hs-evm.itb: \
+    sysfw-j721e_sr2-hs-fs-evm.itb: \
+    sysfw.itb: \
+    tiboot3-j721e-gp-evm.bin: \
+    tiboot3-j721e_sr1_1-hs-evm.bin: \
+    tiboot3-j721e_sr2-hs-fs-evm.bin: \
+    tiboot3.bin: \
+    tispl.bin: \
+    u-boot.img: \
+    "
 BALENA_BOOT_PARTITION_FILES:beagleboard-xm = " \
     MLO: \
     u-boot.img: \

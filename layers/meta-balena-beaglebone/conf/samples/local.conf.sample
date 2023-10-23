@@ -1,6 +1,7 @@
 # Supported machines
 #MACHINE ?= "beagleboard-xm"
 #MACHINE ?= "beaglebone"
+#MACHINE ?= "beaglebone-ai64"
 #MACHINE ?= "beaglebone-green"
 #MACHINE ?= "beaglebone-green-gateway"
 #MACHINE ?= "beaglebone-green-wifi"

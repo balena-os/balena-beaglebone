@@ -1,0 +1,30 @@
+From e91647593423d0abcf8dac89a64a48659db9e9eb Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Lisandro=20P=C3=A9rez=20Meyer?= <lperezmeyer@ics.com>
+Date: Tue, 1 Aug 2023 18:52:55 +0000
+Subject: [PATCH] Subject: [PATCH] Integrate with Balena u-boot environment
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Upstream-Status: Inappropriate [configuration]
+Signed-off-by: Lisandro Pérez Meyer <lperezmeyer@ics.com>
+---
+ include/config_distro_bootcmd.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/include/config_distro_bootcmd.h b/include/config_distro_bootcmd.h
+index 9d2a225e7e..0d2ae1a889 100644
+--- a/include/config_distro_bootcmd.h
++++ b/include/config_distro_bootcmd.h
+@@ -515,7 +515,7 @@
+ 		"\0"                                                      \
+ 	\
+ 	"scan_dev_for_boot_part="                                         \
+-		"part list ${devtype} ${devnum} -bootable devplist; "     \
++		"setenv devplist ${resin_root_part}; " 	                  \
+ 		"env exists devplist || setenv devplist 1; "              \
+ 		"for distro_bootpart in ${devplist}; do "                 \
+ 			"if fstype ${devtype} "                           \
+-- 
+2.25.1
+
