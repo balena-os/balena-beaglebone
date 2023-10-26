@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v4.0.30+rev1
+## (2023-10-26)
+
+* Add support for the BeagleBone AI64. [Lisandro Pérez Meyer]
+
 # v4.0.30
 ## (2023-10-24)
 

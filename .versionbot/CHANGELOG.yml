@@ -1,4 +1,21 @@
 - commits:
+    - subject: Add support for the BeagleBone AI64.
+      hash: 8dd122997763e77c71e65c2fc1da32263cfe653d
+      body: |
+        This also updates the meta-ti and meta-arm layers in order to provide
+        different improvements made in those layers. Check their notes for more
+        details.
+      footer:
+        Changelog-entry: Add support for the BeagleBone AI64.
+        changelog-entry: Add support for the BeagleBone AI64.
+        Signed-By: Lisandro Pérez Meyer <lperezmeyer@ics.com>
+        signed-by: Lisandro Pérez Meyer <lperezmeyer@ics.com>
+      author: Lisandro Pérez Meyer
+      nested: []
+  version: 4.0.30+rev1
+  title: ""
+  date: 2023-10-26T08:38:05.097Z
+- commits:
     - subject: Update layers/meta-balena to ff47baf219489312903ecbfe52f6f16a2cb284bb
       hash: 9b89667af8f9e515e3820b7b14ee570c8763bdc7
       body: Update layers/meta-balena
