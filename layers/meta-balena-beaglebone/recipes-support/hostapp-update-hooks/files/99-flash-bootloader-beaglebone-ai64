@@ -1,0 +1,58 @@
+#!/bin/sh
+
+#
+# Script used by hostapps updater to flash bootloader onto internal media.
+#
+
+set -o errexit
+
+# Machine specific data
+# Block size is 128k == 131072 bytes, keeping the values on the original
+# BBAI64 Debian system.
+
+tiboot3_file="tiboot3.bin"
+tiboot3_block_size=131072
+tiboot3_seek_blocks=0
+
+# The BBAI64 has two boot partitions, so far only one of them is being used.
+device="/dev/mmcblk0boot0"
+
+# Files are listed in the order they need to be flashed.
+update_files="tiboot3"
+
+# We need these commands, else we can't write into mmcblk0boot0.
+mmc bootpart enable 1 2 /dev/mmcblk0
+mmc bootbus set single_backward x1 x8 /dev/mmcblk0
+mmc hwreset enable /dev/mmcblk0 | true
+
+echo 0 > /sys/block/mmcblk0boot0/force_ro
+
+for i in $update_files; do
+        current_update_file=$(eval echo \$${i}_file)
+        block_size=$(eval echo \$${i}_block_size)
+        seek_blocks=$(eval echo \$${i}_seek_blocks)
+
+        # calculate size and md5sum of the binary to update from the update bundle
+        update_size=$(stat -c%s /resin-boot/$current_update_file)
+        update_md5sum=$(md5sum /resin-boot/$current_update_file | awk '{print $1'})
+
+        # calculate number of bytes to skip when computing the checksum of the data we want to update (i.e. the data already written to $device)
+        skip_bytes=$((block_size * seek_blocks))
+
+        # calculate md5sum of the data already written to $device, using $update_size bytes and skipping $skip_bytes from $device
+        existing_md5sum=$(dd if=$device skip=$skip_bytes bs=1 count=$update_size status=none | md5sum | awk '{print $1}')
+
+        echo "Processing $current_update_file. Existing md5sum $existing_md5sum ; update md5sum $update_md5sum"
+
+        if [ ! "$existing_md5sum" = "$update_md5sum" ] || [ -n "$force_write" ]; then
+                # we are flashing a binary and let's signal that we need to also flash the remaining binaries
+                # (if we do not write the remaining binaries when the previous one was written then the board may not boot anymore, due to the nature of the secure boot mechanism on the hardware)
+                force_write=true
+                echo "Flashing $current_update_file to $device"
+                dd if=/resin-boot/$current_update_file of=$device conv=fdatasync seek=$seek_blocks bs=$block_size
+        fi
+done
+
+sync
+
+echo 1 > /sys/block/mmcblk0boot0/force_ro

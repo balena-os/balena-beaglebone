@@ -1,0 +1,28 @@
+From 5d6583299dcc0765cf3c4652150bb6f483ea201f Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Lisandro=20P=C3=A9rez=20Meyer?= <lperezmeyer@ics.com>
+Date: Mon, 21 Aug 2023 13:39:31 +0000
+Subject: [PATCH] Use the BBONEAI-64-B0- as default board.
+
+On BeagleBoard's discord server channel #beaglebone-ai-64 Robert C.
+Nelson told me that the EEPROM support is WIP, so for the moment just
+set this as the default board.
+---
+ board/ti/j721e/evm.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/board/ti/j721e/evm.c b/board/ti/j721e/evm.c
+index e82349ef24..7964f36e22 100644
+--- a/board/ti/j721e/evm.c
++++ b/board/ti/j721e/evm.c
+@@ -453,7 +453,7 @@ void configure_serdes_sierra(void)
+ #ifdef CONFIG_BOARD_LATE_INIT
+ static void setup_board_eeprom_env(void)
+ {
+-	char *name = "j721e";
++	char *name = "BBONEAI-64-B0-";
+ 
+ 	if (do_board_detect())
+ 		goto invalid_eeprom;
+-- 
+2.25.1
+
