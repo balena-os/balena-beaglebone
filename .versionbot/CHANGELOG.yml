@@ -1,4 +1,115 @@
 - commits:
+    - subject: Update layers/meta-balena to 0608f561a79e1b4b2ba5e83a10c4b9d2010a00cd
+      hash: a953fbdf97d90688002342bca3a7d91c0ca21f98
+      body: Update layers/meta-balena
+      footer:
+        Changelog-entry: Update layers/meta-balena to 0608f561a79e1b4b2ba5e83a10c4b9d2010a00cd
+        changelog-entry: Update layers/meta-balena to 0608f561a79e1b4b2ba5e83a10c4b9d2010a00cd
+      author: Self-hosted Renovate Bot
+      nested:
+        - commits:
+            - subject: "plymouth: Remove --retain-splash flag from plymouth quit"
+              hash: 01a0cc9a3116274fd6e6e6c999705e6e5a8acfec
+              body: |
+                This flag isn't needed on balenaOS as the splash screen
+                remains even after plymouthd is stopped.
+
+                Having the flag in place prevents user apps from writing to
+                tty consoles after stopping plymouth via dbus.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Kyle Harding <kyle@balena.io>
+                signed-off-by: Kyle Harding <kyle@balena.io>
+              author: Kyle Harding
+              nested: []
+          version: meta-balena-4.1.1
+          title: ""
+          date: 2023-10-25T19:07:25.710Z
+        - commits:
+            - subject: "tests: add safe reboot checks"
+              hash: 8d99048a3e2218d4cfdbbf9e27e2a3e04c1aa700
+              body: >
+                This check tests the safe_reboot script used in hostOS updates
+                to
+
+                make sure application locks are respected.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+            - subject: "hostapp-update: move lock checking to helper function"
+              hash: 8cf977610619687e5958c66b430585cd91f0dbe2
+              body: >
+                The helper function can then be called both from hostapp-update
+                and
+
+                from the actions server hup script.
+              footer:
+                Change-type: minor
+                change-type: minor
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+            - subject: "os-helpers-logging: output script logging to journald"
+              hash: e0f1c60cf6eaf668c4c5714d525da17df58073e5
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+            - subject: "os-helpers: add safe_reboot function"
+              hash: 18ebc142a761b798fe3b08bc93baf52a11702a2c
+              body: >
+                This script performs a safe system reboot with application
+                update
+
+                locks checks.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+          version: meta-balena-4.1.0
+          title: ""
+          date: 2023-10-25T08:06:44.556Z
+        - commits:
+            - subject: 'Revert "kernel-balena: Remove apparmor support"'
+              hash: ddc94ae58072323cf94ac39d6c2d16c78ff794d8
+              body: >
+                This is no longer needed after the balena_os/balena-engine
+                commit:
+
+                https://github.com/balena-os/balena-engine/commit/ed8ba18e8776a7bf37b3326baeca8196b4ea76b0
+
+
+                released in balena-engine v20.10.39
+
+
+                This reverts commit 18cd233a83554b58b3540164afd768fdeda60b03.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+          version: meta-balena-4.0.31
+          title: ""
+          date: 2023-10-24T16:20:53.918Z
+  version: 4.1.1
+  title: ""
+  date: 2023-10-27T12:17:27.149Z
+- commits:
     - subject: Add support for the BeagleBone AI64.
       hash: 8dd122997763e77c71e65c2fc1da32263cfe653d
       body: |
