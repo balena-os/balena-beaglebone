@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v4.1.1+rev1
+## (2023-10-31)
+
+* Add path for LED indentification. [Lisandro Pérez Meyer]
+
 # v4.1.1
 ## (2023-10-27)
 

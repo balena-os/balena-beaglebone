@@ -1,4 +1,21 @@
 - commits:
+    - subject: Add path for LED indentification.
+      hash: 4a2b36eba607e36015916712c3d8365425c52976
+      body: |
+        We can use the same one as the beaglebone.
+      footer:
+        Change-type: patch
+        change-type: patch
+        Changelog-entry: Add path for LED indentification.
+        changelog-entry: Add path for LED indentification.
+        Signed-By: Lisandro Pérez Meyer <lperezmeyer@ics.com>
+        signed-by: Lisandro Pérez Meyer <lperezmeyer@ics.com>
+      author: Lisandro Pérez Meyer
+      nested: []
+  version: 4.1.1+rev1
+  title: ""
+  date: 2023-10-31T20:37:12.068Z
+- commits:
     - subject: Update layers/meta-balena to 0608f561a79e1b4b2ba5e83a10c4b9d2010a00cd
       hash: a953fbdf97d90688002342bca3a7d91c0ca21f98
       body: Update layers/meta-balena
