@@ -1,10 +1,10 @@
 #SRC_URI = "https://github.com/beagleboard/ti-linux-firmware.git;branch=09.00.00.007"
-PV = "09.00.00.010"
+PV = "09.00.00.011"
 BPN = "ti-linux-firmware"
 SRC_URI = "https://github.com/beagleboard/${BPN}/archive/refs/tags/${PV}.tar.gz"
 #SRCREV = "905eb58564581d951d148f45828e8c8a142a5938"
-SRC_URI[sha256sum] = "51ec25622e44fa18ac9b032f6d432408736307e59290f273c29932999bb27ff4"
-WHENCE_CHKSUM  = "8d69d6d063cc3fdf264752e2c7a41f1a"
+SRC_URI[sha256sum] = "4ba370a5975131a638c7500d96596313588ab63f19048097f0650e6a7abaf551"
+WHENCE_CHKSUM  = "4279eb9fcb7c0c9e9303a171f491c0e4"
 
 SRC_URI:class-devupstream = "https://github.com/beagleboard/${BPN}/archive/refs/tags/${PV}.tar.gz"
 #SRCREV:class-devupstream = "905eb58564581d951d148f45828e8c8a142a5938"
