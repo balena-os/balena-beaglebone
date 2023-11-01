@@ -10,17 +10,26 @@ BRANCH:beaglebone-play= "v2023.04-ti-09.00.00.010-BeaglePlay"
 UBOOT_GIT_URI:beaglebone-play = "git://git.beagleboard.org/beagleboard/u-boot.git"
 SRCREV:beaglebone-play = "4a4f4d88ffb620a3d389900f648abb24008f3ddc"
 
-
 # Generate an extlinux.conf file
 UBOOT_EXTLINUX = "1"
-UBOOT_EXTLINUX_ROOT = "root=/dev/mmcblk1p2"
+UBOOT_EXTLINUX_ROOT = "root=UUID="
+
+# Generate a Guid for the so called 'resin_rootA' partition
+# This will be used later (by the do_populate_ext4() method of the 'balena-image' recipe)
+def maybe_generate_resin_root_a_guid (d):
+       import uuid
+       return str(uuid.uuid4())
+
+
+RESIN_ROOT_A_GUID = "${@maybe_generate_resin_root_a_guid(d)}"
+UBOOT_EXTLINUX_ROOT .= "${RESIN_ROOT_A_GUID}"
+
 UBOOT_EXTLINUX_KERNEL_ARGS = "rootwait rw rootfstype=ext4"
 UBOOT_EXTLINUX_BOOT_FILES = " \
     extlinux.conf;extlinux/extlinux.conf \
     ${KERNEL_IMAGETYPE} \
     ${KERNEL_DEVICETREE} \
 "
-
 
 FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
 
