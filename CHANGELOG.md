@@ -1,6 +1,12 @@
 Change log
 -----------
 
+# v4.1.1+rev2
+## (2023-11-01)
+
+* Increase image rootfs size, per Alexandru's request [Lisandro Pérez Meyer]
+* Add video decoder and Display Port's firmwares for the BeagleBone AI64. [Lisandro Pérez Meyer]
+
 # v4.1.1+rev1
 ## (2023-10-31)
 

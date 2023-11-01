@@ -1,4 +1,40 @@
 - commits:
+    - subject: Increase image rootfs size, per Alexandru's request
+      hash: 206154a54429ab03470bcfabef2d4c3384c88764
+      body: |
+        Per Alexandru's request.
+      footer:
+        Changelog-entry: Increase image rootfs size, per Alexandru's request
+        changelog-entry: Increase image rootfs size, per Alexandru's request
+        Signed-off-by: Lisandro Pérez Meyer <lperezmeyer@ics.com>
+        signed-off-by: Lisandro Pérez Meyer <lperezmeyer@ics.com>
+      author: Lisandro Pérez Meyer
+      nested: []
+    - subject: Add video decoder and Display Port's firmwares for the BeagleBone AI64.
+      hash: 054e3a40fa64e6e13b623e6bdd472d8201b2a994
+      body: |
+        The BeagleBone AI-64 requires the vxd-dec-fw package in order to bring
+        in the video decoder firmware. This avoids:
+
+        ```
+        img_dec 4300000.video-decoder: Error!! fw binary is not present
+        ```
+
+        dmesg message.
+
+        At the same time install the Cadence Display Port firmware on initramfs,
+        as it's needed ASAP.
+      footer:
+        Changelog-entry: Add video decoder and Display Port's firmwares for the BeagleBone AI64.
+        changelog-entry: Add video decoder and Display Port's firmwares for the BeagleBone AI64.
+        Signed-By: Lisandro Pérez Meyer <lperezmeyer@ics.com>
+        signed-by: Lisandro Pérez Meyer <lperezmeyer@ics.com>
+      author: Lisandro Pérez Meyer
+      nested: []
+  version: 4.1.1+rev2
+  title: ""
+  date: 2023-11-01T13:28:39.982Z
+- commits:
     - subject: Add path for LED indentification.
       hash: 4a2b36eba607e36015916712c3d8365425c52976
       body: |
