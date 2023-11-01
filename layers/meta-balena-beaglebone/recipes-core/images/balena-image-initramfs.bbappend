@@ -2,3 +2,4 @@
 # of zImage, so we need a bigger rootfs image size in order to account for this
 # on the initramfs.
 IMAGE_ROOTFS_MAXSIZE:beaglebone-ai64 = "65536"
+PACKAGE_INSTALL:append:beaglebone-ai64 = " cadence-mhdp-fw"
