@@ -20,7 +20,7 @@ COMPATIBLE_MACHINE = "beaglebone|beagleboard-xm"
 
 S = "${WORKDIR}/git"
 
-TAG = "5.4.106-ti-r42"
+TAG = "5.4.106-ti-r42-bn1"
 
 PV = "5.4.106+git${SRCPV}"
 
@@ -36,15 +36,13 @@ KERNEL_CONFIG_DIR = "${S}/ti_config_fragments"
 
 MULTI_CONFIG_BASE_SUFFIX = ""
 
-KERNEL_GIT_URI = "git://github.com/beagleboard/linux.git"
+KERNEL_GIT_URI = "git://git.beagleboard.org/jkridner/linux.git"
 KERNEL_GIT_PROTOCOL = "https"
 SRC_URI += " \
     ${KERNEL_GIT_URI};protocol=${KERNEL_GIT_PROTOCOL};tag=${TAG};nobranch=1 \
-    file://0001-Revert-random-fix-crng_ready-test.patch \
-    file://bn-v3-dt.patch \
     file://defconfig \
     "
 
 do_install:append() {
-    rm -rf ${D}/lib/modules/5.4.70+/modules.builtin.modinfo
+    rm -rf ${D}/lib/modules/5.4.106+/modules.builtin.modinfo
 }
