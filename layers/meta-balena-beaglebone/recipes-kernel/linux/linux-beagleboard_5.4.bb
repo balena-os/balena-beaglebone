@@ -20,7 +20,7 @@ COMPATIBLE_MACHINE = "beaglebone|beagleboard-xm"
 
 S = "${WORKDIR}/git"
 
-TAG = "5.4.106-ti-r42-bn2"
+TAG = "v5.4.106-ti-r42-bn2"
 
 PV = "5.4.106+git${SRCPV}"
 
