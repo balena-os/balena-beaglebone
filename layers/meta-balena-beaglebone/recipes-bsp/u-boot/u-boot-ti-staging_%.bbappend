@@ -23,17 +23,7 @@ UBOOT_SIGN_ENABLE:beaglebone-play = "0"
 
 # Generate an extlinux.conf file
 UBOOT_EXTLINUX = "1"
-UBOOT_EXTLINUX_ROOT = "root=UUID="
-
-# Generate a Guid for the so called 'resin_rootA' partition
-# This will be used later (by the do_populate_ext4() method of the 'balena-image' recipe)
-def maybe_generate_resin_root_a_guid (d):
-       import uuid
-       return str(uuid.uuid4())
-
-
-RESIN_ROOT_A_GUID = "${@maybe_generate_resin_root_a_guid(d)}"
-UBOOT_EXTLINUX_ROOT .= "${RESIN_ROOT_A_GUID}"
+UBOOT_EXTLINUX_ROOT = "root=/dev/mmcblk1p2"
 
 UBOOT_EXTLINUX_KERNEL_ARGS = "rootwait rw rootfstype=ext4"
 UBOOT_EXTLINUX_BOOT_FILES = " \
