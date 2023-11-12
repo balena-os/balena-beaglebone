@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash -xe
 HERE="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 COMMIT=144b01a94e5604a6d59e2d1680af6e1730ad1847
 VERSION=4.0.1-bn2
