@@ -1,0 +1,2664 @@
+From bf2e6e6a781b3756f508e35f21b48a4a6afce907 Mon Sep 17 00:00:00 2001
+From: Jason Kridner <jkridner@beagleboard.org>
+Date: Sun, 12 Nov 2023 23:04:03 +0000
+Subject: [PATCH] Add bcfserial and wpanusb
+
+---
+ drivers/misc/Makefile                    |   2 +
+ drivers/misc/bcfserial/.gitignore        |   8 +
+ drivers/misc/bcfserial/Kbuild            |   1 +
+ drivers/misc/bcfserial/LICENSE           | 339 ++++++++++
+ drivers/misc/bcfserial/Makefile          |   7 +
+ drivers/misc/bcfserial/README.md         |  49 ++
+ drivers/misc/bcfserial/bcfserial.c       | 680 ++++++++++++++++++++
+ drivers/misc/bcfserial/debug.sh          |   6 +
+ drivers/misc/bcfserial/dts/bcfserial.dts |  16 +
+ drivers/misc/bcfserial/lowpan.sh         |  21 +
+ drivers/misc/bcfserial/modprobe.sh       |   5 +
+ drivers/misc/wpanusb/.gitignore          |   9 +
+ drivers/misc/wpanusb/Kbuild              |   3 +
+ drivers/misc/wpanusb/LICENSE             | 339 ++++++++++
+ drivers/misc/wpanusb/Makefile            |  10 +
+ drivers/misc/wpanusb/README.rst          |  66 ++
+ drivers/misc/wpanusb/wpan-radio-spec.txt | 107 ++++
+ drivers/misc/wpanusb/wpanusb.c           | 778 +++++++++++++++++++++++
+ drivers/misc/wpanusb/wpanusb.h           |  54 ++
+ 19 files changed, 2500 insertions(+)
+ create mode 100644 drivers/misc/bcfserial/.gitignore
+ create mode 100644 drivers/misc/bcfserial/Kbuild
+ create mode 100644 drivers/misc/bcfserial/LICENSE
+ create mode 100644 drivers/misc/bcfserial/Makefile
+ create mode 100644 drivers/misc/bcfserial/README.md
+ create mode 100644 drivers/misc/bcfserial/bcfserial.c
+ create mode 100755 drivers/misc/bcfserial/debug.sh
+ create mode 100644 drivers/misc/bcfserial/dts/bcfserial.dts
+ create mode 100755 drivers/misc/bcfserial/lowpan.sh
+ create mode 100755 drivers/misc/bcfserial/modprobe.sh
+ create mode 100644 drivers/misc/wpanusb/.gitignore
+ create mode 100644 drivers/misc/wpanusb/Kbuild
+ create mode 100644 drivers/misc/wpanusb/LICENSE
+ create mode 100644 drivers/misc/wpanusb/Makefile
+ create mode 100644 drivers/misc/wpanusb/README.rst
+ create mode 100644 drivers/misc/wpanusb/wpan-radio-spec.txt
+ create mode 100644 drivers/misc/wpanusb/wpanusb.c
+ create mode 100644 drivers/misc/wpanusb/wpanusb.h
+
+diff --git a/drivers/misc/Makefile b/drivers/misc/Makefile
+index 48fe4d684684..985d3301b6b7 100644
+--- a/drivers/misc/Makefile
++++ b/drivers/misc/Makefile
+@@ -60,3 +60,5 @@ obj-$(CONFIG_PVPANIC)   	+= pvpanic.o
+ obj-$(CONFIG_HABANA_AI)		+= habanalabs/
+ obj-$(CONFIG_XILINX_SDFEC)	+= xilinx_sdfec.o
+ obj-$(CONFIG_DMA_BUF_PHYS)	+= dma-buf-phys.o
++obj-m += bcfserial/
++obj-m += wpanusb/
+diff --git a/drivers/misc/bcfserial/.gitignore b/drivers/misc/bcfserial/.gitignore
+new file mode 100644
+index 000000000000..14e7c740d732
+--- /dev/null
++++ b/drivers/misc/bcfserial/.gitignore
+@@ -0,0 +1,8 @@
++*.ko
++*.mod.*
++*.o
++*.order
++*.symvers
++*.swp
++*.cmd
++.tmp_versions/
+diff --git a/drivers/misc/bcfserial/Kbuild b/drivers/misc/bcfserial/Kbuild
+new file mode 100644
+index 000000000000..35faf8d48cce
+--- /dev/null
++++ b/drivers/misc/bcfserial/Kbuild
+@@ -0,0 +1 @@
++obj-m := bcfserial.o
+diff --git a/drivers/misc/bcfserial/LICENSE b/drivers/misc/bcfserial/LICENSE
+new file mode 100644
+index 000000000000..d159169d1050
+--- /dev/null
++++ b/drivers/misc/bcfserial/LICENSE
+@@ -0,0 +1,339 @@
++                    GNU GENERAL PUBLIC LICENSE
++                       Version 2, June 1991
++
++ Copyright (C) 1989, 1991 Free Software Foundation, Inc.,
++ 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
++ Everyone is permitted to copy and distribute verbatim copies
++ of this license document, but changing it is not allowed.
++
++                            Preamble
++
++  The licenses for most software are designed to take away your
++freedom to share and change it.  By contrast, the GNU General Public
++License is intended to guarantee your freedom to share and change free
++software--to make sure the software is free for all its users.  This
++General Public License applies to most of the Free Software
++Foundation's software and to any other program whose authors commit to
++using it.  (Some other Free Software Foundation software is covered by
++the GNU Lesser General Public License instead.)  You can apply it to
++your programs, too.
++
++  When we speak of free software, we are referring to freedom, not
++price.  Our General Public Licenses are designed to make sure that you
++have the freedom to distribute copies of free software (and charge for
++this service if you wish), that you receive source code or can get it
++if you want it, that you can change the software or use pieces of it
++in new free programs; and that you know you can do these things.
++
++  To protect your rights, we need to make restrictions that forbid
++anyone to deny you these rights or to ask you to surrender the rights.
++These restrictions translate to certain responsibilities for you if you
++distribute copies of the software, or if you modify it.
++
++  For example, if you distribute copies of such a program, whether
++gratis or for a fee, you must give the recipients all the rights that
++you have.  You must make sure that they, too, receive or can get the
++source code.  And you must show them these terms so they know their
++rights.
++
++  We protect your rights with two steps: (1) copyright the software, and
++(2) offer you this license which gives you legal permission to copy,
++distribute and/or modify the software.
++
++  Also, for each author's protection and ours, we want to make certain
++that everyone understands that there is no warranty for this free
++software.  If the software is modified by someone else and passed on, we
++want its recipients to know that what they have is not the original, so
++that any problems introduced by others will not reflect on the original
++authors' reputations.
++
++  Finally, any free program is threatened constantly by software
++patents.  We wish to avoid the danger that redistributors of a free
++program will individually obtain patent licenses, in effect making the
++program proprietary.  To prevent this, we have made it clear that any
++patent must be licensed for everyone's free use or not licensed at all.
++
++  The precise terms and conditions for copying, distribution and
++modification follow.
++
++                    GNU GENERAL PUBLIC LICENSE
++   TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
++
++  0. This License applies to any program or other work which contains
++a notice placed by the copyright holder saying it may be distributed
++under the terms of this General Public License.  The "Program", below,
++refers to any such program or work, and a "work based on the Program"
++means either the Program or any derivative work under copyright law:
++that is to say, a work containing the Program or a portion of it,
++either verbatim or with modifications and/or translated into another
++language.  (Hereinafter, translation is included without limitation in
++the term "modification".)  Each licensee is addressed as "you".
++
++Activities other than copying, distribution and modification are not
++covered by this License; they are outside its scope.  The act of
++running the Program is not restricted, and the output from the Program
++is covered only if its contents constitute a work based on the
++Program (independent of having been made by running the Program).
++Whether that is true depends on what the Program does.
++
++  1. You may copy and distribute verbatim copies of the Program's
++source code as you receive it, in any medium, provided that you
++conspicuously and appropriately publish on each copy an appropriate
++copyright notice and disclaimer of warranty; keep intact all the
++notices that refer to this License and to the absence of any warranty;
++and give any other recipients of the Program a copy of this License
++along with the Program.
++
++You may charge a fee for the physical act of transferring a copy, and
++you may at your option offer warranty protection in exchange for a fee.
++
++  2. You may modify your copy or copies of the Program or any portion
++of it, thus forming a work based on the Program, and copy and
++distribute such modifications or work under the terms of Section 1
++above, provided that you also meet all of these conditions:
++
++    a) You must cause the modified files to carry prominent notices
++    stating that you changed the files and the date of any change.
++
++    b) You must cause any work that you distribute or publish, that in
++    whole or in part contains or is derived from the Program or any
++    part thereof, to be licensed as a whole at no charge to all third
++    parties under the terms of this License.
++
++    c) If the modified program normally reads commands interactively
++    when run, you must cause it, when started running for such
++    interactive use in the most ordinary way, to print or display an
++    announcement including an appropriate copyright notice and a
++    notice that there is no warranty (or else, saying that you provide
++    a warranty) and that users may redistribute the program under
++    these conditions, and telling the user how to view a copy of this
++    License.  (Exception: if the Program itself is interactive but
++    does not normally print such an announcement, your work based on
++    the Program is not required to print an announcement.)
++
++These requirements apply to the modified work as a whole.  If
++identifiable sections of that work are not derived from the Program,
++and can be reasonably considered independent and separate works in
++themselves, then this License, and its terms, do not apply to those
++sections when you distribute them as separate works.  But when you
++distribute the same sections as part of a whole which is a work based
++on the Program, the distribution of the whole must be on the terms of
++this License, whose permissions for other licensees extend to the
++entire whole, and thus to each and every part regardless of who wrote it.
++
++Thus, it is not the intent of this section to claim rights or contest
++your rights to work written entirely by you; rather, the intent is to
++exercise the right to control the distribution of derivative or
++collective works based on the Program.
++
++In addition, mere aggregation of another work not based on the Program
++with the Program (or with a work based on the Program) on a volume of
++a storage or distribution medium does not bring the other work under
++the scope of this License.
++
++  3. You may copy and distribute the Program (or a work based on it,
++under Section 2) in object code or executable form under the terms of
++Sections 1 and 2 above provided that you also do one of the following:
++
++    a) Accompany it with the complete corresponding machine-readable
++    source code, which must be distributed under the terms of Sections
++    1 and 2 above on a medium customarily used for software interchange; or,
++
++    b) Accompany it with a written offer, valid for at least three
++    years, to give any third party, for a charge no more than your
++    cost of physically performing source distribution, a complete
++    machine-readable copy of the corresponding source code, to be
++    distributed under the terms of Sections 1 and 2 above on a medium
++    customarily used for software interchange; or,
++
++    c) Accompany it with the information you received as to the offer
++    to distribute corresponding source code.  (This alternative is
++    allowed only for noncommercial distribution and only if you
++    received the program in object code or executable form with such
++    an offer, in accord with Subsection b above.)
++
++The source code for a work means the preferred form of the work for
++making modifications to it.  For an executable work, complete source
++code means all the source code for all modules it contains, plus any
++associated interface definition files, plus the scripts used to
++control compilation and installation of the executable.  However, as a
++special exception, the source code distributed need not include
++anything that is normally distributed (in either source or binary
++form) with the major components (compiler, kernel, and so on) of the
++operating system on which the executable runs, unless that component
++itself accompanies the executable.
++
++If distribution of executable or object code is made by offering
++access to copy from a designated place, then offering equivalent
++access to copy the source code from the same place counts as
++distribution of the source code, even though third parties are not
++compelled to copy the source along with the object code.
++
++  4. You may not copy, modify, sublicense, or distribute the Program
++except as expressly provided under this License.  Any attempt
++otherwise to copy, modify, sublicense or distribute the Program is
++void, and will automatically terminate your rights under this License.
++However, parties who have received copies, or rights, from you under
++this License will not have their licenses terminated so long as such
++parties remain in full compliance.
++
++  5. You are not required to accept this License, since you have not
++signed it.  However, nothing else grants you permission to modify or
++distribute the Program or its derivative works.  These actions are
++prohibited by law if you do not accept this License.  Therefore, by
++modifying or distributing the Program (or any work based on the
++Program), you indicate your acceptance of this License to do so, and
++all its terms and conditions for copying, distributing or modifying
++the Program or works based on it.
++
++  6. Each time you redistribute the Program (or any work based on the
++Program), the recipient automatically receives a license from the
++original licensor to copy, distribute or modify the Program subject to
++these terms and conditions.  You may not impose any further
++restrictions on the recipients' exercise of the rights granted herein.
++You are not responsible for enforcing compliance by third parties to
++this License.
++
++  7. If, as a consequence of a court judgment or allegation of patent
++infringement or for any other reason (not limited to patent issues),
++conditions are imposed on you (whether by court order, agreement or
++otherwise) that contradict the conditions of this License, they do not
++excuse you from the conditions of this License.  If you cannot
++distribute so as to satisfy simultaneously your obligations under this
++License and any other pertinent obligations, then as a consequence you
++may not distribute the Program at all.  For example, if a patent
++license would not permit royalty-free redistribution of the Program by
++all those who receive copies directly or indirectly through you, then
++the only way you could satisfy both it and this License would be to
++refrain entirely from distribution of the Program.
++
++If any portion of this section is held invalid or unenforceable under
++any particular circumstance, the balance of the section is intended to
++apply and the section as a whole is intended to apply in other
++circumstances.
++
++It is not the purpose of this section to induce you to infringe any
++patents or other property right claims or to contest validity of any
++such claims; this section has the sole purpose of protecting the
++integrity of the free software distribution system, which is
++implemented by public license practices.  Many people have made
++generous contributions to the wide range of software distributed
++through that system in reliance on consistent application of that
++system; it is up to the author/donor to decide if he or she is willing
++to distribute software through any other system and a licensee cannot
++impose that choice.
++
++This section is intended to make thoroughly clear what is believed to
++be a consequence of the rest of this License.
++
++  8. If the distribution and/or use of the Program is restricted in
++certain countries either by patents or by copyrighted interfaces, the
++original copyright holder who places the Program under this License
++may add an explicit geographical distribution limitation excluding
++those countries, so that distribution is permitted only in or among
++countries not thus excluded.  In such case, this License incorporates
++the limitation as if written in the body of this License.
++
++  9. The Free Software Foundation may publish revised and/or new versions
++of the General Public License from time to time.  Such new versions will
++be similar in spirit to the present version, but may differ in detail to
++address new problems or concerns.
++
++Each version is given a distinguishing version number.  If the Program
++specifies a version number of this License which applies to it and "any
++later version", you have the option of following the terms and conditions
++either of that version or of any later version published by the Free
++Software Foundation.  If the Program does not specify a version number of
++this License, you may choose any version ever published by the Free Software
++Foundation.
++
++  10. If you wish to incorporate parts of the Program into other free
++programs whose distribution conditions are different, write to the author
++to ask for permission.  For software which is copyrighted by the Free
++Software Foundation, write to the Free Software Foundation; we sometimes
++make exceptions for this.  Our decision will be guided by the two goals
++of preserving the free status of all derivatives of our free software and
++of promoting the sharing and reuse of software generally.
++
++                            NO WARRANTY
++
++  11. BECAUSE THE PROGRAM IS LICENSED FREE OF CHARGE, THERE IS NO WARRANTY
++FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW.  EXCEPT WHEN
++OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES
++PROVIDE THE PROGRAM "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
++OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
++MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.  THE ENTIRE RISK AS
++TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU.  SHOULD THE
++PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING,
++REPAIR OR CORRECTION.
++
++  12. IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING
++WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MAY MODIFY AND/OR
++REDISTRIBUTE THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES,
++INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING
++OUT OF THE USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED
++TO LOSS OF DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY
++YOU OR THIRD PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER
++PROGRAMS), EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE
++POSSIBILITY OF SUCH DAMAGES.
++
++                     END OF TERMS AND CONDITIONS
++
++            How to Apply These Terms to Your New Programs
++
++  If you develop a new program, and you want it to be of the greatest
++possible use to the public, the best way to achieve this is to make it
++free software which everyone can redistribute and change under these terms.
++
++  To do so, attach the following notices to the program.  It is safest
++to attach them to the start of each source file to most effectively
++convey the exclusion of warranty; and each file should have at least
++the "copyright" line and a pointer to where the full notice is found.
++
++    <one line to give the program's name and a brief idea of what it does.>
++    Copyright (C) <year>  <name of author>
++
++    This program is free software; you can redistribute it and/or modify
++    it under the terms of the GNU General Public License as published by
++    the Free Software Foundation; either version 2 of the License, or
++    (at your option) any later version.
++
++    This program is distributed in the hope that it will be useful,
++    but WITHOUT ANY WARRANTY; without even the implied warranty of
++    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++    GNU General Public License for more details.
++
++    You should have received a copy of the GNU General Public License along
++    with this program; if not, write to the Free Software Foundation, Inc.,
++    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
++
++Also add information on how to contact you by electronic and paper mail.
++
++If the program is interactive, make it output a short notice like this
++when it starts in an interactive mode:
++
++    Gnomovision version 69, Copyright (C) year name of author
++    Gnomovision comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
++    This is free software, and you are welcome to redistribute it
++    under certain conditions; type `show c' for details.
++
++The hypothetical commands `show w' and `show c' should show the appropriate
++parts of the General Public License.  Of course, the commands you use may
++be called something other than `show w' and `show c'; they could even be
++mouse-clicks or menu items--whatever suits your program.
++
++You should also get your employer (if you work as a programmer) or your
++school, if any, to sign a "copyright disclaimer" for the program, if
++necessary.  Here is a sample; alter the names:
++
++  Yoyodyne, Inc., hereby disclaims all copyright interest in the program
++  `Gnomovision' (which makes passes at compilers) written by James Hacker.
++
++  <signature of Ty Coon>, 1 April 1989
++  Ty Coon, President of Vice
++
++This General Public License does not permit incorporating your program into
++proprietary programs.  If your program is a subroutine library, you may
++consider it more useful to permit linking proprietary applications with the
++library.  If this is what you want to do, use the GNU Lesser General
++Public License instead of this License.
+diff --git a/drivers/misc/bcfserial/Makefile b/drivers/misc/bcfserial/Makefile
+new file mode 100644
+index 000000000000..ba4fc5b273b2
+--- /dev/null
++++ b/drivers/misc/bcfserial/Makefile
+@@ -0,0 +1,7 @@
++KDIR ?= /lib/modules/`uname -r`/build
++
++default:
++	$(MAKE) -C $(KDIR) M=$$PWD
++
++clean:
++	rm -f *.o *.ko *.mod.c .*.cmd
+diff --git a/drivers/misc/bcfserial/README.md b/drivers/misc/bcfserial/README.md
+new file mode 100644
+index 000000000000..12f586a3fc3b
+--- /dev/null
++++ b/drivers/misc/bcfserial/README.md
+@@ -0,0 +1,49 @@
++# bcfserial
++Kernel driver utilizing serdev to connect WPAN via HDLC over uart
++
++# Installation Instructions for Pocket Beagle
++
++## Installing the Device Tree Overlay
++
++    > cd dts
++    > dtc -O dtb -o bcfserial.dtbo -b 0 -@ bcfserial.dts
++    > sudo cp ./bcfserial.dtbo /lib/firmware/
++
++Add the following line to `/boot/uEnv.txt`
++
++    dtb_overlay=/lib/firmware/bcfserial.dtbo
++
++Reboot the board
++
++## Connecting the BeagleConnect Freedom to the Pocket Beagle
++
++With the orientation of the BeagleConnect Freedom board pigtail antenna 'up' and the USB/JST connectors 'down', and the board flipped to the buttons on the underside:
++
++|Pocket Beagle |  | BeagleConnect Freedom|
++|--------------|----------|----------------------|
++|U4 RX | < ---- > | Right side connector, 3rd from top|
++|U4 TX | < ---- > | Right side connector, 4th from top|
++|GND | < ---- > | Right side connector, last from top|
++
++
++Power the BeagleConect Freedom with a LiPo battery. Do not connect USB.
++
++## Building the module
++
++If not already present, insall the Kernel header files for your system
++
++    > sudo apt install linux-headers-$(uname -r)
++
++Then build the module
++
++    > make
++
++## Loading the module
++
++    > sudo ./modprode.sh
++
++## Starting the LOWPAN device
++
++    > sudo ./lowpan.sh
++
++This will create the lowpan0 device with IP address 2001:db8::2/64 using channel 26 with PAN ID 0xabcd.
+diff --git a/drivers/misc/bcfserial/bcfserial.c b/drivers/misc/bcfserial/bcfserial.c
+new file mode 100644
+index 000000000000..1ca8d025e5d0
+--- /dev/null
++++ b/drivers/misc/bcfserial/bcfserial.c
+@@ -0,0 +1,680 @@
++
++/*
++ *  bcfserial.c - Serial interface driver for BeagleConnect Freedom.
++ */
++#include <linux/circ_buf.h>
++#include <linux/crc-ccitt.h>
++#include <linux/delay.h>
++#include <linux/kernel.h>
++#include <linux/module.h>
++#include <linux/of.h>
++#include <linux/of_device.h>
++#include <linux/serdev.h>
++#include <linux/sched.h>
++#include <linux/skbuff.h>
++
++#include <net/cfg802154.h>
++#include <net/mac802154.h>
++
++#define DEBUG
++
++#define BCFSERIAL_DRV_VERSION "0.1.0"
++#define BCFSERIAL_DRV_NAME "bcfserial"
++
++#define HDLC_FRAME	0x7E
++#define HDLC_ESC	0x7D
++#define HDLC_XOR	0x20
++
++#define ADDRESS_CTRL	0x01
++#define ADDRESS_WPAN	0x03
++#define ADDRESS_CDC	0x05
++#define ADDRESS_HW	0x41
++
++#define MAX_PSDU		127
++#define MAX_RX_XFER		(1 + MAX_PSDU + 2 + 1)	/* PHR+PSDU+CRC+LQI */
++#define HDLC_HEADER_LEN 	2
++#define PACKET_HEADER_LEN	8
++#define CRC_LEN 		2
++#define RX_HDLC_PAYLOAD		140
++#define MAX_TX_HDLC		(1 + HDLC_HEADER_LEN + PACKET_HEADER_LEN + MAX_RX_XFER + CRC_LEN + 1)
++#define MAX_RX_HDLC		(1 + RX_HDLC_PAYLOAD + CRC_LEN)
++#define TX_CIRC_BUF_SIZE	1024
++
++enum bcfserial_requests {
++	RESET,
++	TX,
++	XMIT_ASYNC,
++	ED,
++	SET_CHANNEL,
++	START,
++	STOP,
++	SET_SHORT_ADDR,
++	SET_PAN_ID,
++	SET_IEEE_ADDR,
++	SET_TXPOWER,
++	SET_CCA_MODE,
++	SET_CCA_ED_LEVEL,
++	SET_CSMA_PARAMS,
++	SET_LBT,
++	SET_FRAME_RETRIES,
++	SET_PROMISCUOUS_MODE,
++	GET_EXTENDED_ADDR,
++	GET_SUPPORTED_CHANNELS,
++};
++
++struct bcfserial {
++	struct serdev_device *serdev;
++	struct ieee802154_hw *hw;
++
++	struct work_struct tx_work;
++	spinlock_t tx_producer_lock;
++	spinlock_t tx_consumer_lock;
++	struct circ_buf tx_circ_buf;
++	struct sk_buff *tx_skb;
++	u16 tx_crc;
++	u8 tx_ack_seq;		/* current TX ACK sequence number */
++
++	size_t response_size;
++	u8 *response_buffer;
++
++	u8 rx_in_esc;
++	u8 rx_address;
++	u16 rx_offset;
++	u8 *rx_buffer;
++};
++
++// RX Packet Format:
++// - WPAN RX PACKET:	[len] payload [lqi]
++// - WPAN TX ACK:	[seq]
++// - WPAN CAPABILITIES:	supported_channels_mask(4)
++// - CDC:		printable_chars
++
++static void bcfserial_serdev_write_locked(struct bcfserial *bcfserial)
++{
++	//must be locked already
++	int head = smp_load_acquire(&bcfserial->tx_circ_buf.head);
++	int tail = bcfserial->tx_circ_buf.tail;
++	int count = CIRC_CNT_TO_END(head, tail, TX_CIRC_BUF_SIZE);
++	int written;
++
++	if (count >= 1) {
++		written = serdev_device_write_buf(bcfserial->serdev, &bcfserial->tx_circ_buf.buf[tail], count);
++
++		smp_store_release(&(bcfserial->tx_circ_buf.tail), (tail + written) & (TX_CIRC_BUF_SIZE - 1));
++	}
++}
++
++static void bcfserial_append(struct bcfserial *bcfserial, u8 value)
++{
++	//must be locked already
++	int head = bcfserial->tx_circ_buf.head;
++
++	while(true)
++	{
++		int tail = READ_ONCE(bcfserial->tx_circ_buf.tail);
++
++		if (CIRC_SPACE(head, tail, TX_CIRC_BUF_SIZE) >= 1) {
++
++			bcfserial->tx_circ_buf.buf[head] = value;
++
++			smp_store_release(&(bcfserial->tx_circ_buf.head),
++					  (head + 1) & (TX_CIRC_BUF_SIZE - 1));
++			return;
++		} else {
++			dev_dbg(&bcfserial->serdev->dev, "Tx circ buf full\n");
++			usleep_range(3000,5000);
++		}
++	}
++}
++
++static void bcfserial_append_tx_frame(struct bcfserial *bcfserial)
++{
++	bcfserial->tx_crc = 0xFFFF;
++	bcfserial_append(bcfserial, HDLC_FRAME);
++}
++
++static void bcfserial_append_escaped(struct bcfserial *bcfserial, u8 value)
++{
++        if (value == HDLC_FRAME || value == HDLC_ESC) {
++                bcfserial_append(bcfserial, HDLC_ESC);
++                value ^= HDLC_XOR;
++        }
++        bcfserial_append(bcfserial, value);
++}
++
++static void bcfserial_append_tx_u8(struct bcfserial *bcfserial, u8 value)
++{
++	bcfserial->tx_crc = crc_ccitt(bcfserial->tx_crc, &value, 1);
++	bcfserial_append_escaped(bcfserial, value);
++}
++
++static void bcfserial_append_tx_buffer(struct bcfserial *bcfserial, const void *buffer, size_t len)
++{
++	size_t i;
++	for (i=0; i<len; i++) {
++		bcfserial_append_tx_u8(bcfserial, ((u8*)buffer)[i]);
++	}
++}
++
++static void bcfserial_append_tx_le16(struct bcfserial *bcfserial, u16 value)
++{
++	value = cpu_to_le16(value);
++	bcfserial_append_tx_buffer(bcfserial, (u8 *)&value, sizeof(u16));
++}
++
++static void bcfserial_append_tx_crc(struct bcfserial *bcfserial)
++{
++	bcfserial->tx_crc ^= 0xffff;
++	bcfserial_append_escaped(bcfserial, bcfserial->tx_crc & 0xff);
++	bcfserial_append_escaped(bcfserial, (bcfserial->tx_crc >> 8) & 0xff);
++}
++
++static void bcfserial_hdlc_send(struct bcfserial *bcfserial, u8 cmd, u16 value, u16 index, u16 length, const void* buffer)
++{
++	// HDLC_FRAME
++	// 0 address : 0x01
++	// 1 control : 0x03
++	// 2 [bmRequestType] : 0x00
++	// 3 cmd (TX, START, STOP, etc)
++	// 4/5 value
++	// 6/7 index
++	// 8/9 length
++	// contents
++	// x/y crc
++	// HDLC_FRAME
++
++	spin_lock(&bcfserial->tx_producer_lock);
++
++	bcfserial_append_tx_frame(bcfserial);
++	bcfserial_append_tx_u8(bcfserial, 0x01); //address
++	bcfserial_append_tx_u8(bcfserial, 0x03); //control
++	bcfserial_append_tx_u8(bcfserial, 0x00); //ignored
++	bcfserial_append_tx_u8(bcfserial, cmd);
++	bcfserial_append_tx_le16(bcfserial, value);
++	bcfserial_append_tx_le16(bcfserial, index);
++	bcfserial_append_tx_le16(bcfserial, length);
++	bcfserial_append_tx_buffer(bcfserial, buffer, length);
++	bcfserial_append_tx_crc(bcfserial);
++	bcfserial_append_tx_frame(bcfserial);
++
++	spin_unlock(&bcfserial->tx_producer_lock);
++
++	spin_lock(&bcfserial->tx_consumer_lock);
++	bcfserial_serdev_write_locked(bcfserial);
++	spin_unlock(&bcfserial->tx_consumer_lock);
++}
++
++static void bcfserial_hdlc_send_cmd(struct bcfserial *bcfserial, u8 cmd)
++{
++	bcfserial_hdlc_send(bcfserial, cmd, 0, 0, 0, NULL);
++}
++
++static void bcfserial_hdlc_send_ack(struct bcfserial *bcfserial, u8 address, u8 seq)
++{
++	// To make this a valid S-frame:
++	// u8 ctrl = (((seq + 1) & 0x07) << 5) | 0x01;
++	// TODO Fix control frame type bug here and in wpanusb_bc
++
++	spin_lock(&bcfserial->tx_producer_lock);
++
++	bcfserial_append_tx_frame(bcfserial);
++	bcfserial_append_tx_u8(bcfserial, address); //address
++	bcfserial_append_tx_u8(bcfserial, 0x00); //control
++	bcfserial_append_tx_crc(bcfserial);
++	bcfserial_append_tx_frame(bcfserial);
++
++	spin_unlock(&bcfserial->tx_producer_lock);
++
++	spin_lock(&bcfserial->tx_consumer_lock);
++	bcfserial_serdev_write_locked(bcfserial);
++	spin_unlock(&bcfserial->tx_consumer_lock);
++}
++
++static int bcfserial_hdlc_receive(struct bcfserial *bcfserial, u8 cmd, void *buffer, size_t count)
++{
++	int retries = 5;
++	bcfserial->response_size = count;
++	bcfserial->response_buffer = (u8*)buffer;
++	bcfserial_hdlc_send_cmd(bcfserial, cmd);
++	// TODO semaphore? give/take 
++	do {
++		usleep_range(10000,10001);
++	} while (bcfserial->response_size && retries--);
++	bcfserial->response_buffer = NULL;
++	if (bcfserial->response_size) {
++		bcfserial->response_size = 0;
++		return -EAGAIN;
++	}
++	return 0;
++}
++
++static int bcfserial_start(struct ieee802154_hw *hw)
++{
++	struct bcfserial *bcfserial = hw->priv;
++	dev_dbg(&bcfserial->serdev->dev, "START\n");
++	bcfserial_hdlc_send_cmd(bcfserial, START);
++	return 0;
++}
++
++static void bcfserial_stop(struct ieee802154_hw *hw)
++{
++	struct bcfserial *bcfserial = hw->priv;
++	dev_dbg(&bcfserial->serdev->dev, "STOP\n");
++	bcfserial_hdlc_send_cmd(bcfserial, STOP);
++}
++
++static int bcfserial_xmit(struct ieee802154_hw *hw, struct sk_buff *skb)
++{
++	struct bcfserial *bcfserial = hw->priv;
++
++	if (bcfserial->tx_skb)
++	{
++		dev_err(&bcfserial->serdev->dev, "SKB not freed! %d\n", bcfserial->tx_ack_seq);
++	}
++
++	bcfserial->tx_skb = skb;
++	bcfserial->tx_ack_seq++;
++	if (!bcfserial->tx_ack_seq) {
++		bcfserial->tx_ack_seq++;
++	}
++
++	dev_dbg(&bcfserial->serdev->dev, "XMIT %02x %d\n", bcfserial->tx_ack_seq, skb->len);
++
++	bcfserial_hdlc_send(bcfserial, TX, 0, bcfserial->tx_ack_seq, skb->len, skb->data);
++
++	return 0;
++}
++
++static int bcfserial_ed(struct ieee802154_hw *hw, u8 *level)
++{
++	struct bcfserial *bcfserial = hw->priv;
++	dev_dbg(&bcfserial->serdev->dev, "ED\n");
++	WARN_ON(!level);
++	*level = 0xbe;
++	return 0;
++}
++
++static int bcfserial_set_channel(struct ieee802154_hw *hw, u8 page, u8 channel)
++{
++	struct bcfserial *bcfserial = hw->priv;
++	u8 buffer[2] = {page, channel};
++	dev_dbg(&bcfserial->serdev->dev, "SET CHANNEL %u %u\n", page, channel);
++	bcfserial_hdlc_send(bcfserial, SET_CHANNEL, 0, 0, 2, &buffer);
++	return 0;
++}
++
++static int bcfserial_set_hw_addr_filt(struct ieee802154_hw *hw,
++				      struct ieee802154_hw_addr_filt *filt,
++				      unsigned long changed)
++{
++	struct bcfserial *bcfserial = hw->priv;
++
++	if (changed & IEEE802154_AFILT_SADDR_CHANGED) {
++		u16 addr = le16_to_cpu(filt->short_addr);
++		dev_dbg(&bcfserial->serdev->dev, "Short Address changed %x\n", addr);
++		bcfserial_hdlc_send(bcfserial, SET_SHORT_ADDR, 0, 0, sizeof(addr), &addr);
++	}
++
++	if (changed & IEEE802154_AFILT_PANID_CHANGED) {
++		u16 pan = le16_to_cpu(filt->pan_id);
++		dev_dbg(&bcfserial->serdev->dev, "PAN ID changed %x\n", pan);
++		bcfserial_hdlc_send(bcfserial, SET_PAN_ID, 0, 0, sizeof(pan), &pan);
++	}
++
++	if (changed & IEEE802154_AFILT_IEEEADDR_CHANGED) {
++		u64 ieee_addr = le64_to_cpu(filt->ieee_addr);
++		dev_dbg(&bcfserial->serdev->dev, "IEEE Addr changed %llx\n", ieee_addr);
++		bcfserial_hdlc_send(bcfserial, SET_IEEE_ADDR, 0, 0, sizeof(ieee_addr), &ieee_addr);
++	}
++	return 0;
++}
++
++static int bcfserial_set_txpower(struct ieee802154_hw *hw, s32 mbm)
++{
++	struct bcfserial *bcfserial = hw->priv;
++	dev_dbg(&bcfserial->serdev->dev, "SET TXPOWER\n");
++	return -ENOTSUPP;
++}
++
++static int bcfserial_set_lbt(struct ieee802154_hw *hw, bool on)
++{
++	struct bcfserial *bcfserial = hw->priv;
++	dev_dbg(&bcfserial->serdev->dev, "SET LBT\n");
++	return -ENOTSUPP;
++}
++
++static int bcfserial_set_cca_mode(struct ieee802154_hw *hw,
++			   const struct wpan_phy_cca *cca)
++{
++	struct bcfserial *bcfserial = hw->priv;
++	dev_dbg(&bcfserial->serdev->dev, "SET CCA MODE\n");
++	return -ENOTSUPP;
++}
++
++static int bcfserial_set_cca_ed_level(struct ieee802154_hw *hw, s32 mbm)
++{
++	struct bcfserial *bcfserial = hw->priv;
++	dev_dbg(&bcfserial->serdev->dev, "SET CCA ED LEVEL\n");
++	return -ENOTSUPP;
++}
++
++static int bcfserial_set_csma_params(struct ieee802154_hw *hw, u8 min_be, u8 max_be,
++			      u8 retries)
++{
++	struct bcfserial *bcfserial = hw->priv;
++	dev_dbg(&bcfserial->serdev->dev, "SET CSMA PARAMS\n");
++	return -ENOTSUPP;
++}
++
++static int bcfserial_set_frame_retries(struct ieee802154_hw *hw, s8 retries)
++{
++	struct bcfserial *bcfserial = hw->priv;
++	dev_dbg(&bcfserial->serdev->dev, "SET FRAME RETRIES\n");
++	return -ENOTSUPP;
++}
++
++static int bcfserial_set_promiscuous_mode(struct ieee802154_hw *hw, const bool on)
++{
++	struct bcfserial *bcfserial = hw->priv;
++	dev_dbg(&bcfserial->serdev->dev, "SET PROMISCUOUS\n");
++	return -ENOTSUPP;
++}
++
++static const struct ieee802154_ops bcfserial_ops = {
++	.owner			= THIS_MODULE,
++	.start			= bcfserial_start,
++	.stop			= bcfserial_stop,
++	.xmit_async		= bcfserial_xmit,
++	.ed			= bcfserial_ed,
++	.set_channel		= bcfserial_set_channel,
++	.set_hw_addr_filt	= bcfserial_set_hw_addr_filt,
++	.set_txpower		= bcfserial_set_txpower,
++	.set_lbt		= bcfserial_set_lbt,
++	.set_cca_mode		= bcfserial_set_cca_mode,
++	.set_cca_ed_level	= bcfserial_set_cca_ed_level,
++	.set_csma_params	= bcfserial_set_csma_params,
++	.set_frame_retries	= bcfserial_set_frame_retries,
++	.set_promiscuous_mode	= bcfserial_set_promiscuous_mode,
++};
++
++static void bcfserial_wpan_rx(struct bcfserial *bcfserial, const u8 *buffer, size_t count)
++{
++	struct sk_buff *skb;
++	u8 len, lqi;
++
++	if (count == 1) {
++		// TX ACK
++		dev_dbg(&bcfserial->serdev->dev, "TX ACK: 0x%02x:0x%02x\n", buffer[0], bcfserial->tx_ack_seq);
++
++		if (buffer[0] == bcfserial->tx_ack_seq && bcfserial->tx_skb) {
++			skb = bcfserial->tx_skb;
++			bcfserial->tx_skb = NULL;
++			ieee802154_xmit_complete(bcfserial->hw, skb, false);
++		} else {
++			dev_err(&bcfserial->serdev->dev, "unknown ack %u\n", bcfserial->tx_ack_seq);
++		}
++	} else if (bcfserial->response_size == count && bcfserial->response_buffer) {
++		//TODO replace with semaphore
++		dev_dbg(&bcfserial->serdev->dev, "Response size %u found\n", count);
++		memcpy(bcfserial->response_buffer, buffer, count);
++		bcfserial->response_size = 0;
++	} else {
++		// RX Packet
++		dev_dbg(&bcfserial->serdev->dev, "RX Packet Len:%u LQI:%u\n", buffer[0], buffer[count-1]);
++		len = buffer[0];
++		lqi = buffer[count-1];
++
++		if (len+2 != count) {
++			dev_err(&bcfserial->serdev->dev, "RX Packet invalid length\n");
++			return;
++		}
++
++		if (!ieee802154_is_valid_psdu_len(len)) {
++			dev_err(&bcfserial->serdev->dev, "frame corrupted\n");
++			return;
++		}
++
++		skb = dev_alloc_skb(IEEE802154_MTU);
++		if (!skb) {
++			dev_err(&bcfserial->serdev->dev, "failed to allocate sk_buff\n");
++			return;
++		}
++
++		skb_put_data(skb, buffer+1, len);
++		ieee802154_rx_irqsafe(bcfserial->hw, skb, lqi);
++	}
++}
++
++static int bcfserial_tty_receive(struct serdev_device *serdev,
++	const unsigned char *data, size_t count)
++{
++	struct bcfserial *bcfserial = serdev_device_get_drvdata(serdev);
++	u16 crc_check = 0;
++	size_t i;
++	u8 c;
++
++
++	for (i = 0; i < count; i++) {
++		c = data[i];
++
++		if (c == HDLC_FRAME) {
++			if (bcfserial->rx_address != 0xFF) {
++				crc_check = crc_ccitt(0xffff, &bcfserial->rx_address, 1);
++				crc_check = crc_ccitt(crc_check, bcfserial->rx_buffer, bcfserial->rx_offset);
++
++				if (crc_check == 0xf0b8) {
++					if ((bcfserial->rx_buffer[0] & 1) == 0) {
++						//I-Frame, send S-Frame ACK
++						bcfserial_hdlc_send_ack(bcfserial, bcfserial->rx_address, (bcfserial->rx_buffer[0] >> 1) & 0x7);
++					}
++
++					if (bcfserial->rx_address == ADDRESS_WPAN) {
++						bcfserial_wpan_rx(bcfserial, bcfserial->rx_buffer + 1, bcfserial->rx_offset - 3);
++					}
++					else if (bcfserial->rx_address == ADDRESS_CDC) {
++						bcfserial->rx_buffer[bcfserial->rx_offset-2] = 0;
++						printk("> %s", bcfserial->rx_buffer+1);
++					}
++				}
++				else {
++					dev_err(&bcfserial->serdev->dev, "CRC Failed from %02x: 0x%04x\n", bcfserial->rx_address, crc_check);
++				}
++			}
++			bcfserial->rx_offset = 0;
++			bcfserial->rx_address = 0xFF;
++		} else if (c == HDLC_ESC) {
++			bcfserial->rx_in_esc = 1;
++		} else {
++			if (bcfserial->rx_in_esc) {
++				c ^= 0x20;
++				bcfserial->rx_in_esc = 0;
++			}
++
++			if (bcfserial->rx_address == 0xFF) {
++				bcfserial->rx_address = c;
++				if (bcfserial->rx_address == ADDRESS_WPAN ||
++				   bcfserial->rx_address == ADDRESS_CDC ||
++				   bcfserial->rx_address == ADDRESS_HW) {
++				} else {
++					bcfserial->rx_address = 0xFF;
++				}
++					bcfserial->rx_offset = 0;
++			} else {
++				if (bcfserial->rx_offset < MAX_RX_HDLC) {
++					bcfserial->rx_buffer[bcfserial->rx_offset] = c;
++					bcfserial->rx_offset++;
++				} else {
++					//buffer overflow
++					dev_err(&bcfserial->serdev->dev, "RX Buffer Overflow\n");
++					bcfserial->rx_address = 0xFF;
++					bcfserial->rx_offset = 0;
++				}
++			}
++		}
++	}
++
++	return count;
++}
++
++static void bcfserial_uart_transmit(struct work_struct *work)
++{
++	struct bcfserial *bcfserial = container_of(work, struct bcfserial, tx_work);
++
++	spin_lock_bh(&bcfserial->tx_consumer_lock);
++	bcfserial_serdev_write_locked(bcfserial);
++	spin_unlock_bh(&bcfserial->tx_consumer_lock);
++}
++
++static void bcfserial_tty_wakeup(struct serdev_device *serdev)
++{
++	struct bcfserial *bcfserial = serdev_device_get_drvdata(serdev);
++
++	schedule_work(&bcfserial->tx_work);
++}
++
++static struct serdev_device_ops bcfserial_serdev_ops = {
++	.receive_buf = bcfserial_tty_receive,
++	.write_wakeup = bcfserial_tty_wakeup,
++};
++
++static const struct of_device_id bcfserial_of_match[] = {
++	{
++	.compatible = "beagle,bcfserial",
++	},
++	{}
++};
++MODULE_DEVICE_TABLE(of, bcfserial_of_match);
++
++static const s32 channel_powers[] = {
++	300, 280, 230, 180, 130, 70, 0, -100, -200, -300, -400, -500, -700,
++	-900, -1200, -1700,
++};
++
++static int bcfserial_get_device_capabilities(struct bcfserial *bcfserial)
++{
++	u32 valid_channels = 0;
++	int ret = 0;
++	struct ieee802154_hw *hw = bcfserial->hw;
++
++	bcfserial_hdlc_send_cmd(bcfserial, RESET);
++
++	ret = bcfserial_hdlc_receive(bcfserial, GET_SUPPORTED_CHANNELS, &valid_channels, sizeof(valid_channels));
++	if (ret < 0) {
++		return ret;
++	}
++	dev_dbg(&bcfserial->serdev->dev, "Supported Channels %x\n", valid_channels);
++
++	/* FIXME: these need to come from device capabilities */
++	hw->flags = IEEE802154_HW_TX_OMIT_CKSUM | IEEE802154_HW_AFILT;
++
++	/* FIXME: these need to come from device capabilities */
++	hw->phy->flags = WPAN_PHY_FLAG_TXPOWER;
++
++	/* Set default and supported channels */
++	hw->phy->current_page = 0;
++	hw->phy->current_channel = ffs(valid_channels) - 1; //set to lowest valid channel
++	hw->phy->supported.channels[0] = valid_channels;
++
++	/* FIXME: these need to come from device capabilities */
++	hw->phy->supported.tx_powers = channel_powers;
++	hw->phy->supported.tx_powers_size = ARRAY_SIZE(channel_powers);
++	hw->phy->transmit_power = hw->phy->supported.tx_powers[0];
++
++	return ret;
++}
++
++static int bcfserial_probe(struct serdev_device *serdev)
++{
++	struct ieee802154_hw *hw;
++	struct bcfserial *bcfserial = NULL;
++	u32 speed = 115200;
++	int ret;
++
++	hw = ieee802154_alloc_hw(sizeof(struct bcfserial), &bcfserial_ops);
++	if (!hw)
++		return -ENOMEM;
++
++	bcfserial = hw->priv;
++	bcfserial->hw = hw;
++	hw->parent = &serdev->dev;
++	bcfserial->serdev = serdev;
++
++	INIT_WORK(&bcfserial->tx_work, bcfserial_uart_transmit);
++
++	spin_lock_init(&bcfserial->tx_producer_lock);
++	spin_lock_init(&bcfserial->tx_consumer_lock);
++	bcfserial->tx_circ_buf.head = 0;
++	bcfserial->tx_circ_buf.tail = 0;
++	bcfserial->tx_circ_buf.buf = devm_kmalloc(&serdev->dev, TX_CIRC_BUF_SIZE, GFP_KERNEL);
++
++	bcfserial->rx_buffer = devm_kmalloc(&serdev->dev, MAX_RX_HDLC, GFP_KERNEL);
++	bcfserial->rx_offset = 0;
++	bcfserial->rx_address = 0xff;
++	bcfserial->rx_in_esc = 0;
++
++	serdev_device_set_drvdata(serdev, bcfserial);
++	serdev_device_set_client_ops(serdev, &bcfserial_serdev_ops);
++
++	ret = serdev_device_open(serdev);
++	if (ret) {
++		dev_err(&bcfserial->serdev->dev, "Unable to open device\n");
++		goto fail_hw;
++	}
++
++	speed = serdev_device_set_baudrate(serdev, speed);
++	dev_dbg(&bcfserial->serdev->dev, "Using baudrate %u\n", speed);
++
++	serdev_device_set_flow_control(serdev, false);
++
++	bcfserial_hdlc_send_ack(bcfserial, 0x41, 0x00);
++
++	ret = bcfserial_get_device_capabilities(bcfserial);
++
++	if (ret < 0) {
++		// dev_err(&udev->dev, "Failed to get device capabilities");
++		dev_err(&bcfserial->serdev->dev, "Failed to get device capabilities\n");
++		goto fail;
++	}
++
++	ret = ieee802154_register_hw(hw);
++
++	dev_info(&bcfserial->serdev->dev, "bcfserial started");
++	if (ret)
++		goto fail;
++
++	return 0;
++
++fail:
++	dev_err(&bcfserial->serdev->dev, "Closing serial device on failure\n");
++	serdev_device_close(serdev);
++fail_hw:
++	printk(KERN_ERR "Failed to open bcfserial\n");
++	ieee802154_free_hw(hw);
++	return ret;
++}
++
++static void bcfserial_remove(struct serdev_device *serdev)
++{
++	struct bcfserial *bcfserial = serdev_device_get_drvdata(serdev);
++	dev_info(&bcfserial->serdev->dev, "Closing serial device\n");
++	ieee802154_unregister_hw(bcfserial->hw);
++	flush_work(&bcfserial->tx_work);
++	ieee802154_free_hw(bcfserial->hw);
++	serdev_device_close(serdev);
++}
++
++static struct serdev_device_driver bcfserial_driver = {
++	.probe = bcfserial_probe,
++	.remove = bcfserial_remove,
++	.driver = {
++		.name = BCFSERIAL_DRV_NAME,
++		.of_match_table = of_match_ptr(bcfserial_of_match),
++	},
++};
++
++module_serdev_device_driver(bcfserial_driver);
++
++MODULE_DESCRIPTION("WPAN serial driver for BeagleConnect Freedom");
++MODULE_AUTHOR("Erik Larson <erik@statropy.com>");
++MODULE_VERSION("0.1.0");
++MODULE_LICENSE("GPL v2");
+diff --git a/drivers/misc/bcfserial/debug.sh b/drivers/misc/bcfserial/debug.sh
+new file mode 100755
+index 000000000000..3c03044a97a4
+--- /dev/null
++++ b/drivers/misc/bcfserial/debug.sh
+@@ -0,0 +1,6 @@
++#!/bin/sh
++
++sudo sh -c "echo 'module ieee802154_6lowpan +fp' > /sys/kernel/debug/dynamic_debug/control"
++sudo sh -c "echo 'module mac802154 +fp' > /sys/kernel/debug/dynamic_debug/control"
++sudo sh -c "echo 'module ieee802154 +fp' > /sys/kernel/debug/dynamic_debug/control"
++sudo sh -c "echo 'module bcfserial +fp' > /sys/kernel/debug/dynamic_debug/control"
+diff --git a/drivers/misc/bcfserial/dts/bcfserial.dts b/drivers/misc/bcfserial/dts/bcfserial.dts
+new file mode 100644
+index 000000000000..048b0be14000
+--- /dev/null
++++ b/drivers/misc/bcfserial/dts/bcfserial.dts
+@@ -0,0 +1,16 @@
++
++/dts-v1/;
++/plugin/;
++
++/ {
++		fragment@0 {
++				target = <&uart4>;
++				status = "okay";
++				__overlay__ {
++						bcfserial {
++								compatible = "beagle,bcfserial";
++								status = "okay";
++						};
++				};
++		};
++};
+diff --git a/drivers/misc/bcfserial/lowpan.sh b/drivers/misc/bcfserial/lowpan.sh
+new file mode 100755
+index 000000000000..43b32e05b04a
+--- /dev/null
++++ b/drivers/misc/bcfserial/lowpan.sh
+@@ -0,0 +1,21 @@
++#!/bin/sh
++
++PHY=`iwpan phy | grep -m1 wpan_phy | cut -d' ' -f2`
++
++INSTANCE=${1:-2}
++CHAN=${2:-26}
++PAN=${3:-0xabcd}
++IP_ADDR=2001:db8::$INSTANCE/64
++SHORT_ADDR=0xbee$INSTANCE
++echo 'Using phy' $PHY 'channel' $CHAN 'PAN ID' $PAN
++echo 'IP:' $IP_ADDR 'Short:' $SHORT_ADDR
++
++ip link set wpan0 down
++iwpan dev wpan0 set pan_id $PAN
++iwpan dev wpan0 set short_addr $SHORT_ADDR
++iwpan phy $PHY set channel 0 $CHAN
++ip link add link wpan0 name lowpan0 type lowpan
++ip link set wpan0 up
++ip link set lowpan0 up
++ip -6 addr add $IP_ADDR dev lowpan0
++
+diff --git a/drivers/misc/bcfserial/modprobe.sh b/drivers/misc/bcfserial/modprobe.sh
+new file mode 100755
+index 000000000000..033267617f4a
+--- /dev/null
++++ b/drivers/misc/bcfserial/modprobe.sh
+@@ -0,0 +1,5 @@
++#!/bin/sh
++
++modprobe mac802154
++modprobe ieee802154_socket
++insmod ./bcfserial.ko
+diff --git a/drivers/misc/wpanusb/.gitignore b/drivers/misc/wpanusb/.gitignore
+new file mode 100644
+index 000000000000..c9877d9d9a11
+--- /dev/null
++++ b/drivers/misc/wpanusb/.gitignore
+@@ -0,0 +1,9 @@
++*.cmd
++*.ko
++*.o
++.tmp_versions/
++Module.symvers
++modules.order
++*.mod.c
++*.a
++*.mod
+diff --git a/drivers/misc/wpanusb/Kbuild b/drivers/misc/wpanusb/Kbuild
+new file mode 100644
+index 000000000000..f1fa40dd5ac6
+--- /dev/null
++++ b/drivers/misc/wpanusb/Kbuild
+@@ -0,0 +1,3 @@
++obj-m := wpanusb.o
++
++#wpanusb-y := wpanusb.o
+diff --git a/drivers/misc/wpanusb/LICENSE b/drivers/misc/wpanusb/LICENSE
+new file mode 100644
+index 000000000000..d159169d1050
+--- /dev/null
++++ b/drivers/misc/wpanusb/LICENSE
+@@ -0,0 +1,339 @@
++                    GNU GENERAL PUBLIC LICENSE
++                       Version 2, June 1991
++
++ Copyright (C) 1989, 1991 Free Software Foundation, Inc.,
++ 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
++ Everyone is permitted to copy and distribute verbatim copies
++ of this license document, but changing it is not allowed.
++
++                            Preamble
++
++  The licenses for most software are designed to take away your
++freedom to share and change it.  By contrast, the GNU General Public
++License is intended to guarantee your freedom to share and change free
++software--to make sure the software is free for all its users.  This
++General Public License applies to most of the Free Software
++Foundation's software and to any other program whose authors commit to
++using it.  (Some other Free Software Foundation software is covered by
++the GNU Lesser General Public License instead.)  You can apply it to
++your programs, too.
++
++  When we speak of free software, we are referring to freedom, not
++price.  Our General Public Licenses are designed to make sure that you
++have the freedom to distribute copies of free software (and charge for
++this service if you wish), that you receive source code or can get it
++if you want it, that you can change the software or use pieces of it
++in new free programs; and that you know you can do these things.
++
++  To protect your rights, we need to make restrictions that forbid
++anyone to deny you these rights or to ask you to surrender the rights.
++These restrictions translate to certain responsibilities for you if you
++distribute copies of the software, or if you modify it.
++
++  For example, if you distribute copies of such a program, whether
++gratis or for a fee, you must give the recipients all the rights that
++you have.  You must make sure that they, too, receive or can get the
++source code.  And you must show them these terms so they know their
++rights.
++
++  We protect your rights with two steps: (1) copyright the software, and
++(2) offer you this license which gives you legal permission to copy,
++distribute and/or modify the software.
++
++  Also, for each author's protection and ours, we want to make certain
++that everyone understands that there is no warranty for this free
++software.  If the software is modified by someone else and passed on, we
++want its recipients to know that what they have is not the original, so
++that any problems introduced by others will not reflect on the original
++authors' reputations.
++
++  Finally, any free program is threatened constantly by software
++patents.  We wish to avoid the danger that redistributors of a free
++program will individually obtain patent licenses, in effect making the
++program proprietary.  To prevent this, we have made it clear that any
++patent must be licensed for everyone's free use or not licensed at all.
++
++  The precise terms and conditions for copying, distribution and
++modification follow.
++
++                    GNU GENERAL PUBLIC LICENSE
++   TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
++
++  0. This License applies to any program or other work which contains
++a notice placed by the copyright holder saying it may be distributed
++under the terms of this General Public License.  The "Program", below,
++refers to any such program or work, and a "work based on the Program"
++means either the Program or any derivative work under copyright law:
++that is to say, a work containing the Program or a portion of it,
++either verbatim or with modifications and/or translated into another
++language.  (Hereinafter, translation is included without limitation in
++the term "modification".)  Each licensee is addressed as "you".
++
++Activities other than copying, distribution and modification are not
++covered by this License; they are outside its scope.  The act of
++running the Program is not restricted, and the output from the Program
++is covered only if its contents constitute a work based on the
++Program (independent of having been made by running the Program).
++Whether that is true depends on what the Program does.
++
++  1. You may copy and distribute verbatim copies of the Program's
++source code as you receive it, in any medium, provided that you
++conspicuously and appropriately publish on each copy an appropriate
++copyright notice and disclaimer of warranty; keep intact all the
++notices that refer to this License and to the absence of any warranty;
++and give any other recipients of the Program a copy of this License
++along with the Program.
++
++You may charge a fee for the physical act of transferring a copy, and
++you may at your option offer warranty protection in exchange for a fee.
++
++  2. You may modify your copy or copies of the Program or any portion
++of it, thus forming a work based on the Program, and copy and
++distribute such modifications or work under the terms of Section 1
++above, provided that you also meet all of these conditions:
++
++    a) You must cause the modified files to carry prominent notices
++    stating that you changed the files and the date of any change.
++
++    b) You must cause any work that you distribute or publish, that in
++    whole or in part contains or is derived from the Program or any
++    part thereof, to be licensed as a whole at no charge to all third
++    parties under the terms of this License.
++
++    c) If the modified program normally reads commands interactively
++    when run, you must cause it, when started running for such
++    interactive use in the most ordinary way, to print or display an
++    announcement including an appropriate copyright notice and a
++    notice that there is no warranty (or else, saying that you provide
++    a warranty) and that users may redistribute the program under
++    these conditions, and telling the user how to view a copy of this
++    License.  (Exception: if the Program itself is interactive but
++    does not normally print such an announcement, your work based on
++    the Program is not required to print an announcement.)
++
++These requirements apply to the modified work as a whole.  If
++identifiable sections of that work are not derived from the Program,
++and can be reasonably considered independent and separate works in
++themselves, then this License, and its terms, do not apply to those
++sections when you distribute them as separate works.  But when you
++distribute the same sections as part of a whole which is a work based
++on the Program, the distribution of the whole must be on the terms of
++this License, whose permissions for other licensees extend to the
++entire whole, and thus to each and every part regardless of who wrote it.
++
++Thus, it is not the intent of this section to claim rights or contest
++your rights to work written entirely by you; rather, the intent is to
++exercise the right to control the distribution of derivative or
++collective works based on the Program.
++
++In addition, mere aggregation of another work not based on the Program
++with the Program (or with a work based on the Program) on a volume of
++a storage or distribution medium does not bring the other work under
++the scope of this License.
++
++  3. You may copy and distribute the Program (or a work based on it,
++under Section 2) in object code or executable form under the terms of
++Sections 1 and 2 above provided that you also do one of the following:
++
++    a) Accompany it with the complete corresponding machine-readable
++    source code, which must be distributed under the terms of Sections
++    1 and 2 above on a medium customarily used for software interchange; or,
++
++    b) Accompany it with a written offer, valid for at least three
++    years, to give any third party, for a charge no more than your
++    cost of physically performing source distribution, a complete
++    machine-readable copy of the corresponding source code, to be
++    distributed under the terms of Sections 1 and 2 above on a medium
++    customarily used for software interchange; or,
++
++    c) Accompany it with the information you received as to the offer
++    to distribute corresponding source code.  (This alternative is
++    allowed only for noncommercial distribution and only if you
++    received the program in object code or executable form with such
++    an offer, in accord with Subsection b above.)
++
++The source code for a work means the preferred form of the work for
++making modifications to it.  For an executable work, complete source
++code means all the source code for all modules it contains, plus any
++associated interface definition files, plus the scripts used to
++control compilation and installation of the executable.  However, as a
++special exception, the source code distributed need not include
++anything that is normally distributed (in either source or binary
++form) with the major components (compiler, kernel, and so on) of the
++operating system on which the executable runs, unless that component
++itself accompanies the executable.
++
++If distribution of executable or object code is made by offering
++access to copy from a designated place, then offering equivalent
++access to copy the source code from the same place counts as
++distribution of the source code, even though third parties are not
++compelled to copy the source along with the object code.
++
++  4. You may not copy, modify, sublicense, or distribute the Program
++except as expressly provided under this License.  Any attempt
++otherwise to copy, modify, sublicense or distribute the Program is
++void, and will automatically terminate your rights under this License.
++However, parties who have received copies, or rights, from you under
++this License will not have their licenses terminated so long as such
++parties remain in full compliance.
++
++  5. You are not required to accept this License, since you have not
++signed it.  However, nothing else grants you permission to modify or
++distribute the Program or its derivative works.  These actions are
++prohibited by law if you do not accept this License.  Therefore, by
++modifying or distributing the Program (or any work based on the
++Program), you indicate your acceptance of this License to do so, and
++all its terms and conditions for copying, distributing or modifying
++the Program or works based on it.
++
++  6. Each time you redistribute the Program (or any work based on the
++Program), the recipient automatically receives a license from the
++original licensor to copy, distribute or modify the Program subject to
++these terms and conditions.  You may not impose any further
++restrictions on the recipients' exercise of the rights granted herein.
++You are not responsible for enforcing compliance by third parties to
++this License.
++
++  7. If, as a consequence of a court judgment or allegation of patent
++infringement or for any other reason (not limited to patent issues),
++conditions are imposed on you (whether by court order, agreement or
++otherwise) that contradict the conditions of this License, they do not
++excuse you from the conditions of this License.  If you cannot
++distribute so as to satisfy simultaneously your obligations under this
++License and any other pertinent obligations, then as a consequence you
++may not distribute the Program at all.  For example, if a patent
++license would not permit royalty-free redistribution of the Program by
++all those who receive copies directly or indirectly through you, then
++the only way you could satisfy both it and this License would be to
++refrain entirely from distribution of the Program.
++
++If any portion of this section is held invalid or unenforceable under
++any particular circumstance, the balance of the section is intended to
++apply and the section as a whole is intended to apply in other
++circumstances.
++
++It is not the purpose of this section to induce you to infringe any
++patents or other property right claims or to contest validity of any
++such claims; this section has the sole purpose of protecting the
++integrity of the free software distribution system, which is
++implemented by public license practices.  Many people have made
++generous contributions to the wide range of software distributed
++through that system in reliance on consistent application of that
++system; it is up to the author/donor to decide if he or she is willing
++to distribute software through any other system and a licensee cannot
++impose that choice.
++
++This section is intended to make thoroughly clear what is believed to
++be a consequence of the rest of this License.
++
++  8. If the distribution and/or use of the Program is restricted in
++certain countries either by patents or by copyrighted interfaces, the
++original copyright holder who places the Program under this License
++may add an explicit geographical distribution limitation excluding
++those countries, so that distribution is permitted only in or among
++countries not thus excluded.  In such case, this License incorporates
++the limitation as if written in the body of this License.
++
++  9. The Free Software Foundation may publish revised and/or new versions
++of the General Public License from time to time.  Such new versions will
++be similar in spirit to the present version, but may differ in detail to
++address new problems or concerns.
++
++Each version is given a distinguishing version number.  If the Program
++specifies a version number of this License which applies to it and "any
++later version", you have the option of following the terms and conditions
++either of that version or of any later version published by the Free
++Software Foundation.  If the Program does not specify a version number of
++this License, you may choose any version ever published by the Free Software
++Foundation.
++
++  10. If you wish to incorporate parts of the Program into other free
++programs whose distribution conditions are different, write to the author
++to ask for permission.  For software which is copyrighted by the Free
++Software Foundation, write to the Free Software Foundation; we sometimes
++make exceptions for this.  Our decision will be guided by the two goals
++of preserving the free status of all derivatives of our free software and
++of promoting the sharing and reuse of software generally.
++
++                            NO WARRANTY
++
++  11. BECAUSE THE PROGRAM IS LICENSED FREE OF CHARGE, THERE IS NO WARRANTY
++FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW.  EXCEPT WHEN
++OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES
++PROVIDE THE PROGRAM "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
++OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
++MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.  THE ENTIRE RISK AS
++TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU.  SHOULD THE
++PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING,
++REPAIR OR CORRECTION.
++
++  12. IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING
++WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MAY MODIFY AND/OR
++REDISTRIBUTE THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES,
++INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING
++OUT OF THE USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED
++TO LOSS OF DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY
++YOU OR THIRD PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER
++PROGRAMS), EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE
++POSSIBILITY OF SUCH DAMAGES.
++
++                     END OF TERMS AND CONDITIONS
++
++            How to Apply These Terms to Your New Programs
++
++  If you develop a new program, and you want it to be of the greatest
++possible use to the public, the best way to achieve this is to make it
++free software which everyone can redistribute and change under these terms.
++
++  To do so, attach the following notices to the program.  It is safest
++to attach them to the start of each source file to most effectively
++convey the exclusion of warranty; and each file should have at least
++the "copyright" line and a pointer to where the full notice is found.
++
++    <one line to give the program's name and a brief idea of what it does.>
++    Copyright (C) <year>  <name of author>
++
++    This program is free software; you can redistribute it and/or modify
++    it under the terms of the GNU General Public License as published by
++    the Free Software Foundation; either version 2 of the License, or
++    (at your option) any later version.
++
++    This program is distributed in the hope that it will be useful,
++    but WITHOUT ANY WARRANTY; without even the implied warranty of
++    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++    GNU General Public License for more details.
++
++    You should have received a copy of the GNU General Public License along
++    with this program; if not, write to the Free Software Foundation, Inc.,
++    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
++
++Also add information on how to contact you by electronic and paper mail.
++
++If the program is interactive, make it output a short notice like this
++when it starts in an interactive mode:
++
++    Gnomovision version 69, Copyright (C) year name of author
++    Gnomovision comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
++    This is free software, and you are welcome to redistribute it
++    under certain conditions; type `show c' for details.
++
++The hypothetical commands `show w' and `show c' should show the appropriate
++parts of the General Public License.  Of course, the commands you use may
++be called something other than `show w' and `show c'; they could even be
++mouse-clicks or menu items--whatever suits your program.
++
++You should also get your employer (if you work as a programmer) or your
++school, if any, to sign a "copyright disclaimer" for the program, if
++necessary.  Here is a sample; alter the names:
++
++  Yoyodyne, Inc., hereby disclaims all copyright interest in the program
++  `Gnomovision' (which makes passes at compilers) written by James Hacker.
++
++  <signature of Ty Coon>, 1 April 1989
++  Ty Coon, President of Vice
++
++This General Public License does not permit incorporating your program into
++proprietary programs.  If your program is a subroutine library, you may
++consider it more useful to permit linking proprietary applications with the
++library.  If this is what you want to do, use the GNU Lesser General
++Public License instead of this License.
+diff --git a/drivers/misc/wpanusb/Makefile b/drivers/misc/wpanusb/Makefile
+new file mode 100644
+index 000000000000..66e68c5bab1d
+--- /dev/null
++++ b/drivers/misc/wpanusb/Makefile
+@@ -0,0 +1,10 @@
++KDIR ?= /lib/modules/`uname -r`/build
++
++default:
++	$(MAKE) -C $(KDIR) M=$$PWD
++
++install:
++	sudo $(MAKE) -C $(KDIR) M=$$PWD modules_install
++
++clean:
++	rm -f *.o *.ko *.mod.c .*.cmd
+diff --git a/drivers/misc/wpanusb/README.rst b/drivers/misc/wpanusb/README.rst
+new file mode 100644
+index 000000000000..04d3d7aa3986
+--- /dev/null
++++ b/drivers/misc/wpanusb/README.rst
+@@ -0,0 +1,66 @@
++===========
++QUICK HOWTO
++===========
++
++Prerequisites
++-------------
++QuarkSE devboard is connected to Linux PC with 2 USB cables and flashed
++with wpanusb application.
++
++Building Linux kernel wpanusb driver
++------------------------------------
++1. Make sure you have Linux kernel headers installed
++
++   .. code-block:: console
++
++     $ ls /lib/modules/`uname -r`/build
++
++2. Type make, below is output for the latest Ubuntu
++
++   .. code-block:: console
++
++      $ make
++      make -C /lib/modules/`uname -r`/build M=$PWD
++      make[1]: Entering directory '/usr/src/linux-headers-4.4.0-38-generic'
++        CC [M]  /usr/local/src/ieee802154/wpanusb/wpanusb.o
++        Building modules, stage 2.
++        MODPOST 1 modules
++        CC      /usr/local/src/ieee802154/wpanusb/wpanusb.mod.o
++        LD [M]  /usr/local/src/ieee802154/wpanusb/wpanusb.ko
++      make[1]: Leaving directory '/usr/src/linux-headers-4.4.0-38-generic'
++
++Loading wpanusb
++---------------
++You can load driver with insmod given that all dependency are loaded, otherwise use
++provided modprobe.sh script
++
++.. code-block:: console
++
++  $ sudo scripts/modprobe.sh
++
++wpan0 device should appear in the network devices list
++
++Configuring 6lowpan address
++---------------------------
++There is a script helping to configure 6lowpan address
++
++.. code-block:: console
++
++  $ sudo scripts/lowpan.sh <last octect of IP address> <channel> <pan_id>
++  
++  $ sudo scripts/lowpan.sh 2 5 && ip -6 monitor dev lowpan0 
++
++Creates lowpan0 with IP address 2001:db8::2, short address 0xbee2, pan id 0xabcd using channel 5.
++The monitor will show the status of routes on lowpan0
++
++lowpan0 network device should appear and IPv6 address can be checked with
++
++.. code-block:: console
++
++  $ ip addr show dev lowpan0
++  59: lowpan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1280 qdisc noqueue state UNKNOWN group default qlen 1
++      link/[825] 92:05:91:9b:5a:2c:34:41 brd ff:ff:ff:ff:ff:ff:ff:ff
++      inet6 fe80::9005:919b:5a2c:3441/64 scope link
++         valid_lft forever preferred_lft forever
++
++There is link local IPv6 address which can be used for ping6.
+diff --git a/drivers/misc/wpanusb/wpan-radio-spec.txt b/drivers/misc/wpanusb/wpan-radio-spec.txt
+new file mode 100644
+index 000000000000..469fa8396161
+--- /dev/null
++++ b/drivers/misc/wpanusb/wpan-radio-spec.txt
+@@ -0,0 +1,107 @@
++ieee802154 wpan radio protocol over USB
++
++Overview
++========
++
++The document describes protocol between 802.15.4 physical radio and Linux
++kernel driver over USB. Protocol is based on atusb Linux driver protocol
++found inside Linux kernel: drivers/net/ieee802154/atusb.h
++
++Packet structure
++================
++
++Command opcodes are inside bRequest field. bRequest and wIndex are one octet
++long.
++
++Commands from Host to Device
++============================
++
++USB command endpoint
++
++	Opcode 0x00 - Reset		bRequest
++
++		Reset the Radio
++
++	Opcode 0x01 - Transmit		bRequest
++
++		Sequence number		wIndex
++		Data length		wLength
++
++		Transmit data from Host to Device
++
++	Opcode 0x02 - Transmit Async	bRequest
++
++		TBD
++
++	Opcode 0x03 - ED		bRequest
++
++		TBD
++
++	Opcode 0x04 - Set Channel	bRequest
++
++		Set ieee802154 channel
++
++		Page		1 octet
++		Channel		1 octet
++
++	Opcode 0x05 - Start		bRequest
++
++		Start ieee802154 device
++
++	Opcode 0x06 - Stop		bRequest
++
++		Stop ieee802154 device
++
++	Opcode 0x07 - Set Short address	bRequest
++
++		Set ieee802154 Short address
++
++		Short address	2 octets
++
++	Opcode 0x08 - Set PAN ID	bRequest
++
++		Set ieee802154 PAN ID
++
++		PAN ID		2 octets
++
++	Opcode 0x09 - Set address	bRequest
++
++		Set ieee802154 address
++
++		address		8 octets
++
++	Opcode 0x0A - Set TX Power	bRequest
++
++		TBD
++
++	Opcode 0x0B - Set CCA Mode	bRequest
++
++		TBD
++
++	Opcode 0x0C - Set CCA ED level	bRequest
++
++		TBD
++
++	Opcode 0x0D - Set CSMA Params	bRequest
++
++		TBD
++
++	Opcode 0x0E - Set Promisc mode	bRequest
++
++		TBD
++
++Data from Device to Host
++========================
++
++USB BULK IN endpoint
++
++	Transmit ACK
++
++		Length		1 octet
++		Data		Sequence number
++
++	Data
++
++		Length		1 octet
++		Data		Data
++		LQI		1 octet
+diff --git a/drivers/misc/wpanusb/wpanusb.c b/drivers/misc/wpanusb/wpanusb.c
+new file mode 100644
+index 000000000000..51eb0d32b291
+--- /dev/null
++++ b/drivers/misc/wpanusb/wpanusb.c
+@@ -0,0 +1,778 @@
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * Driver for the WPANUSB IEEE 802.15.4 dongle
++ *
++ * Copyright (C) 2018 Intel Corp.
++ *
++ * The driver implements SoftMAC 802.15.4 protocol based on atusb
++ * driver for ATUSB IEEE 802.15.4 dongle.
++ *
++ * Written by Andrei Emeltchenko <andrei.emeltchenko@intel.com>
++ */
++
++#include <linux/kernel.h>
++#include <linux/module.h>
++#include <linux/skbuff.h>
++#include <linux/usb.h>
++
++#include <net/cfg802154.h>
++#include <net/mac802154.h>
++
++#define DEBUG
++#include "wpanusb.h"
++
++#define WPANUSB_NUM_RX_URBS	4	/* allow for a bit of local latency */
++#define WPANUSB_ALLOC_DELAY_MS	100	/* delay after failed allocation */
++
++#define VENDOR_OUT		(USB_TYPE_VENDOR | USB_DIR_OUT)
++#define VENDOR_IN		(USB_TYPE_VENDOR | USB_DIR_IN)
++
++#define WPANUSB_VALID_CHANNELS	(0x07FFFFFF)
++
++struct wpanusb {
++	struct ieee802154_hw *hw;
++	struct usb_device *udev;
++	int shutdown;			/* non-zero if shutting down */
++
++	/* RX variables */
++	struct delayed_work work;	/* memory allocations */
++	struct usb_anchor idle_urbs;	/* URBs waiting to be submitted */
++	struct usb_anchor rx_urbs;	/* URBs waiting for reception */
++
++	/* TX variables */
++	struct usb_ctrlrequest tx_dr;
++	struct urb *tx_urb;
++	struct sk_buff *tx_skb;
++	u8 tx_ack_seq;			/* current TX ACK sequence number */
++};
++
++/* ----- USB commands without data ----------------------------------------- */
++
++static int wpanusb_control_send(struct wpanusb *wpanusb, unsigned int pipe,
++				u8 request, void *data, u16 size)
++{
++	struct usb_device *udev = wpanusb->udev;
++
++	return usb_control_msg(udev, pipe, request, VENDOR_OUT,
++			       0, 0, data, size, 1000);
++}
++
++static int wpanusb_control_recv(struct wpanusb *wpanusb, u8 request, void *data, u16 size)
++{
++	struct usb_device *udev = wpanusb->udev;
++
++	usb_control_msg(udev, usb_sndctrlpipe(udev, 0), request, VENDOR_OUT,
++			       0, 0, data, size, 1000);
++
++	return usb_control_msg(udev, usb_rcvbulkpipe(udev, 1), request, VENDOR_IN,
++			       0, 0, data, size, 1000);
++}
++
++/* ----- skb allocation ---------------------------------------------------- */
++
++#define MAX_PSDU	127
++#define MAX_RX_XFER	(1 + MAX_PSDU + 2 + 1)	/* PHR+PSDU+CRC+LQI */
++
++#define SKB_WPANUSB(skb)	(*(struct wpanusb **)(skb)->cb)
++
++static void wpanusb_bulk_complete(struct urb *urb);
++
++static int wpanusb_submit_rx_urb(struct wpanusb *wpanusb, struct urb *urb)
++{
++	struct usb_device *udev = wpanusb->udev;
++	struct sk_buff *skb = urb->context;
++	int ret;
++
++	if (!skb) {
++		skb = alloc_skb(MAX_RX_XFER, GFP_KERNEL);
++		if (!skb) {
++			dev_warn_ratelimited(&udev->dev,
++					     "can't allocate skb\n");
++			return -ENOMEM;
++		}
++		skb_put(skb, MAX_RX_XFER);
++		SKB_WPANUSB(skb) = wpanusb;
++	}
++
++	usb_fill_bulk_urb(urb, udev, usb_rcvbulkpipe(udev, 1),
++			  skb->data, MAX_RX_XFER, wpanusb_bulk_complete, skb);
++	usb_anchor_urb(urb, &wpanusb->rx_urbs);
++
++	ret = usb_submit_urb(urb, GFP_KERNEL);
++	if (ret) {
++		usb_unanchor_urb(urb);
++		kfree_skb(skb);
++		urb->context = NULL;
++	}
++
++	return ret;
++}
++
++static void wpanusb_work_urbs(struct work_struct *work)
++{
++	struct wpanusb *wpanusb =
++		container_of(to_delayed_work(work), struct wpanusb, work);
++	struct usb_device *udev = wpanusb->udev;
++	struct urb *urb;
++	int ret;
++
++	if (wpanusb->shutdown)
++		return;
++
++	do {
++		urb = usb_get_from_anchor(&wpanusb->idle_urbs);
++		if (!urb)
++			return;
++
++		ret = wpanusb_submit_rx_urb(wpanusb, urb);
++	} while (!ret);
++
++	usb_anchor_urb(urb, &wpanusb->idle_urbs);
++	dev_warn_ratelimited(&udev->dev, "can't allocate/submit URB (%d)\n",
++			     ret);
++	schedule_delayed_work(&wpanusb->work,
++			      msecs_to_jiffies(WPANUSB_ALLOC_DELAY_MS) + 1);
++}
++
++/* ----- Asynchronous USB -------------------------------------------------- */
++
++static void wpanusb_tx_done(struct wpanusb *wpanusb, uint8_t seq)
++{
++	struct usb_device *udev = wpanusb->udev;
++	u8 expect = wpanusb->tx_ack_seq;
++
++	dev_dbg(&udev->dev, "seq 0x%02x expect 0x%02x\n", seq, expect);
++
++	if (seq == expect) {
++		ieee802154_xmit_complete(wpanusb->hw, wpanusb->tx_skb, false);
++	} else {
++		dev_dbg(&udev->dev, "unknown ack %u\n", seq);
++
++		ieee802154_wake_queue(wpanusb->hw);
++		if (wpanusb->tx_skb)
++			dev_kfree_skb_irq(wpanusb->tx_skb);
++	}
++}
++
++static void wpanusb_process_urb(struct urb *urb)
++{
++	struct usb_device *udev = urb->dev;
++	struct sk_buff *skb = urb->context;
++	struct wpanusb *wpanusb = SKB_WPANUSB(skb);
++	u8 len, lqi;
++
++	if (!urb->actual_length) {
++		dev_dbg(&udev->dev, "zero-sized URB ?\n");
++		return;
++	}
++
++	len = *skb->data;
++
++	dev_dbg(&udev->dev, "urb %p urb len %u pkt len %u", urb,
++		urb->actual_length, len);
++
++	/* Handle ACK */
++	if (urb->actual_length == 1) {
++		wpanusb_tx_done(wpanusb, len);
++		return;
++	}
++
++	if (len + 1 > urb->actual_length - 1) {
++		dev_dbg(&udev->dev, "frame len %d+1 > URB %u-1\n",
++			len, urb->actual_length);
++		return;
++	}
++
++	if (!ieee802154_is_valid_psdu_len(len)) {
++		dev_dbg(&udev->dev, "frame corrupted\n");
++		return;
++	}
++
++	print_hex_dump_bytes("> ", DUMP_PREFIX_OFFSET, skb->data,
++			     urb->actual_length);
++
++	/* Get LQI at the end of the packet */
++	lqi = skb->data[len + 1];
++	dev_dbg(&udev->dev, "rx len %d lqi 0x%02x\n", len, lqi);
++	skb_pull(skb, 1);	/* remove length */
++	skb_trim(skb, len);	/* remove LQI */
++	ieee802154_rx_irqsafe(wpanusb->hw, skb, lqi);
++	urb->context = NULL;	/* skb is gone */
++}
++
++static void wpanusb_bulk_complete(struct urb *urb)
++{
++	struct usb_device *udev = urb->dev;
++	struct sk_buff *skb = urb->context;
++	struct wpanusb *wpanusb = SKB_WPANUSB(skb);
++
++	dev_dbg(&udev->dev, "status %d len %d\n",
++		urb->status, urb->actual_length);
++
++	if (urb->status) {
++		if (urb->status == -ENOENT) { /* being killed */
++			kfree_skb(skb);
++			urb->context = NULL;
++			return;
++		}
++
++		dev_dbg(&udev->dev, "URB error %d\n", urb->status);
++	} else {
++		wpanusb_process_urb(urb);
++	}
++
++	usb_anchor_urb(urb, &wpanusb->idle_urbs);
++	if (!wpanusb->shutdown)
++		schedule_delayed_work(&wpanusb->work, 0);
++}
++
++/* ----- URB allocation/deallocation --------------------------------------- */
++
++static void wpanusb_free_urbs(struct wpanusb *wpanusb)
++{
++	struct urb *urb;
++
++	do {
++		urb = usb_get_from_anchor(&wpanusb->idle_urbs);
++		if (!urb)
++			break;
++		kfree_skb(urb->context);
++		usb_free_urb(urb);
++	} while (true);
++}
++
++static int wpanusb_alloc_urbs(struct wpanusb *wpanusb, unsigned int n)
++{
++	struct urb *urb;
++
++	while (n--) {
++		urb = usb_alloc_urb(0, GFP_KERNEL);
++		if (!urb) {
++			wpanusb_free_urbs(wpanusb);
++			return -ENOMEM;
++		}
++		usb_anchor_urb(urb, &wpanusb->idle_urbs);
++	}
++
++	return 0;
++}
++
++/* ----- IEEE 802.15.4 interface operations -------------------------------- */
++
++static void wpanusb_xmit_complete(struct urb *urb)
++{
++	dev_dbg(&urb->dev->dev, "urb transmit completed");
++}
++
++static int wpanusb_xmit(struct ieee802154_hw *hw, struct sk_buff *skb)
++{
++	struct wpanusb *wpanusb = hw->priv;
++	struct usb_device *udev = wpanusb->udev;
++	int ret = 0;
++
++	dev_dbg(&udev->dev, "len %u", skb->len);
++
++	/* ack_seq range is 0x01 - 0xff */
++	wpanusb->tx_ack_seq++;
++	if (!wpanusb->tx_ack_seq)
++		wpanusb->tx_ack_seq++;
++
++	wpanusb->tx_skb = skb;
++	wpanusb->tx_dr.wIndex = cpu_to_le16(wpanusb->tx_ack_seq);
++	wpanusb->tx_dr.wLength = cpu_to_le16(skb->len);
++
++	usb_fill_control_urb(wpanusb->tx_urb, udev,
++			     usb_sndctrlpipe(udev, 0),
++			     (unsigned char *)&wpanusb->tx_dr, skb->data,
++			     skb->len, wpanusb_xmit_complete, NULL);
++	ret = usb_submit_urb(wpanusb->tx_urb, GFP_ATOMIC);
++
++	dev_dbg(&udev->dev, "%s: ret %d len %u seq %u\n", __func__, ret,
++		skb->len, wpanusb->tx_ack_seq);
++
++	return ret;
++}
++
++static int wpanusb_channel(struct ieee802154_hw *hw, u8 page, u8 channel)
++{
++	struct wpanusb *wpanusb = hw->priv;
++	struct usb_device *udev = wpanusb->udev;
++	struct set_channel *req;
++	int ret;
++
++	req = kmalloc(sizeof(*req), GFP_KERNEL);
++	if (!req)
++		return -ENOMEM;
++
++	req->page = page;
++	req->channel = channel;
++
++	ret = wpanusb_control_send(wpanusb, usb_sndctrlpipe(udev, 0),
++				   SET_CHANNEL, req, sizeof(*req));
++	kfree(req);
++	if (ret < 0) {
++		dev_err(&udev->dev, "Failed set channel, ret %d", ret);
++		return ret;
++	}
++
++	dev_dbg(&udev->dev, "set page %u channel %u", page, channel);
++
++	return 0;
++}
++
++static int wpanusb_ed(struct ieee802154_hw *hw, u8 *level)
++{
++	WARN_ON(!level);
++
++	*level = 0xbe;
++
++	return 0;
++}
++
++static int wpanusb_set_hw_addr_filt(struct ieee802154_hw *hw,
++				    struct ieee802154_hw_addr_filt *filt,
++				    unsigned long changed)
++{
++	struct wpanusb *wpanusb = hw->priv;
++	struct usb_device *udev = wpanusb->udev;
++	int ret = 0;
++
++	if (changed & IEEE802154_AFILT_SADDR_CHANGED) {
++		struct set_short_addr *req;
++
++		req = kmalloc(sizeof(*req), GFP_KERNEL);
++		if (!req)
++			return -ENOMEM;
++
++		req->short_addr = filt->short_addr;
++
++		ret = wpanusb_control_send(wpanusb, usb_sndctrlpipe(udev, 0),
++					   SET_SHORT_ADDR, req, sizeof(*req));
++		kfree(req);
++		if (ret < 0) {
++			dev_err(&udev->dev, "Failed to set short_addr, ret %d",
++				ret);
++			return ret;
++		}
++
++		dev_dbg(&udev->dev, "short addr changed to 0x%04x",
++			le16_to_cpu(filt->short_addr));
++	}
++
++	if (changed & IEEE802154_AFILT_PANID_CHANGED) {
++		struct set_pan_id *req;
++
++		req = kmalloc(sizeof(*req), GFP_KERNEL);
++		if (!req)
++			return -ENOMEM;
++
++		req->pan_id = filt->pan_id;
++
++		ret = wpanusb_control_send(wpanusb, usb_sndctrlpipe(udev, 0),
++					   SET_PAN_ID, req, sizeof(*req));
++		kfree(req);
++		if (ret < 0) {
++			dev_err(&udev->dev, "Failed to set pan_id, ret %d",
++				ret);
++			return ret;
++		}
++
++		dev_dbg(&udev->dev, "pan id changed to 0x%04x",
++			le16_to_cpu(filt->pan_id));
++	}
++
++	if (changed & IEEE802154_AFILT_IEEEADDR_CHANGED) {
++		struct set_ieee_addr *req;
++
++		req = kmalloc(sizeof(*req), GFP_KERNEL);
++		if (!req)
++			return -ENOMEM;
++
++		memcpy(&req->ieee_addr, &filt->ieee_addr,
++		       sizeof(req->ieee_addr));
++
++		ret = wpanusb_control_send(wpanusb, usb_sndctrlpipe(udev, 0),
++					   SET_IEEE_ADDR, req, sizeof(*req));
++		kfree(req);
++		if (ret < 0) {
++			dev_err(&udev->dev, "Failed to set ieee_addr, ret %d",
++				ret);
++			return ret;
++		}
++
++		dev_dbg(&udev->dev, "IEEE addr changed");
++	}
++
++	if (changed & IEEE802154_AFILT_PANC_CHANGED) {
++		dev_dbg(&udev->dev, "panc changed");
++
++		dev_err(&udev->dev, "Not handled AFILT_PANC_CHANGED");
++	}
++
++	return ret;
++}
++
++static int wpanusb_set_extended_addr(struct ieee802154_hw *hw)
++{
++	struct wpanusb *wpanusb = hw->priv;
++	struct usb_device *udev = wpanusb->udev;
++	unsigned char *buffer;
++	__le64 extended_addr;
++	int ret = 0;
++	u64 addr;
++
++	buffer = kmalloc(IEEE802154_EXTENDED_ADDR_LEN, GFP_KERNEL);
++	if (!buffer)
++		return -ENOMEM;
++
++	ret = wpanusb_control_send(wpanusb, usb_sndctrlpipe(udev, 0), GET_EXTENDED_ADDR, buffer,
++					IEEE802154_EXTENDED_ADDR_LEN);
++	if (ret < 0) {
++		dev_err(&udev->dev, "failed to fetch extended address, random address set\n");
++		ieee802154_random_extended_addr(&wpanusb->hw->phy->perm_extended_addr);
++		kfree(buffer);
++		return ret;
++	}
++
++	memcpy(&extended_addr, buffer, IEEE802154_EXTENDED_ADDR_LEN);
++	/* Check if read address is not empty and the unicast bit is set correctly */
++	if (!ieee802154_is_valid_extended_unicast_addr(extended_addr)) {
++		dev_info(&udev->dev, "no permanent extended address found, random address set\n");
++		ieee802154_random_extended_addr(&wpanusb->hw->phy->perm_extended_addr);
++	} else {
++		wpanusb->hw->phy->perm_extended_addr = extended_addr;
++		addr = swab64((__force u64)wpanusb->hw->phy->perm_extended_addr);
++		dev_info(&udev->dev, "Read permanent extended address %8phC from device\n", &addr);
++	}
++
++	kfree(buffer);
++	return ret;
++}
++
++/* FIXME: these need to come as capabilities from the device */
++static const s32 wpanusb_powers[] = {
++	300, 280, 230, 180, 130, 70, 0, -100, -200, -300, -400, -500, -700,
++	-900, -1200, -1700,
++};
++
++static int wpanusb_get_device_capabilities(struct ieee802154_hw *hw)
++{
++	struct wpanusb *wpanusb = hw->priv;
++	struct usb_device *udev = wpanusb->udev;
++	unsigned char *buffer;
++	uint32_t valid_channels;
++	int ret = 0;
++
++	buffer = kmalloc(IEEE802154_EXTENDED_ADDR_LEN, GFP_KERNEL);
++	if (!buffer)
++		return -ENOMEM;
++
++	ret = wpanusb_control_send(wpanusb, usb_sndctrlpipe(udev, 0), GET_EXTENDED_ADDR, buffer,
++					IEEE802154_EXTENDED_ADDR_LEN);
++	if (ret < 0) {
++		dev_err(&udev->dev, "failed to fetch extended address, random address set\n");
++		ieee802154_random_extended_addr(&wpanusb->hw->phy->perm_extended_addr);
++		kfree(buffer);
++		return ret;
++	}
++
++	buffer = kmalloc(sizeof(valid_channels), GFP_NOIO);
++	if (!buffer)
++		return -ENOMEM;
++	ret = wpanusb_control_recv(wpanusb, GET_SUPPORTED_CHANNELS, buffer,	sizeof(valid_channels));
++	valid_channels = *(uint32_t *)buffer;
++	if (ret < 0 || !valid_channels) {
++		dev_err(&udev->dev, "failed to fetch valid channels, setting default valid channels\n");
++		valid_channels = WPANUSB_VALID_CHANNELS;
++	}
++
++	/* FIXME: these need to come from device capabilities */
++	hw->flags = IEEE802154_HW_TX_OMIT_CKSUM | IEEE802154_HW_AFILT;
++
++	/* FIXME: these need to come from device capabilities */
++	hw->phy->flags = WPAN_PHY_FLAG_TXPOWER;
++
++	/* Set default and supported channels */
++	hw->phy->current_page = 0;
++	hw->phy->current_channel = ffs(valid_channels) - 1; //set to lowest valid channel
++	hw->phy->supported.channels[0] = valid_channels;
++
++	/* FIXME: these need to come from device capabilities */
++	hw->phy->supported.tx_powers = wpanusb_powers;
++	hw->phy->supported.tx_powers_size = ARRAY_SIZE(wpanusb_powers);
++	hw->phy->transmit_power = hw->phy->supported.tx_powers[0];
++
++	kfree(buffer);
++	return ret;
++}
++
++static int wpanusb_start(struct ieee802154_hw *hw)
++{
++	struct wpanusb *wpanusb = hw->priv;
++	struct usb_device *udev = wpanusb->udev;
++	int ret;
++
++	schedule_delayed_work(&wpanusb->work, 0);
++
++	ret = wpanusb_control_send(wpanusb, usb_sndctrlpipe(udev, 0),
++				   START, NULL, 0);
++	if (ret < 0) {
++		dev_err(&udev->dev, "Failed to start ieee802154");
++		usb_kill_anchored_urbs(&wpanusb->idle_urbs);
++	}
++
++	return ret;
++}
++
++static void wpanusb_stop(struct ieee802154_hw *hw)
++{
++	struct wpanusb *wpanusb = hw->priv;
++	struct usb_device *udev = wpanusb->udev;
++	int ret;
++
++	dev_dbg(&udev->dev, "stop");
++
++	usb_kill_anchored_urbs(&wpanusb->idle_urbs);
++
++	ret = wpanusb_control_send(wpanusb, usb_sndctrlpipe(udev, 0),
++				   STOP, NULL, 0);
++	if (ret < 0)
++		dev_err(&udev->dev, "Failed to stop ieee802154");
++}
++
++static int wpanusb_set_txpower(struct ieee802154_hw *hw, s32 mbm)
++{
++	struct wpanusb *wpanusb = hw->priv;
++	struct usb_device *udev = wpanusb->udev;
++
++	dev_err(&udev->dev, "%s: Not handled, mbm %d", __func__, mbm);
++
++	return -ENOTSUPP;
++}
++
++static int wpanusb_set_cca_mode(struct ieee802154_hw *hw,
++				const struct wpan_phy_cca *cca)
++{
++	struct wpanusb *wpanusb = hw->priv;
++	struct usb_device *udev = wpanusb->udev;
++
++	dev_err(&udev->dev, "%s: Not handled, mode %u opt %u",
++		__func__, cca->mode, cca->opt);
++
++	switch (cca->mode) {
++	case NL802154_CCA_ENERGY:
++		break;
++	case NL802154_CCA_CARRIER:
++		break;
++	case NL802154_CCA_ENERGY_CARRIER:
++		break;
++	default:
++		return -EINVAL;
++	}
++
++	return 0;
++}
++
++static int wpanusb_set_lbt(struct ieee802154_hw *hw, bool on)
++{
++	struct wpanusb *wpanusb = hw->priv;
++	struct usb_device *udev = wpanusb->udev;
++	int ret = 0;
++
++	if (on)
++		ret = wpanusb_control_send(wpanusb, usb_sndctrlpipe(udev, 0),
++				   SET_LBT, NULL, 0);
++
++	return ret;
++}
++
++static int wpanusb_set_frame_retries(struct ieee802154_hw *hw, s8 retries)
++{
++	struct wpanusb *wpanusb = hw->priv;
++	struct usb_device *udev = wpanusb->udev;
++	int ret;
++
++	/* FIXME pass retries onwards to device */
++	ret = wpanusb_control_send(wpanusb, usb_sndctrlpipe(udev, 0),
++				   SET_FRAME_RETRIES, NULL, 0);
++
++	return ret;
++}
++
++static int wpanusb_set_cca_ed_level(struct ieee802154_hw *hw, s32 mbm)
++{
++	struct wpanusb *wpanusb = hw->priv;
++	struct usb_device *udev = wpanusb->udev;
++
++	dev_err(&udev->dev, "%s: Not handled, mbm %d", __func__, mbm);
++
++	return 0;
++}
++
++static int wpanusb_set_csma_params(struct ieee802154_hw *hw, u8 min_be,
++				   u8 max_be, u8 retries)
++{
++	struct wpanusb *wpanusb = hw->priv;
++	struct usb_device *udev = wpanusb->udev;
++
++	dev_err(&udev->dev, "%s: Not handled, min_be %u max_be %u retr %u",
++		__func__, min_be, max_be, retries);
++
++	return 0;
++}
++
++static int wpanusb_set_promiscuous_mode(struct ieee802154_hw *hw, const bool on)
++{
++	struct wpanusb *wpanusb = hw->priv;
++	struct usb_device *udev = wpanusb->udev;
++
++	dev_err(&udev->dev, "%s: Not handled, on %d", __func__, on);
++
++	return 0;
++}
++
++static const struct ieee802154_ops wpanusb_ops = {
++	.owner			= THIS_MODULE,
++	.xmit_async		= wpanusb_xmit,
++	.ed			= wpanusb_ed,
++	.set_channel		= wpanusb_channel,
++	.start			= wpanusb_start,
++	.stop			= wpanusb_stop,
++	.set_hw_addr_filt	= wpanusb_set_hw_addr_filt,
++	.set_txpower		= wpanusb_set_txpower,
++	.set_lbt		= wpanusb_set_lbt,
++	.set_cca_mode		= wpanusb_set_cca_mode,
++	.set_cca_ed_level	= wpanusb_set_cca_ed_level,
++	.set_csma_params	= wpanusb_set_csma_params,
++	.set_frame_retries	= wpanusb_set_frame_retries,
++	.set_promiscuous_mode	= wpanusb_set_promiscuous_mode,
++};
++
++/* ----- Setup ------------------------------------------------------------- */
++
++static int wpanusb_probe(struct usb_interface *interface,
++			 const struct usb_device_id *id)
++{
++	struct usb_device *udev = interface_to_usbdev(interface);
++	struct ieee802154_hw *hw;
++	struct wpanusb *wpanusb;
++	int ret;
++
++	hw = ieee802154_alloc_hw(sizeof(struct wpanusb), &wpanusb_ops);
++	if (!hw)
++		return -ENOMEM;
++
++	wpanusb = hw->priv;
++	wpanusb->hw = hw;
++	wpanusb->udev = usb_get_dev(udev);
++	usb_set_intfdata(interface, wpanusb);
++
++	wpanusb->shutdown = 0;
++	INIT_DELAYED_WORK(&wpanusb->work, wpanusb_work_urbs);
++	init_usb_anchor(&wpanusb->idle_urbs);
++	init_usb_anchor(&wpanusb->rx_urbs);
++
++	ret = wpanusb_alloc_urbs(wpanusb, WPANUSB_NUM_RX_URBS);
++	if (ret)
++		goto fail;
++
++	wpanusb->tx_dr.bRequestType = VENDOR_OUT;
++	wpanusb->tx_dr.bRequest = TX;
++	wpanusb->tx_dr.wValue = cpu_to_le16(0);
++
++	wpanusb->tx_urb = usb_alloc_urb(0, GFP_KERNEL);
++	if (!wpanusb->tx_urb)
++		goto fail;
++
++	hw->parent = &udev->dev;
++
++	ret = wpanusb_control_send(wpanusb, usb_sndctrlpipe(udev, 0), RESET,
++				   NULL, 0);
++	if (ret < 0) {
++		dev_err(&udev->dev, "Failed to RESET ieee802154");
++		goto fail;
++	}
++
++	ret = wpanusb_get_device_capabilities(hw);
++
++	if (ret < 0) {
++		dev_err(&udev->dev, "Failed to get device capabilities");
++		goto fail;
++	}
++
++	ret = wpanusb_set_extended_addr(hw);
++
++	if (ret < 0) {
++		dev_err(&udev->dev, "Failed to set permanent address");
++		goto fail;
++	}
++
++	ret = ieee802154_register_hw(hw);
++	if (ret) {
++		dev_err(&udev->dev, "Failed to register ieee802154");
++		goto fail;
++	}
++
++	dev_dbg(&udev->dev, "ieee802154 ready to go");
++
++	return 0;
++
++fail:
++	dev_err(&udev->dev, "Failed ieee802154 probe");
++	wpanusb_free_urbs(wpanusb);
++	usb_kill_urb(wpanusb->tx_urb);
++	usb_free_urb(wpanusb->tx_urb);
++	usb_put_dev(udev);
++	ieee802154_free_hw(hw);
++
++	return ret;
++}
++
++static void wpanusb_disconnect(struct usb_interface *interface)
++{
++	struct wpanusb *wpanusb = usb_get_intfdata(interface);
++
++	wpanusb->shutdown = 1;
++	cancel_delayed_work_sync(&wpanusb->work);
++
++	usb_kill_anchored_urbs(&wpanusb->rx_urbs);
++	wpanusb_free_urbs(wpanusb);
++	usb_kill_urb(wpanusb->tx_urb);
++	usb_free_urb(wpanusb->tx_urb);
++
++	ieee802154_unregister_hw(wpanusb->hw);
++
++	ieee802154_free_hw(wpanusb->hw);
++
++	usb_set_intfdata(interface, NULL);
++	usb_put_dev(wpanusb->udev);
++}
++
++/* The devices we work with */
++static const struct usb_device_id wpanusb_device_table[] = {
++	{
++		USB_DEVICE_AND_INTERFACE_INFO(WPANUSB_VENDOR_ID,
++					      WPANUSB_PRODUCT_ID,
++					      USB_CLASS_VENDOR_SPEC,
++					      0, 0),
++                USB_DEVICE_AND_INTERFACE_INFO(BEAGLECONNECT_VENDOR_ID,
++                                                BEAGLECONNECT_PRODUCT_ID,
++                                                USB_CLASS_VENDOR_SPEC,
++                                                0, 0)
++	},
++	/* end with null element */
++	{}
++};
++MODULE_DEVICE_TABLE(usb, wpanusb_device_table);
++
++static struct usb_driver wpanusb_driver = {
++	.name		= "wpanusb",
++	.probe		= wpanusb_probe,
++	.disconnect	= wpanusb_disconnect,
++	.id_table	= wpanusb_device_table,
++};
++module_usb_driver(wpanusb_driver);
++
++MODULE_AUTHOR("Andrei Emeltchenko <andrei.emeltchenko@intel.com>");
++MODULE_DESCRIPTION("WPANUSB IEEE 802.15.4 over USB Driver");
++MODULE_LICENSE("GPL");
+diff --git a/drivers/misc/wpanusb/wpanusb.h b/drivers/misc/wpanusb/wpanusb.h
+new file mode 100644
+index 000000000000..68c3b475946f
+--- /dev/null
++++ b/drivers/misc/wpanusb/wpanusb.h
+@@ -0,0 +1,54 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++/*
++ * Definitions shared between kernel and WPANUSB firmware
++ *
++ * Copyright (C) 2018 Intel Corp.
++ *
++ * Written by Andrei Emeltchenko <andrei.emeltchenko@intel.com>
++ */
++
++#define WPANUSB_VENDOR_ID	0x2fe3
++#define WPANUSB_PRODUCT_ID	0x0101
++
++#define BEAGLECONNECT_VENDOR_ID  0x2047
++#define BEAGLECONNECT_PRODUCT_ID 0x0aa5
++
++enum wpanusb_requests {
++	RESET,
++	TX,
++	XMIT_ASYNC,
++	ED,
++	SET_CHANNEL,
++	START,
++	STOP,
++	SET_SHORT_ADDR,
++	SET_PAN_ID,
++	SET_IEEE_ADDR,
++	SET_TXPOWER,
++	SET_CCA_MODE,
++	SET_CCA_ED_LEVEL,
++	SET_CSMA_PARAMS,
++	SET_LBT,
++	SET_FRAME_RETRIES,
++	SET_PROMISCUOUS_MODE,
++	GET_EXTENDED_ADDR,
++	GET_SUPPORTED_CHANNELS,
++};
++
++struct set_channel {
++	__u8 page;
++	__u8 channel;
++} __packed;
++
++struct set_short_addr {
++	__le16 short_addr;
++} __packed;
++
++struct set_pan_id {
++	__le16 pan_id;
++} __packed;
++
++struct set_ieee_addr {
++	__le64 ieee_addr;
++} __packed;
++
+-- 
+2.34.1
+

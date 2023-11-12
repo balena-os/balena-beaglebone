@@ -20,9 +20,10 @@ COMPATIBLE_MACHINE = "beaglebone|beagleboard-xm"
 
 S = "${WORKDIR}/git"
 
-TAG = "v5.4.106-ti-r42-bn2"
+#v5.4.106-ti-r42-bn2"
+TAG = "5.4.70-ti-r21"
 
-PV = "5.4.106+git${SRCPV}"
+PV = "5.4.70+git${SRCPV}"
 
 # Append to the MACHINE_KERNEL_PR so that a new SRCREV will cause a rebuild
 MACHINE_KERNEL_PR:append = "b"
@@ -40,9 +41,12 @@ KERNEL_GIT_URI = "git://git.beagleboard.org/jkridner/linux.git"
 KERNEL_GIT_PROTOCOL = "https"
 SRC_URI += " \
     ${KERNEL_GIT_URI};protocol=${KERNEL_GIT_PROTOCOL};tag=${TAG};nobranch=1 \
+    file://0001-Revert-random-fix-crng_ready-test.patch \
+    file://0001-Add-bcfserial-and-wpanusb.patch \
+    file://bn-v3-dt.patch \
     file://defconfig \
     "
 
 do_install:append() {
-    rm -rf ${D}/lib/modules/5.4.106+/modules.builtin.modinfo
+    rm -rf ${D}/lib/modules/5.4.70+/modules.builtin.modinfo
 }
