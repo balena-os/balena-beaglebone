@@ -35,10 +35,10 @@ module.exports =
 
 	yocto:
 		machine: 'beaglebone-play'
-		image: 'balena-image'
+		image: 'balena-image-flasher'
 		fstype: 'balenaos-img'
 		version: 'yocto-kirkstone'
-		deployArtifact: 'balena-image-beaglebone-play.balenaos-img'
+		deployArtifact: 'balena-image-flasher-beaglebone-play.balenaos-img'
 		compressed: true
 
 	options: [ networkOptions.group ]
