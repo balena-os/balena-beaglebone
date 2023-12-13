@@ -1,4 +1,31 @@
 - commits:
+    - subject: Update contracts to 591fda9174610519f89842e651f3186eac8862eb
+      hash: 0f9fe26d5e498ec151af5161d972104799ba8c45
+      body: Update contracts
+      footer:
+        Changelog-entry: Update contracts to 591fda9174610519f89842e651f3186eac8862eb
+        changelog-entry: Update contracts to 591fda9174610519f89842e651f3186eac8862eb
+      author: Self-hosted Renovate Bot
+      nested:
+        - commits:
+            - subject: "iot-gate-imx8plus: Update flashing instructions and name"
+              hash: e390406c50b2ec6bb6ea631fcfaf817ceab69736
+              body: |
+                to reflect that this image can be used for both 2G and 4G DRAM
+                boards.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+          version: contracts-2.0.84
+          title: ""
+          date: 2023-12-13T15:46:08.530Z
+  version: 5.0.3+rev2
+  title: ""
+  date: 2023-12-13T22:06:33.757Z
+- commits:
     - subject: Update layers/poky to 3e73216a32a2b01916eb8c555a41579bd69a47aa
       hash: efb2ee9a7d9d8e3aa7830ca73ccf5b1c8f914a5b
       body: Update layers/poky
