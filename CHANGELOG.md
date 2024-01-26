@@ -1,6 +1,85 @@
 Change log
 -----------
 
+# v5.1.14
+## (2024-01-26)
+
+
+<details>
+<summary> Update layers/meta-balena to 2868aa1385bcbf6fe885e76872c2015de209d710 [Self-hosted Renovate Bot] </summary>
+
+> ## meta-balena-5.1.14
+> ### (2024-01-24)
+> 
+> 
+> <details>
+> <summary> Update tests/leviathan digest to e618772 [Self-hosted Renovate Bot] </summary>
+> 
+>> ### leviathan-2.29.40
+>> #### (2024-01-23)
+>> 
+>> * Update Lock file maintenance [Self-hosted Renovate Bot]
+>> 
+>> ### leviathan-2.29.39
+>> #### (2024-01-23)
+>> 
+>> * Update actions/upload-artifact digest to 26f96df [Self-hosted Renovate Bot]
+>> 
+> 
+> </details>
+> 
+> 
+> ## meta-balena-5.1.13
+> ### (2024-01-23)
+> 
+> * Start extract-balena-ca before os-config update [jaomaloy]
+> 
+> ## meta-balena-5.1.12
+> ### (2024-01-19)
+> 
+> 
+> <details>
+> <summary> Update tests/leviathan digest to 6be4049 [Self-hosted Renovate Bot] </summary>
+> 
+>> ### leviathan-2.29.38
+>> #### (2024-01-18)
+>> 
+>> * Update actions/upload-artifact digest to 694cdab [Self-hosted Renovate Bot]
+>> 
+>> ### leviathan-2.29.37
+>> #### (2024-01-15)
+>> 
+>> * Update actions/upload-artifact digest to 1eb3cb2 [Self-hosted Renovate Bot]
+>> 
+>> ### leviathan-2.29.36
+>> #### (2024-01-15)
+>> 
+>> * Update Lock file maintenance [Self-hosted Renovate Bot]
+>> 
+> 
+> </details>
+> 
+> 
+> ## meta-balena-5.1.11
+> ### (2024-01-18)
+> 
+> * kernel-balena: Only sign initramfs for EFI machines [Alex Gonzalez]
+> * balena-image: Add TPM tools conditionally on tpm machine feature [Alex Gonzalez]
+> * initrdscripts: Add TPM/EFI tools conditionally on tpm machine feature [Alex Gonzalez]
+> * os-helpers: rename os-helpers-secureboot to os-helpers-efi [Alex Gonzalez]
+> * image-balena: extract hup boot partition checks into a function [Alex Gonzalez]
+> * balena-keys: Distinguish EFI devices [Alex Gonzalez]
+> * balena-image-flasher: only add grub configuration for EFI devices [Alex Gonzalez]
+> * balena-image: only add grub configuration for EFI machines [Alex Gonzalez]
+> 
+> ## meta-balena-5.1.10
+> ### (2024-01-12)
+> 
+> * tests/bluetooth: Leave Autokit host discoverable on BT for a longer period of time [Alexandru Costache]
+> 
+
+</details>
+
 # v5.1.9+rev4
 ## (2024-01-25)
 
