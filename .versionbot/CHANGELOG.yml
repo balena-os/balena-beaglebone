@@ -1,4 +1,99 @@
 - commits:
+    - subject: Update contracts to 14a10d925b56660c59471447ca74ae324da68f79
+      hash: ab24b21b386263b276fe0082be10cbaf30df7516
+      body: Update contracts
+      footer:
+        Changelog-entry: Update contracts to 14a10d925b56660c59471447ca74ae324da68f79
+        changelog-entry: Update contracts to 14a10d925b56660c59471447ca74ae324da68f79
+      author: Self-hosted Renovate Bot
+      nested:
+        - commits:
+            - subject: "hw.device-type: Update svg icon for seeed-j4012"
+              hash: 26b20e8e64f1a52c042bf5974931fb3baaa5d8fb
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+          version: contracts-2.0.90
+          title: ""
+          date: 2024-01-10T10:48:43.053Z
+        - commits:
+            - subject: "hw.device-type: Fix hyperlinks in provisioning instructions"
+              hash: 7ba9c9e03fe93110b2c8f3c866fbd4a3d7c8248b
+              body: |
+                If hyperlinks are unquoted, a target=blank is added and entire
+                link is broken in the dashboard. This doesn't happen for devices
+                which use quoted links, like for example the CM4.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+          version: contracts-2.0.89
+          title: ""
+          date: 2024-01-05T11:04:31.513Z
+        - commits:
+            - subject: "jetson-orin-nx-seeed-j4012: Add Seeed J4012 device-type"
+              hash: 2f35889ca436bcb17cb8fba3e9192676b9872042
+              body: |
+                This is the initial commit, necessary to create the DT
+                in the API. The icon will need to be updated.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+          version: contracts-2.0.88
+          title: ""
+          date: 2024-01-03T13:26:42.845Z
+        - commits:
+            - subject: "hw.device-type: Fix device type is_private flag for imx8mp-var-dart"
+              hash: 31176adf167c7f9754c0f7f01f92c759d12b8c2b
+              body: >
+                This was added by mistake as private when it is supposed to be a
+                public dt.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Florin Sarbu <florin@balena.io>
+                signed-off-by: Florin Sarbu <florin@balena.io>
+              author: Florin Sarbu
+          version: contracts-2.0.87
+          title: ""
+          date: 2023-12-29T14:04:58.033Z
+        - commits:
+            - subject: "hw.device-type: Add Variscite DART-MX8M-PLUS"
+              hash: dd4e9de9d010e49040adf8d9f4ce8a4d68c69cce
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Florin Sarbu <florin@balena.io>
+                signed-off-by: Florin Sarbu <florin@balena.io>
+              author: Florin Sarbu
+          version: contracts-2.0.86
+          title: ""
+          date: 2023-12-28T11:16:43.472Z
+        - commits:
+            - subject: "patch: Remove wiki link reference to flash Tinker Board"
+              hash: 2d9a5bbea64deda704298e8ee41834e9d180d4da
+              body: ""
+              footer:
+                Signed-off-by: Vipul Gupta (@vipulgupta2048) <vipulgupta2048@gmail.com>
+                signed-off-by: Vipul Gupta (@vipulgupta2048) <vipulgupta2048@gmail.com>
+              author: Vipul Gupta (@vipulgupta2048)
+          version: contracts-2.0.85
+          title: ""
+          date: 2023-12-21T13:26:59.714Z
+  version: 5.1.14+rev1
+  title: ""
+  date: 2024-01-26T11:58:38.682Z
+- commits:
     - subject: Update layers/meta-balena to 2868aa1385bcbf6fe885e76872c2015de209d710
       hash: 97dba5816bcf9b0ca26a640e368ac7cc9c3b8da9
       body: Update layers/meta-balena

@@ -1,6 +1,46 @@
 Change log
 -----------
 
+# v5.1.14+rev1
+## (2024-01-26)
+
+
+<details>
+<summary> Update contracts to 14a10d925b56660c59471447ca74ae324da68f79 [Self-hosted Renovate Bot] </summary>
+
+> ## contracts-2.0.90
+> ### (2024-01-10)
+> 
+> * hw.device-type: Update svg icon for seeed-j4012 [Alexandru Costache]
+> 
+> ## contracts-2.0.89
+> ### (2024-01-05)
+> 
+> * hw.device-type: Fix hyperlinks in provisioning instructions [Alexandru Costache]
+> 
+> ## contracts-2.0.88
+> ### (2024-01-03)
+> 
+> * jetson-orin-nx-seeed-j4012: Add Seeed J4012 device-type [Alexandru Costache]
+> 
+> ## contracts-2.0.87
+> ### (2023-12-29)
+> 
+> * hw.device-type: Fix device type is_private flag for imx8mp-var-dart [Florin Sarbu]
+> 
+> ## contracts-2.0.86
+> ### (2023-12-28)
+> 
+> * hw.device-type: Add Variscite DART-MX8M-PLUS [Florin Sarbu]
+> 
+> ## contracts-2.0.85
+> ### (2023-12-21)
+> 
+> * patch: Remove wiki link reference to flash Tinker Board [Vipul Gupta (@vipulgupta2048)]
+> 
+
+</details>
+
 # v5.1.14
 ## (2024-01-26)
 
