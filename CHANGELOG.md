@@ -1,6 +1,84 @@
 Change log
 -----------
 
+# v5.1.20
+## (2024-02-01)
+
+
+<details>
+<summary> Update layers/meta-balena to cb6fcbc870bbb5c3a39a36647fb3c91747718a93 [Self-hosted Renovate Bot] </summary>
+
+> ## meta-balena-5.1.20
+> ### (2024-02-01)
+> 
+> 
+> <details>
+> <summary> Update balena-supervisor to v15.3.0 [Self-hosted Renovate Bot] </summary>
+> 
+>> ### balena-supervisor-15.3.0
+>> #### (2024-01-26)
+>> 
+>> * Pin docker version to v24 for tests [Felipe Lalanne]
+>> * Fix docker utils tests for docker v25 [Felipe Lalanne]
+>> * Enable nodemon when using test:env [Felipe Lalanne]
+>> * Improve test:compose and test:env commands [Felipe Lalanne]
+>> * Add prettierrc for editor compatibility [Felipe Lalanne]
+>> 
+> 
+> </details>
+> 
+> 
+> ## meta-balena-5.1.19
+> ### (2024-02-01)
+> 
+> * Add balena bootloader class [Michal Toman]
+> * initrdscripts: remove nr_cpus kernel arg before kexec [Michal Toman]
+> 
+> ## meta-balena-5.1.18
+> ### (2024-01-29)
+> 
+> * classes: kernel-balena: expose watchdog in sysfs [Alex Gonzalez]
+> 
+> ## meta-balena-5.1.17
+> ### (2024-01-29)
+> 
+> 
+> <details>
+> <summary> Update tests/leviathan digest to 01e65ec [Self-hosted Renovate Bot] </summary>
+> 
+>> ### leviathan-2.29.42
+>> #### (2024-01-29)
+>> 
+>> * Update Lock file maintenance [Self-hosted Renovate Bot]
+>> 
+> 
+> </details>
+> 
+> 
+> ## meta-balena-5.1.16
+> ### (2024-01-27)
+> 
+> 
+> <details>
+> <summary> Update tests/leviathan digest to 7c94243 [Self-hosted Renovate Bot] </summary>
+> 
+>> ### leviathan-2.29.41
+>> #### (2024-01-26)
+>> 
+>> * Update balena-os/leviathan-worker to v2.9.28 [Self-hosted Renovate Bot]
+>> 
+> 
+> </details>
+> 
+> 
+> ## meta-balena-5.1.15
+> ### (2024-01-26)
+> 
+> * networkmanager: make FORWARD rules for shared interfaces last in chain [Michal Toman]
+> 
+
+</details>
+
 # v5.1.14+rev3
 ## (2024-01-31)
 
