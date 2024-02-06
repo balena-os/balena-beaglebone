@@ -1,6 +1,48 @@
 Change log
 -----------
 
+# v5.1.26
+## (2024-02-06)
+
+
+<details>
+<summary> Update layers/meta-balena to cde215eca198fddfd900cf481ed5cc3f26d901ab [Self-hosted Renovate Bot] </summary>
+
+> ## meta-balena-5.1.26
+> ### (2024-02-06)
+> 
+> 
+> <details>
+> <summary> Update balena-supervisor to v15.3.1 [Self-hosted Renovate Bot] </summary>
+> 
+>> ### balena-supervisor-15.3.1
+>> #### (2024-02-01)
+>> 
+>> * Respect update strategies app-wide instead of at the service level [Christina Ying Wang]
+>> 
+> 
+> </details>
+> 
+> 
+> ## meta-balena-5.1.25
+> ### (2024-02-06)
+> 
+> 
+> <details>
+> <summary> Update tests/leviathan digest to a708a7f [Self-hosted Renovate Bot] </summary>
+> 
+>> ### leviathan-2.29.49
+>> #### (2024-02-05)
+>> 
+>> * Update actions/upload-artifact digest to 5d5d22a [Self-hosted Renovate Bot]
+>> 
+> 
+> </details>
+> 
+> 
+
+</details>
+
 # v5.1.24
 ## (2024-02-06)
 
