@@ -1,4 +1,29 @@
 - commits:
+    - subject: Update contracts to 75a97647a44cfe534f93926ab039afca6570cb86
+      hash: 6b5c6c8125b91d4307d9e1cf37b48197502c87c9
+      body: Update contracts
+      footer:
+        Changelog-entry: Update contracts to 75a97647a44cfe534f93926ab039afca6570cb86
+        changelog-entry: Update contracts to 75a97647a44cfe534f93926ab039afca6570cb86
+      author: Self-hosted Renovate Bot
+      nested:
+        - commits:
+            - subject: "hw.device-type: Add phyboard-lyra-am62xx-2 device"
+              hash: d9e57b1f2432aac0ea4b6d9e6285e805e5359a6f
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Atanas Bunchev <atanas.bunchev@konsulko.com>
+                signed-off-by: Atanas Bunchev <atanas.bunchev@konsulko.com>
+              author: Atanas Bunchev
+          version: contracts-2.0.92
+          title: ""
+          date: 2024-02-01T10:43:30.336Z
+  version: 5.1.26+rev2
+  title: ""
+  date: 2024-02-07T08:39:24.024Z
+- commits:
     - subject: Update balena-yocto-scripts to 0ba4bf5f5c4597b21628dfb6206304d1f889468f
       hash: 21dcfdad332db28e178d4871731f98b02ea3905a
       body: Update balena-yocto-scripts
