@@ -26,7 +26,6 @@ UBOOT_EXTLINUX_BOOT_FILES = " \
 FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
 
 SRC_URI:append = " \
-    file://uEnv.txt_internal \
     file://balenaos_disableuefi.cfg \
     file://balenaos_bootcommand.cfg \
 "
@@ -41,13 +40,12 @@ do_deploy:append:beaglebone-ai64 () {
     rm -vf ${DEPLOYDIR}/extra_uEnv.txt
 }
 
-SSTATE_ALLOW_OVERLAP_FILES += "${DEPLOYDIR}/extra_uEnv.txt"
-SSTATE_ALLOW_OVERLAP_FILES += "${DEPLOYDIR}/uEnv.txt_internal"
-
-
-do_deploy:append () {
-    install ${WORKDIR}/uEnv.txt_internal ${DEPLOYDIR}
+# The Beagleplay *also* creates this file for both archs, remove one.
+do_deploy:append:beaglebone-play () {
+    rm -vf ${DEPLOYDIR}/extra_uEnv.txt
 }
+
+SSTATE_ALLOW_OVERLAP_FILES += "${DEPLOYDIR}/extra_uEnv.txt"
 
 SRCREV = "4a4f4d88ffb620a3d389900f648abb24008f3ddc"
 
