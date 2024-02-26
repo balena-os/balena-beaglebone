@@ -1,14 +1,6 @@
 UBOOT_KCONFIG_SUPPORT = "1"
 inherit resin-u-boot
 
-FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
-
-SRC_URI:append = " \
-    file://0001-Integrate-with-Balena-environment-configuration.patch \
-    file://0002-am335x_evm_defconfig-Reduce-SPL-.rodata-size.patch \
-    file://0005-Autoboot-keyboard-beaglebone-fixes.patch \
-    file://0001-Add-support-for-BeagleBoard.org-PocketBeagle.patch \
-
 UBOOT_MACHINE = "am335x_evm_config"
 UBOOT_MACHINE:beaglebone-play = "am62x_evm_a53_defconfig"
 UBOOT_MACHINE:beaglebone-play-k3r5 = "am62x_evm_r5_defconfig"
@@ -19,9 +11,6 @@ BRANCH:beaglebone-play-k3r5= "v2023.04-ti-09.00.00.010-BeaglePlay"
 UBOOT_GIT_URI:beaglebone-play = "git://git.beagleboard.org/beagleboard/u-boot.git"
 UBOOT_GIT_URI:beaglebone-play-k3r5 = "git://git.beagleboard.org/beagleboard/u-boot.git"
 SRCREV:beaglebone-play = "4a4f4d88ffb620a3d389900f648abb24008f3ddc"
-
-SRC_URI += " \
-UBOOT_SIGN_ENABLE:beaglebone-play = "0"
 
 # Generate an extlinux.conf file
 UBOOT_EXTLINUX = "1"
