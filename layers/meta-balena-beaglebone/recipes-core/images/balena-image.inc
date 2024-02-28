@@ -54,8 +54,8 @@ IMAGE_INSTALL:append = " kernel-image-initramfs kernel-devicetree wlconf"
 IMAGE_INSTALL:append = " beagle-serial"
 
 BALENA_BOOT_PARTITION_FILES:append:beaglebone-pocket = " uEnv.txt_internal:"
-BALENA_BOOT_PARTITION_FILES:append:beaglebone-play = " uEnv.txt_internal:"
-BALENA_BOOT_PARTITION_FILES:append:beaglebone-play-k3r5 = " uEnv.txt_internal:"
+#BALENA_BOOT_PARTITION_FILES:append:beaglebone-play = " uEnv.txt_internal:"
+#BALENA_BOOT_PARTITION_FILES:append:beaglebone-play-k3r5 = " uEnv.txt_internal:"
 
 
 # Fixes error: packages already installed
