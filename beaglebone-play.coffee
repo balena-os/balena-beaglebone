@@ -1,8 +1,8 @@
 deviceTypesCommon = require '@resin.io/device-types/common'
 { networkOptions, commonImg, instructions } = deviceTypesCommon
 
-BBB_FLASH = 'Power up the <%= TYPE_NAME %> while holding down the small button near the SD slot.
-You need to keep it pressed until the blue LEDs start flashing wildly.'
+BBB_FLASH = 'Power up the <%= TYPE_NAME %> after inserting the flasher image into the SDCard Slot.
+The device will power down automatically after the flashing is complete. Remove the SCCard and restart the device.'
 
 postProvisioningInstructions = [
 	instructions.BOARD_SHUTDOWN
@@ -12,9 +12,9 @@ postProvisioningInstructions = [
 
 module.exports =
 	version: 1
-	slug: 'beaglebone-black'
-	aliases: [ 'beaglebone' ]
-	name: 'BeagleBone Black'
+	slug: 'beaglebone-play'
+	aliases: [ 'beagleplay' ]
+	name: 'BeagleBone Play'
 	arch: 'aarch64'
 	state: 'released'
 
