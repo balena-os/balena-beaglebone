@@ -1,0 +1,77 @@
+Index: git/include/environment/ti/mmc.h
+===================================================================
+--- git.orig/include/environment/ti/mmc.h
++++ git/include/environment/ti/mmc.h
+@@ -14,8 +14,8 @@
+ 	"finduuid=part uuid ${boot} ${bootpart} uuid\0" \
+ 	"args_mmc=run finduuid;setenv bootargs console=${console} " \
+ 		"${optargs} " \
+-		"root=PARTUUID=${uuid} rw " \
+-		"rootfstype=${mmcrootfstype}\0" \
++		"${resin_kernel_root}" \
++		"${os_cmdline}"
+ 	"loadbootscript=load mmc ${mmcdev} ${loadaddr} boot.scr\0" \
+ 	"bootscript=echo Running bootscript from mmc${mmcdev} ...; " \
+ 		"source ${loadaddr}\0" \
+@@ -23,8 +23,8 @@
+ 	"importbootenv=echo Importing environment from mmc${mmcdev} ...; " \
+ 		"env import -t ${loadaddr} ${filesize}\0" \
+ 	"loadbootenv=fatload mmc ${mmcdev} ${loadaddr} ${bootenvfile}\0" \
+-	"loadimage=load ${devtype} ${bootpart} ${loadaddr} ${bootdir}/${bootfile}\0" \
+-	"loadfdt=load ${devtype} ${bootpart} ${fdtaddr} ${bootdir}/${fdtfile}\0" \
++	"loadimage=load ${devtype} ${resin_dev_index}:${resin_root_part} ${loadaddr} ${bootdir}/${bootfile}\0" \
++	"loadfdt=load ${devtype} ${resin_dev_index}:${resin_root_part} ${fdtaddr} ${bootdir}/${fdtfile}\0" \
+ 	"envboot=mmc dev ${mmcdev}; " \
+ 		"if mmc rescan; then " \
+ 			"echo SD/MMC found on device ${mmcdev};" \
+Index: git/include/environment/ti/mmc.env
+===================================================================
+--- git.orig/include/environment/ti/mmc.env
++++ git/include/environment/ti/mmc.env
+@@ -3,8 +3,7 @@ mmcrootfstype=ext4 rootwait
+ finduuid=part uuid ${boot} ${bootpart} uuid
+ args_mmc=run finduuid;setenv bootargs console=${console}
+ 	${optargs}
+-	root=PARTUUID=${uuid} rw
+-	rootfstype=${mmcrootfstype}
++	${resin_kernel_root}
+ loadbootscript=load mmc ${mmcdev} ${loadaddr} boot.scr
+ bootscript=echo Running bootscript from mmc${mmcdev} ...;
+ 	source ${loadaddr}
+@@ -12,9 +11,9 @@ bootenvfile=uEnv.txt
+ importbootenv=echo Importing environment from mmc${mmcdev} ...;
+ 	env import -t ${loadaddr} ${filesize}
+ loadbootenv=fatload mmc ${mmcdev} ${loadaddr} ${bootenvfile}
+-loadimage=load ${devtype} ${bootpart} ${loadaddr} ${bootdir}/${bootfile}
+-loadfdt=load ${devtype} ${bootpart} ${fdtaddr} ${bootdir}/dtb/${fdtfile}
+-get_fdt_mmc=load mmc ${bootpart} ${fdtaddr} ${bootdir}/dtb/${name_fdt}
++loadimage=load ${devtype} ${resin_dev_index}:${resin_root_part} ${loadaddr} ${bootdir}/${bootfile}
++loadfdt=load ${devtype} ${resin_dev_index}:${resin_root_part} ${fdtaddr} ${bootdir}/dtb/${fdtfile}
++get_fdt_mmc=load mmc ${resin_dev_index}:${resin_root_part} ${fdtaddr} ${bootdir}/dtb/${name_fdt}
+ envboot=mmc dev ${mmcdev};
+ 	if mmc rescan; then
+ 		echo SD/MMC found on device ${mmcdev};
+@@ -66,11 +65,11 @@ get_overlay_mmc=
+ 	fdt resize 0x100000;
+ 	for overlay in $name_overlays;
+ 	do;
+-	load mmc ${bootpart} ${dtboaddr} ${bootdir}/dtb/ti/${overlay} &&
++	load mmc ${resin_dev_index}:${resin_root_part} ${dtboaddr} ${bootdir}/dtb/ti/${overlay} &&
+ 	fdt apply ${dtboaddr};
+ 	done;
+-get_kern_mmc=load mmc ${bootpart} ${loadaddr}
++get_kern_mmc=load mmc ${resin_dev_index}:${resin_root_part} ${loadaddr}
+ 	${bootdir}/${name_kern}
+-get_fit_mmc=load mmc ${bootpart} ${addr_fit}
++get_fit_mmc=load mmc ${resin_dev_index}:${resin_root_part} ${addr_fit}
+ 	${bootdir}/${name_fit}
+ partitions=name=rootfs,start=0,size=-,uuid=${uuid_gpt_rootfs}
+Index: git/board/ti/j721e/j721e.env
+===================================================================
+--- git.orig/board/ti/j721e/j721e.env
++++ git/board/ti/j721e/j721e.env
+@@ -1,3 +1,4 @@
++#include <env_resin.h>
+ #include <environment/ti/ti_armv7_common.env>
+ #include <environment/ti/mmc.env>
+ #include <environment/ti/ufs.env>

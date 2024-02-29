@@ -5,6 +5,7 @@ FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
 
 SRC_URI:append = " \
     file://0001-Integrate-with-Balena-u-boot-environment.patch \
+    file://0002-env_default.h-Add-support-for-OS_KERNEL_CMDLINE.patch \
 "
 
 SRC_URI:append:beaglebone-ai64 = " \
