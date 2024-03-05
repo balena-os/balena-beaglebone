@@ -1,0 +1,17 @@
+Integrate with BalenaOS.
+
+Upstream-status: Inappropriate [configuration]
+Signed-off-by: Lisandro Pérez Meyer <lpmeyer@ics.com>
+Index: git/include/config_distro_bootcmd.h
+===================================================================
+--- git.orig/include/config_distro_bootcmd.h
++++ git/include/config_distro_bootcmd.h
+@@ -515,7 +515,7 @@
+ 		"\0"                                                      \
+ 	\
+ 	"scan_dev_for_boot_part="                                         \
+-		"part list ${devtype} ${devnum} -bootable devplist; "     \
++		"setenv devplist ${resin_root_part}; "     \
+ 		"env exists devplist || setenv devplist 1; "              \
+ 		"for distro_bootpart in ${devplist}; do "                 \
+ 			"if fstype ${devtype} "                           \

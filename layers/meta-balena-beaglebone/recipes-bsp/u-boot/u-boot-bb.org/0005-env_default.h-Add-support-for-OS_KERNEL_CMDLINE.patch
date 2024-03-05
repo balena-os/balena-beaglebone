@@ -1,0 +1,93 @@
+Add support for OS kernel line
+
+- Load the proper partitions.
+- Call mmcboot instead of mmc_boot.
+
+Upstream-status: Inappropriate [configuration]
+Signed-off-by: Lisandro Pérez Meyer <lpmeyer@ics.com>
+
+Index: git/include/environment/ti/mmc.env
+===================================================================
+--- git.orig/include/environment/ti/mmc.env
++++ git/include/environment/ti/mmc.env
+@@ -3,8 +3,9 @@ mmcrootfstype=ext4 rootwait
+ finduuid=part uuid ${boot} ${bootpart} uuid
+ args_mmc=run finduuid;setenv bootargs console=${console}
+ 	${optargs}
+-	root=PARTUUID=${uuid} rw
++	${resin_kernel_root} rw
+ 	rootfstype=${mmcrootfstype}
++	${os_cmdline}
+ loadbootscript=load mmc ${mmcdev} ${loadaddr} boot.scr
+ bootscript=echo Running bootscript from mmc${mmcdev} ...;
+ 	source ${loadaddr}
+@@ -12,9 +13,9 @@ bootenvfile=uEnv.txt
+ importbootenv=echo Importing environment from mmc${mmcdev} ...;
+ 	env import -t ${loadaddr} ${filesize}
+ loadbootenv=fatload mmc ${mmcdev} ${loadaddr} ${bootenvfile}
+-loadimage=load ${devtype} ${bootpart} ${loadaddr} ${bootdir}/${bootfile}
+-loadfdt=load ${devtype} ${bootpart} ${fdtaddr} ${bootdir}/dtb/${fdtfile}
+-get_fdt_mmc=load mmc ${bootpart} ${fdtaddr} ${bootdir}/dtb/${name_fdt}
++loadimage=load ${devtype} ${resin_dev_index}:${resin_root_part} ${loadaddr} boot/${bootfile}; run balena_kernel_load_crc_save
++loadfdt=load ${devtype} ${resin_dev_index}:${resin_root_part} ${fdtaddr} boot/dtb/${fdtfile}; run balena_fdt_load_crc_save
++get_fdt_mmc=load mmc ${resin_dev_index}:${resin_root_part} ${fdtaddr} boot/dtb/${name_fdt}
+ envboot=mmc dev ${mmcdev};
+ 	if mmc rescan; then
+ 		echo SD/MMC found on device ${mmcdev};
+@@ -46,19 +47,20 @@ mmcloados=
+ 		bootz;
+ 	fi;
+ mmcboot=mmc dev ${mmcdev};
+-	devnum=${mmcdev};
+-	devtype=mmc;
++	setenv devnum ${resin_dev_index};
++	setenv bootfile Image;
++	run mmc_boot;
+ 	if mmc rescan; then
+ 		echo SD/MMC found on device ${mmcdev};
+ 		if run loadimage; then
+-			run args_mmc;
+-			if test ${boot_fit} -eq 1; then
+-				run run_fit;
+-			else
+-				run mmcloados;
++			setenv fdt_addr ${fdtaddr};
++			if run findfdt; then
++				run loadfdt;
++				run args_mmc;
++				booti ${loadaddr} - ${fdtaddr};
+ 			fi;
+ 		fi;
+-fi;
++	fi;
+ 
+ init_mmc=run args_all args_mmc
+ get_overlay_mmc=
+@@ -66,11 +68,11 @@ get_overlay_mmc=
+ 	fdt resize 0x100000;
+ 	for overlay in $name_overlays;
+ 	do;
+-	load mmc ${bootpart} ${dtboaddr} ${bootdir}/dtb/${overlay} &&
++	load mmc ${resin_dev_index}:${resin_root_part} ${dtboaddr} ${bootdir}/dtb/${overlay} &&
+ 	fdt apply ${dtboaddr};
+ 	done;
+-get_kern_mmc=load mmc ${bootpart} ${loadaddr}
++get_kern_mmc=load mmc ${resin_dev_index}:${resin_root_part} ${loadaddr}
+ 	${bootdir}/${name_kern}
+-get_fit_mmc=load mmc ${bootpart} ${addr_fit}
++get_fit_mmc=load mmc ${resin_dev_index}:${resin_root_part} ${addr_fit}
+ 	${bootdir}/${name_fit}
+ partitions=name=rootfs,start=0,size=-,uuid=${uuid_gpt_rootfs}
+Index: git/include/config_distro_bootcmd.h
+===================================================================
+--- git.orig/include/config_distro_bootcmd.h
++++ git/include/config_distro_bootcmd.h
+@@ -38,7 +38,7 @@
+ #define BOOTENV_DEV_BLKDEV(devtypeu, devtypel, instance) \
+ 	"bootcmd_" #devtypel #instance "=" \
+ 		"devnum=" #instance "; " \
+-		"run " #devtypel "_boot\0"
++		"run " #devtypel "boot\0"
+ 
+ #define BOOTENV_DEV_NAME_BLKDEV(devtypeu, devtypel, instance) \
+ 	#devtypel #instance " "
