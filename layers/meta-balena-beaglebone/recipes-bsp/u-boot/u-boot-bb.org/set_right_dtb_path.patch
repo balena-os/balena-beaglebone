@@ -1,0 +1,31 @@
+Fix path to dtb.
+
+Upstream-status: Inappropriate [configuration]
+Signed-off-by: Lisandro Pérez Meyer <lpmeyer@ics.com>
+Index: git/board/ti/j721e/j721e.env
+===================================================================
+--- git.orig/board/ti/j721e/j721e.env
++++ git/board/ti/j721e/j721e.env
+@@ -12,17 +12,17 @@ defined(CONFIG_TARGET_J721E_R5_EVM)
+ #include <environment/ti/k3_rproc.env>
+ #endif
+ 
+-default_device_tree=ti/k3-j721e-beagleboneai64.dtb
++default_device_tree=k3-j721e-beagleboneai64.dtb
+ findfdt=
+ 	setenv name_fdt ${default_device_tree};
+ 	if test $board_name = j721e; then
+-		setenv name_fdt ti/k3-j721e-common-proc-board.dtb; fi;
++		setenv name_fdt k3-j721e-common-proc-board.dtb; fi;
+ 	if test $board_name = BBONEAI-64-B0-; then
+-		setenv name_fdt ti/k3-j721e-beagleboneai64.dtb; fi;
++		setenv name_fdt k3-j721e-beagleboneai64.dtb; fi;
+ 	if test $board_name = j7200; then
+-		setenv name_fdt ti/k3-j7200-common-proc-board.dtb; fi;
++		setenv name_fdt k3-j7200-common-proc-board.dtb; fi;
+ 	if test $board_name = j721e-eaik || test $board_name = j721e-sk; then
+-		setenv name_fdt ti/k3-j721e-sk.dtb; fi;
++		setenv name_fdt k3-j721e-sk.dtb; fi;
+ 	setenv fdtfile ${name_fdt}
+ name_kern=Image
+ console=ttyS2,115200n8
