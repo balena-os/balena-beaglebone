@@ -1,4 +1,18 @@
 - commits:
+    - subject: pass input parameters to common esr workflow
+      hash: 49f2ed72e28b7a78254fbcfc33ceab98a0eed7ed
+      body: ""
+      footer:
+        Changelog-entry: pass input parameters to common esr workflow
+        changelog-entry: pass input parameters to common esr workflow
+        Signed-off-by: Alex Gonzalez <alexg@balena.io>
+        signed-off-by: Alex Gonzalez <alexg@balena.io>
+      author: Alex Gonzalez
+      nested: []
+  version: 5.1.26+rev4
+  title: ""
+  date: 2024-03-06T09:50:00.532Z
+- commits:
     - subject: Update balena-yocto-scripts to 57b2f7c97e4d95e74b76a0827e910d46e3b3ce2f
       hash: b5f08bcca45affd7925fc9666c70af90f2489e1c
       body: Update balena-yocto-scripts
