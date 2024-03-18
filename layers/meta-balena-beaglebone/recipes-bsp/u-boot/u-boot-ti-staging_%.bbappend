@@ -2,15 +2,15 @@ UBOOT_KCONFIG_SUPPORT = "1"
 inherit resin-u-boot
 
 UBOOT_MACHINE = "am335x_evm_config"
-UBOOT_MACHINE:beaglebone-play = "am62x_evm_a53_defconfig"
-UBOOT_MACHINE:beaglebone-play-k3r5 = "am62x_evm_r5_defconfig"
+UBOOT_MACHINE:beagleplay = "am62x_evm_a53_defconfig"
+UBOOT_MACHINE:beagleplay-k3r5 = "am62x_evm_r5_defconfig"
 
 # Use BeagleBone's u-boot until u-boot-ti-staging has the BBAI64 support upstreamed.
-BRANCH:beaglebone-play= "v2023.04-ti-09.00.00.010-BeaglePlay"
-BRANCH:beaglebone-play-k3r5= "v2023.04-ti-09.00.00.010-BeaglePlay"
-UBOOT_GIT_URI:beaglebone-play = "git://git.beagleboard.org/beagleboard/u-boot.git"
-UBOOT_GIT_URI:beaglebone-play-k3r5 = "git://git.beagleboard.org/beagleboard/u-boot.git"
-SRCREV:beaglebone-play = "4a4f4d88ffb620a3d389900f648abb24008f3ddc"
+BRANCH:beagleplay= "v2023.04-ti-09.00.00.010-BeaglePlay"
+BRANCH:beagleplay-k3r5= "v2023.04-ti-09.00.00.010-BeaglePlay"
+UBOOT_GIT_URI:beagleplay = "git://git.beagleboard.org/beagleboard/u-boot.git"
+UBOOT_GIT_URI:beagleplay-k3r5 = "git://git.beagleboard.org/beagleboard/u-boot.git"
+SRCREV:beagleplay = "4a4f4d88ffb620a3d389900f648abb24008f3ddc"
 
 # Generate an extlinux.conf file
 UBOOT_EXTLINUX = "1"
@@ -41,7 +41,7 @@ do_deploy:append:beaglebone-ai64 () {
 }
 
 # The Beagleplay *also* creates this file for both archs, remove one.
-do_deploy:append:beaglebone-play () {
+do_deploy:append:beagleplay () {
     rm -vf ${DEPLOYDIR}/extra_uEnv.txt
 }
 

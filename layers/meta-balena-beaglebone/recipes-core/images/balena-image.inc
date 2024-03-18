@@ -1,10 +1,10 @@
 IMAGE_FSTYPES:append:beaglebone = " balenaos-img balenaos-img.bmap"
 IMAGE_FSTYPES:append:beaglebone-pocket = " balenaos-img"
 IMAGE_FSTYPES:append:beagleboard-xm = " balenaos-img"
-IMAGE_FSTYPES:append:beaglebone-play = " balenaos-img"
-IMAGE_FSTYPES:append:beaglebone-play-k3r5 = " balenaos-img"
+IMAGE_FSTYPES:append:beagleplay = " balenaos-img"
+IMAGE_FSTYPES:append:beagleplay-k3r5 = " balenaos-img"
 
-BALENA_BOOT_SIZE:beaglebone-play="327680"
+BALENA_BOOT_SIZE:beagleplay="327680"
 
 
 # Customize balenaos-img
@@ -30,7 +30,7 @@ BALENA_BOOT_PARTITION_FILES:beagleboard-xm = " \
     u-boot.img: \
 "
 
-BALENA_BOOT_PARTITION_FILES:beaglebone-play = " \
+BALENA_BOOT_PARTITION_FILES:beagleplay = " \
     ${SPL_BINARY}: \
     u-boot.img: \
     tiboot3.bin: \
@@ -39,7 +39,7 @@ BALENA_BOOT_PARTITION_FILES:beaglebone-play = " \
     extlinux.conf:/extlinux/extlinux.conf \
 "
 
-BALENA_BOOT_PARTITION_FILES:beaglebone-play-k3r5 = " \
+BALENA_BOOT_PARTITION_FILES:beagleplay-k3r5 = " \
     ${SPL_BINARY}: \
     u-boot.img: \
     tiboot3.bin: \
@@ -54,8 +54,8 @@ IMAGE_INSTALL:append = " kernel-image-initramfs kernel-devicetree wlconf"
 IMAGE_INSTALL:append = " beagle-serial"
 
 BALENA_BOOT_PARTITION_FILES:append:beaglebone-pocket = " uEnv.txt_internal:"
-#BALENA_BOOT_PARTITION_FILES:append:beaglebone-play = " uEnv.txt_internal:"
-#BALENA_BOOT_PARTITION_FILES:append:beaglebone-play-k3r5 = " uEnv.txt_internal:"
+#BALENA_BOOT_PARTITION_FILES:append:beagleplay = " uEnv.txt_internal:"
+#BALENA_BOOT_PARTITION_FILES:append:beagleplay-k3r5 = " uEnv.txt_internal:"
 
 
 # Fixes error: packages already installed

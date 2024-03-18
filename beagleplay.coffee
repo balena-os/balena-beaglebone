@@ -12,7 +12,7 @@ postProvisioningInstructions = [
 
 module.exports =
 	version: 1
-	slug: 'beaglebone-play'
+	slug: 'beagleplay'
 	aliases: [ 'beagleplay' ]
 	name: 'BeagleBone Play'
 	arch: 'aarch64'
@@ -34,11 +34,11 @@ module.exports =
 		linux: 'https://docs.resin.io/beaglebone/nodejs/getting-started/#adding-your-first-device'
 
 	yocto:
-		machine: 'beaglebone-play'
+		machine: 'beagleplay'
 		image: 'balena-image-flasher'
 		fstype: 'balenaos-img'
 		version: 'yocto-kirkstone'
-		deployArtifact: 'balena-image-flasher-beaglebone-play.balenaos-img'
+		deployArtifact: 'balena-image-flasher-beagleplay.balenaos-img'
 		compressed: true
 
 	options: [ networkOptions.group ]

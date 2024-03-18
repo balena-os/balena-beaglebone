@@ -3,5 +3,5 @@
 # on the initramfs.
 IMAGE_ROOTFS_MAXSIZE:beaglebone-ai64 = "65536"
 PACKAGE_INSTALL:append:beaglebone-ai64 = " cadence-mhdp-fw"
-IMAGE_ROOTFS_MAXSIZE:beaglebone-play = "65536"
-IMAGE_ROOTFS_MAXSIZE:beaglebone-play-k3r5 = "65536"
+IMAGE_ROOTFS_MAXSIZE:beagleplay = "65536"
+IMAGE_ROOTFS_MAXSIZE:beagleplay-k3r5 = "65536"
