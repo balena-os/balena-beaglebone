@@ -17,8 +17,13 @@ SRC_URI:append:beaglebone-ai64-k3r5 = " \
   file://0005-env_default.h-Add-support-for-OS_KERNEL_CMDLINE.patch \
 "
 
+SRC_URI:append:beagleplay = " \
+    file://balenaos_bootcommand_beagleplay_emmc.cfg \
+    file://0001-Added-device-tree-fix-as-suggested-by-Nishanth-Menon.patch \
+"
+
 SRC_URI:append:beagleplay-k3r5 = " \
-    file://balenaos_bootcommand_beagleplay.cfg \
+    file://balenaos_bootcommand_beagleplay_emmc.cfg \
     file://0001-Added-device-tree-fix-as-suggested-by-Nishanth-Menon.patch \
 "
 
