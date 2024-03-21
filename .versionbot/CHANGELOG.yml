@@ -1,4 +1,28 @@
 - commits:
+    - subject: Update meta-openembedded to latest kirkstone
+      hash: 6a6c238740c19ab9226eb12aacc4672244f7ee16
+      body: ""
+      footer:
+        Changelog-entry: Update meta-openembedded to latest kirkstone
+        changelog-entry: Update meta-openembedded to latest kirkstone
+        Signed-off-by: Florin Sarbu <florin@balena.io>
+        signed-off-by: Florin Sarbu <florin@balena.io>
+      author: Florin Sarbu
+      nested: []
+    - subject: Update poky to latest kirkstone
+      hash: ea16ae7a68e94a6b0de2d1f4efd345c860cb186a
+      body: ""
+      footer:
+        Changelog-entry: Update poky to latest kirkstone
+        changelog-entry: Update poky to latest kirkstone
+        Signed-off-by: Florin Sarbu <florin@balena.io>
+        signed-off-by: Florin Sarbu <florin@balena.io>
+      author: Florin Sarbu
+      nested: []
+  version: 5.1.53+rev1
+  title: ""
+  date: 2024-03-21T15:23:00.298Z
+- commits:
     - subject: Update layers/meta-balena to 4f480f5a5ef8595e963b373ea03f9f684ab9073b
       hash: 5a93d3e27542326a6b324cbb53e98e841598fa96
       body: Update layers/meta-balena

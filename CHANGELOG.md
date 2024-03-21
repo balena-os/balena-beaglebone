@@ -1,6 +1,12 @@
 Change log
 -----------
 
+# v5.1.53+rev1
+## (2024-03-21)
+
+* Update meta-openembedded to latest kirkstone [Florin Sarbu]
+* Update poky to latest kirkstone [Florin Sarbu]
+
 # v5.1.53
 ## (2024-03-13)
 
