@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v5.2.2+rev1
+## (2024-03-23)
+
+* Clean up the contributing section from README.md [Florin Sarbu]
+
 # v5.2.2
 ## (2024-03-21)
 

@@ -1,4 +1,21 @@
 - commits:
+    - subject: Clean up the contributing section from README.md
+      hash: ce99b78185c812bcecadc36827a4eb591d522583
+      body: |
+        Manual updates of meta-balena are no longer neeeded so we remove that
+        info. Also, clean up the restrictions on the commit message length since
+        that's not used anymore either.
+      footer:
+        Changelog-entry: Clean up the contributing section from README.md
+        changelog-entry: Clean up the contributing section from README.md
+        Signed-off-by: Florin Sarbu <florin@balena.io>
+        signed-off-by: Florin Sarbu <florin@balena.io>
+      author: Florin Sarbu
+      nested: []
+  version: 5.2.2+rev1
+  title: ""
+  date: 2024-03-23T11:29:47.578Z
+- commits:
     - subject: Update layers/meta-balena to b551e7d7a37d040165676862dba5a29ff1109b13
       hash: 0243154594f93eee9b1a12f1c7a37bee7a41a35b
       body: Update layers/meta-balena
