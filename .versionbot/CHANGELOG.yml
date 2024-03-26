@@ -1,4 +1,22 @@
 - commits:
+    - subject: Remove efi from MACHINE_FEATURES for BeagleBone AI-64
+      hash: a0e66ef66351e11465544f7ec7997f912f4925c6
+      body: >
+        We do not use grub for the BeagleBone AI-64 so let's remove it in order
+
+        to avoid build issues related to missing luks grub config for this
+        board.
+      footer:
+        Changelog-entry: Remove efi from MACHINE_FEATURES for BeagleBone AI-64
+        changelog-entry: Remove efi from MACHINE_FEATURES for BeagleBone AI-64
+        Signed-off-by: Florin Sarbu <florin@balena.io>
+        signed-off-by: Florin Sarbu <florin@balena.io>
+      author: Florin Sarbu
+      nested: []
+  version: 5.2.3+rev1
+  title: ""
+  date: 2024-03-26T10:44:38.310Z
+- commits:
     - subject: Update layers/meta-balena to 90d838ae943ffa72108522bfcc4370105a3be40c
       hash: 438f4ce6d02901e1e2ea1bd3187d026bc1abfcbb
       body: Update layers/meta-balena

@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v5.2.3+rev1
+## (2024-03-26)
+
+* Remove efi from MACHINE_FEATURES for BeagleBone AI-64 [Florin Sarbu]
+
 # v5.2.3
 ## (2024-03-25)
 
