@@ -2,7 +2,7 @@ deviceTypesCommon = require '@resin.io/device-types/common'
 { networkOptions, commonImg, instructions } = deviceTypesCommon
 
 BBB_FLASH = 'Power up the <%= TYPE_NAME %> after inserting the flasher image into the SDCard Slot.
-The device will power down automatically after the flashing is complete. Remove the SCCard and restart the device.'
+The device will power down automatically after the flashing is complete. Remove the SDCard and restart the device.'
 
 postProvisioningInstructions = [
 	instructions.BOARD_SHUTDOWN

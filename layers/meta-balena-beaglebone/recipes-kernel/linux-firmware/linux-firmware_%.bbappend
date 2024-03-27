@@ -1,10 +1,12 @@
 #SRC_URI = "https://github.com/beagleboard/ti-linux-firmware.git;branch=09.00.00.007"
-PV = "09.00.00.011"
+PV = "09.02.00.009"
 BPN = "ti-linux-firmware"
 SRC_URI = "https://github.com/beagleboard/${BPN}/archive/refs/tags/${PV}.tar.gz"
-#SRCREV = "905eb58564581d951d148f45828e8c8a142a5938"
-SRC_URI[sha256sum] = "4ba370a5975131a638c7500d96596313588ab63f19048097f0650e6a7abaf551"
-WHENCE_CHKSUM  = "4279eb9fcb7c0c9e9303a171f491c0e4"
+# SRCREV = "553da6850e271b579b569725ce9c58a1a6d7c849"
+SRC_URI[sha256sum] = "7be82c33137d974ce3322d11694a9f53f402c731967e130ba3667b27b4872950"
+WHENCE_CHKSUM  = "473207b6318af57de9d4559d1556407a"
 
 SRC_URI:class-devupstream = "https://github.com/beagleboard/${BPN}/archive/refs/tags/${PV}.tar.gz"
 #SRCREV:class-devupstream = "905eb58564581d951d148f45828e8c8a142a5938"
+
+DEPENDS += "rdfind-native"

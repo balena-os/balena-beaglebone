@@ -1,0 +1,1 @@
+RDEPENDS:packagegroup-meta-python:append:aarch64 = " python3-yamllint python3_pathspec"
