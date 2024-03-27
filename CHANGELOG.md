@@ -1,6 +1,42 @@
 Change log
 -----------
 
+# v5.2.3+rev2
+## (2024-03-27)
+
+
+<details>
+<summary> Update contracts to 8631765cc3b0b4c6fde0941b896dbfb1b8373455 [Self-hosted Renovate Bot] </summary>
+
+> ## contracts-2.0.97
+> ### (2024-03-21)
+> 
+> * hw.device-type: Add beagleplay device [delhiryder]
+> 
+> ## contracts-2.0.96
+> ### (2024-03-14)
+> 
+> * hw.device-type: Add beaglebone-play device [delhiryder]
+> 
+> ## contracts-2.0.95
+> ### (2024-02-26)
+> 
+> * sw.os+hw.device-type: Update Jetson Orin repositories [Alexandru Costache]
+> * jetson-orin-nx-seeed-j4012: Add ubuntu and debian distro tpl files [Alexandru Costache]
+> 
+> ## contracts-2.0.94
+> ### (2024-02-14)
+> 
+> * odyssey-x86: Update icon to latest revision [Alexandru Costache]
+> 
+> ## contracts-2.0.93
+> ### (2024-02-08)
+> 
+> * hw.device-type: Add Kontron i.MX8M Mini device [joris-bright]
+> 
+
+</details>
+
 # v5.2.3+rev1
 ## (2024-03-26)
 
