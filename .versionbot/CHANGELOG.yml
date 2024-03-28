@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update balena-os/github-workflows to v0.0.27
+      hash: f0102bb2f930955cbc43371cdcb61199138de705
+      body: Update balena-os/github-workflows
+      footer:
+        Changelog-entry: Update balena-os/github-workflows to v0.0.27
+        changelog-entry: Update balena-os/github-workflows to v0.0.27
+      author: Self-hosted Renovate Bot
+      nested: []
+  version: 5.2.3+rev4
+  title: ""
+  date: 2024-03-28T19:50:37.520Z
+- commits:
     - subject: Update balena-yocto-scripts to 35108dbe920e2b96e976065df205e265d19d86a5
       hash: 33c7b381e92425764f48074f743cef53bcb7d4ef
       body: Update balena-yocto-scripts
