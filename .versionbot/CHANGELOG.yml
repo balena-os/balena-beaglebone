@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update layers/poky to b6f6c729453cb88961488e3332046517e2fe99bb
+      hash: 3717114f5af48ecf1f2a65d1e33d7e06e9dccc6b
+      body: Update layers/poky
+      footer:
+        Changelog-entry: Update layers/poky to b6f6c729453cb88961488e3332046517e2fe99bb
+        changelog-entry: Update layers/poky to b6f6c729453cb88961488e3332046517e2fe99bb
+      author: Self-hosted Renovate Bot
+      nested: []
+  version: 5.2.3+rev5
+  title: ""
+  date: 2024-03-29T00:09:13.231Z
+- commits:
     - subject: Update balena-os/github-workflows to v0.0.27
       hash: f0102bb2f930955cbc43371cdcb61199138de705
       body: Update balena-os/github-workflows
