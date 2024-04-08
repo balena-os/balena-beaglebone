@@ -1,4 +1,43 @@
 - commits:
+    - subject: Update contracts to cb7b2220f327c5a21c1c0ab193ac03016537c05a
+      hash: 17e578508eb97296ee3bd8a0e640326bea5d9f96
+      body: Update contracts
+      footer:
+        Changelog-entry: Update contracts to cb7b2220f327c5a21c1c0ab193ac03016537c05a
+        changelog-entry: Update contracts to cb7b2220f327c5a21c1c0ab193ac03016537c05a
+      author: Self-hosted Renovate Bot
+      nested:
+        - commits:
+            - subject: Add node v20.12.0 for debian
+              hash: 69bd96b9757959ebbcdffb0e45e0811567929bb6
+              body: |
+                Planning to add alpine in a follow-up once
+                we get the jenkins job to work and will then
+                also mark 20.12.0 as the latest.
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: Thodoris Greasidis
+          version: contracts-2.0.99
+          title: ""
+          date: 2024-04-07T23:28:45.593Z
+        - commits:
+            - subject: "hw.device-type: Add bluechiptechnology-db1"
+              hash: 16e6a9606a0eddf4cfcc9f3fa18d539096d64e16
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Chris Richardson <crichardson@bluechiptechnology.com>
+                signed-off-by: Chris Richardson <crichardson@bluechiptechnology.com>
+              author: crichardson
+          version: contracts-2.0.98
+          title: ""
+          date: 2024-03-26T12:30:34.277Z
+  version: 5.2.3+rev6
+  title: ""
+  date: 2024-04-08T04:41:21.939Z
+- commits:
     - subject: Update layers/poky to b6f6c729453cb88961488e3332046517e2fe99bb
       hash: 3717114f5af48ecf1f2a65d1e33d7e06e9dccc6b
       body: Update layers/poky

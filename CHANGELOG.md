@@ -1,6 +1,26 @@
 Change log
 -----------
 
+# v5.2.3+rev6
+## (2024-04-08)
+
+
+<details>
+<summary> Update contracts to cb7b2220f327c5a21c1c0ab193ac03016537c05a [Self-hosted Renovate Bot] </summary>
+
+> ## contracts-2.0.99
+> ### (2024-04-07)
+> 
+> * Add node v20.12.0 for debian [Thodoris Greasidis]
+> 
+> ## contracts-2.0.98
+> ### (2024-03-26)
+> 
+> * hw.device-type: Add bluechiptechnology-db1 [crichardson]
+> 
+
+</details>
+
 # v5.2.3+rev5
 ## (2024-03-29)
 
