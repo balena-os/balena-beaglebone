@@ -1,4 +1,44 @@
 - commits:
+    - subject: "beaglebone-ai64: Switch to u-boot-bb.org to enable booting from eMMC"
+      hash: ff967a447de8f40e115b39ae110d958f0916ba10
+      body: >
+        The current u-boot-ti-staging does not allow booting from eMMC so
+
+        we switch provider to an u-boot-bb.org release which can boot from eMMC.
+
+
+        This also requires adding two new recipes coming from poky which are not
+
+        yet on kirkstone.
+
+
+        Clear TI_TMPDIR_APPEND so that the files for both archs are in the same
+
+        path and we can install them.
+
+
+        Change the path to where the device trees are, there is no ti
+
+        subdirectory in u-boot-bb.org.
+
+
+        This required a meta-ti update, so updating patches too. Interestingly
+
+        enough CONFIG_DM_CRYPT is not a warning anymore if
+
+        0001-Enable-CRYPTO_DM-by-default.patch is not used, so removing this
+        patch.
+      footer:
+        Changelog-Entry: "beaglebone-ai64: Switch to u-boot-bb.org to enable booting from eMMC"
+        changelog-entry: "beaglebone-ai64: Switch to u-boot-bb.org to enable booting from eMMC"
+        Signed-off-by: Lisandro Pérez Meyer <lpmeyer@ics.com>
+        signed-off-by: Lisandro Pérez Meyer <lpmeyer@ics.com>
+      author: Lisandro Pérez Meyer
+      nested: []
+  version: 5.2.3+rev7
+  title: ""
+  date: 2024-04-11T13:44:41.024Z
+- commits:
     - subject: Update contracts to cb7b2220f327c5a21c1c0ab193ac03016537c05a
       hash: 17e578508eb97296ee3bd8a0e640326bea5d9f96
       body: Update contracts

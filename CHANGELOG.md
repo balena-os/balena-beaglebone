@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v5.2.3+rev7
+## (2024-04-11)
+
+* beaglebone-ai64: Switch to u-boot-bb.org to enable booting from eMMC [Lisandro Pérez Meyer]
+
 # v5.2.3+rev6
 ## (2024-04-08)
 
