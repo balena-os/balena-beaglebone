@@ -1,6 +1,5 @@
 FILESEXTRAPATHS:append := ":${THISDIR}/${PN}"
 
-UBOOT_KCONFIG_SUPPORT = "1"
 inherit resin-u-boot
 
 SRC_URI += " \
