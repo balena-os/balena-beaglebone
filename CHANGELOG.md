@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v5.2.3+rev8
+## (2024-04-17)
+
+* u-boot-bb.org: remove uneeded config stanza [Lisandro Damián Nicanor Pérez Meyer]
+
 # v5.2.3+rev7
 ## (2024-04-11)
 

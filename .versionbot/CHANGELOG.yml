@@ -1,4 +1,23 @@
 - commits:
+    - subject: "u-boot-bb.org: remove uneeded config stanza"
+      hash: 4ef06e85cd909824e03dabad6df04842ab4ff061
+      body: >
+        UBOOT_KCONFIG_SUPPORT is already enabled when inheriting resin-u-boot,
+
+        as discussed in
+
+        https://github.com/balena-os/balena-beaglebone/pull/662#discussion_r1565590564
+      footer:
+        Changelog-Entry: "u-boot-bb.org: remove uneeded config stanza"
+        changelog-entry: "u-boot-bb.org: remove uneeded config stanza"
+        Signed-off-by: Lisandro Pérez Meyer <lpmeyer@ics.com>
+        signed-off-by: Lisandro Pérez Meyer <lpmeyer@ics.com>
+      author: Lisandro Damián Nicanor Pérez Meyer
+      nested: []
+  version: 5.2.3+rev8
+  title: ""
+  date: 2024-04-17T12:16:32.950Z
+- commits:
     - subject: "beaglebone-ai64: Switch to u-boot-bb.org to enable booting from eMMC"
       hash: ff967a447de8f40e115b39ae110d958f0916ba10
       body: >
