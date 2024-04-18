@@ -1,7 +1,7 @@
 ## Clone / Initialize this repository
 
 There are two ways of initializing this repository:
-* Clone this repository with "git clone --recursive".
+* Clone this repository with "git clone --recursive" .
 
 or
 
