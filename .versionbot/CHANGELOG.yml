@@ -1,4 +1,19 @@
 - commits:
+    - subject: Update meta-balena from v5.1.54 to v5.1.56
+      hash: acf53f44198acfb1a469d4134c27ad51daf5215e
+      body: |
+        Update meta-balena from 5.1.54 to 5.1.56
+      footer:
+        Changelog-entry: Update meta-balena from v5.1.54 to v5.1.56
+        changelog-entry: Update meta-balena from v5.1.54 to v5.1.56
+        Signed-off-by: Alex Gonzalez <alexg@balena.io>
+        signed-off-by: Alex Gonzalez <alexg@balena.io>
+      author: Alex Gonzalez
+      nested: []
+  version: 2024.4.1
+  title: ""
+  date: 2024-04-19T13:16:08.232Z
+- commits:
     - subject: Update meta-openembedded to latest kirkstone
       hash: 6a6c238740c19ab9226eb12aacc4672244f7ee16
       body: ""
