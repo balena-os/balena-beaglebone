@@ -1,6 +1,46 @@
 Change log
 -----------
 
+# v2024.4.2
+## (2024-04-21)
+
+
+<details>
+<summary> Update balena-yocto-scripts to v1.21.7 [Alex Gonzalez] </summary>
+
+> ## balena-yocto-scripts-1.21.7
+> ### (2024-04-19)
+> 
+> * Add missing $select for release_asset.asset_key [Thodoris Greasidis]
+> 
+> ## balena-yocto-scripts-1.21.6
+> ### (2024-03-25)
+> 
+> * Revert "balena-build: avoid using device-type as a prefix in yocto sstate" [Kyle Harding]
+> 
+> ## balena-yocto-scripts-1.21.5
+> ### (2024-03-14)
+> 
+> * Merge AMI publishing dependencies into yocto-build-env [Kyle Harding]
+> 
+> ## balena-yocto-scripts-1.21.4
+> ### (2024-03-13)
+> 
+> * balena-build: avoid using device-type as a prefix in yocto sstate [Kyle Harding]
+> 
+> ## balena-yocto-scripts-1.21.3
+> ### (2024-02-11)
+> 
+> * Enable S3 Server Side Encryption flags [Kyle Harding]
+> 
+> ## balena-yocto-scripts-1.21.2
+> ### (2024-02-08)
+> 
+> * automation/include: Pass helper image version [Florin Sarbu]
+> 
+
+</details>
+
 # v2024.4.1
 ## (2024-04-19)
 
