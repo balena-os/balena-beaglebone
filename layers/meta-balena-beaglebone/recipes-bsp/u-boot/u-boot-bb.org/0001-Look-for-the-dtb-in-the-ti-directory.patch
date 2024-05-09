@@ -1,0 +1,31 @@
+From 6626cd397dc44047e38972953a4b8fae2565f3c2 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Lisandro=20P=C3=A9rez=20Meyer?= <lperezmeyer@ics.com>
+Date: Mon, 21 Aug 2023 16:43:01 +0000
+Subject: [PATCH] Look for the dtb in the ti directory.
+
+According to RobertCNelson:
+
+> yeah, u-boot is starting to shove everything in ./vendor/*.dtb now..
+> this will be a messy transition, so i'm using both places... [snip]
+
+So this is a patch that needs to be revisited on the next update.
+---
+ board/ti/j721e/j721e.env | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/board/ti/j721e/j721e.env b/board/ti/j721e/j721e.env
+index 492e6ae3c7..b66bbec329 100644
+--- a/board/ti/j721e/j721e.env
++++ b/board/ti/j721e/j721e.env
+@@ -18,7 +18,7 @@ findfdt=
+ 	if test $board_name = j721e; then
+ 		setenv name_fdt ti/k3-j721e-common-proc-board.dtb; fi;
+ 	if test $board_name = BBONEAI-64-B0-; then
+-		setenv name_fdt k3-j721e-beagleboneai64.dtb; fi;
++		setenv name_fdt ti/k3-j721e-beagleboneai64.dtb; fi;
+ 	if test $board_name = j7200; then
+ 		setenv name_fdt ti/k3-j7200-common-proc-board.dtb; fi;
+ 	if test $board_name = j721e-eaik || test $board_name = j721e-sk; then
+-- 
+2.25.1
+

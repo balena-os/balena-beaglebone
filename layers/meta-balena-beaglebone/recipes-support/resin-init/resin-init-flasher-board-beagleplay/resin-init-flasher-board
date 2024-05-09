@@ -1,0 +1,27 @@
+#!/bin/sh
+
+set -e
+
+# Copy required boot files to mmcblk0boot0
+
+if ! id | grep -q root; then
+    echo "must be run as root"
+    exit
+fi
+
+# We need these commands, else we can't write into mmcblk0boot0.
+mmc bootpart enable 1 2 /dev/mmcblk0
+mmc bootbus set single_backward x1 x8 /dev/mmcblk0
+mmc hwreset enable /dev/mmcblk0 | true
+
+echo 0 > /sys/block/mmcblk0boot0/force_ro
+
+echo "Clearing mmcblk0boot0..."
+dd if=/dev/zero of=/dev/mmcblk0boot0 count=32 bs=128k
+
+echo "Copying tiboot3.bin..."
+dd if=/mnt/boot/tiboot3.bin of=/dev/mmcblk0boot0 count=3 bs=128k
+
+sync
+
+echo 1 > /sys/block/mmcblk0boot0/force_ro
