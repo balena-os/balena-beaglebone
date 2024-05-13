@@ -1,6 +1,100 @@
 Change log
 -----------
 
+# v5.3.4
+## (2024-05-13)
+
+
+<details>
+<summary> Update layers/meta-balena to b09a185be7b866374d1c4d0ed37e9407289293a6 [Self-hosted Renovate Bot] </summary>
+
+> ## meta-balena-5.3.4
+> ### (2024-05-12)
+> 
+> * hostapp-update-hooks: 99-balena-bootloader: Adapt to secure boot [Alex Gonzalez]
+> * hostapp-update-hooks: fix linter warnings [Alex Gonzalez]
+> * classes: image-balena: use relative path to generate boot fingerprint [Alex Gonzalez]
+> * os-helpers: add a helper function to generate fingerprint files [Alex Gonzalez]
+> * classes: sign-rsa: add dependencies [Alex Gonzalez]
+> * initrdscripts: migrate: allow command line argument configuration [Alex Gonzalez]
+> * classes: image-balena: provide board configuration hook [Alex Gonzalez]
+> * initrdscripts: abroot: add missing dependency [Alex Gonzalez]
+> * classes: kernel-balena: selectively include dmcrypt for signed images [Alex Gonzalez]
+> * hostapp-update-hooks: only include os-helpers-sb for signed builds [Alex Gonzalez]
+> * hostapp-update-hooks: 1-bootfiles: Check for os-helpers-sb before including [Alex Gonzalez]
+> * docs: add secure boot abstractions details [Alex Gonzalez]
+> * initrdscripts: fsuuidinit: use file based mutex to avoid race condition [Alex Gonzalez]
+> * systemd: update_state_probe: Use a file mutex to avoid race condition [Alex Gonzalez]
+> * os-helpers: extend filesystem helper with wait4rm [Alex Gonzalez]
+> * os-helpers-fs: regenerate_uuid: skip remounting [Joseph Kogut]
+> * resin-init-flasher: replace fatal with fail [Alex Gonzalez]
+> * balena-image-bootloader-initramfs: add modules needed for secure boot [Alex Gonzalez]
+> * classes: balena-bootloader: add support for encrypted disks mount and kexec [Alex Gonzalez]
+> * classes: balena-bootloader: specify a deployment subfolder [Alex Gonzalez]
+> * classes: kernel-balena: add secureboot configuration dependencies [Alex Gonzalez]
+> * classes: kernel-balena: non-efi device types also use EFI signing for kexec [Alex Gonzalez]
+> * classes: sign-efi: allow to configure deployment directory [Alex Gonzalez]
+> * classes: sign-efi: support compressed payloads [Alex Gonzalez]
+> 
+> ## meta-balena-5.3.3
+> ### (2024-05-01)
+> 
+> * docs: elaborate automated testing requirement in board support guide [rcooke-warwick]
+> 
+> ## meta-balena-5.3.2
+> ### (2024-04-25)
+> 
+> * contributing-device-support.md: Rework repo transfer and autokit requirement steps [Florin Sarbu]
+> 
+> ## meta-balena-5.3.1
+> ### (2024-04-24)
+> 
+> * tests: os: address race in internet con. sharing tests [rcooke-warwick]
+> 
+> ## meta-balena-5.3.0
+> ### (2024-04-24)
+> 
+> * hup: signed-update: silence tpm2-tools output [Joseph Kogut]
+> * hup: silence mountpoint [Joseph Kogut]
+> * hup: signed-update: print predicted PCR values after creating a policy [Joseph Kogut]
+> * os-helpers-tpm2: firmware_measures_efibins: silence grep [Joseph Kogut]
+> * os-helpers-tpm2: specify TCTI backend [Joseph Kogut]
+> * os-helpers-sb: silence 'command -v' [Joseph Kogut]
+> * hup: signed-update: update boot files as needed [Joseph Kogut]
+> * hup: signed-update: always remove policy directory [Joseph Kogut]
+> * os-helpers-tpm2: append event log digests before separator [Joseph Kogut]
+> * hostapp-update-hooks: signed-update: fix exit code conditional [Joseph Kogut]
+> * os-helpers-tpm2: fix awk syntax error causing unbootable machines [Joseph Kogut]
+> 
+> ## meta-balena-5.2.10
+> ### (2024-04-23)
+> 
+> * hostapp-update-hooks: check for logging helper [Alex Gonzalez]
+> 
+> ## meta-balena-5.2.9
+> ### (2024-04-22)
+> 
+> 
+> <details>
+> <summary> Update tests/leviathan digest to 5984adc [Self-hosted Renovate Bot] </summary>
+> 
+>> ### leviathan-2.30.11
+>> #### (2024-04-22)
+>> 
+>> * Update actions/upload-artifact digest to 1746f4a [Self-hosted Renovate Bot]
+>> 
+>> ### leviathan-2.30.10
+>> #### (2024-04-22)
+>> 
+>> * Update Lock file maintenance [Self-hosted Renovate Bot]
+>> 
+> 
+> </details>
+> 
+> 
+
+</details>
+
 # v5.2.8
 ## (2024-04-18)
 
