@@ -1,0 +1,31 @@
+#!/bin/sh
+
+#
+# Script used by hostapps updater to flash bootloader onto internal media.
+#
+
+set -o errexit
+
+# The following lines of code are copied from
+# https://openbeagle.org/beagleboard/repos-arm64/-/blob/main/bb-u-boot-beagleplay-debian-12/suite/bookworm/debian/install-emmc.sh?ref_type=heads
+
+if [ -b /dev/mmcblk0 ] ; then
+	#mmc extcsd read /dev/mmcblk0
+	mmc bootpart enable 1 2 /dev/mmcblk0
+	mmc bootbus set single_backward x1 x8 /dev/mmcblk0
+	mmc hwreset enable /dev/mmcblk0 | true
+
+	echo "Clearing eMMC boot0"
+
+	echo '0' >> /sys/class/block/mmcblk0boot0/force_ro
+
+	echo "dd if=/dev/zero of=/dev/mmcblk0boot0 count=32 bs=128k"
+	dd if=/dev/zero of=/dev/mmcblk0boot0 count=32 bs=128k
+
+	echo "dd if=/resin-boot/tiboot3.bin of=/dev/mmcblk0boot0 bs=128k"
+	dd if=/resin-boot/tiboot3.bin of=/dev/mmcblk0boot0 bs=128k
+fi
+
+sync
+
+echo 1 > /sys/block/mmcblk0boot0/force_ro
