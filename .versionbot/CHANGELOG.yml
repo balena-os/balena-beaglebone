@@ -1,4 +1,110 @@
 - commits:
+    - subject: Update contracts to 1d499fe7d33791e1ac6dccfe031e178b7d520bb4
+      hash: 0cfbbac69a6f9b2ba1de172129f9de59ba2cdc4a
+      body: Update contracts
+      footer:
+        Changelog-entry: Update contracts to 1d499fe7d33791e1ac6dccfe031e178b7d520bb4
+        changelog-entry: Update contracts to 1d499fe7d33791e1ac6dccfe031e178b7d520bb4
+      author: balena-renovate[bot]
+      nested:
+        - commits:
+            - subject: "hw.device-type: Add new device-type Jetson AGX Orin 64GB Devkit"
+              hash: b329046af8d6427955627231ba0d332d23dc0f87
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+          version: contracts-2.0.108
+          title: ""
+          date: 2024-07-25T08:53:00.318Z
+        - commits:
+            - subject: "beagleplay: Fix provisioning instructions"
+              hash: 996350221bcc6ff73d83239af7ffd96653d36a2c
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru
+          version: contracts-2.0.107
+          title: ""
+          date: 2024-07-15T10:43:40.476Z
+        - commits:
+            - subject: "hw.device-type: Disable bluetooth until this feature is officially
+                supported"
+              hash: bc3746dd50d63824e3069cd0098227d47e9f22ed
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Sidd-Gupta sidd.gupta@zylum.in
+                signed-off-by: Sidd-Gupta sidd.gupta@zylum.in
+              author: delhiryder
+          version: contracts-2.0.106
+          title: ""
+          date: 2024-07-12T09:11:52.729Z
+        - commits:
+            - subject: "sw.os+hw.device-type: Update Jetson Orin distro configs for L4T 35.5.0
+                repositories"
+              hash: 12fb5f18b054878ded4124b555a725f7f446b902
+              body: >
+                All public Jetson Orin based device-types have just been updated
+                to L4T 35.5.0,
+
+                thus we need to update the base images to use the updated L4T
+                repositories.
+
+
+                We also add the distro configs for the upcoming Orin Nano 4GB
+                Seeed J3010
+
+                device-type.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+          version: contracts-2.0.105
+          title: ""
+          date: 2024-06-06T15:12:51.267Z
+        - commits:
+            - subject: "jetson-orin-nano-seeed-j3010: Specify RAM size for the Seeed J3010"
+              hash: f5bb495bf4b516a86465dccf54e6d142bcf18311
+              body: >
+                Mentioning that this is a 4GB RAM Orin Nano module in the name.
+
+                The carrier board appears to be very close to the Devkit, so
+                this
+
+                image may be used with other carrier boards if they are
+                compatible.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+            - subject: "jetson-orin-nano-seeed-j3010: add Seeed J3010 device-type"
+              hash: 8013a005a44d3ed7fa0e977714997e0b29cb84f4
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Suykov <alex.suykov@sirinsoftware.com>
+                signed-off-by: Alex Suykov <alex.suykov@sirinsoftware.com>
+              author: Alex Suykov
+          version: contracts-2.0.104
+          title: ""
+          date: 2024-06-02T04:39:00.781Z
+  version: 5.3.4+rev5
+  title: ""
+  date: 2024-08-01T12:30:22.439Z
+- commits:
     - subject: Update balena-yocto-scripts to 7736d3807540afb6646b435117bffa2377ac0156
       hash: 3d919c95e96aa036e5ce458d5081a001fcdc383c
       body: Update balena-yocto-scripts

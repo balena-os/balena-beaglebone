@@ -1,6 +1,42 @@
 Change log
 -----------
 
+# v5.3.4+rev5
+## (2024-08-01)
+
+
+<details>
+<summary> Update contracts to 1d499fe7d33791e1ac6dccfe031e178b7d520bb4 [balena-renovate[bot]] </summary>
+
+> ## contracts-2.0.108
+> ### (2024-07-25)
+> 
+> * hw.device-type: Add new device-type Jetson AGX Orin 64GB Devkit [Alexandru Costache]
+> 
+> ## contracts-2.0.107
+> ### (2024-07-15)
+> 
+> * beagleplay: Fix provisioning instructions [Alexandru]
+> 
+> ## contracts-2.0.106
+> ### (2024-07-12)
+> 
+> * hw.device-type: Disable bluetooth until this feature is officially supported [delhiryder]
+> 
+> ## contracts-2.0.105
+> ### (2024-06-06)
+> 
+> * sw.os+hw.device-type: Update Jetson Orin distro configs for L4T 35.5.0 repositories [Alexandru Costache]
+> 
+> ## contracts-2.0.104
+> ### (2024-06-02)
+> 
+> * jetson-orin-nano-seeed-j3010: Specify RAM size for the Seeed J3010 [Alexandru Costache]
+> * jetson-orin-nano-seeed-j3010: add Seeed J3010 device-type [Alex Suykov]
+> 
+
+</details>
+
 # v5.3.4+rev4
 ## (2024-08-01)
 
