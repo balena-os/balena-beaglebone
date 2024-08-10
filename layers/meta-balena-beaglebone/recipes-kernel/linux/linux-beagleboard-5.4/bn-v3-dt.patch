@@ -548,11 +548,11 @@ index 40b17b9561099..691228679455c 100644
 +	};
 +};
 +
-+&uart2 {
++/*&uart2 {
 +	bcfserial: bcfserial {
 +		compatible = "beagle,bcfserial";
 +	};
-+};
++};*/
 +
 +
 +&am33xx_pinmux {
