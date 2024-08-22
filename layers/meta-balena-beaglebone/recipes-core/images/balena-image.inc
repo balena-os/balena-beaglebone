@@ -2,8 +2,6 @@ IMAGE_FSTYPES:append:beaglebone = " balenaos-img balenaos-img.bmap"
 IMAGE_FSTYPES:append:beaglebone-pocket = " balenaos-img"
 IMAGE_FSTYPES:append:beagleboard-xm = " balenaos-img"
 
-BALENA_BOOT_SIZE:beagleplay = "327680"
-
 # Customize balenaos-img
 BALENA_BOOT_PARTITION_FILES:beaglebone = " \
     MLO: \
@@ -31,8 +29,6 @@ BALENA_BOOT_PARTITION_FILES:beagleplay = " \
     tispl.bin_unsigned:/tispl.bin \
     u-boot.img: \
     tiboot3.bin: \
-    ${KERNEL_IMAGETYPE}${KERNEL_INITRAMFS}-${MACHINE}.bin:/${KERNEL_IMAGETYPE} \
-    k3-am625-beagleplay.dtb: \
 "
 
 # Beaglebone expects the kernel and dtbs on rootfs
