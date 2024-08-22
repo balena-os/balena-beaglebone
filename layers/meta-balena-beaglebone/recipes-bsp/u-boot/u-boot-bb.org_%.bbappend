@@ -9,6 +9,8 @@ SRC_URI:append:beaglebone-ai64 = " \
   file://set_right_dtb_path.patch \
 "
 
+BALENA_DEVICE_FDT_ADDR_VAR = "fdtaddr"
+
 UBOOT_MACHINE:beagleplay = "am62x_beagleplay_a53_defconfig"
 UBOOT_MACHINE:beagleplay-k3r5 = "am62x_beagleplay_r5_defconfig"
 
