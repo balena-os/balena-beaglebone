@@ -62,3 +62,8 @@ do_deploy:append:beaglebone-ai64-k3r5 () {
 do_deploy:append:beagleplay-k3r5 () {
     rm -vf ${DEPLOYDIR}/extra_uEnv.txt
 }
+
+do_install[nostamp] = "1"
+do_compile[nostamp] = "1"
+do_deploy[nostamp] = "1"
+do_configure[nostamp] = "1"
