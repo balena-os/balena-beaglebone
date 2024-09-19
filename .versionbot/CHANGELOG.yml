@@ -1,4 +1,30 @@
 - commits:
+    - subject: "layers/meta-balena: Update to v6.0.24"
+      hash: 6166bf28de560c2f191dc39a535b5afcdd25a86b
+      body: ""
+      footer:
+        Changelog-entry: "layers/meta-balena: Update to v6.0.24"
+        changelog-entry: "layers/meta-balena: Update to v6.0.24"
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+    - subject: Add beagleplay support
+      hash: 19f2d6233c1752fc29e70242acaa9d90fd1dcd6b
+      body: >
+        Updated the balena-image-flasher and associated dependent recipes to
+        support building a balena-image-flasher image for the beagleplay device.
+      footer:
+        Changelog-entry: Add beagleplay support
+        changelog-entry: Add beagleplay support
+        Signed-off-by: Sidd Gupta <sidd.gupta@zylum.in>
+        signed-off-by: Sidd Gupta <sidd.gupta@zylum.in>
+      author: delhiryder
+      nested: []
+  version: 6.0.24
+  title: ""
+  date: 2024-09-19T10:05:16.050Z
+- commits:
     - subject: Update contracts to 1d499fe7d33791e1ac6dccfe031e178b7d520bb4
       hash: 0cfbbac69a6f9b2ba1de172129f9de59ba2cdc4a
       body: Update contracts

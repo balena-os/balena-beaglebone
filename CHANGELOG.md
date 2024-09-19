@@ -1,6 +1,12 @@
 Change log
 -----------
 
+# v6.0.24
+## (2024-09-19)
+
+* layers/meta-balena: Update to v6.0.24 [Alexandru Costache]
+* Add beagleplay support [delhiryder]
+
 # v5.3.4+rev5
 ## (2024-08-01)
 
