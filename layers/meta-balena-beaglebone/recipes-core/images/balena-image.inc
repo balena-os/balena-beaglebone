@@ -25,6 +25,12 @@ BALENA_BOOT_PARTITION_FILES:beagleboard-xm = " \
     u-boot.img: \
 "
 
+BALENA_BOOT_PARTITION_FILES:beagleplay = " \
+    tispl.bin_unsigned:/tispl.bin \
+    u-boot.img: \
+    tiboot3.bin: \
+"
+
 # Beaglebone expects the kernel and dtbs on rootfs
 IMAGE_INSTALL:append = " kernel-image-initramfs kernel-devicetree wlconf"
 
