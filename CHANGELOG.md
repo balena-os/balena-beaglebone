@@ -1,6 +1,168 @@
 Change log
 -----------
 
+# v6.0.24+rev1
+## (2024-09-20)
+
+
+<details>
+<summary> Update balena-yocto-scripts to 0899d814aa7f25d48825ac701c61e066f7b0c4f5 [balena-renovate[bot]] </summary>
+
+> ## balena-yocto-scripts-1.25.45
+> ### (2024-09-19)
+> 
+> * fix check of finalize value [rcooke-warwick]
+> * Improve checking of previous test results [Kyle Harding]
+> 
+> ## balena-yocto-scripts-1.25.44
+> ### (2024-09-18)
+> 
+> * Update balena-os/leviathan action to v2.31.44 [balena-renovate[bot]]
+> 
+> ## balena-yocto-scripts-1.25.43
+> ### (2024-09-18)
+> 
+> * Update balena-os/leviathan action to v2.31.43 [balena-renovate[bot]]
+> 
+> ## balena-yocto-scripts-1.25.42
+> ### (2024-09-18)
+> 
+> * only upload artifacts when test_matrix is defined [rcooke-warwick]
+> 
+> ## balena-yocto-scripts-1.25.41
+> ### (2024-09-12)
+> 
+> * Update balena-os/leviathan action to v2.31.40 [balena-renovate[bot]]
+> 
+> ## balena-yocto-scripts-1.25.40
+> ### (2024-09-12)
+> 
+> * Update balena-os/leviathan action to v2.31.37 [balena-renovate[bot]]
+> 
+> ## balena-yocto-scripts-1.25.39
+> ### (2024-09-11)
+> 
+> * Update actions/create-github-app-token action to v1.11.0 [balena-renovate[bot]]
+> 
+> ## balena-yocto-scripts-1.25.38
+> ### (2024-09-09)
+> 
+> * Include semver when bumping leviathan action [Kyle Harding]
+> 
+> ## balena-yocto-scripts-1.25.37
+> ### (2024-09-05)
+> 
+> * Update balena-os/leviathan digest to 8fb47f2 [balena-renovate[bot]]
+> 
+> ## balena-yocto-scripts-1.25.36
+> ### (2024-09-05)
+> 
+> * Update balena-os/leviathan digest to 5db2b5d [balena-renovate[bot]]
+> 
+> ## balena-yocto-scripts-1.25.35
+> ### (2024-09-04)
+> 
+> * Update balena-os/leviathan digest to da52396 [balena-renovate[bot]]
+> 
+> ## balena-yocto-scripts-1.25.34
+> ### (2024-09-04)
+> 
+> * Update actions/create-github-app-token action to v1.10.4 [balena-renovate[bot]]
+> 
+> ## balena-yocto-scripts-1.25.33
+> ### (2024-09-02)
+> 
+> * Update balena-os/leviathan digest to d8572e2 [balena-renovate[bot]]
+> 
+> ## balena-yocto-scripts-1.25.32
+> ### (2024-09-02)
+> 
+> * Update Lock file maintenance [balena-renovate[bot]]
+> 
+> ## balena-yocto-scripts-1.25.31
+> ### (2024-09-01)
+> 
+> * Update actions/upload-artifact action to v4.4.0 [balena-renovate[bot]]
+> 
+> ## balena-yocto-scripts-1.25.30
+> ### (2024-09-01)
+> 
+> * Update balena-os/leviathan digest to ff6a079 [balena-renovate[bot]]
+> 
+> ## balena-yocto-scripts-1.25.29
+> ### (2024-09-01)
+> 
+> * Restrict runners via yocto label, not 16cpu [Kyle Harding]
+> 
+> ## balena-yocto-scripts-1.25.28
+> ### (Invalid date)
+> 
+> * checkout private contracts for test job [rcooke-warwick]
+> 
+> ## balena-yocto-scripts-1.25.27
+> ### (2024-08-29)
+> 
+> * use apt-get to install s4cmd instead of pip [rcooke-warwick]
+> 
+> ## balena-yocto-scripts-1.25.26
+> ### (2024-08-27)
+> 
+> * Fix if condition for checking merge commit test results [rcooke-warwick]
+> 
+> ## balena-yocto-scripts-1.25.25
+> ### (2024-08-23)
+> 
+> * Add unique unique identifiers to summary job [Kyle Harding]
+> 
+> ## balena-yocto-scripts-1.25.24
+> ### (2024-08-21)
+> 
+> * ensure "force-finalize" guarantees a finalized release [rcooke-warwick]
+> * update example workflow to use "deploy-environment" input [rcooke-warwick]
+> * remove "deploy-esr" input [rcooke-warwick]
+> * remove "deploy-s3" input [rcooke-warwick]
+> * remove "deploy-hostapp" and add "force-finalize" and "finalize-on-push-if-tests-passed" [rcooke-warwick]
+> * rename "envinroment" input to "deploy-environment" for clarity [rcooke-warwick]
+> * remove os-dev input [rcooke-warwick]
+> 
+> ## balena-yocto-scripts-1.25.23
+> ### (2024-08-15)
+> 
+> * Add mermaid flowchart to yocto workflow README [Kyle Harding]
+> 
+> ## balena-yocto-scripts-1.25.22
+> ### (2024-08-12)
+> 
+> * Update Lock file maintenance [balena-renovate[bot]]
+> 
+> ## balena-yocto-scripts-1.25.21
+> ### (2024-08-06)
+> 
+> * Update balena-os/leviathan digest to f4e9332 [balena-renovate[bot]]
+> 
+> ## balena-yocto-scripts-1.25.20
+> ### (2024-08-06)
+> 
+> * Update actions/upload-artifact action to v4.3.6 [balena-renovate[bot]]
+> 
+> ## balena-yocto-scripts-1.25.19
+> ### (2024-08-06)
+> 
+> * Update balena-os/leviathan digest to a16cf0f [balena-renovate[bot]]
+> 
+> ## balena-yocto-scripts-1.25.18
+> ### (2024-08-05)
+> 
+> * Update actions/upload-artifact action to v4.3.5 [balena-renovate[bot]]
+> 
+> ## balena-yocto-scripts-1.25.17
+> ### (2024-08-05)
+> 
+> * Update Lock file maintenance [balena-renovate[bot]]
+> 
+
+</details>
+
 # v6.0.24
 ## (2024-09-19)
 
