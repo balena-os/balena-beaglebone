@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v6.0.32+rev1
+## (2024-10-02)
+
+* Add GHA Built Test Deploy workflows [rcooke-warwick]
+
 # v6.0.32
 ## (2024-09-22)
 
