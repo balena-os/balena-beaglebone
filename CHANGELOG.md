@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v6.0.32+rev2
+## (2024-12-16)
+
+* Explicitly set GITHUB_TOKEN permissions for yocto workflow [Ryan Cooke]
+
 # v6.0.32+rev1
 ## (2024-10-02)
 
