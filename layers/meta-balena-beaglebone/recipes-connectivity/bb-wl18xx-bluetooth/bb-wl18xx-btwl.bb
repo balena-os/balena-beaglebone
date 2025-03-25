@@ -12,15 +12,15 @@ inherit allarch systemd
 
 RDEPENDS:${PN} = "bash"
 
-FILES:${PN} += "/lib/firmware/ti-connectivity/TIInit_11.8.32.bts"
+FILES:${PN} += "${nonarch_base_libdir}/firmware/ti-connectivity/TIInit_11.8.32.bts"
 
 do_install() {
 	install -d ${D}/usr/bin
 	install -m 0755 ${WORKDIR}/bb-wl18xx-btwl ${D}/usr/bin/bb-wl18xx-btwl
 	install -d ${D}${systemd_unitdir}/system
 	install -m 0644 ${WORKDIR}/bb-wl18xx-btwl.service ${D}${systemd_unitdir}/system/bb-wl18xx-btwl.service
-	install -d ${D}/lib/firmware/ti-connectivity
-	install -m 0644 ${WORKDIR}/TIInit_11.8.32.bts ${D}/lib/firmware/ti-connectivity/TIInit_11.8.32.bts
+	install -d ${D}//${nonarch_base_libdir}/firmware/ti-connectivity
+	install -m 0644 ${WORKDIR}/TIInit_11.8.32.bts ${D}//${nonarch_base_libdir}/firmware/ti-connectivity/TIInit_11.8.32.bts
 
 	# These modules need to be loaded in a particular order and
 	# given enoug time to settle, otherwise BT fails to initialize

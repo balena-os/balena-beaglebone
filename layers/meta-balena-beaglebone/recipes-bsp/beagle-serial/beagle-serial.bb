@@ -9,10 +9,10 @@ SRC_URI = "file://99-beagle-serial.rules \
 "
 
 do_install() {
-    install -d ${D}${base_libdir}/udev/rules.d
-    install -m 0644 ${WORKDIR}/99-beagle-serial.rules ${D}${base_libdir}/udev/rules.d
+    install -d ${D}${nonarch_base_libdir}/udev/rules.d
+    install -m 0644 ${WORKDIR}/99-beagle-serial.rules ${D}${nonarch_base_libdir}/udev/rules.d
 }
 
 FILES:${PN} = " \
-  /lib/udev/rules.d/99-beagle-serial.rules \
+  ${nonarch_base_libdir}/udev/rules.d/99-beagle-serial.rules \
 "
