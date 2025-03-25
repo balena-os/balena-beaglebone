@@ -1,4 +1,57 @@
 - commits:
+    - subject: Only keep max supported versions of iwlwifi firmware
+      hash: 2d3560590923e929e2a803b5f1b6701b24e92b19
+      body: >
+        The iwfwifi driver specifies the min and max fw versions it supports for
+        various chipsets.
+
+        To save space we only keep the max supported fw version for some of
+        these chipsets.
+      footer:
+        Changelog-entry: Only keep max supported versions of iwlwifi firmware
+        changelog-entry: Only keep max supported versions of iwlwifi firmware
+        Signed-off-by: Florin Sarbu <florin@balena.io>
+        signed-off-by: Florin Sarbu <florin@balena.io>
+      author: Florin Sarbu
+      nested: []
+    - subject: Use nonarch_base_libdir variable when packaging files for
+        bb-wl18xx-btwl recipe
+      hash: 3f8b5e4848cce505c9754f45a293101826c78286
+      body: >
+        Using the nonarch_base_libdir variable instead of hardcoding directly
+        the path
+
+        will help us when we enable the usrmerge feature.
+      footer:
+        Changelog-entry: Use nonarch_base_libdir variable when packaging files for
+          bb-wl18xx-btwl recipe
+        changelog-entry: Use nonarch_base_libdir variable when packaging files for
+          bb-wl18xx-btwl recipe
+        Signed-off-by: Florin Sarbu <florin@balena.io>
+        signed-off-by: Florin Sarbu <florin@balena.io>
+      author: Florin Sarbu
+      nested: []
+    - subject: Use nonarch_base_libdir variable when packaging files for beagle-serial
+        recipe
+      hash: 59f21fb5ef3c3b676d83ba833d3127e167b57075
+      body: >
+        Using the nonarch_base_libdir variable instead of hardcoding directly
+        the path
+
+        will help us when we enable the usrmerge feature.
+      footer:
+        Changelog-entry: Use nonarch_base_libdir variable when packaging files for
+          beagle-serial recipe
+        changelog-entry: Use nonarch_base_libdir variable when packaging files for
+          beagle-serial recipe
+        Signed-off-by: Florin Sarbu <florin@balena.io>
+        signed-off-by: Florin Sarbu <florin@balena.io>
+      author: Florin Sarbu
+      nested: []
+  version: 6.0.32+rev3
+  title: ""
+  date: 2025-03-25T20:05:18.987Z
+- commits:
     - subject: Explicitly set GITHUB_TOKEN permissions for yocto workflow
       hash: 5ab9c6bdd8e470e33c92418572476d4554db3c84
       body: ""

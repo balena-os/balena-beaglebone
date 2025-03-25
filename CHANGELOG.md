@@ -1,6 +1,13 @@
 Change log
 -----------
 
+# v6.0.32+rev3
+## (2025-03-25)
+
+* Only keep max supported versions of iwlwifi firmware [Florin Sarbu]
+* Use nonarch_base_libdir variable when packaging files for bb-wl18xx-btwl recipe [Florin Sarbu]
+* Use nonarch_base_libdir variable when packaging files for beagle-serial recipe [Florin Sarbu]
+
 # v6.0.32+rev2
 ## (2024-12-16)
 
