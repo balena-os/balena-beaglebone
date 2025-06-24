@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v6.5.2+rev1
+## (2025-06-24)
+
+* recipes-connectivity/wlconf: switch to using github repository [Alexandru Costache]
+
 # v6.5.2
 ## (2025-03-27)
 

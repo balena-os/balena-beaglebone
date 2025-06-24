@@ -1,4 +1,20 @@
 - commits:
+    - subject: "recipes-connectivity/wlconf: switch to using github repository"
+      hash: 6bb68eaf080bf8099f7471d137bbb97d556a6342
+      body: |
+        previous repository switch to using Anubis and that is preventing
+        Yocto builds from fetching the sources.
+      footer:
+        Changelog-entry: "recipes-connectivity/wlconf: switch to using github repository"
+        changelog-entry: "recipes-connectivity/wlconf: switch to using github repository"
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+  version: 6.5.2+rev1
+  title: ""
+  date: 2025-06-24T11:45:15.272Z
+- commits:
     - subject: Update layers/meta-balena to aa785e72071c7291797312d8800a4a9d8a441450
       hash: 9f670fc76233038dd46a508ed69a036348ceed6a
       body: Update layers/meta-balena
