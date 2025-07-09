@@ -1,4 +1,19 @@
 - commits:
+    - subject: Generate SBOM and VEX (cycloneDX)
+      hash: 012d0a051f7c63284ad7cf0cb477b7a65cf4d6ac
+      body: >
+        https://balena.fibery.io/Work/Project/balenaos-SBOM-as-release-asset-1515
+      footer:
+        Changelog-entry: Generate SBOM and VEX (cycloneDX)
+        changelog-entry: Generate SBOM and VEX (cycloneDX)
+        Signed-off-by: Edwin Joassart <edwin.joassart@balena.io>
+        signed-off-by: Edwin Joassart <edwin.joassart@balena.io>
+      author: Edwin Joassart
+      nested: []
+  version: 6.5.2+rev2
+  title: ""
+  date: 2025-07-09T10:01:50.587Z
+- commits:
     - subject: "recipes-connectivity/wlconf: switch to using github repository"
       hash: 6bb68eaf080bf8099f7471d137bbb97d556a6342
       body: |
