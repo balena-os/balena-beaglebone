@@ -8,7 +8,7 @@
 	branch = master
 [submodule "layers/meta-ti"]
 	path = layers/meta-ti
-	url = http://git.yoctoproject.org/git/meta-ti
+	url = https://git.yoctoproject.org/git/meta-ti
 	branch = kirkstone
 [submodule "layers/poky"]
 	path = layers/poky
