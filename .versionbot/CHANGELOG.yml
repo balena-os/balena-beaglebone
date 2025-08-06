@@ -1,4 +1,2276 @@
 - commits:
+    - subject: Update layers/meta-balena to 0dd9f8e4c8a32a503723375bc4a87c557d57f356
+      hash: e6de37b57eceb02d0d718d7563f1667dfb13b2e8
+      body: Update layers/meta-balena
+      footer:
+        Changelog-entry: Update layers/meta-balena to 0dd9f8e4c8a32a503723375bc4a87c557d57f356
+        changelog-entry: Update layers/meta-balena to 0dd9f8e4c8a32a503723375bc4a87c557d57f356
+      author: balena-renovate[bot]
+      nested:
+        - commits:
+            - subject: Update tests/leviathan digest to 9df0f9b
+              hash: ccd75a1a45890dff66e68740a2262b4a11892d7e
+              body: Update tests/leviathan
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested:
+                - commits:
+                    - subject: "Core: sdk: Fix error handling on fetchOS function"
+                      hash: d020caee0283f5bf69f6a016396c6ee82ab14ce6
+                      body: >
+                        The exsiting error handling and retry logic no longer
+                        works after updating to node 22, leading to the core
+                        crashing in the case of a failed attempt to download the
+                        OS image in the hup suite
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: Ryan Cooke <ryan@balena.io>
+                        signed-off-by: Ryan Cooke <ryan@balena.io>
+                      author: Ryan Cooke
+                      nested: []
+                  version: leviathan-2.36.2
+                  title: ""
+                  date: 2025-08-01T16:50:54.699Z
+                - commits:
+                    - subject: Update balena-io/balena-cli to v22.1.5
+                      hash: 35b591e8499f9624e3c29f2bd807478761b7cfd0
+                      body: |
+                        Update balena-io/balena-cli from 22.1.4 to 22.1.5
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: balena-renovate[bot]
+                      nested: []
+                  version: leviathan-2.36.1
+                  title: ""
+                  date: 2025-08-01T15:40:24.613Z
+                - commits:
+                    - subject: "Core: worker: update flashing method to use native fetch API"
+                      hash: 8f5ce43de3c268a6191c843f019aba8c1c78d8e4
+                      body: ""
+                      footer:
+                        Change-type: minor
+                        change-type: minor
+                        Signed-off-by: Ryan Cooke <ryan@balena.io>
+                        signed-off-by: Ryan Cooke <ryan@balena.io>
+                      author: Ryan Cooke
+                      nested: []
+                  version: leviathan-2.36.0
+                  title: ""
+                  date: 2025-07-31T08:44:28.779Z
+          version: meta-balena-6.5.48
+          title: ""
+          date: 2025-08-02T13:15:29.481Z
+        - commits:
+            - subject: Update tests/leviathan digest to b33ddb7
+              hash: 05bcaafe9f196f4762775cc87bc740edb344c93c
+              body: Update tests/leviathan
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested:
+                - commits:
+                    - subject: Bind mount private contracts in the core service
+                      hash: ba51cc72a4ccf098af5d969ed8d7aeb08e009755
+                      body: >
+                        These contracts used to be copied to the core service at
+                        build
+
+                        time if private device types cloned the repo before
+                        running test suites.
+
+
+                        However, since switching to pre-built images by default
+                        we need to
+
+                        manually mount private contracts to the core service.
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: Kyle Harding <kyle@balena.io>
+                        signed-off-by: Kyle Harding <kyle@balena.io>
+                      author: Kyle Harding
+                      nested: []
+                  version: leviathan-2.35.3
+                  title: ""
+                  date: 2025-07-28T11:33:30.510Z
+                - commits:
+                    - subject: Update Lock file maintenance
+                      hash: 2d66ad92dced0d8e34a3b6b588ed4ad961c11cf8
+                      body: |
+                        Update 
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: balena-renovate[bot]
+                      nested: []
+                  version: leviathan-2.35.2
+                  title: ""
+                  date: 2025-07-28T01:09:38.375Z
+          version: meta-balena-6.5.47
+          title: ""
+          date: 2025-07-29T16:25:57.448Z
+        - commits:
+            - subject: Update tests/leviathan digest to 353d77d
+              hash: d6b24c862bc95915b84b738b7b3eaa302d5b7ac6
+              body: Update tests/leviathan
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested:
+                - commits:
+                    - subject: Ensure we always pass the BALENA_ARCH worker build arg
+                      hash: 45b97d1f907a69123c41407c48e49ab11d19c44c
+                      body: |
+                        'docker compose up' will build any missing images,
+                        but does not accept build-args from the command line
+
+                        instead, we want to always inherit some build args
+                        from the environment via docker compose substitution
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: Kyle Harding <kyle@balena.io>
+                        signed-off-by: Kyle Harding <kyle@balena.io>
+                      author: Kyle Harding
+                      nested: []
+                  version: leviathan-2.35.1
+                  title: ""
+                  date: 2025-07-24T18:51:48.786Z
+                - commits:
+                    - subject: "Core: worker: use polling to track flashing"
+                      hash: be6971bb77cf11fd6051797b772631e3c955530b
+                      body: >
+                        Switch to worker endpoints that allow for initiation ->
+                        polling to flash the DUT - reducing drastically the
+                        amount of time the socket over public URL needs to
+                        remain open
+                      footer:
+                        Change-type: minor
+                        change-type: minor
+                        Signed-off-by: Ryan Cooke <ryan@balena.io>
+                        signed-off-by: Ryan Cooke <ryan@balena.io>
+                      author: Ryan Cooke
+                      nested: []
+                  version: leviathan-2.35.0
+                  title: ""
+                  date: 2025-07-24T12:06:06.767Z
+                - commits:
+                    - subject: Update balena-io/balena-cli to v22.1.4
+                      hash: 72192e00754a9101b2b307182227988cc3081a10
+                      body: |
+                        Update balena-io/balena-cli from 22.1.1 to 22.1.4
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: balena-renovate[bot]
+                      nested: []
+                  version: leviathan-2.34.4
+                  title: ""
+                  date: 2025-07-24T10:33:19.249Z
+                - commits:
+                    - subject: "tests/e2e: switch to self hosted runners"
+                      hash: bb79590f0a1b56044c351625a36ca08902a7b027
+                      body: >
+                        github hosted runners have exhibited frequent failures
+                        recently - switching to self-hosted to see if there's
+                        improvement
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: Ryan Cooke <ryan@balena.io>
+                        signed-off-by: Ryan Cooke <ryan@balena.io>
+                      author: Ryan Cooke
+                      nested: []
+                  version: leviathan-2.34.3
+                  title: ""
+                  date: 2025-07-24T08:36:18.389Z
+                - commits:
+                    - subject: Update core/contracts digest to fc76558
+                      hash: e76d47a39268b0b6e5b138c61c01d65d151fda19
+                      body: |
+                        Update core/contracts
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: balena-renovate[bot]
+                      nested: []
+                  version: leviathan-2.34.2
+                  title: ""
+                  date: 2025-07-23T08:37:54.214Z
+                - commits:
+                    - subject: Update balena-os/leviathan-worker to v2.10.0
+                      hash: a2aa0eb3b9580c56981263d8e974388d4376de4e
+                      body: |
+                        Update balena-os/leviathan-worker from 2.9.60 to 2.10.0
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: balena-renovate[bot]
+                      nested: []
+                  version: leviathan-2.34.1
+                  title: ""
+                  date: 2025-07-23T08:07:52.398Z
+                - commits:
+                    - subject: Prefer image pull when running from GitHub Actions
+                      hash: 1c15e8ec3d28ef11972835195209f260e13e3e7b
+                      body: >
+                        The default 'make test' behaviour still includes a local
+                        build but when
+
+                        running as part of CI/CD it should pull by default.
+                      footer:
+                        Change-type: minor
+                        change-type: minor
+                        Signed-off-by: Kyle Harding <kyle@balena.io>
+                        signed-off-by: Kyle Harding <kyle@balena.io>
+                      author: Kyle Harding
+                      nested: []
+                    - subject: Publish core and client docker images to ghcr.io
+                      hash: 9974eb05f120b3b79efb64e133a05f454df7fdb0
+                      body: |
+                        We want to allow image reuse at test time and avoid
+                        always building from scratch.
+                      footer:
+                        Change-type: minor
+                        change-type: minor
+                        Signed-off-by: Kyle Harding <kyle@balena.io>
+                        signed-off-by: Kyle Harding <kyle@balena.io>
+                      author: Kyle Harding
+                      nested: []
+                  version: leviathan-2.34.0
+                  title: ""
+                  date: 2025-07-22T15:50:16.616Z
+                - commits:
+                    - subject: Update Lock file maintenance
+                      hash: ed1a6486bb4af8d15c9235d36bb2c9175bfb206f
+                      body: |
+                        Update 
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: balena-renovate[bot]
+                      nested: []
+                  version: leviathan-2.33.9
+                  title: ""
+                  date: 2025-07-22T14:25:32.055Z
+                - commits:
+                    - subject: Update Lock file maintenance
+                      hash: 88f2cb9f2b0afe7277b537535a76ae3bec9085d6
+                      body: |
+                        Update 
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: balena-renovate[bot]
+                      nested: []
+                  version: leviathan-2.33.8
+                  title: ""
+                  date: 2025-06-30T01:06:02.687Z
+                - commits:
+                    - subject: Update Lock file maintenance
+                      hash: 5f8f872d4ad9fc05c8d1803b19890a202e3f0aa4
+                      body: |
+                        Update 
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: balena-renovate[bot]
+                      nested: []
+                  version: leviathan-2.33.7
+                  title: ""
+                  date: 2025-06-23T03:12:57.657Z
+                - commits:
+                    - subject: Update Lock file maintenance
+                      hash: 22cc9f3e4f6149f745b8881ae402ff2d298361a9
+                      body: |
+                        Update 
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: balena-renovate[bot]
+                      nested: []
+                  version: leviathan-2.33.6
+                  title: ""
+                  date: 2025-06-23T01:04:00.788Z
+                - commits:
+                    - subject: Update docker/setup-buildx-action digest to e468171
+                      hash: 485edfb5ce584c44b104dc24e3aea28b8eb6c5ea
+                      body: |
+                        Update docker/setup-buildx-action
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: balena-renovate[bot]
+                      nested: []
+                  version: leviathan-2.33.5
+                  title: ""
+                  date: 2025-06-19T12:52:06.923Z
+                - commits:
+                    - subject: Update balena-io/balena-cli to v22.1.1
+                      hash: b92156046845a298521ddf21d1174a98394ccdb5
+                      body: |
+                        Update balena-io/balena-cli from 22.1.0 to 22.1.1
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: balena-renovate[bot]
+                      nested: []
+                  version: leviathan-2.33.4
+                  title: ""
+                  date: 2025-06-19T10:32:52.015Z
+                - commits:
+                    - subject: Update balena-io/balena-cli to v22.1.0
+                      hash: 1a86ffebadeac1d5c44de0a856f343c93b8f1ad8
+                      body: |
+                        Update balena-io/balena-cli from 22.0.6 to 22.1.0
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: balena-renovate[bot]
+                      nested: []
+                  version: leviathan-2.33.3
+                  title: ""
+                  date: 2025-06-16T03:03:58.314Z
+                - commits:
+                    - subject: Update Lock file maintenance
+                      hash: b70f8fdadbb949d00a3562a07c7f537df2521229
+                      body: |
+                        Update 
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: balena-renovate[bot]
+                      nested: []
+                  version: leviathan-2.33.2
+                  title: ""
+                  date: 2025-06-16T01:02:47.803Z
+          version: meta-balena-6.5.46
+          title: ""
+          date: 2025-07-25T14:19:20.691Z
+        - commits:
+            - subject: "grub-conf: Don't sign non-luks grub.cfg"
+              hash: 000f38c9384557ba7ed67e0fa2444638a4f0d3e4
+              body: >
+                At this moment we sign 3 artifacts:
+
+                * grub.cfg_external - for flasher (secure boot or not)
+
+                * grub.cfg_internal_luks - for secure boot + LUKS
+
+                * grub.cfg_internal - for regular systems
+
+
+                We don't verify any signatures on systems with secure boot
+                disabled
+
+                so there is no need to sign grub.cfg_internal, on the contrary,
+                having
+
+                it signed only makes the file loadable on secure boot systems,
+
+                which is undesirable.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Michal Toman <michalt@balena.io>
+                signed-off-by: Michal Toman <michalt@balena.io>
+              author: Michal Toman
+              nested: []
+          version: meta-balena-6.5.45
+          title: ""
+          date: 2025-07-23T23:20:31.526Z
+        - commits:
+            - subject: "meta-balena-YOCTO_RELEASE: update bmap-tools branch name"
+              hash: ca3e8df431c811088982050c5053d4fb5ca46499
+              body: |
+                In Nov 2024 bmap-tools  master branch was renamed to main
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Ryan Cooke <ryan@balena.io>
+                signed-off-by: Ryan Cooke <ryan@balena.io>
+              author: Ryan Cooke
+              nested: []
+          version: meta-balena-6.5.44
+          title: ""
+          date: 2025-07-09T16:53:56.590Z
+        - commits:
+            - subject: "meta-balena-esr: fall back to current minor"
+              hash: b04c4769fdffb61e65c365aad7cea8907991cb2d
+              body: >
+                If an esr branch for a previous minor already exists, then fall
+                back to the current minor
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Ryan Cooke <ryan@balena.io>
+                signed-off-by: Ryan Cooke <ryan@balena.io>
+              author: Ryan Cooke
+              nested: []
+          version: meta-balena-6.5.43
+          title: ""
+          date: 2025-07-07T10:43:40.599Z
+        - commits:
+            - subject: Enable zram zstd compression for 6.12+ kernels
+              hash: ffafb1007a8deab5bd80de5cb65fbc81c18f4e7d
+              body: >
+                Kernels 6.12+ need the corresponding CONFIG_ZRAM_BACKEND_* linux
+
+                kernel config item enabled for the respective compression
+                support
+
+                to be available for zram.
+
+
+                For the flasher we need zram zstd support so we need to enable
+                the new
+
+                CONFIG_ZRAM_BACKEND_ZSTD option.
+
+
+                This fixes the following error when booting a flasher image
+                running a 6.12+ kernel:
+
+                zramctl: /dev/zram1: failed to set algorithm: Invalid argument
+              footer:
+                Change-type: patch
+                change-type: patch
+                Changelog-entry: Enable zram zstd compression for 6.12+ kernels
+                changelog-entry: Enable zram zstd compression for 6.12+ kernels
+                Signed-off-by: Florin Sarbu <florin@balena.io>
+                signed-off-by: Florin Sarbu <florin@balena.io>
+              author: Florin Sarbu
+              nested: []
+          version: meta-balena-6.5.42
+          title: ""
+          date: 2025-07-03T13:05:08.986Z
+        - commits:
+            - subject: Update outdated context of efitools patches
+              hash: de30667d5b7548ea6381978c45d7ae3bdeb3b10c
+              body: >
+                Patches with outdated context will trigger fatal build errors in
+                Yocto Scarthgap
+              footer:
+                Change-type: patch
+                change-type: patch
+                Changelog-entry: Update outdated context of efitools patches
+                changelog-entry: Update outdated context of efitools patches
+                Signed-off-by: Florin Sarbu <florin@balena.io>
+                signed-off-by: Florin Sarbu <florin@balena.io>
+              author: Florin Sarbu
+              nested: []
+          version: meta-balena-6.5.41
+          title: ""
+          date: 2025-07-02T00:16:55.553Z
+        - commits:
+            - subject: "busybox: add conv support in dd"
+              hash: b2b69965b8c955ef099e5b4bfcf13ea9bdfb835c
+              body: >
+                This is used from the initramfs of flasher devices to erase the
+                disk
+
+                of secrets.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+            - subject: "initrdscripts: cryptsetup-efi-tmp: use common encrypted partition
+                asserts"
+              hash: b1e95e0114a34f8c8241db6455c772c6b24b9a30
+              body: >
+                Use the shared helper functions to assert encrypted partitions.
+
+
+                Note that the new functions have introduced some refactoring so
+                that
+
+                they can be used in the general case.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+            - subject: "os-helpers-fs: move logic to assert luks encrypted partitions"
+              hash: 9671276855e76cd296e5c077af4653b3c88188f9
+              body: >
+                The logic to assert encrypted partitions was being implemented
+                in a
+
+                device specific way as part of cryptsetup - move it to common
+                code so
+
+                that this does not need to be re-implemented for every device
+                type.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+            - subject: "initrdscripts: migrate: use an estimated compressed size for raw
+                image"
+              hash: f712bab8bb2df75fbb5a5d37c809f6f9a6c9f5d1
+              body: >
+                The memory check before a migration run was not taking into
+                account
+
+                that the tmp directory is now compressed ram.
+
+
+                This change approximates the compressed size of the raw image
+                which is
+
+                the biggest in the calculation. The rest of the file sizes are
+                left as
+
+                is to provide some buffer for approximation failures and not to
+                complicate
+
+                the logic excessively.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+            - subject: "os-helpers-fs: add a function to estimate zram compression sizes"
+              hash: 91c07c0f263c5e63d46b438aa6b972458f8f5182
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+          version: meta-balena-6.5.40
+          title: ""
+          date: 2025-06-26T14:04:59.217Z
+        - commits:
+            - subject: "workflows: remove Jetson Xavier AGX"
+              hash: 2c15ce8d878115f45c77bc39ced83ab4bfda0d4d
+              body: >
+                This device type is no longer being built in the device
+                repository,
+
+                although it has not been officially discontinued yet it probably
+                should.
+
+
+                Removing it from meta-balena not to block development.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+          version: meta-balena-6.5.39
+          title: ""
+          date: 2025-06-20T12:30:59.288Z
+        - commits:
+            - subject: Update tests/leviathan digest to 473af4b
+              hash: 87e6999dae7010ab541d367a9b51d26b8e3cd4c4
+              body: Update tests/leviathan
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested:
+                - commits:
+                    - subject: Update Lock file maintenance
+                      hash: d277c85c9a0601573486eefc5fc1c2219dd61c6c
+                      body: |
+                        Update 
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: balena-renovate[bot]
+                      nested: []
+                  version: leviathan-2.33.1
+                  title: ""
+                  date: 2025-06-10T20:46:22.016Z
+                - commits:
+                    - subject: "minor: Upgrade Typedoc to v0.26.11"
+                      hash: fcb51606c3936b16488abe765baff97686547515
+                      body: ""
+                      footer:
+                        Signed-off-by: Vipul Gupta (@vipulgupta2048) <vipulgupta2048@gmail.com>
+                        signed-off-by: Vipul Gupta (@vipulgupta2048) <vipulgupta2048@gmail.com>
+                      author: Vipul Gupta (@vipulgupta2048)
+                      nested: []
+                  version: leviathan-2.33.0
+                  title: ""
+                  date: 2025-06-10T16:59:15.659Z
+                - commits:
+                    - subject: Update balena-os/leviathan-worker to v2.9.60
+                      hash: 2c44681c4132a2115dc7448ff0cdfe1800fb01db
+                      body: |
+                        Update balena-os/leviathan-worker from 2.9.59 to 2.9.60
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: balena-renovate[bot]
+                      nested: []
+                  version: leviathan-2.32.9
+                  title: ""
+                  date: 2025-06-09T16:23:26.272Z
+                - commits:
+                    - subject: Update balena-io/balena-cli to v22.0.6
+                      hash: 9b97e276d7c143b33a5744bcbdebee3e560c2b98
+                      body: |
+                        Update balena-io/balena-cli from 22.0.5 to 22.0.6
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: balena-renovate[bot]
+                      nested: []
+                  version: leviathan-2.32.8
+                  title: ""
+                  date: 2025-06-09T10:31:47.585Z
+                - commits:
+                    - subject: "core/lib: Specify partition indexes for Jetson Nano eMMC and JN30B
+                        Nano"
+                      hash: 38dfbc2013e438ffc7b6d2df54ec889c1be3afc3
+                      body: ""
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                        signed-off-by: Alexandru Costache <alexandru@balena.io>
+                      author: Alexandru
+                      nested: []
+                  version: leviathan-2.32.7
+                  title: ""
+                  date: 2025-06-09T09:28:56.518Z
+          version: meta-balena-6.5.38
+          title: ""
+          date: 2025-06-12T09:01:23.456Z
+        - commits:
+            - subject: Update tests/leviathan digest to 2c6c6ef
+              hash: 31b6a51e1a0e635377b3f5e6025a75ca054c49b6
+              body: Update tests/leviathan
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested: []
+            - subject: "tests: hup: enable specifying image type"
+              hash: fe0c0c5c2542e3eb325f217c9b3439f2c2a473d0
+              body: >
+                Allows selecting image type (flasher vs raw) in the hup suite,
+                to hup from
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Ryan Cooke <ryan@balena.io>
+                signed-off-by: Ryan Cooke <ryan@balena.io>
+              author: Ryan Cooke
+              nested: []
+          version: meta-balena-6.5.37
+          title: ""
+          date: 2025-06-09T13:51:50.387Z
+        - commits:
+            - subject: "classes: Make sure we disable debug info for newer kernels"
+              hash: 22494caa4284a15d9f707f22d0a03f546de85f47
+              body: |
+                Starting with https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=f9b3cd24578401e7a392974b3353277286e49cee
+                we also need to enable CONFIG_DEBUG_INFO_NONE to properly disable debug info for the kernel.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Florin Sarbu <florin@balena.io>
+                signed-off-by: Florin Sarbu <florin@balena.io>
+              author: Florin Sarbu
+              nested: []
+          version: meta-balena-6.5.36
+          title: ""
+          date: 2025-06-04T15:07:17.703Z
+        - commits:
+            - subject: Update tests/leviathan digest to 17aa86b
+              hash: 1d00af3555ef743e4d2841aa2604891d9c4f0ef8
+              body: Update tests/leviathan
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested:
+                - commits:
+                    - subject: Update balena-io/balena-cli to v22
+                      hash: a0496491a1176c6def64a813d21c857f8de0c828
+                      body: |
+                        Update balena-io/balena-cli from 21.1.14 to 22.0.0
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: balena-renovate[bot]
+                      nested: []
+                  version: leviathan-2.32.2
+                  title: ""
+                  date: 2025-05-27T12:29:55.248Z
+                - commits:
+                    - subject: Update Lock file maintenance
+                      hash: 2992f6dcdb1433fc923f299ee037d2c851dac4ba
+                      body: |
+                        Update 
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: balena-renovate[bot]
+                      nested: []
+                  version: leviathan-2.32.1
+                  title: ""
+                  date: 2025-05-23T20:29:49.880Z
+                - commits:
+                    - subject: Remove custom compose binary installation from Make
+                      hash: efcf8422d597ba297d0b4be23a809555aacf78f3
+                      body: >
+                        Instead just check the installed version of compose for
+                        compatibility.
+                      footer:
+                        Change-type: minor
+                        change-type: minor
+                        Signed-off-by: Kyle Harding <kyle@balena.io>
+                        signed-off-by: Kyle Harding <kyle@balena.io>
+                      author: Kyle Harding
+                      nested: []
+                  version: leviathan-2.32.0
+                  title: ""
+                  date: 2025-05-23T17:11:23.196Z
+                - commits:
+                    - subject: Update balena-io/balena-cli to v21.1.14
+                      hash: 012da90fd1b65de61e2eb14d84367bd4323ee831
+                      body: |
+                        Update balena-io/balena-cli from 21.1.13 to 21.1.14
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: balena-renovate[bot]
+                      nested: []
+                  version: leviathan-2.31.111
+                  title: ""
+                  date: 2025-05-23T16:40:44.786Z
+                - commits:
+                    - subject: "Core: update to node 22"
+                      hash: c0769dfa821dca8568e5d577f449fa17fc9c85d5
+                      body: ""
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: Ryan Cooke <ryan@balena.io>
+                        signed-off-by: Ryan Cooke <ryan@balena.io>
+                      author: Ryan Cooke
+                      nested: []
+                  version: leviathan-2.31.110
+                  title: ""
+                  date: 2025-05-23T14:56:57.540Z
+                - commits:
+                    - subject: Update balena-io/balena-cli to v21.1.13
+                      hash: 5f35acb9b7b280e152cf445e5472f28aaa29b0e3
+                      body: |
+                        Update balena-io/balena-cli from 21.1.11 to 21.1.13
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: balena-renovate[bot]
+                      nested: []
+                  version: leviathan-2.31.109
+                  title: ""
+                  date: 2025-05-21T14:43:38.311Z
+                - commits:
+                    - subject: Update core/contracts digest to 417aec2
+                      hash: 69146ce0f994f8ecf302d20ab3dde162c0144dc2
+                      body: |
+                        Update core/contracts
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: balena-renovate[bot]
+                      nested: []
+                  version: leviathan-2.31.108
+                  title: ""
+                  date: 2025-05-14T16:38:33.326Z
+                - commits:
+                    - subject: Update balena-io/balena-cli to v21.1.11
+                      hash: 88a3a2e7b6a5aafcb63314d5682d9ddc2c97c829
+                      body: |
+                        Update balena-io/balena-cli from 21.1.10 to 21.1.11
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: balena-renovate[bot]
+                      nested: []
+                  version: leviathan-2.31.107
+                  title: ""
+                  date: 2025-05-06T16:32:38.363Z
+            - subject: "tests: update for node 22"
+              hash: 2b86d00f665430b384984fc5e9b691db727645c6
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Ryan Cooke <ryan@balena.io>
+                signed-off-by: Ryan Cooke <ryan@balena.io>
+              author: Ryan Cooke
+              nested: []
+          version: meta-balena-6.5.35
+          title: ""
+          date: 2025-06-03T12:01:23.627Z
+        - commits:
+            - subject: Increases persistent logs size to 128M
+              hash: ffe62ab787a0d50bf48fea0d9a9c28fb9f163221
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+          version: meta-balena-6.5.34
+          title: ""
+          date: 2025-05-23T08:18:21.963Z
+        - commits:
+            - subject: Update balena-supervisor to v17.0.3
+              hash: 85752e8323d83b7ed8fc705df7239157bf0640c6
+              body: |
+                Update balena-supervisor from 17.0.2 to 17.0.3
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested:
+                - commits:
+                    - subject: Simplify contract validation module
+                      hash: 7c83eaef8024cec9052eb0051a1a1f47e238c690
+                      body: >
+                        Use `satisfiesChildContract` instead of Blueprints as
+                        the previous
+
+                        implementation did.
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: Felipe Lalanne
+                      nested: []
+                  version: balena-supervisor-17.0.3
+                  title: ""
+                  date: 2025-05-13T14:50:13.303Z
+          version: meta-balena-6.5.33
+          title: ""
+          date: 2025-05-21T07:30:02.404Z
+        - commits:
+            - subject: "kernel-balena.bbclass: Include 802.1q VLAN driver"
+              hash: edf1db17820be0689799c73a68b4bd72c593fb98
+              body: >
+                On most devices this is already included but we want it
+                everywhere,
+
+                NetworkManager provides native support and it can't work without
+
+                the kernel driver.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Michal Toman <michalt@balena.io>
+                signed-off-by: Michal Toman <michalt@balena.io>
+              author: Michal Toman
+              nested: []
+          version: meta-balena-6.5.32
+          title: ""
+          date: 2025-05-17T16:27:22.273Z
+        - commits:
+            - subject: ".github/workflows: Change meta-balena ref to last commit of the pull
+                request"
+              hash: 0f34b3070a332626003b2f3fe72c3c9fc799ee89
+              body: |
+                Using github.sha will point to a temporary merge commit which should
+                be the commit of merging the PR. This has caused issues from time to time
+                with the builds failing with an error such as:
+
+                fatal: unable to read tree (d1611af4dccfe68c7fe136816ead2257a9659425)
+
+                Instead let's switch to using github.event.pull_request.head.sha which is the
+                commit ID of the last commit to the head branch of the pull request as per
+                https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows#pull-request-event-pull_request
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Florin Sarbu <florin@balena.io>
+                signed-off-by: Florin Sarbu <florin@balena.io>
+              author: Florin Sarbu
+              nested: []
+          version: meta-balena-6.5.31
+          title: ""
+          date: 2025-05-16T05:33:07.347Z
+        - commits:
+            - subject: "conf: set INIT_MANAGER to disable sysvinit scripts"
+              hash: 3c0070b3455d6d2a4a0e34dc3efa5682bcb7e069
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Joseph Kogut <joseph@balena.io>
+                signed-off-by: Joseph Kogut <joseph@balena.io>
+              author: Joseph Kogut
+              nested: []
+            - subject: "openvpn: fix systemd-tmpfiles legacy path warning"
+              hash: 8f8785fde38d8053495073cfc29c7f3192530aa3
+              body: >
+                systemd-tmpfiles reports that /var/run is a legacy path, and
+                updates it
+
+                to just /run
+
+
+                Update this configuration file to use the now preferred path to
+                silence
+
+                this warning.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Joseph Kogut <joseph@balena.io>
+                signed-off-by: Joseph Kogut <joseph@balena.io>
+              author: Joseph Kogut
+              nested: []
+            - subject: "common: image_types: backport nanbield+ image output naming"
+              hash: 63457c76b86c4835ea0f7d43b7f986af19312e18
+              body: |
+                Nanbield introduced a minor change [0] that includes IMAGE_NAME_SUFFIX
+                in IMAGE_NAME and IMAGE_LINK_NAME.
+
+                Adapt image output paths to support this change, and backport the new
+                behavior to images built with older Yocto releases.
+
+                [0] https://docs.yoctoproject.org/dev/migration-guides/migration-4.3.html#output-file-naming-changes
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Joseph Kogut <joseph@balena.io>
+                signed-off-by: Joseph Kogut <joseph@balena.io>
+              author: Joseph Kogut
+              nested: []
+            - subject: "common: networkmanager: fix postinst script failure"
+              hash: 7aef85193dc0f5d5419497dcd03bf721004181c9
+              body: >
+                The networkmanager-daemon package specifies an initscript that a
+                poky
+
+                postinstall script fails to find for installation, as we didn't
+                copy it
+
+                to meta-balena, and use systemd instead.
+
+
+                Clear the initscript variables in the bbappend.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Joseph Kogut <joseph@balena.io>
+                signed-off-by: Joseph Kogut <joseph@balena.io>
+              author: Joseph Kogut
+              nested: []
+            - subject: "common: systemd: fix QA issue"
+              hash: f816442858d10e4074daf1721c48500b82b7df62
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Joseph Kogut <joseph@balena.io>
+                signed-off-by: Joseph Kogut <joseph@balena.io>
+              author: Joseph Kogut
+              nested: []
+            - subject: "rust: Replace references to deprecated distutils python module"
+              hash: dc7bb7ea3c0e34e7c0b3733afa0b37a1001adf1c
+              body: >
+                Replace references to deprecated distutils module in Rust
+                toolchain.
+
+
+                Also backport to older Yocto release(s) the new packaging module
+                we
+
+                use to replace distutils.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Florin Sarbu <florin@balena.io>
+                signed-off-by: Florin Sarbu <florin@balena.io>
+              author: Joseph Kogut
+              nested: []
+            - subject: "meta-balena-rust: add balena_ prefix to classes"
+              hash: 54eaf84c5197e31d0d60212b9d868618dc55b800
+              body: |
+                We have a Rust layer in order to use the same toolchain across all
+                supported compatibility layers.
+
+                Yocto Langdale splits classes by usage context [0], which makes our recipe
+                inherit from the upstream class instead of the one from the same layer.
+
+                Add the balena- prefix to the classes for this layer to ensure we
+                inherit from the appropriate versions.
+
+                [0] https://docs.yoctoproject.org/next/migration-guides/migration-4.1.html#classes-now-split-by-usage-context
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Joseph Kogut <joseph@balena.io>
+                signed-off-by: Joseph Kogut <joseph@balena.io>
+              author: Joseph Kogut
+              nested: []
+            - subject: "resin-sanity: get datastore from event"
+              hash: 2afd47018ad2fae5fc86a234cf67ef593f52064f
+              body: >
+                The datastore ('d') variable is no longer accessible in this
+                event. Copy
+
+                upstream behavior and get the datastore from the 'e' variable
+                available
+
+                to the event handler.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Joseph Kogut <joseph@balena.io>
+                signed-off-by: Joseph Kogut <joseph@balena.io>
+              author: Joseph Kogut
+              nested: []
+            - subject: "common: bluez: bump from 5.66 to 5.72"
+              hash: 8792a581201d8f3b1817158038def7f55bad7635
+              body: >
+                This fixes an issue with the package not obeying the usrmerge
+                feature.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Joseph Kogut <joseph@balena.io>
+                signed-off-by: Joseph Kogut <joseph@balena.io>
+              author: Joseph Kogut
+              nested: []
+            - subject: "scarthgap: enable usrmerge distro feature"
+              hash: a39830ceb84143befaee1083cdf5aceedd724190
+              body: >
+                Yocto scarthgap includes a version of systemd that requires the
+                usrmerge
+
+                distro feature. Enable it.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Joseph Kogut <joseph@balena.io>
+                signed-off-by: Joseph Kogut <joseph@balena.io>
+              author: Joseph Kogut
+              nested: []
+            - subject: "common: systemd: prepare for merged usr"
+              hash: e286006a3335cede17bac59c5f36c6f756e4dcdc
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Joseph Kogut <joseph@balena.io>
+                signed-off-by: Joseph Kogut <joseph@balena.io>
+              author: Joseph Kogut
+              nested: []
+            - subject: "common: usb-modeswitch-data: prepare for merged usr"
+              hash: 4ac57614b53bb00563759fd1b73fa022f820acc9
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Joseph Kogut <joseph@balena.io>
+                signed-off-by: Joseph Kogut <joseph@balena.io>
+              author: Joseph Kogut
+              nested: []
+            - subject: "common: usb-modeswitch: prepare for merged usr"
+              hash: 164b67a8b8c51a412bdd99993977cb4a1f5a99aa
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Joseph Kogut <joseph@balena.io>
+                signed-off-by: Joseph Kogut <joseph@balena.io>
+              author: Joseph Kogut
+              nested: []
+            - subject: "common: libnss-ato: prepare for merged usr"
+              hash: bc126e29ff367d39cb1c3dc16aae5f4e2fc18d20
+              body: >
+                Bump to latest revision, which pulls in Makefile fixes for
+                merged usr
+
+                directory.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Joseph Kogut <joseph@balena.io>
+                signed-off-by: Joseph Kogut <joseph@balena.io>
+              author: Joseph Kogut
+              nested: []
+            - subject: "common: base-files: prepare for merged usr"
+              hash: 16080a971b92d2122893c362ac7499dbfacb4949
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Joseph Kogut <joseph@balena.io>
+                signed-off-by: Joseph Kogut <joseph@balena.io>
+              author: Joseph Kogut
+              nested: []
+            - subject: "common: peak: prepare for merged usr"
+              hash: f928c030d25efa491eb5384e103bac49e7d123bf
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Joseph Kogut <joseph@balena.io>
+                signed-off-by: Joseph Kogut <joseph@balena.io>
+              author: Joseph Kogut
+              nested: []
+            - subject: "meta-balena-common: add scarthgap to LAYERSERIES_COMPAT"
+              hash: ba5b35ace951d836de237ebfd5f70b5debacfc5f
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Joseph Kogut <joseph@balena.io>
+                signed-off-by: Joseph Kogut <joseph@balena.io>
+              author: Joseph Kogut
+              nested: []
+            - subject: "meta-balena-rust: add scarthgap to LAYERSERIES_COMPAT"
+              hash: 0d445836fc9363b5df091e62a2e6f469b9add35f
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Joseph Kogut <joseph@balena.io>
+                signed-off-by: Joseph Kogut <joseph@balena.io>
+              author: Joseph Kogut
+              nested: []
+            - subject: "common: adjust bmaptool name for scarthgap"
+              hash: 2c5771419d20bfec85524216fcb9a42c1f4d74ae
+              body: |
+                bmaptool was renamed and incorporated into the Yocto project in
+                Scarthgap, so adjust the package name.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Joseph Kogut <joseph@balena.io>
+                signed-off-by: Joseph Kogut <joseph@balena.io>
+              author: Joseph Kogut
+              nested: []
+            - subject: "scarthgap: busybox: fix QA issue in patch"
+              hash: 2e60c144d08ae165046b2da2b247b61ef353c51f
+              body: >
+                Drop unneeded patch, as it raises a QA issue, and isn't needed
+                anymore
+
+                after enabling usrmerge.
+
+
+                Fixes "QA Issue: Malformed Upstream-Status in patch"
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Joseph Kogut <joseph@balena.io>
+                signed-off-by: Joseph Kogut <joseph@balena.io>
+              author: Joseph Kogut
+              nested: []
+            - subject: "os-config: add checksums"
+              hash: 3fa1f1ef78332900b6d5a5543442064efde7bb75
+              body: |
+                As of Yocto Mickledore (4.2), checksums are mandatory for Rust crates.
+
+                https://docs.yoctoproject.org/next/migration-guides/migration-4.2.html#rust-mandatory-checksums-for-crates
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Joseph Kogut <joseph@balena.io>
+                signed-off-by: Joseph Kogut <joseph@balena.io>
+              author: Joseph Kogut
+              nested: []
+            - subject: "bindmount: add checksums"
+              hash: 7a0c555e69c3ea49357ed19b76b59a6424489280
+              body: |
+                As of Yocto Mickledore (4.2), checksums are mandatory for Rust crates.
+
+                https://docs.yoctoproject.org/next/migration-guides/migration-4.2.html#rust-mandatory-checksums-for-crates
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Joseph Kogut <joseph@balena.io>
+                signed-off-by: Joseph Kogut <joseph@balena.io>
+              author: Joseph Kogut
+              nested: []
+            - subject: "healthdog: add checksums"
+              hash: 3c7073d745770929025f51aae15225c4ed731d8c
+              body: |
+                As of Yocto Mickledore (4.2), checksums are mandatory for Rust crates.
+
+                https://docs.yoctoproject.org/next/migration-guides/migration-4.2.html#rust-mandatory-checksums-for-crates
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Joseph Kogut <joseph@balena.io>
+                signed-off-by: Joseph Kogut <joseph@balena.io>
+              author: Joseph Kogut
+              nested: []
+            - subject: "fatrw: add checksums"
+              hash: 92b289b5dde560e169b7dfde8787997d3e02f1ca
+              body: |
+                As of Yocto Mickledore (4.2), checksums are mandatory for Rust crates.
+
+                https://docs.yoctoproject.org/next/migration-guides/migration-4.2.html#rust-mandatory-checksums-for-crates
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Joseph Kogut <joseph@balena.io>
+                signed-off-by: Joseph Kogut <joseph@balena.io>
+              author: Joseph Kogut
+              nested: []
+            - subject: "meta-balena-scarthgap: Add integration layer"
+              hash: c10c242c13b14b86a6243b5609a95a9dd55543df
+              body: |
+                This is a 1:1 copy of meta-balena-kirkstone.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Joseph Kogut <joseph@balena.io>
+                signed-off-by: Joseph Kogut <joseph@balena.io>
+              author: Joseph Kogut
+              nested: []
+          version: meta-balena-6.5.30
+          title: ""
+          date: 2025-05-09T14:13:39.806Z
+        - commits:
+            - subject: "tests: cloud: Don't disable DUT internet access if secureboot enabled"
+              hash: e4a000782b5cff3f3416950eb5cc62b360a1c359
+              body: >
+                For the preload test, we disable DUT internet access to check
+                the preloaded app starts without API access. For secureboot
+                devices, we dont run the preload test as its not a supported
+                feature yet. So don't disable the internet access for a
+                secureboot device
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Ryan Cooke <ryan@balena.io>
+                signed-off-by: Ryan Cooke <ryan@balena.io>
+              author: Ryan Cooke
+              nested: []
+          version: meta-balena-6.5.29
+          title: ""
+          date: 2025-05-08T20:36:21.893Z
+        - commits:
+            - subject: Do not include in the rootfs the test binaries from the nss package
+              hash: 045f1061526a95857b8d27f69b87383ddcba5b51
+              body: |
+                In order to free up space in the rootfs we remove the following binaries:
+                bltest  chktest  crmftest  dbtest  dertimetest  encodeinttest  fbectest  fipstest  pk11ectest  pk11gcmtest  pk11importtest  remtest  sdrtest  secmodtest
+              footer:
+                Changelog-entry: Do not include in the rootfs the test binaries from the nss
+                  package
+                changelog-entry: Do not include in the rootfs the test binaries from the nss
+                  package
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Florin Sarbu <florin@balena.io>
+                signed-off-by: Florin Sarbu <florin@balena.io>
+              author: Florin Sarbu
+              nested: []
+          version: meta-balena-6.5.28
+          title: ""
+          date: 2025-05-07T19:45:20.413Z
+        - commits:
+            - subject: Update tests/leviathan digest to 81e581a
+              hash: 8d082e3e727f18c7b58098debdb522dfaf3831fd
+              body: Update tests/leviathan
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested:
+                - commits:
+                    - subject: Update balena-io/balena-cli to v21.1.10
+                      hash: cd9d6e00b478dde5dc69ac2fbfa1b127a588bb3b
+                      body: |
+                        Update balena-io/balena-cli from 21.1.9 to 21.1.10
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: balena-renovate[bot]
+                      nested: []
+                  version: leviathan-2.31.106
+                  title: ""
+                  date: 2025-05-05T18:57:38.638Z
+          version: meta-balena-6.5.27
+          title: ""
+          date: 2025-05-06T15:08:40.140Z
+        - commits:
+            - subject: "tests/os: Add regdb load failure test"
+              hash: 545214b5e3a19bda78254bf1f9e01de34f3c8df1
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+              nested: []
+          version: meta-balena-6.5.26
+          title: ""
+          date: 2025-05-05T18:46:13.539Z
+        - commits:
+            - subject: Update tests/leviathan digest to 769d8e6
+              hash: 3fc4f63b17c401143523698731924a07599a8818
+              body: Update tests/leviathan
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested:
+                - commits:
+                    - subject: Update core/contracts digest to a1e8b75
+                      hash: 4b8505c58f5cd30541d334077ee2b96f3cfe233c
+                      body: |
+                        Update core/contracts
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: balena-renovate[bot]
+                      nested: []
+                  version: leviathan-2.31.105
+                  title: ""
+                  date: 2025-04-30T22:32:41.266Z
+          version: meta-balena-6.5.25
+          title: ""
+          date: 2025-05-04T12:47:31.788Z
+        - commits:
+            - subject: Update actions/setup-python digest to a26af69
+              hash: 0946c15d23411563fae3fd38b2e4bfa5f11f89fb
+              body: >
+                Update actions/setup-python to
+                a26af69be951a213d495a4c3e4e4022e16d87065
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested: []
+          version: meta-balena-6.5.24
+          title: ""
+          date: 2025-04-24T10:53:52.990Z
+        - commits:
+            - subject: Update actions/setup-python digest to 8d9ed9a
+              hash: 50dd1e53238b004511d2854291c81afa6bd9604e
+              body: >
+                Update actions/setup-python to
+                8d9ed9ac5c53483de85588cdf95a591a75ab9f55
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested: []
+          version: meta-balena-6.5.23
+          title: ""
+          date: 2025-04-22T10:52:53.386Z
+        - commits:
+            - subject: Use workflow_call for balena-generic device type tests
+              hash: 685b74e962f6805713118c887e8574fadf4148f3
+              body: >
+                This includes adding secure boot tests to the generic-amd64 test
+                matrix.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Kyle Harding <kyle@balena.io>
+                signed-off-by: Kyle Harding <kyle@balena.io>
+              author: Kyle Harding
+              nested: []
+          version: meta-balena-6.5.22
+          title: ""
+          date: 2025-04-21T21:24:03.843Z
+        - commits:
+            - subject: Update tests/leviathan digest to 5ecdcd3
+              hash: 0e98a555c2f4ba4003502b3e01c054828a74c67d
+              body: Update tests/leviathan
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested:
+                - commits:
+                    - subject: Update balena-os/leviathan-worker to v2.9.59
+                      hash: 3664862394cf24a370ae3679d2fba9517c1bf7de
+                      body: |
+                        Update balena-os/leviathan-worker from 2.9.58 to 2.9.59
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: balena-renovate[bot]
+                      nested: []
+                  version: leviathan-2.31.104
+                  title: ""
+                  date: 2025-04-16T11:21:05.396Z
+          version: meta-balena-6.5.21
+          title: ""
+          date: 2025-04-19T11:24:43.032Z
+        - commits:
+            - subject: "kernel-balena: add aufs commit for v6.6.84"
+              hash: 6a63c9f2e9e064be591e4e29d6c50f86393c752f
+              body: >
+                We will continue to update to the stable head of v6.6 until
+                v6.12 is
+
+                officially deployed.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+          version: meta-balena-6.5.20
+          title: ""
+          date: 2025-04-19T06:11:53.850Z
+        - commits:
+            - subject: "os-helpers-tpm2: Always use password protection for TPM NVRAM writes"
+              hash: e91e64315c06327d4592ad4c9d72658ae88c4fba
+              body: >
+                At this moment tpm_nvram_store_passphrase checks whether the
+                expected
+
+                policy is currently met or not, and acts differently in each
+                case.
+
+                If the policy doesn't match, the TPM write is protected by a
+                one-time
+
+                password that is lost when the function exits.
+
+                If the policy matches, it will be used to protect the write
+                directly.
+
+                The latter seems to be broken at least in some scenarios
+                (retrying
+
+                HUP after a rollback).
+
+
+                This patch removes the special-casing and makes
+
+                tpm_nvram_store_passphrase always use the password protection.
+                While
+
+                using the current PCR states directly is a nice optimization,
+                always
+
+                using the password is more universal and makes the code simpler.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Michal Toman <michalt@balena.io>
+                signed-off-by: Michal Toman <michalt@balena.io>
+              author: Michal Toman
+              nested: []
+          version: meta-balena-6.5.19
+          title: ""
+          date: 2025-04-17T08:41:50.848Z
+        - commits:
+            - subject: "hostapp-update-hooks: make rollback possible when migrating to TPM
+                NVRAM"
+              hash: ce2a7d309a5637dc8f5f17d1106fc925f00a898e
+              body: >
+                At this moment migrating from passphrase encrypted in the EFI
+                partition
+
+                to passphrase stored in TPM NVRAM is a one way operation.
+
+                The signed-update HUP hook will move the passphrase to TPM NVRAM
+
+                and protect it with a new policy, but doesn't update the
+                encrypted
+
+                file in the EFI partition. That way, if the new OS doesn't work
+
+                and triggers a rollback, the passphrase can't be decrypted when
+                running
+
+                the "old" hooks and rollback fails, leaving the system
+
+                in an inconsistent state.
+
+
+                This patch makes the signed-update hook re-encrypt the
+                passphrase
+
+                and update it in the boot partition one last time during the
+                migration.
+
+                * If HUP goes through, the encrypted file is removed from the
+                boot
+                  partition and the system sticks with NVRAM only.
+                * If HUP fails, the system can rollback and the "old" OS version
+                  is able to decrypt the passphrase without involving NVRAM.
+
+                It's worth noting that both the RSA key and the NVRAM slot are
+                protected
+
+                by the same policy, so the "old" OS will be allowed to access
+
+                the passphrase in the TPM NVRAM, even though there is no OS
+                tooling
+
+                that would know how to do that. And the "new" OS will be allowed
+
+                to decrypt the passphrase in the EFI partition until it's
+                removed
+
+                by rollback-health, even though it will prefer to use NVRAM.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Michal Toman <michalt@balena.io>
+                signed-off-by: Michal Toman <michalt@balena.io>
+              author: Michal Toman
+              nested: []
+          version: meta-balena-6.5.18
+          title: ""
+          date: 2025-04-15T08:48:17.007Z
+        - commits:
+            - subject: "tests: os: secureboot: update kernel-module-build to v3.0.2"
+              hash: 230a38b7b558fe4c9104f86fc605d5d1982759b9
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+            - subject: "tests: secureboot: adapt kernel modules test to private device types"
+              hash: ffb5bd295200dbd081a30789cf0c6a7b5d7d1650
+              body: >
+                If a kernel headers file is provided, use it for the kernel
+                module test.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+          version: meta-balena-6.5.17
+          title: ""
+          date: 2025-04-09T21:47:13.513Z
+        - commits:
+            - subject: "os-helpers: tpm_nvram_store_passphrase: remove tpm2_shutdown"
+              hash: 3526cac33a536465ec60a26214213ddf580c099e
+              body: |
+                This should only be called during machine shutdown
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Joseph Kogut <joseph@balena.io>
+                signed-off-by: Joseph Kogut <joseph@balena.io>
+              author: Joseph Kogut
+              nested: []
+          version: meta-balena-6.5.16
+          title: ""
+          date: 2025-04-09T16:17:22.672Z
+        - commits:
+            - subject: "initrdscripts: mount securityfs in migrate script"
+              hash: 37c70ed240e67ff367ae5af44f287a5089a5fde7
+              body: >
+                At this moment securityfs is not mounted in the initramfs,
+
+                so when flasher is running from the migrate script, it won't
+                find
+
+                the TPM event log. This is fine for most systems, but on systems
+
+                that have extra TPM events logged and measured, the expected
+                PCR7
+
+                value will be computed incorrectly.
+
+
+                This patch mounts securityfs before running flasher from the
+                migrate
+
+                script.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Michal Toman <michalt@balena.io>
+                signed-off-by: Michal Toman <michalt@balena.io>
+              author: Michal Toman
+              nested: []
+          version: meta-balena-6.5.15
+          title: ""
+          date: 2025-04-09T12:39:41.112Z
+        - commits:
+            - subject: "tests: whitelist extra PCR2 events by default"
+              hash: 0c8fe3a4e9d00a2b766677b1e43b30c586202126
+              body: >
+                By introducing the option to whitelist or ignore extra events in
+                PCR2,
+
+                we have changed the default behavior of the system. Instead of
+                copying
+
+                the contents of PCR2 during provisioning, we now expect no
+                drivers
+
+                to be loaded, unless there was an explicit opt-in through
+                config.json.
+
+                This is the behavior that we've seen on physical hardware,
+                however
+
+                qemu behaves differently - it loads the PXE driver for the
+                network card
+
+                unconditionally, even if secure boot is enabled and the driver
+
+                has not been whitelisted.
+
+
+                This patch makes all the testsuites opt-in for the PCR2
+                whitelist,
+
+                which is just a workaround to restore the previous behavior and
+                unblock
+
+                the automated testsuite.
+
+
+                A proper fix should either be in leviathan, or in QEMU, or
+                implementing
+
+                a proper test for the PCR2 feature, that checks all the possible
+                states.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Michal Toman <michalt@balena.io>
+                signed-off-by: Michal Toman <michalt@balena.io>
+              author: Michal Toman
+              nested: []
+          version: meta-balena-6.5.14
+          title: ""
+          date: 2025-04-09T09:23:44.803Z
+        - commits:
+            - subject: Update balena-supervisor to v17
+              hash: ddf24d8375ca4cc9d004798b9ba096ceb9ea3286
+              body: |
+                Update balena-supervisor from 16.12.7 to 17.0.2
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested:
+                - commits:
+                    - subject: Fix search for app leftover locks
+                      hash: d475b1d8301c83b932ce272d3496bf4aac0ef1ad
+                      body: >
+                        The leftover locks search was creating an array rather
+                        than an object
+
+                        keyed by the appId. This could affect the lock cleanup
+                        and make leftover
+
+                        locks from one app affect the install of the app in
+                        local mode.
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: Felipe Lalanne
+                      nested: []
+                  version: balena-supervisor-17.0.2
+                  title: ""
+                  date: 2025-04-02T20:16:09.754Z
+                - commits:
+                    - subject: Clarify firewall docs on behavior with host network containers
+                      hash: caed4dcca0043f848f6dd5a3d1a2f82a2466e8d6
+                      body: ""
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: Christina Ying Wang <christina@balena.io>
+                        signed-off-by: Christina Ying Wang <christina@balena.io>
+                      author: Christina Ying Wang
+                      nested: []
+                  version: balena-supervisor-17.0.1
+                  title: ""
+                  date: 2025-03-25T20:41:20.141Z
+                - commits:
+                    - subject: Add Docker network label if custom ipam config
+                      hash: b596c77ce2d229e79082cbb1f0022f93806f09ae
+                      body: >
+                        In a target release where the only change is the
+                        addition or removal
+
+                        of a custom ipam config, the Supervisor does not
+                        recreate the network
+
+                        due to ignoring ipam config differences when comparing
+                        current and target
+
+                        network (in network.isEqualConfig). This commit
+                        implements the addition of
+
+                        a network label if the target compose object includes a
+                        network with custom
+
+                        ipam. With the label, the Supervisor will detect a
+                        difference between a
+
+                        network with a custom ipam and a network without,
+                        without needing to compare
+
+                        the ipam configs themselves.
+
+
+                        This is a major change, as devices running networks with
+                        custom ipam configs
+
+                        will have their networks recreated to add the network
+                        label.
+                      footer:
+                        Closes: "#2251"
+                        closes: "#2251"
+                        Change-type: major
+                        change-type: major
+                        See: https://balena.fibery.io/Work/Project/Fix-Supervisor-not-recreating-network-when-passed-custom-ipam-config-1127
+                        see: https://balena.fibery.io/Work/Project/Fix-Supervisor-not-recreating-network-when-passed-custom-ipam-config-1127
+                        Signed-off-by: Christina Ying Wang <christina@balena.io>
+                        signed-off-by: Christina Ying Wang <christina@balena.io>
+                      author: Christina Ying Wang
+                      nested: []
+                  version: balena-supervisor-17.0.0
+                  title: ""
+                  date: 2025-03-24T22:18:08.753Z
+                - commits:
+                    - subject: Start a dependent if all dependencies are started
+                      hash: 7764f98c9d357a1942628e57951266767555f67b
+                      body: |
+                        The previous behavior required that dependencies were running beefore
+                        starting the dependent service. This made it that services dependent on
+                        a one-shot service would not get started and goes against the default
+                        docker behavior.
+
+                        Depending on a service to be running will require the implementation of
+                        [long syntax depends_on](https://docs.docker.com/reference/compose-file/services/#long-syntax-1) and the condition
+                        `service_healthy`.
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Closes: "#2409"
+                        closes: "#2409"
+                      author: Felipe Lalanne
+                      nested: []
+                  version: balena-supervisor-16.12.9
+                  title: ""
+                  date: 2025-03-20T18:43:06.085Z
+                - commits:
+                    - subject: Remove GOT retries on state poll
+                      hash: ae337a1dd7743b0ee0a05c32a5ce01965c5bafef
+                      body: >
+                        The state poll already has retry implementation, making
+                        the GOT default
+
+                        unnecessary.
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: Felipe Lalanne
+                      nested: []
+                    - subject: Ensure poll socket timeout is defined early
+                      hash: bdbc6a4ba4766f9466891497bc02bd33aff1d4c7
+                      body: |
+                        We have observed that even when setting the socket timeout on the
+                        state poll https request, the timeout is only applied once the socket is
+                        connected. This causes issues with Node's auto family selection (happy
+                        eyeballs), as the default https timeout is 5s which means that larger
+                        [auto select attempt timeout](https://nodejs.org/docs/latest-v22.x/api/net.html#netgetdefaultautoselectfamilyattempttimeout) may result in the socket timing out before all connection attempts have been tried.
+
+                        This commit sets a different https Agent for state polling, with a
+                        timeout matching the `apiRequestTimeout` used for other request events.
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: Felipe Lalanne
+                      nested: []
+                  version: balena-supervisor-16.12.8
+                  title: ""
+                  date: 2025-03-12T14:50:33.204Z
+          version: meta-balena-6.5.13
+          title: ""
+          date: 2025-04-09T04:37:03.228Z
+        - commits:
+            - subject: Update tests/leviathan digest to b8e76d7
+              hash: a782ef21b71a408635e0a75754555d1571c5ab49
+              body: Update tests/leviathan
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested:
+                - commits:
+                    - subject: Add kernel headers artifacts
+                      hash: f15ad5e91cd22ba03193a7dd53512324a09ce87e
+                      body: ""
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                        signed-off-by: Alex Gonzalez <alexg@balena.io>
+                      author: Alex Gonzalez
+                      nested: []
+                  version: leviathan-2.31.103
+                  title: ""
+                  date: 2025-04-08T13:01:01.819Z
+          version: meta-balena-6.5.12
+          title: ""
+          date: 2025-04-08T21:49:57.591Z
+        - commits:
+            - subject: Update tests/leviathan digest to 8b32739
+              hash: eb2866f279a11240267960cf7c63ee874f8c021d
+              body: Update tests/leviathan
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested:
+                - commits:
+                    - subject: Update core/contracts digest to 34033e6
+                      hash: ae8c5539e6df98f2ed8b87ae9b9e712825be3ac5
+                      body: |
+                        Update core/contracts
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: balena-renovate[bot]
+                      nested: []
+                  version: leviathan-2.31.102
+                  title: ""
+                  date: 2025-04-07T16:35:24.638Z
+                - commits:
+                    - subject: Update balena-io/balena-cli to v21.1.9
+                      hash: c80880792af05905fe5581bd7cd5eb9bffe95dcb
+                      body: |
+                        Update balena-io/balena-cli from 21.1.4 to 21.1.9
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: balena-renovate[bot]
+                      nested: []
+                  version: leviathan-2.31.101
+                  title: ""
+                  date: 2025-04-07T14:31:34.378Z
+                - commits:
+                    - subject: Update core/contracts digest to d077818
+                      hash: 13ee8b92a54708ce555f948d68e4cd8eeeda9798
+                      body: |
+                        Update core/contracts
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: balena-renovate[bot]
+                      nested: []
+                  version: leviathan-2.31.100
+                  title: ""
+                  date: 2025-04-02T17:08:31.543Z
+                - commits:
+                    - subject: Update balena-io/balena-cli to v21.1.4
+                      hash: 4b66b13964a25bc960528f956616d0644d256db5
+                      body: |
+                        Update balena-io/balena-cli from 21.1.3 to 21.1.4
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: balena-renovate[bot]
+                      nested: []
+                  version: leviathan-2.31.99
+                  title: ""
+                  date: 2025-04-02T11:45:25.557Z
+                - commits:
+                    - subject: Update balena-io/balena-cli to v21.1.3
+                      hash: 9159d3f488fcb6260b834423f5fe265ef65e3e8a
+                      body: |
+                        Update balena-io/balena-cli from 21.1.0 to 21.1.3
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: balena-renovate[bot]
+                      nested: []
+                  version: leviathan-2.31.98
+                  title: ""
+                  date: 2025-04-01T18:42:52.531Z
+                - commits:
+                    - subject: Update balena-os/leviathan-worker to v2.9.58
+                      hash: 154a4ad9587f3d7bb262f5ae412da9e4a0a11b22
+                      body: |
+                        Update balena-os/leviathan-worker from 2.9.57 to 2.9.58
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: balena-renovate[bot]
+                      nested: []
+                  version: leviathan-2.31.97
+                  title: ""
+                  date: 2025-04-01T17:58:10.260Z
+                - commits:
+                    - subject: Improve device selection logs
+                      hash: 6513668024b0c32e0bbb0e73f002f56fee8a1faf
+                      body: |
+                        Print fleets and worker tag used for device selection.
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                        signed-off-by: Alex Gonzalez <alexg@balena.io>
+                      author: Alex Gonzalez
+                      nested: []
+                  version: leviathan-2.31.96
+                  title: ""
+                  date: 2025-03-27T16:34:07.013Z
+          version: meta-balena-6.5.11
+          title: ""
+          date: 2025-04-08T13:06:52.864Z
+        - commits:
+            - subject: "resin-init-flasher: Sleep before SysRq to let shutdown properly
+                execute if need be"
+              hash: a059180c9ae5dd4551fd977871fa5a54981b53f2
+              body: >
+                There are cases when at the end of the flashing procedure the
+                board will execute
+
+                "shutdown -h now" but sometimes the shutdown procedure is not
+                immediate and the script will
+
+                continue with the next instruction which is to use SysRq and on
+                some hardware this can happen
+
+                right when the previous shutdown command is still running in the
+                background and the effect will
+
+                be that the board does not actually power off in the end (eth
+                carrier is still on, the power
+
+                circuitry is still online and so on.)
+
+
+                To fix this we sleep for 5 seconds to give the system a chance
+                to properly shutdown. If it has
+
+                not been shutdown in 5 seconds then most likely shutdown is
+                broken so we force it via SysRq.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Florin Sarbu <florin@balena.io>
+                signed-off-by: Florin Sarbu <florin@balena.io>
+              author: Florin Sarbu
+              nested: []
+          version: meta-balena-6.5.10
+          title: ""
+          date: 2025-04-08T07:44:56.710Z
+        - commits:
+            - subject: "balena-unique-key: Fix dependency on /home/root/.rnd mount point"
+              hash: fa7215bbef396dfe75f7ebd9ab6b1b5d568fe47a
+              body: >
+                We have changed the mount units to service units a while back
+                but forgot to update a
+
+                depending service to use the new service unit instead of the
+                older mount point unit.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Florin Sarbu <florin@balena.io>
+                signed-off-by: Florin Sarbu <florin@balena.io>
+              author: Florin Sarbu
+              nested: []
+          version: meta-balena-6.5.9
+          title: ""
+          date: 2025-04-03T03:23:17.919Z
+        - commits:
+            - subject: "resin-init-flasher: Do not check exitcode of reboot, halt or poweroff"
+              hash: 467089bfa746cf9801ac137c76aa47e2e8b69989
+              body: >
+                At this moment flasher tries multiple methods to shut down or
+                reboot
+
+                the device after it has finished. The current approach first
+                tries
+
+                a graceful way, e.g. `poweroff`, and checks the exitcode.
+
+                If the command exits with a non-zero status, it then adds a `-f`
+                flag
+
+                to force the behavior. But this doesn't work inside the
+                initramfs,
+
+                because the busybox variant of the commands exits with 0 and
+                does
+
+                nothing (it will register the signal, but only shutdown / reboot
+
+                after the last initscript has been executed). Additionally,
+
+                the systemd variant of the tools, used on fully booted systems,
+
+                never returns to shell, so there is no point checking the
+                exitcode.
+
+
+                This patch makes flasher use the forced variant if the graceful
+
+                attempt returned to shell, regardless of the exitcode.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Michal Toman <michalt@balena.io>
+                signed-off-by: Michal Toman <michalt@balena.io>
+              author: Michal Toman
+              nested: []
+            - subject: Replace the usage of /dev/fd/1 by /proc/self/fd/1
+              hash: 174d17a1789ba7bf3245b61bc768f1c70929ad73
+              body: >
+                Currently we are using /dev/fd/1 as output file for tools that
+                do not
+
+                normally allow using stdout. This works on a fully running
+                system,
+
+                but the /dev/fd symlinks do not exist in the intramfs. This
+                breaks
+
+                the migrator when provisioning secure boot systems.
+
+
+                This patch replaces /dev/fd/1 by /proc/self/fd/1 which is
+                semantically
+
+                the same, but does exist even in the initramfs.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Michal Toman <michalt@balena.io>
+                signed-off-by: Michal Toman <michalt@balena.io>
+              author: Michal Toman
+              nested: []
+            - subject: "balena-init-flasher-efi: look for kernel in both / and /tmp"
+              hash: 9b7f1438dba338c6814ac3dc204df86fd75c36ea
+              body: >
+                One of the things that balena-init-flasher-efi does is that it
+                copies
+
+                the currently running kernel to the EFI partition to serve as
+                2nd stage
+
+                bootloader when secure boot is enabled and the boot partition is
+                split.
+
+                Right now it looks for the kernel in /, which works for
+                provisioning
+
+                from an external drive, but not for the migrator. The migrator
+                copies
+
+                the kernel into /tmp before running flasher, but that directory
+                would
+
+                be skipped by flasher, as it is a different filesystem.
+
+
+                This patch makes flasher look for the kernel in both / and /tmp.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Michal Toman <michalt@balena.io>
+                signed-off-by: Michal Toman <michalt@balena.io>
+              author: Michal Toman
+              nested: []
+          version: meta-balena-6.5.8
+          title: ""
+          date: 2025-04-02T09:48:30.481Z
+        - commits:
+            - subject: "kernel-balena.bbclass: enable multipath TCP"
+              hash: e96b6aebcd77ada85e17aec8e7bfe32855e8a0d7
+              body: |
+                Enable multipath TCP (MPTCP) for all devices by default.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Joseph Kogut <joseph@balena.io>
+                signed-off-by: Joseph Kogut <joseph@balena.io>
+              author: Joseph Kogut
+              nested: []
+          version: meta-balena-6.5.7
+          title: ""
+          date: 2025-04-01T19:43:34.631Z
+        - commits:
+            - subject: "tests: os: modem: Skip modem test if no SIM detected"
+              hash: d2881bf9c6ef8f94e134362fbf786bd89e841bc1
+              body: >
+                This is to allow for the use case of a test device having a hard
+                wired modem, that won't work in the region the test device is
+                hosted in - e.g NA modem soldered on but test device in the EU.
+                In that case we can remove the SIM, and the test will skip
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Ryan Cooke <ryan@balena.io>
+                signed-off-by: Ryan Cooke <ryan@balena.io>
+              author: Ryan Cooke
+              nested: []
+          version: meta-balena-6.5.6
+          title: ""
+          date: 2025-04-01T10:45:56.026Z
+        - commits:
+            - subject: "initrdscripts: Force migration with secure boot enabled"
+              hash: a664a14d3e788f086f8572a312a72e5603faf0db
+              body: >
+                As a part of secure boot hardening, we want to avoid flasher
+                running
+
+                userspace from an external drive, and always provision from
+                memory.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Michal Toman <michalt@balena.io>
+                signed-off-by: Michal Toman <michalt@balena.io>
+              author: Michal Toman
+              nested: []
+          version: meta-balena-6.5.5
+          title: ""
+          date: 2025-03-30T12:42:16.341Z
+        - commits:
+            - subject: "classes: kernel-balena: enable CONFIG_MEMCG_V1 when needed"
+              hash: b7d69ac707a1c1ce58e28033d8a5aeeaaf542c27
+              body: >
+                From kernel v6.11 the memory controller for cgroups v1 has to be
+
+                explicitely selected or its compiled out.
+
+
+                This is required for the engine to apply memory resource
+                constraints.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+          version: meta-balena-6.5.4
+          title: ""
+          date: 2025-03-27T22:08:15.577Z
+        - commits:
+            - subject: Update tests/leviathan digest to c3c6661
+              hash: c141588401621db7581a1e82e8856437dbf1561f
+              body: Update tests/leviathan
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested:
+                - commits:
+                    - subject: Update balena-io/balena-cli to v21
+                      hash: cb8172a1cc6b5357ef2965418de0f7e43f128c6f
+                      body: |
+                        Update balena-io/balena-cli from 20.2.10 to 21.1.0
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: balena-renovate[bot]
+                      nested: []
+                  version: leviathan-2.31.95
+                  title: ""
+                  date: 2025-03-25T12:35:47.604Z
+                - commits:
+                    - subject: Extend selection of devices to run secureboot tests
+                      hash: 4885a0abb6cb379218bcf2ffcd51e1b6a1693cd9
+                      body: >
+                        When FLASHER_SECUREBOOT=1 select only devices that have
+                        a `deviceType-sb`
+
+                        tag, taking into account the device type name could
+                        already have a `-sb`
+
+                        suffix.
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                        signed-off-by: Alex Gonzalez <alexg@balena.io>
+                      author: Alex Gonzalez
+                      nested: []
+                  version: leviathan-2.31.94
+                  title: ""
+                  date: 2025-03-25T10:41:19.499Z
+                - commits:
+                    - subject: Update balena-io/balena-cli to v20.2.10
+                      hash: 83586a4f5f1a6d4c8afeecae4f0fac4862fdef61
+                      body: |
+                        Update balena-io/balena-cli from 20.2.7 to 20.2.10
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: balena-renovate[bot]
+                      nested: []
+                  version: leviathan-2.31.93
+                  title: ""
+                  date: 2025-03-19T22:33:53.213Z
+                - commits:
+                    - subject: Update docker/setup-buildx-action digest to b5ca514
+                      hash: 24966423bd59c7dd1e1fdeb2646784aa53ff4f39
+                      body: |
+                        Update docker/setup-buildx-action
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: balena-renovate[bot]
+                      nested: []
+                  version: leviathan-2.31.92
+                  title: ""
+                  date: 2025-03-19T20:35:11.071Z
+                - commits:
+                    - subject: Update actions/upload-artifact digest to ea165f8
+                      hash: 0f7d4f09cd41c30c1aea88845e59395159f26a1b
+                      body: |
+                        Update actions/upload-artifact
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: balena-renovate[bot]
+                      nested: []
+                  version: leviathan-2.31.91
+                  title: ""
+                  date: 2025-03-19T18:34:55.180Z
+          version: meta-balena-6.5.3
+          title: ""
+          date: 2025-03-27T13:32:24.313Z
+  version: 6.5.48
+  title: ""
+  date: 2025-08-06T19:24:40.012Z
+- commits:
     - subject: Update balena-yocto-scripts to a78462c0fcb2f580b80734d9a0900cc72fa180f2
       hash: 859679fdbb36f6e94c8b90dfb951c0c466a7d0ea
       body: Update balena-yocto-scripts
