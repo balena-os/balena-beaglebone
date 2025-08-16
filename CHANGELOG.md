@@ -1,6 +1,31 @@
 Change log
 -----------
 
+# v6.5.51
+## (2025-08-16)
+
+
+<details>
+<summary> Update layers/meta-balena to 5a73334fc661f78a2163d3c520b804f80890d480 [balena-renovate[bot]] </summary>
+
+> ## meta-balena-6.5.51
+> ### (2025-08-15)
+> 
+> * Updated contributing-device-support.md Part of https://balena.fibery.io/Work/Project/Update-Device-Support-Docs-1641 [Ryan]
+> 
+> ## meta-balena-6.5.50
+> ### (2025-08-13)
+> 
+> * wpa_supplicant: Enable SAE to support WPA3 personal [Michal Toman]
+> 
+> ## meta-balena-6.5.49
+> ### (2025-08-11)
+> 
+> * kernel-balena.bbclass: Remove references to disabling CONFIG_RTL8192CU [Florin Sarbu]
+> 
+
+</details>
+
 # v6.5.48
 ## (2025-08-06)
 
