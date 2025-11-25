@@ -1,4 +1,92 @@
 - commits:
+    - subject: Update balena-yocto-scripts to 2b1cf90fb0333b1d8cdb2c3dbf041fd109e563a2
+      hash: ffca76d8fe252512a86c0afabb101197df8c484a
+      body: Update balena-yocto-scripts
+      footer:
+        Changelog-entry: Update balena-yocto-scripts to 2b1cf90fb0333b1d8cdb2c3dbf041fd109e563a2
+        changelog-entry: Update balena-yocto-scripts to 2b1cf90fb0333b1d8cdb2c3dbf041fd109e563a2
+      author: balena-renovate[bot]
+      nested:
+        - commits:
+            - subject: "workflows: Add Generic x86_64 (GPT) and Generic AARCH64 device tests"
+              hash: 275e4dd5f5cef11e410c9713cf8e6ad23ec45071
+              body: |
+                These provide better test coverage of the workflow, including
+                - signed/unsigned
+                - aarch64/amd64
+                - AMI deploy
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Kyle Harding <kyle@balena.io>
+                signed-off-by: Kyle Harding <kyle@balena.io>
+              author: Kyle Harding
+              nested: []
+            - subject: "Dockerfile_yocto-build-env: Avoid balena CLI duplicate install"
+              hash: 269850acff96b92c871756555d05ee4178c76aa4
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Kyle Harding <kyle@balena.io>
+                signed-off-by: Kyle Harding <kyle@balena.io>
+              author: Kyle Harding
+              nested: []
+          version: balena-yocto-scripts-1.38.96
+          title: ""
+          date: 2025-11-24T17:20:16.243Z
+        - commits:
+            - subject: Update actions/create-github-app-token action to v2.2.0
+              hash: f6d1b81b5228dcbfc748dc76e50f26609349db5e
+              body: |
+                Update actions/create-github-app-token from 2.1.4 to 2.2.0
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested: []
+          version: balena-yocto-scripts-1.38.95
+          title: ""
+          date: 2025-11-22T12:52:58.859Z
+        - commits:
+            - subject: Update actions/checkout action to v6
+              hash: 94a11b9ac52beea5c8ad31f69ab86f9fe00423ac
+              body: |
+                Update actions/checkout from 5.0.0 to 6.0.0
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested: []
+            - subject: Update balena-io/balena-cli to v23.2.0
+              hash: 248b6afef2df0b6cba918edadb805200d3063368
+              body: |
+                Update balena-io/balena-cli from 23.1.2 to 23.2.0
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested: []
+          version: balena-yocto-scripts-1.38.94
+          title: ""
+          date: 2025-11-22T09:43:26.840Z
+        - commits:
+            - subject: Update aws/aws-cli to v2.32.3
+              hash: def39fbf1a9cb409e275234764db7cb1a295f030
+              body: |
+                Update aws/aws-cli from 2.32.2 to 2.32.3
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested: []
+          version: balena-yocto-scripts-1.38.93
+          title: ""
+          date: 2025-11-22T01:31:41.174Z
+  version: 6.8.0+rev1
+  title: ""
+  date: 2025-11-25T15:00:49.395Z
+- commits:
     - subject: Update layers/meta-balena to 37b7e9efbdbcab4bc487993f5736ec4fe6974f1c
       hash: c9dfb08fadf1c2e7ed42fc82925834c6c8dd82ec
       body: Update layers/meta-balena
