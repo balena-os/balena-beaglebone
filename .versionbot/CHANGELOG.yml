@@ -1,4 +1,18 @@
 - commits:
+    - subject: "workflows: remove automatic triggers on discontinued DT workflows"
+      hash: e1a0f104129e230672728cbdf5dd4eaa07c5f0f1
+      body: ""
+      footer:
+        Changelog-entry: "workflows: remove automatic triggers on discontinued DT workflows"
+        changelog-entry: "workflows: remove automatic triggers on discontinued DT workflows"
+        Signed-off-by: Ryan Cooke <ryan@balena.io>
+        signed-off-by: Ryan Cooke <ryan@balena.io>
+      author: Ryan Cooke
+      nested: []
+  version: 6.8.0+rev4
+  title: ""
+  date: 2025-11-26T20:54:24.300Z
+- commits:
     - subject: Update contracts to fc76558c384c10bf228b10909eca346ee9d6b564
       hash: 0ec66271ce86e08888cf045506bf855ca5140585
       body: Update contracts
