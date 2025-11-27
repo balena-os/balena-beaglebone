@@ -1,4 +1,20 @@
 - commits:
+    - subject: "packagegroup-balena-connectivity: Don't install ath10k firmware"
+      hash: c2f0e7b339c85c0701d8994778163bdfcc0cbde1
+      body: >
+        These devices don't need this firmware which will now be brought in by
+        meta-balena PR 3608 by default.
+      footer:
+        Changelog-entry: "packagegroup-balena-connectivity: Don't install ath10k firmware"
+        changelog-entry: "packagegroup-balena-connectivity: Don't install ath10k firmware"
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru
+      nested: []
+  version: 6.8.0+rev5
+  title: ""
+  date: 2025-11-27T12:28:52.713Z
+- commits:
     - subject: "workflows: remove automatic triggers on discontinued DT workflows"
       hash: e1a0f104129e230672728cbdf5dd4eaa07c5f0f1
       body: ""

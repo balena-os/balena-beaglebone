@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v6.8.0+rev5
+## (2025-11-27)
+
+* packagegroup-balena-connectivity: Don't install ath10k firmware [Alexandru]
+
 # v6.8.0+rev4
 ## (2025-11-26)
 
