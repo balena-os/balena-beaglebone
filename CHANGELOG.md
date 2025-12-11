@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v6.8.0+rev6
+## (2025-12-11)
+
+* Prepare linux-firmare packaging for firmware compression [Florin Sarbu]
+
 # v6.8.0+rev5
 ## (2025-11-27)
 

@@ -1,4 +1,18 @@
 - commits:
+    - subject: Prepare linux-firmare packaging for firmware compression
+      hash: 20e762787face3cfdebc0ae6f0a807e6826f1fd2
+      body: ""
+      footer:
+        Changelog-entry: Prepare linux-firmare packaging for firmware compression
+        changelog-entry: Prepare linux-firmare packaging for firmware compression
+        Signed-off-by: Florin Sarbu <florin@balena.io>
+        signed-off-by: Florin Sarbu <florin@balena.io>
+      author: Florin Sarbu
+      nested: []
+  version: 6.8.0+rev6
+  title: ""
+  date: 2025-12-11T16:36:55.070Z
+- commits:
     - subject: "packagegroup-balena-connectivity: Don't install ath10k firmware"
       hash: c2f0e7b339c85c0701d8994778163bdfcc0cbde1
       body: >
