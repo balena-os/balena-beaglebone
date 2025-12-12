@@ -1,4 +1,91 @@
 - commits:
+    - subject: Update balena-yocto-scripts to 8cbefeedbc99bb8a29a28e9540dee75e216b172f
+      hash: a7efe30f818a9c04d802e708f5e7c3cbee298a88
+      body: Update balena-yocto-scripts
+      footer:
+        Changelog-entry: Update balena-yocto-scripts to 8cbefeedbc99bb8a29a28e9540dee75e216b172f
+        changelog-entry: Update balena-yocto-scripts to 8cbefeedbc99bb8a29a28e9540dee75e216b172f
+      author: balena-renovate[bot]
+      nested:
+        - commits:
+            - subject: Update aws/aws-cli to v2.32.15
+              hash: b151aac8b6c210e63225a6b554d36b19f1bdcae5
+              body: |
+                Update aws/aws-cli from 2.32.8 to 2.32.15
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested: []
+          version: balena-yocto-scripts-1.39.1
+          title: ""
+          date: 2025-12-11T23:28:40.309Z
+        - commits:
+            - subject: verify that keys from SIGN_KMOD_KEY_APPEND ends up properly in kernel
+              hash: 25cbd8c85b7acc45c3d117b2a7f260b6e67419d1
+              body: ""
+              footer:
+                Change-type: minor
+                change-type: minor
+                Signed-off-by: Yann CARDAILLAC <yann.cardaillac@balena.io>
+                signed-off-by: Yann CARDAILLAC <yann.cardaillac@balena.io>
+              author: Yann CARDAILLAC
+              nested: []
+          version: balena-yocto-scripts-1.39.0
+          title: ""
+          date: 2025-12-03T14:35:00.598Z
+        - commits:
+            - subject: Update aws/aws-cli to v2.32.8
+              hash: ec3eb613943c1c473191427c8b7e90b6262850ae
+              body: |
+                Update aws/aws-cli from 2.32.4 to 2.32.8
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested: []
+          version: balena-yocto-scripts-1.38.99
+          title: ""
+          date: 2025-12-03T03:21:19.732Z
+        - commits:
+            - subject: Update balena-io/balena-cli to v23.2.2
+              hash: 8a720c985c61482c8f432c7e984ea2abc48aa85a
+              body: |
+                Update balena-io/balena-cli from 23.2.0 to 23.2.2
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested: []
+          version: balena-yocto-scripts-1.38.98
+          title: ""
+          date: 2025-12-02T19:23:59.478Z
+        - commits:
+            - subject: Update GitHub Actions
+              hash: cba31254b3639ad0340d02ae5090ee3e2788ec5f
+              body: |
+                Update aws-actions/configure-aws-credentials from 5.1.0 to 5.1.1
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested: []
+            - subject: Update aws/aws-cli to v2.32.4
+              hash: 5b1bf73433b20a3b27a132d0d8e501b5cca68a3c
+              body: |
+                Update aws/aws-cli from 2.32.3 to 2.32.4
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested: []
+          version: balena-yocto-scripts-1.38.97
+          title: ""
+          date: 2025-11-29T04:55:21.586Z
+  version: 6.8.0+rev7
+  title: ""
+  date: 2025-12-12T07:55:04.269Z
+- commits:
     - subject: Prepare linux-firmare packaging for firmware compression
       hash: 20e762787face3cfdebc0ae6f0a807e6826f1fd2
       body: ""
