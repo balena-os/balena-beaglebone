@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v6.10.2+rev1
+## (2025-12-13)
+
+* fix meta-ti submodule being ref using http [Edwin Joassart]
+
 # v6.10.2
 ## (2025-12-13)
 

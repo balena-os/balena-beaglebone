@@ -1,4 +1,17 @@
 - commits:
+    - subject: fix meta-ti submodule being ref using http
+      hash: 250eed6f1878fbf9ccfbd2c8548a0b24fb1eeec3
+      body: |
+        https://balena.fibery.io/Security/Vulnerability_or_Exposure/balena-beaglebone-repo-refers-meta-ti-submodules-over-http-82
+      footer:
+        Changelog-entry: fix meta-ti submodule being ref using http
+        changelog-entry: fix meta-ti submodule being ref using http
+      author: Edwin Joassart
+      nested: []
+  version: 6.10.2+rev1
+  title: ""
+  date: 2025-12-13T23:33:53.141Z
+- commits:
     - subject: Update layers/meta-balena to f90bf403b93602fddf32f0cb4081f9b58864cf34
       hash: 3848d23d0c137ac46fdb982a79ae4545600fd19b
       body: Update layers/meta-balena
