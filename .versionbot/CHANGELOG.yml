@@ -1,4 +1,30 @@
 - commits:
+    - subject: Update layers/meta-balena to 560b3c5c44d1c99dfb8fdd2cb790d28e366374f1
+      hash: bce55ec213b86f398c81af294505b60d57e99abd
+      body: Update layers/meta-balena
+      footer:
+        Changelog-entry: Update layers/meta-balena to 560b3c5c44d1c99dfb8fdd2cb790d28e366374f1
+        changelog-entry: Update layers/meta-balena to 560b3c5c44d1c99dfb8fdd2cb790d28e366374f1
+      author: balena-renovate[bot]
+      nested:
+        - commits:
+            - subject: remove disk watchdog logs
+              hash: 426c342e1c3ee87b752c88ef6805da093249bd51
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Yann CARDAILLAC <yann.cardaillac@balena.io>
+                signed-off-by: Yann CARDAILLAC <yann.cardaillac@balena.io>
+              author: Yann CARDAILLAC
+              nested: []
+          version: meta-balena-6.10.3
+          title: ""
+          date: 2025-12-15T18:38:40.829Z
+  version: 6.10.3
+  title: ""
+  date: 2025-12-19T21:27:14.861Z
+- commits:
     - subject: Update balena-yocto-scripts to d8c7bbeedc15361a8921527539142eb4604457fe
       hash: bf2cec09ae17a21eeda38c2cfc877a3f9674c3cf
       body: Update balena-yocto-scripts
