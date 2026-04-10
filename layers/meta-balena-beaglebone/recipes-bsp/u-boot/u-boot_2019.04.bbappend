@@ -18,10 +18,6 @@ SRC_URI += " \
 	file://0006-Fix-boot-with-cape.patch \
 "
 
-SRC_URI:append:beaglebone-pocket = " \
-	file://am335x_evm-autoboot-zero.patch \
-"
-
 SRC_URI:append:beagleboard-xm = " \
 	file://0001-all-mem.patch \
 	file://beagle-xm--Balena-environment.patch \
