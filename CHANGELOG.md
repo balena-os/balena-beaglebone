@@ -1,6 +1,41 @@
 Change log
 -----------
 
+# v6.12.5+rev2
+## (2026-04-12)
+
+
+<details>
+<summary> Update contracts to 9f5b551e773cd8143cf5d4e86407238c2a1a20e9 [balena-renovate[bot]] </summary>
+
+> ## contracts-2.0.142
+> ### (2026-04-09)
+> 
+> * Update iot-gate-imx8plus-d1d8 to remove Wifi and BT [Alexandru Costache]
+> 
+> ## contracts-2.0.141
+> ### (2026-03-16)
+> 
+> * iot-gate-imx8plus: replace dram size range with explicit dram sizes [Alex Gonzalez]
+> 
+> ## contracts-2.0.140
+> ### (2026-03-11)
+> 
+> * iot-gate-imx8plus-d1d8: Enable bluetooth and wifi [Florin Sarbu]
+> 
+> ## contracts-2.0.139
+> ### (2026-03-11)
+> 
+> * ucm-imx93: Set wifi and bt to false [Florin Sarbu]
+> 
+> ## contracts-2.0.138
+> ### (2026-03-09)
+> 
+> * contracts/raspberrypi5: Update device name to mention CM5 support [Alexandru]
+> 
+
+</details>
+
 # v6.12.5+rev1
 ## (2026-04-10)
 
