@@ -1,6 +1,31 @@
 Change log
 -----------
 
+# v6.12.11
+## (2026-04-23)
+
+
+<details>
+<summary> Update layers/meta-balena to cc6d368d0efde0552b2cab398ea005848cc51d6c [balena-renovate[bot]] </summary>
+
+> ## meta-balena-6.12.11
+> ### (2026-04-23)
+> 
+> * tests: cloud: Stop waiting for healthy supervisor in cloud suite before preload test [Ryan Cooke]
+> 
+> ## meta-balena-6.12.10
+> ### (2026-04-21)
+> 
+> * balena-bootloader.bbclass: Add required CONFIG_NLS_ISO8859_1 as built-in [Florin Sarbu]
+> 
+> ## meta-balena-6.12.9
+> ### (2026-04-16)
+> 
+> * Fix modemmanager build on dunfell [Florin Sarbu]
+> 
+
+</details>
+
 # v6.12.8
 ## (2026-04-14)
 

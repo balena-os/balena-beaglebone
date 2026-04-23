@@ -1,4 +1,74 @@
 - commits:
+    - subject: Update layers/meta-balena to cc6d368d0efde0552b2cab398ea005848cc51d6c
+      hash: 29ffd573e4c087e87f694218ce0287b07be7d1d7
+      body: Update layers/meta-balena
+      footer:
+        Changelog-entry: Update layers/meta-balena to cc6d368d0efde0552b2cab398ea005848cc51d6c
+        changelog-entry: Update layers/meta-balena to cc6d368d0efde0552b2cab398ea005848cc51d6c
+      author: balena-renovate[bot]
+      nested:
+        - commits:
+            - subject: "tests: cloud: Stop waiting for healthy supervisor in cloud suite
+                before preload test"
+              hash: 6afa76bd2f4cd1a342a3dd2339976a380e40b607
+              body: >
+                In the cloud suite we provision the device with no internet - to
+                test that the prloaded app starts on first boot without api
+                access. Supervisor 17.6.26 fixed a supervisor connectivity
+                healthcheck, that causes the supervisor to now correctly report
+                as non healthy if there is no connectivity. This caused a
+                failure in the cloud suite where we were waiting for a healthy
+                supervisor to continue to the preloaded app test, but as the
+                internet is disabled until we complete that test, we were
+                waiting until the test timed out.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Ryan Cooke <ryan@balena.io>
+                signed-off-by: Ryan Cooke <ryan@balena.io>
+              author: Ryan Cooke
+              nested: []
+          version: meta-balena-6.12.11
+          title: ""
+          date: 2026-04-23T05:56:40.348Z
+        - commits:
+            - subject: "balena-bootloader.bbclass: Add required CONFIG_NLS_ISO8859_1 as
+                built-in"
+              hash: 59ff5ba6b5583e14d7d05548930ccfa4a1f3ef92
+              body: |
+                Without this config the boot fails with:
+
+                FAT-fs (mmcblk0p1): IO charset iso8859-1 not found
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Florin Sarbu <florin@balena.io>
+                signed-off-by: Florin Sarbu <florin@balena.io>
+              author: Florin Sarbu
+              nested: []
+          version: meta-balena-6.12.10
+          title: ""
+          date: 2026-04-21T21:38:05.157Z
+        - commits:
+            - subject: Fix modemmanager build on dunfell
+              hash: e945ee3d1610d387a7e29b482b678d9a38d72b9d
+              body: ""
+              footer:
+                Changelog-entry: Fix modemmanager build on dunfell
+                changelog-entry: Fix modemmanager build on dunfell
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Florin Sarbu <florin@balena.io>
+                signed-off-by: Florin Sarbu <florin@balena.io>
+              author: Florin Sarbu
+              nested: []
+          version: meta-balena-6.12.9
+          title: ""
+          date: 2026-04-16T17:50:24.850Z
+  version: 6.12.11
+  title: ""
+  date: 2026-04-23T12:30:12.342Z
+- commits:
     - subject: Update layers/meta-balena to f2d24fa61fe64c6f8b77c4db7b160669c78c41ff
       hash: 8dfb146fb98a78ec2540a244555cad8d7cc27613
       body: Update layers/meta-balena
