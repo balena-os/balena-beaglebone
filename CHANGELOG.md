@@ -1,6 +1,50 @@
 Change log
 -----------
 
+# v6.12.11+rev1
+## (2026-06-03)
+
+
+<details>
+<summary> Update balena-yocto-scripts to 6417d4093c8ef651c06ca1134cb4396e80deedff [balena-renovate[bot]] </summary>
+
+> ## balena-yocto-scripts-1.41.0
+> ### (2026-06-03)
+> 
+> * Add hostapp composition build pipeline [Kyle Harding]
+> 
+> ## balena-yocto-scripts-1.40.0
+> ### (2026-06-02)
+> 
+> * Make release asset upload step required [Kyle Harding]
+> 
+> ## balena-yocto-scripts-1.39.35
+> ### (2026-05-16)
+> 
+> * build/barys: Add Wrynose build support [Alexandru Costache]
+> 
+> ## balena-yocto-scripts-1.39.34
+> ### (2026-05-07)
+> 
+> * Dockerfile_yocto-build-env: Switch to docker-ce, pin 28.5.2 [Kyle Harding]
+> 
+> ## balena-yocto-scripts-1.39.33
+> ### (2026-05-01)
+> 
+> * yocto-build-deploy.yml: Wait for self-CI helper image before Build [Kyle Harding]
+> * yocto-build-deploy.yml: Override helper image tag for self-CI [Kyle Harding]
+> * Dockerfile_yocto-build-env: Pin docker.io to 27.x [Kyle Harding]
+> 
+> ## balena-yocto-scripts-1.39.32
+> ### (Invalid date)
+> 
+> * Set the default source-mirror environment to balena-production.us-east-1 [Kyle Harding]
+> * Backup shared-downloads to S3 on build failure [Kyle Harding]
+> * .github/workflows/yocto-build-deploy.yml: Add the rust crates to MIRRORS [Florin Sarbu]
+> 
+
+</details>
+
 # v6.12.11
 ## (2026-04-23)
 
