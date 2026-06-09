@@ -1,6 +1,158 @@
 Change log
 -----------
 
+# v7.3.0
+## (2026-06-09)
+
+
+<details>
+<summary> Update layers/meta-balena to da9190fabf525a37eb1ac781e4a1664b386066d4 [balena-renovate[bot]] </summary>
+
+> ## meta-balena-7.3.0
+> ### (2026-06-09)
+> 
+> * tests: pieeprom test raspberrypi4 and CM4 [Yann CARDAILLAC]
+> 
+> ## meta-balena-7.2.1
+> ### (2026-06-05)
+> 
+> * hostapp.yml: Add root hostapp composition for all boards [Kyle Harding]
+> 
+> ## meta-balena-7.2.0
+> ### (2026-05-29)
+> 
+> * balena: Remove aufs as a supported storage driver [Kyle Harding]
+> * balena: Remove aufs-to-overlay2 storage migration drop-in [Kyle Harding]
+> * go: Upgrade to 1.24.6 from upstream walnascar recipes [Kyle Harding]
+> * balena: Update balena engine to v25.0.14 [Kyle Harding]
+> 
+> ## meta-balena-7.1.1
+> ### (2026-05-28)
+> 
+> * Remove some docs in favor of moving them directly to the product docs [Matthew Yarmolinsky]
+> 
+> ## meta-balena-7.1.0
+> ### (2026-05-27)
+> 
+> * remove all bins from nss to save some place [Yann CARDAILLAC]
+> 
+> ## meta-balena-7.0.7
+> ### (2026-05-26)
+> 
+> 
+> <details>
+> <summary> Update tests/leviathan digest to 053da9e [balena-renovate[bot]] </summary>
+> 
+>> ### leviathan-2.36.111
+>> #### (2026-05-21)
+>> 
+>> * Update balena-io/balena-cli to v25 [balena-renovate[bot]]
+>> 
+>> ### leviathan-2.36.110
+>> #### (2026-05-20)
+>> 
+>> * e2e: probe supervisor /ping instead of /v1/healthy [Kyle Harding]
+>> 
+>> ### leviathan-2.36.109
+>> #### (2026-04-27)
+>> 
+>> * Update Lock file maintenance [balena-renovate[bot]]
+>> 
+>> ### leviathan-2.36.108
+>> #### (2026-04-22)
+>> 
+>> * Update core/contracts digest to 7c3bf64 [balena-renovate[bot]]
+>> 
+>> ### leviathan-2.36.107
+>> #### (2026-04-20)
+>> 
+>> * Update Lock file maintenance [balena-renovate[bot]]
+>> 
+> 
+> </details>
+> 
+> 
+> ## meta-balena-7.0.6
+> ### (2026-05-25)
+> 
+> * wpa_supplicant: enable OWE networks [Michal Toman]
+> 
+> ## meta-balena-7.0.5
+> ### (2026-05-21)
+> 
+> * image-balena: include size of boot directory in HUP check [Alex Gonzalez]
+> 
+> ## meta-balena-7.0.4
+> ### (2026-05-20)
+> 
+> 
+> <details>
+> <summary> Update balena-supervisor to v17.8.2 [balena-renovate[bot]] </summary>
+> 
+>> ### balena-supervisor-17.8.2
+>> #### (2026-05-19)
+>> 
+>> * Pin back to Node 22 / Alpine 3.22 [Christina Ying Wang]
+>> 
+>> ### balena-supervisor-17.8.1
+>> #### (2026-05-13)
+>> 
+>> * Update systeminformation to v5.31.6 [SECURITY] [balena-renovate[bot]]
+>> 
+>> ### balena-supervisor-17.8.0
+>> #### (2026-05-01)
+>> 
+>> * Add a `PATCH /v2/device/tags` endpoint to tell the supervisor device tags to report [Pagan Gazzard]
+>> 
+>> ### balena-supervisor-17.7.5
+>> #### (Invalid date)
+>> 
+>> * Trim whitespaces around dtparam input values [Christina Ying Wang]
+>> * Fix dtparam parsing for comma-separated values [Christina Ying Wang]
+>> 
+>> ### balena-supervisor-17.7.4
+>> #### (2026-04-29)
+>> 
+>> * Fix the network connectivity check [Felipe Lalanne]
+>> 
+>> ### balena-supervisor-17.7.3
+>> #### (2026-04-20)
+>> 
+>> * Fix error propagation is fsUtils.touch [Pagan Gazzard]
+>> * Convert code to async/await [Pagan Gazzard]
+>> 
+>> ### balena-supervisor-17.7.2
+>> #### (2026-04-14)
+>> 
+>> * Firewall: avoid `exports.` to improve type-checking [Pagan Gazzard]
+>> 
+> 
+> </details>
+> 
+> 
+> ## meta-balena-7.0.3
+> ### (2026-05-13)
+> 
+> * plymouth: start after udev settle [Michal Toman]
+> 
+> ## meta-balena-7.0.2
+> ### (2026-05-11)
+> 
+> * kernel-balena: address CVE-2026-43284 [Alex Gonzalez]
+> 
+> ## meta-balena-7.0.1
+> ### (2026-05-08)
+> 
+> * kernel-balena: address CVE-2026-31431 [Alex Gonzalez]
+> 
+> ## meta-balena-7.0.0
+> ### (2026-04-24)
+> 
+> * mobynit: update to v1.0.0 [Alex Gonzalez]
+> 
+
+</details>
+
 # v6.12.11+rev1
 ## (2026-06-03)
 

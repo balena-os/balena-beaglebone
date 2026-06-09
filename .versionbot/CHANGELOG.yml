@@ -1,4 +1,600 @@
 - commits:
+    - subject: Update layers/meta-balena to da9190fabf525a37eb1ac781e4a1664b386066d4
+      hash: 859ba94c3dc6f077994ec21789008e30674e4079
+      body: Update layers/meta-balena
+      footer:
+        Changelog-entry: Update layers/meta-balena to da9190fabf525a37eb1ac781e4a1664b386066d4
+        changelog-entry: Update layers/meta-balena to da9190fabf525a37eb1ac781e4a1664b386066d4
+      author: balena-renovate[bot]
+      nested:
+        - commits:
+            - subject: "tests: pieeprom test raspberrypi4 and CM4"
+              hash: c4589cf31d1d245a2fc19ad8809c2ae35c88c927
+              body: ""
+              footer:
+                Change-type: minor
+                change-type: minor
+                Signed-off-by: Yann CARDAILLAC <yann.cardaillac@balena.io>
+                signed-off-by: Yann CARDAILLAC <yann.cardaillac@balena.io>
+              author: Yann CARDAILLAC
+              nested: []
+          version: meta-balena-7.3.0
+          title: ""
+          date: 2026-06-09T11:50:41.226Z
+        - commits:
+            - subject: "hostapp.yml: Add root hostapp composition for all boards"
+              hash: 487eaa85a5b8edb115cf2b8b33005155f8df4760
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Kyle Harding <kyle@balena.io>
+                signed-off-by: Kyle Harding <kyle@balena.io>
+              author: Kyle Harding
+              nested: []
+          version: meta-balena-7.2.1
+          title: ""
+          date: 2026-06-05T13:27:23.444Z
+        - commits:
+            - subject: "balena: Remove aufs as a supported storage driver"
+              hash: b95114ed07adc01d510371e705a76d0a8d745560
+              body: >
+                Engine v25 drops aufs support. Update the sanity check to only
+                accept
+
+                overlay2, remove the conditional aufs-util-auplink dependency
+                from the
+
+                packagegroup, and fix the stale comment in balena-os.inc.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Kyle Harding <kyle@balena.io>
+                signed-off-by: Kyle Harding <kyle@balena.io>
+              author: Kyle Harding
+              nested: []
+            - subject: "balena: Remove aufs-to-overlay2 storage migration drop-in"
+              hash: 493c5d406a79eb22412b337e0e546e962c8004ce
+              body: >
+                Engine v25 removes aufs support entirely, making the
+
+                BALENA_MIGRATE_OVERLAY env var a no-op. Remove the systemd
+                drop-in
+
+                that set it and its install logic from the recipe.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Kyle Harding <kyle@balena.io>
+                signed-off-by: Kyle Harding <kyle@balena.io>
+              author: Kyle Harding
+              nested: []
+            - subject: "go: Upgrade to 1.24.6 from upstream walnascar recipes"
+              hash: c13d7b3f15cfe5b80f2efcf669735c3c89a557cb
+              body: >
+                Balena engine v25 requires Go 1.23+. OE-Core skipped 1.23
+                entirely
+
+                (scarthgap=1.22, walnascar=1.24), so we adopt the
+                upstream-validated
+
+                walnascar Go 1.24.6 recipes rather than hand-rolling untested
+                1.23
+
+                patches.
+
+
+                Changes from scarthgap 1.22.12:
+
+                - New source checksums and license md5 for Go 1.24.6
+
+                - Remove GOROOT_FINAL (Go 1.24 uses dynamic GOROOT discovery)
+
+                - Add -trimpath to shared lib install for reproducibility
+
+                - Add patch 0010 (GOROOT trimpath fix for shared builds)
+
+                - Add patch 6d265b (remove forced binutils-gold on aarch64)
+
+                - Drop 14 CVE patches (all fixed upstream in 1.24.6)
+
+                - Update line offsets in 9 existing patches
+
+
+                go-crosssdk.inc and go-cross-canadian.inc are intentionally kept
+                at
+
+                scarthgap versions to preserve SDK dependency naming
+                compatibility.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Kyle Harding <kyle@balena.io>
+                signed-off-by: Kyle Harding <kyle@balena.io>
+              author: Kyle Harding
+              nested: []
+            - subject: "balena: Update balena engine to v25.0.14"
+              hash: 75466c69edde68993e58512f94bd6e367d376cf3
+              body: |
+                This release removes support for aufs to overlay migration.
+              footer:
+                Change-type: minor
+                change-type: minor
+                Signed-off-by: Kyle Harding <kyle@balena.io>
+                signed-off-by: Kyle Harding <kyle@balena.io>
+              author: Kyle Harding
+              nested: []
+          version: meta-balena-7.2.0
+          title: ""
+          date: 2026-05-29T21:39:00.695Z
+        - commits:
+            - subject: Remove some docs in favor of moving them directly to the product docs
+              hash: 48b0fc4b2fff441067d9601219cef747b431c74d
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: Matthew Yarmolinsky
+              nested: []
+          version: meta-balena-7.1.1
+          title: ""
+          date: 2026-05-28T14:15:39.228Z
+        - commits:
+            - subject: remove all bins from nss to save some place
+              hash: e7124736f403316e53f373ef61c7cd06773e06d3
+              body: ""
+              footer:
+                Change-type: minor
+                change-type: minor
+                Signed-off-by: Yann CARDAILLAC <yann.cardaillac@balena.io>
+                signed-off-by: Yann CARDAILLAC <yann.cardaillac@balena.io>
+              author: Yann CARDAILLAC
+              nested: []
+          version: meta-balena-7.1.0
+          title: ""
+          date: 2026-05-27T13:55:53.166Z
+        - commits:
+            - subject: Update tests/leviathan digest to 053da9e
+              hash: 078703410e0531f05fc4b9c74f9ec41523908950
+              body: Update tests/leviathan
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested:
+                - commits:
+                    - subject: Update balena-io/balena-cli to v25
+                      hash: 21225003a53c571f4c4d1d3396dca862f8ad4703
+                      body: |
+                        Update balena-io/balena-cli from 22.5.5 to 25.1.6
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: balena-renovate[bot]
+                      nested: []
+                  version: leviathan-2.36.111
+                  title: ""
+                  date: 2026-05-21T13:58:26.221Z
+                - commits:
+                    - subject: "e2e: probe supervisor /ping instead of /v1/healthy"
+                      hash: 8d1d5e8b554e0b63ed1320244543e4d114393436
+                      body: >
+                        balena-supervisor v17.6.26 fixed an inverted boolean in
+                        the connectivity
+
+                        healthcheck (balena-os/balena-supervisor@22e4d646), so
+                        /v1/healthy now
+
+                        correctly returns 500 when the device isn't actively
+                        reporting state to
+
+                        balena-cloud. The QEMU DUT in this suite is provisioned
+                        in local mode and
+
+                        isn't registered to a fleet, so the supervisor never
+                        establishes that
+
+                        report, deviceState.connected stays false, and the
+                        post-fix supervisor
+
+                        honestly reports unhealthy. This has blocked every
+                        leviathan-worker PR
+
+                        since 2026-04-30.
+
+
+                        /ping is what this test actually wants: unauthenticated,
+                        no internal
+
+                        checks, returns "OK" if the supervisor process is up.
+                        meta-balena did
+
+                        the same thing in tests/suites/cloud/suite.js after
+                        hitting this on
+
+                        2026-04-22 (balena-os/meta-balena@6afa76bd).
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: Kyle Harding <kyle@balena.io>
+                        signed-off-by: Kyle Harding <kyle@balena.io>
+                      author: Kyle Harding
+                      nested: []
+                  version: leviathan-2.36.110
+                  title: ""
+                  date: 2026-05-20T18:40:21.433Z
+                - commits:
+                    - subject: Update Lock file maintenance
+                      hash: 70f8357cca3a4a73911c2e049be08c570a0e2bfb
+                      body: |
+                        Update 
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: balena-renovate[bot]
+                      nested: []
+                  version: leviathan-2.36.109
+                  title: ""
+                  date: 2026-04-27T01:32:31.752Z
+                - commits:
+                    - subject: Update core/contracts digest to 7c3bf64
+                      hash: e24bce4eabaae877a5e9497dd8e5777bf10c66bf
+                      body: |
+                        Update core/contracts
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: balena-renovate[bot]
+                      nested: []
+                  version: leviathan-2.36.108
+                  title: ""
+                  date: 2026-04-22T09:23:40.879Z
+                - commits:
+                    - subject: Update Lock file maintenance
+                      hash: fc31934417d90ee46827e6c75c028022c420922f
+                      body: |
+                        Update 
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: balena-renovate[bot]
+                      nested: []
+                  version: leviathan-2.36.107
+                  title: ""
+                  date: 2026-04-20T01:29:14.347Z
+          version: meta-balena-7.0.7
+          title: ""
+          date: 2026-05-26T13:41:57.157Z
+        - commits:
+            - subject: "wpa_supplicant: enable OWE networks"
+              hash: 0e38fdbb14224c7ab537055ae8beef809617f84c
+              body: >
+                This patch adds two config options necessary to enable
+                Opportunistic
+
+                Wireless Encryption (open networks with client isolation). The
+                main
+
+                thing is CONFIG_OWE, which enables the feature.
+                CONFIG_IEEE80211W adds
+
+                management frame protection, which is optional in OWE, but we
+                expect
+
+                it to be necessary on most networks. It's also mandatory for
+                other WPA3
+
+                family protocols such as SAE.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Michal Toman <michalt@balena.io>
+                signed-off-by: Michal Toman <michalt@balena.io>
+              author: Michal Toman
+              nested: []
+          version: meta-balena-7.0.6
+          title: ""
+          date: 2026-05-25T06:22:47.338Z
+        - commits:
+            - subject: "image-balena: include size of boot directory in HUP check"
+              hash: 46af76930d0c23200d96350e26063672f0215aaa
+              body: >
+                As part of hostapp-update, after pulling the container image
+                into the
+
+                alternative root partition, a volume is created with the
+                contents of
+
+                `/boot`. If there is no space left for this, HUP will fail on
+                the
+
+                field with no space left on device.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+          version: meta-balena-7.0.5
+          title: ""
+          date: 2026-05-21T14:53:59.471Z
+        - commits:
+            - subject: Update balena-supervisor to v17.8.2
+              hash: 69657084a424d2002dbd249b397b0cbcdb813d12
+              body: |
+                Update balena-supervisor from 17.7.1 to 17.8.2
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested:
+                - commits:
+                    - subject: Pin back to Node 22 / Alpine 3.22
+                      hash: 063cfc03f7aefe20cbcfde3bcb19db72b22a5a00
+                      body: >
+                        Node 24's V8 engine has issues with rpi/armv6 arch,
+                        throwing
+
+                        `Fatal error in , line 0 unreachable code`.
+
+
+                        We still support RPi Zero devices in production, roughly
+                        3k
+
+                        at time of this commit.
+
+
+                        Revert RegExp.escape to lodash escapeRegExp as it isn't
+                        useable in Node 22.
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: Christina Ying Wang
+                      nested: []
+                  version: balena-supervisor-17.8.2
+                  title: ""
+                  date: 2026-05-19T18:28:44.611Z
+                - commits:
+                    - subject: Update systeminformation to v5.31.6 [SECURITY]
+                      hash: db278c1c91d4948d737108a9fd97f742640dc341
+                      body: |
+                        Update systeminformation from 5.31.4 to 5.31.6
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: balena-renovate[bot]
+                      nested: []
+                  version: balena-supervisor-17.8.1
+                  title: ""
+                  date: 2026-05-13T17:54:55.662Z
+                - commits:
+                    - subject: Add a `PATCH /v2/device/tags` endpoint to tell the supervisor device
+                        tags to report
+                      hash: ff0dca884b25711e34bd3ce29bed5da330bbf006
+                      body: |
+                        https://balena.fibery.io/Work/Project/1031
+                      footer:
+                        Change-type: minor
+                        change-type: minor
+                      author: Pagan Gazzard
+                      nested: []
+                  version: balena-supervisor-17.8.0
+                  title: ""
+                  date: 2026-05-01T12:30:03.307Z
+                - commits:
+                    - subject: Trim whitespaces around dtparam input values
+                      hash: c240c47363869335fbaf40ba11c494bd5ce1cfca
+                      body: |
+                        Slightly more defensive, and prevents boot config apply
+                        loop from surrounding whitespaces such as in
+                        `BALENA_HOST_CONFIG_dtparam=" "foo=1","bar=2""`
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: Christina Ying Wang
+                      nested: []
+                    - subject: Fix dtparam parsing for comma-separated values
+                      hash: b1b3f8e9ee19339825066d81fb9924d02b25808c
+                      body: >
+                        The RPi config.txt spec allows multiple comma-separated
+                        params
+
+                        on a single dtparam line (e.g.
+                        `dtparam=audio=on,i2c_arm=on`).
+
+                        The supervisor itself always writes one param per line,
+                        so this
+
+                        bug only triggers when a user preloads a config.txt that
+                        uses
+
+                        the multi-param form.
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: Christina Ying Wang
+                      nested: []
+                  version: balena-supervisor-17.7.5
+                  title: ""
+                  date: 2026-04-30T16:49:37.368Z
+                - commits:
+                    - subject: Fix the network connectivity check
+                      hash: c377bbedd928dafe77d898efe048942f0463fd6e
+                      body: >
+                        The connectivity check function was receiving a `path`
+                        argument, added
+
+                        on #820. The function, that just connects to a socket
+                        was looking for a
+
+                        unix socket instead of connecting to the remote host,
+                        which means it was
+
+                        always failing.
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: Felipe Lalanne
+                      nested: []
+                  version: balena-supervisor-17.7.4
+                  title: ""
+                  date: 2026-04-29T20:31:23.602Z
+                - commits:
+                    - subject: Fix error propagation is fsUtils.touch
+                      hash: 29d84ac9ab8bd8e659d52acdcdd94efcf2040f24
+                      body: ""
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: Pagan Gazzard
+                      nested: []
+                    - subject: Convert code to async/await
+                      hash: a9e72a1533bd72d675401edf01a0f470dc00812e
+                      body: >
+                        This is how new code would be written and can result in
+                        better stack
+
+                        traces via zero cost async stack traces and less closure
+                        overhead
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: Pagan Gazzard
+                      nested: []
+                  version: balena-supervisor-17.7.3
+                  title: ""
+                  date: 2026-04-20T16:16:49.325Z
+                - commits:
+                    - subject: "Firewall: avoid `exports.` to improve type-checking"
+                      hash: 553f884dd90f4187c44527f6b1ae4027d7ace245
+                      body: >
+                        `exports` is `any` so referencing it means no typings
+                        are applied in
+
+                        cases you would normally expect them to be and means
+                        that it's easy to
+
+                        introduce bugs due to expecting typescript to be able to
+                        catch them
+
+                        when in fact it's gone via a commonjs indirection. As an
+                        added benefit
+
+                        it also makes the code more ESM ready
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: Pagan Gazzard
+                      nested: []
+                  version: balena-supervisor-17.7.2
+                  title: ""
+                  date: 2026-04-14T21:26:22.254Z
+          version: meta-balena-7.0.4
+          title: ""
+          date: 2026-05-20T16:31:29.825Z
+        - commits:
+            - subject: "plymouth: start after udev settle"
+              hash: 2c223c726e75bc0ecf0aafbf850bde5907e4107b
+              body: >
+                In commit 72706964b8dd308b6c1772fa22c4e89d1680d205 we have
+                reworked
+
+                the plymouth unit files to use drop-in configs and avoid the
+                need
+
+                to patch the sources.
+
+
+                During this process we have lost the plymouth-start's depenency
+
+                on systemd-udev-settle.service which creates a race condition
+                around
+
+                the GPU initialization. Sometimes plymouth starts too early,
+                displays
+
+                the splash screen on the early boot SW framebuffer, which then
+                gets
+
+                lost when the actual GPU driver takes over.
+
+
+                This patch re-adds the dependency on systemd-udev-settle.service
+
+                which should address the issue.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Michal Toman <michalt@balena.io>
+                signed-off-by: Michal Toman <michalt@balena.io>
+              author: Michal Toman
+              nested: []
+          version: meta-balena-7.0.3
+          title: ""
+          date: 2026-05-13T11:48:58.719Z
+        - commits:
+            - subject: "kernel-balena: address CVE-2026-43284"
+              hash: f774fd5ea5dff8e1751c19a62825330fce043425
+              body: >
+                This commit removes the esp4/esp6 and rxrpc modules as they are
+                vulnerable.
+
+
+                Devices will not be able to use IPSEC based VPNs (esp4/esp6).
+                The only
+
+                consumer of rxrpc is the in-kernel AFS (Andrew File System)
+                which is
+
+                experimental anyway.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+          version: meta-balena-7.0.2
+          title: ""
+          date: 2026-05-11T13:58:10.857Z
+        - commits:
+            - subject: "kernel-balena: address CVE-2026-31431"
+              hash: d95ef53e5e65cabc0dcbb87db994463367bd2bad
+              body: |
+                Unconditionally remove CONFIG_CRYPTO_USER_API_AEAD.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+          version: meta-balena-7.0.1
+          title: ""
+          date: 2026-05-08T11:09:20.703Z
+        - commits:
+            - subject: "mobynit: update to v1.0.0"
+              hash: d3c6c79ec6ff747fdcec1534bd704950b163f63b
+              body: >
+                This mobynit version mounts the rootfs as lowerdirs and is
+                intrinsically
+
+                read-only.
+              footer:
+                Change-type: major
+                change-type: major
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+          version: meta-balena-7.0.0
+          title: ""
+          date: 2026-04-24T18:34:48.170Z
+  version: 7.3.0
+  title: ""
+  date: 2026-06-09T19:02:32.044Z
+- commits:
     - subject: Update balena-yocto-scripts to 6417d4093c8ef651c06ca1134cb4396e80deedff
       hash: 63e8f1e38e438ee47348dd2f40d23dbfc6f05f8b
       body: Update balena-yocto-scripts
