@@ -64,3 +64,23 @@ BALENA_CONFIGS[hm3301] = " \
 BALENA_CONFIGS:append:beaglebone = " aufs"
 BALENA_CONFIGS:append:beaglebone-green = " aufs"
 BALENA_CONFIGS:append:beaglebone-green-wifi = " aufs"
+
+BALENA_CONFIGS:append = " core-optimization"
+BALENA_CONFIGS[core-optimization] = " \
+    CONFIG_CC_OPTIMIZE_FOR_SIZE=y \
+"
+
+
+# beaglebone (AM335x) has no USB3/xHCI controller, no Vivante (etnaviv) GPU
+# (display is via CONFIG_DRM_TILCDC), and no raw NAND/NOR flash chip
+# (storage is eMMC/SD via the MMC controller, not MTD) -- these are dead
+# code on this hardware, not feature removals.
+BALENA_CONFIGS:append:beaglebone = " reduce-kernel-size"
+BALENA_CONFIGS[reduce-kernel-size] = " \
+    CONFIG_USB_XHCI_HCD=n \
+    CONFIG_DRM_ETNAVIV=n \
+    CONFIG_MTD_RAW_NAND=n \
+    CONFIG_MTD_UBI=n \
+    CONFIG_UBIFS_FS=n \
+    CONFIG_JFFS2_FS=n \
+"
