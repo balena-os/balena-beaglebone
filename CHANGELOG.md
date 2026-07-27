@@ -1,6 +1,297 @@
 Change log
 -----------
 
+# v7.7.2
+## (2026-07-27)
+
+* Reduce beaglebone kernel size [guille-vega]
+
+<details>
+<summary> Update layers/meta-balena to f953cbe62e7bd00402a5ad083d8a7431a00ec3c4 [balena-renovate[bot]] </summary>
+
+> ## meta-balena-7.7.2
+> ### (2026-07-24)
+> 
+> 
+> <details>
+> <summary> Update tests/leviathan digest to dacce76 [balena-renovate[bot]] </summary>
+> 
+>> ### leviathan-2.36.120
+>> #### (2026-07-24)
+>> 
+>> * Update balena-os/leviathan-worker to v2.10.41 [balena-renovate[bot]]
+>> 
+>> ### leviathan-2.36.119
+>> #### (2026-07-23)
+>> 
+>> * Update balena-os/leviathan-worker to v2.10.40 [balena-renovate[bot]]
+>> 
+>> ### leviathan-2.36.118
+>> #### (2026-07-23)
+>> 
+>> * Update balena-io/balena-cli to v25.1.10 [balena-renovate[bot]]
+>> 
+>> ### leviathan-2.36.117
+>> #### (2026-07-23)
+>> 
+>> * core/lib/common/worker.js: improve reliability of segmented image upload [guille-vega]
+>> 
+>> ### leviathan-2.36.116
+>> #### (2026-07-16)
+>> 
+>> * Update alpine Docker tag to v3.18.12 [balena-renovate[bot]]
+>> 
+>> ### leviathan-2.36.115
+>> #### (2026-07-16)
+>> 
+>> * Update core/contracts digest to a4ab96e [balena-renovate[bot]]
+>> 
+>> ### leviathan-2.36.114
+>> #### (2026-07-14)
+>> 
+>> * Update Pin dependencies [balena-renovate[bot]]
+>> 
+> 
+> </details>
+> 
+> 
+> ## meta-balena-7.7.1
+> ### (2026-07-21)
+> 
+> * tests: os: led: check LED_FILE exists on device, and stop counting sdterr [Ryan Cooke]
+> 
+> ## meta-balena-7.7.0
+> ### (2026-07-15)
+> 
+> * image-types: tag hostapp during import so it includes RepoTags [Alex Gonzalez]
+> * hostapp-update-hooks: add extensions support [Alex Gonzalez]
+> * packagegroup-resin: add extension OCI runtime [Alex Gonzalez]
+> * balena: register extensions runtime [Alex Gonzalez]
+> * balena-extension-runtime: add recipe [Alex Gonzalez]
+> * os-helpers: add bootenv helper [Alex Gonzalez]
+> * os-helpers: add extensions helper [Alex Gonzalez]
+> * docker-disk: remove built-in extension support [Alex Gonzalez]
+> * hostapp-extensions-update: remove recipe. [Alex Gonzalez]
+> 
+> ## meta-balena-7.6.0
+> ### (2026-07-14)
+> 
+> * mobynit: update to v1.0.1 [Alex Gonzalez]
+> 
+> ## meta-balena-7.5.11
+> ### (2026-07-12)
+> 
+> 
+> <details>
+> <summary> Update balena-supervisor to v18 [balena-renovate[bot]] </summary>
+> 
+>> ### balena-supervisor-18.2.2
+>> #### (2026-07-06)
+>> 
+>> * Clean up supervisor images in the database [Felipe Lalanne]
+>> 
+>> ### balena-supervisor-18.2.1
+>> #### (2026-07-02)
+>> 
+>> * Clarify documentation on device tags API [Jonathan Berger]
+>> 
+>> ### balena-supervisor-18.2.0
+>> #### (2026-06-22)
+>> 
+>> * Rename the supervisor service to core on the commposition [Felipe Lalanne]
+>> * Report the supervisor main service to backend [Felipe Lalanne]
+>> 
+>> ### balena-supervisor-18.1.2
+>> #### (2026-06-22)
+>> 
+>> * Docs: clarify behavior for `PATCH /v2/device/tags` [Pagan Gazzard]
+>> 
+>> ### balena-supervisor-18.1.1
+>> #### (2026-06-05)
+>> 
+>> * Pass correct value for restart policy 'no' [Felipe Lalanne]
+>> 
+>> ### balena-supervisor-18.1.0
+>> #### (2026-06-03)
+>> 
+>> * Remove any overrides created by helios and restore service [Felipe Lalanne]
+>> * Revert "Add `helios` service to composition" [Felipe Lalanne]
+>> 
+>> ### balena-supervisor-18.0.0
+>> #### (2026-05-27)
+>> 
+>> * Add `helios` service to composition [Felipe Lalanne]
+>> * Restrict supervisor API listen address when overriding port [Felipe Lalanne]
+>> * Use RESIN_BOARD_REV OS release info as a fallback [Felipe Lalanne]
+>> * Add BALENA_HOST_OS_BUILD as environment variable [Felipe Lalanne]
+>> * Add firewall configurations for the override port [Felipe Lalanne]
+>> * Allow overriding apiEndpoint from a database field [Felipe Lalanne]
+>> 
+>> ### balena-supervisor-17.8.5
+>> #### (2026-05-26)
+>> 
+>> * Convert extra_hosts separator from `=` to `:` [Christina Ying Wang]
+>> 
+>> ### balena-supervisor-17.8.4
+>> #### (2026-05-21)
+>> 
+>> * Remove debugging-supervisor docs in favor of moving directly to docs [Matthew Yarmolinsky]
+>> 
+>> ### balena-supervisor-17.8.3
+>> #### (2026-05-20)
+>> 
+>> * Remove update-locking docs in favor of moving them directly to the docs [Matthew Yarmolinsky]
+>> 
+> 
+> </details>
+> 
+> 
+> ## meta-balena-7.5.10
+> ### (2026-07-09)
+> 
+> * kernel-image-initramfs: multi-kernel support [Alex Gonzalez]
+> * kernel-balena-noimage: remove upstream rrecommends [Alex Gonzalez]
+> * kernel-balena-override: add config fragment support [Alex Gonzalez]
+> * kernel-balena: add multi kernel support [Alex Gonzalez]
+> 
+> ## meta-balena-7.5.9
+> ### (2026-07-08)
+> 
+> * renovate: Append major/minor/patch updates with change-type footer [Kyle Harding]
+> 
+> ## meta-balena-7.5.8
+> ### (2026-07-07)
+> 
+> 
+> <details>
+> <summary> Update tests/leviathan digest to a8266fb [balena-renovate[bot]] </summary>
+> 
+>> ### leviathan-2.36.113
+>> #### (2026-07-06)
+>> 
+>> * Update balena-os/leviathan-worker to v2.10.35 [Florin Sarbu]
+>> * core/lib/common/worker.js: Switch to segmented OS image upload to worker [Florin Sarbu]
+>> 
+> 
+> </details>
+> 
+> 
+> ## meta-balena-7.5.7
+> ### (2026-06-24)
+> 
+> * classes/image-balena: Cleanup issue file in Wrynose [Alexandru Costache]
+> 
+> ## meta-balena-7.5.6
+> ### (2026-06-23)
+> 
+> * tests: Add uptime regression test to the os suite [Kyle Harding]
+> * coreutils: Restore /proc/uptime read so uptime works on scarthgap [Kyle Harding]
+> 
+> ## meta-balena-7.5.5
+> ### (2026-06-22)
+> 
+> * meta-balena-esr: Use GitHub REST API for verified commits [Kyle Harding]
+> 
+> ## meta-balena-7.5.4
+> ### (2026-06-21)
+> 
+> * balena: bump balena-engine to restore 1777 default for bare tmpfs mounts [Kyle Harding]
+> 
+> ## meta-balena-7.5.3
+> ### (2026-06-19)
+> 
+> * networkmanager_%.bbappend: Don't remove /usr/lib/NetworkManager/conf.d from the rootfs [Florin Sarbu]
+> 
+> ## meta-balena-7.5.2
+> ### (2026-06-17)
+> 
+> * recipes-core/systemd: Fix building with Wrynose [Alexandru]
+> 
+> ## meta-balena-7.5.1
+> ### (2026-06-15)
+> 
+> * tests: Define imx8mmebcrs16a1 as flasherConfig type [Florin Sarbu]
+> 
+> ## meta-balena-7.5.0
+> ### (2026-06-12)
+> 
+> * conf/layer.conf: Specify Wrynose compatibility [Alexandru Costache]
+> 
+> ## meta-balena-7.4.1
+> ### (2026-06-11)
+> 
+> 
+> <details>
+> <summary> Update tests/leviathan digest to a310841 [balena-renovate[bot]] </summary>
+> 
+>> ### leviathan-2.36.112
+>> #### (2026-06-10)
+>> 
+>> * core/lib: Make Protected Management Frames (PMF) support optional / disabled when creating the wifi connection profile [Florin Sarbu]
+>> 
+> 
+> </details>
+> 
+> 
+> ## meta-balena-7.4.0
+> ### (2026-06-09)
+> 
+> * systemd: add configuration to ignore lid switch events [Dr Bill Mcilhargey]
+> 
+
+</details>
+
+
+<details>
+<summary> Update balena-yocto-scripts to 4c19733cad4cd1473d196d41ea7d2f4531913172 [balena-renovate[bot]] </summary>
+
+> ## balena-yocto-scripts-1.41.8
+> ### (2026-07-15)
+> 
+> * Update GitHub Actions [balena-renovate[bot]]
+> 
+> ## balena-yocto-scripts-1.41.7
+> ### (2026-07-14)
+> 
+> * Update product-os/review-commit-action action to v0.3.2 [balena-renovate[bot]]
+> 
+> ## balena-yocto-scripts-1.41.6
+> ### (2026-07-13)
+> 
+> * Update balena-io/balena-cli to v25 [balena-renovate[bot]]
+> 
+> ## balena-yocto-scripts-1.41.5
+> ### (2026-06-29)
+> 
+> * yocto-build-deploy: replace pattern based all history first parent match [Alex Gonzalez]
+> 
+> ## balena-yocto-scripts-1.41.4
+> ### (2026-06-23)
+> 
+> * Decode base64-encoded GitHub App private key before token generation [Kyle Harding]
+> * Update actions/create-github-app-token action to v3 [balena-renovate[bot]]
+> 
+> ## balena-yocto-scripts-1.41.3
+> ### (2026-06-10)
+> 
+> * Update GitHub Actions [balena-renovate[bot]]
+> 
+> ## balena-yocto-scripts-1.41.2
+> ### (2026-06-04)
+> 
+> * yocto-build-deploy: soft-skip schema validation when not in checkout [Kyle Harding]
+> * yocto-build-deploy: normalize composition placeholders to __VAR__ form [Kyle Harding]
+> 
+> ## balena-yocto-scripts-1.41.1
+> ### (2026-06-03)
+> 
+> * Update aws/aws-cli to v2.34.61 [balena-renovate[bot]]
+> 
+
+</details>
+
+* Set explicit partition size overrides for each machine [guille-vega]
+
 # v7.3.0
 ## (2026-06-09)
 
