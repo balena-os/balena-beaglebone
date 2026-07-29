@@ -1,4 +1,22 @@
 - commits:
+    - subject: unpin flowzone, track @master
+      hash: cc8519ab250dfe708ecb30aedf41ca1ac3fb0dd4
+      body: |
+        renovate pinned this to a sha by accident, config is fixed now. dropping
+        the `# master` comment since the ref self-documents.
+
+        See: https://balena.fibery.io/Security/Information_Security_and_Reliability_Incident/Renovate-infinite-pinning-actions-PRs-198
+      footer:
+        Changelog-entry: unpin flowzone, track @master
+        changelog-entry: unpin flowzone, track @master
+        Signed-off-by: Kyle Harding <kyle@balena.io>
+        signed-off-by: Kyle Harding <kyle@balena.io>
+      author: Kyle Harding
+      nested: []
+  version: 7.7.2+rev1
+  title: ""
+  date: 2026-07-29T17:26:52.669Z
+- commits:
     - subject: Reduce beaglebone kernel size
       hash: e63e5a89e414ab492d59d6c292c0da1416e0222a
       body: |
