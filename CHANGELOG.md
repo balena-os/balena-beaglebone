@@ -1,6 +1,41 @@
 Change log
 -----------
 
+# v7.7.2+rev2
+## (2026-08-04)
+
+
+<details>
+<summary> Update contracts to 410a252de768cef05e71bde5417361819dda50e1 [balena-renovate[bot]] </summary>
+
+> ## contracts-2.0.147
+> ### (2026-08-04)
+> 
+> * Add device family and manufacturer metadata [Pranas Ziaukas]
+> 
+> ## contracts-2.0.146
+> ### (2026-07-16)
+> 
+> * Modify existing device family and manufacturer metadata [Pranas Ziaukas]
+> 
+> ## contracts-2.0.145
+> ### (2026-07-01)
+> 
+> * hw/device-type: Add Jetson AGX Thor Devkit contract [Alexandru Costache]
+> 
+> ## contracts-2.0.144
+> ### (2026-05-19)
+> 
+> * hw.device-type/beaglebone-ai64: Add the beaglebone-ai-64 alias to align with its device repo definition [Thodoris Greasidis]
+> 
+> ## contracts-2.0.143
+> ### (2026-04-22)
+> 
+> * hw.device-type: Add new device-type Compulab IOT-LINK Gateway [Florin Sarbu]
+> 
+
+</details>
+
 # v7.7.2+rev1
 ## (2026-07-29)
 

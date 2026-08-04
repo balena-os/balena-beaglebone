@@ -1,4 +1,82 @@
 - commits:
+    - subject: Update contracts to 410a252de768cef05e71bde5417361819dda50e1
+      hash: 8d5c11362e84a333422b5351500ececb36c0e9e5
+      body: Update contracts
+      footer:
+        Changelog-entry: Update contracts to 410a252de768cef05e71bde5417361819dda50e1
+        changelog-entry: Update contracts to 410a252de768cef05e71bde5417361819dda50e1
+      author: balena-renovate[bot]
+      nested:
+        - commits:
+            - subject: Add device family and manufacturer metadata
+              hash: a74ddb06557df9e0c19f8201d095be10828ef47a
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Pranas Ziaukas <pranas@balena.io>
+                signed-off-by: Pranas Ziaukas <pranas@balena.io>
+              author: Pranas Ziaukas
+          version: contracts-2.0.147
+          title: ""
+          date: 2026-08-04T04:57:52.384Z
+        - commits:
+            - subject: Modify existing device family and manufacturer metadata
+              hash: cd120576e7c0f021b84c1e81096c188862a144df
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Pranas Ziaukas <pranas@balena.io>
+                signed-off-by: Pranas Ziaukas <pranas@balena.io>
+              author: Pranas Ziaukas
+          version: contracts-2.0.146
+          title: ""
+          date: 2026-07-16T13:59:26.149Z
+        - commits:
+            - subject: "hw/device-type: Add Jetson AGX Thor Devkit contract"
+              hash: b4177e428fcc74bf0cf18ff0189d7a4826f7da4d
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+          version: contracts-2.0.145
+          title: ""
+          date: 2026-07-01T09:44:52.326Z
+        - commits:
+            - subject: "hw.device-type/beaglebone-ai64: Add the beaglebone-ai-64 alias to
+                align with its device repo definition"
+              hash: 72cf4a59d42908cee0350bb6aa5a96e3c96fcc4f
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                See: https://balena.fibery.io/Work/Project/2470
+                see: https://balena.fibery.io/Work/Project/2470
+              author: Thodoris Greasidis
+          version: contracts-2.0.144
+          title: ""
+          date: 2026-05-19T06:48:40.188Z
+        - commits:
+            - subject: "hw.device-type: Add new device-type Compulab IOT-LINK Gateway"
+              hash: 9f8168327bc4393d5fe00aca5cb263003d76de7b
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Florin Sarbu <florin@balena.io>
+                signed-off-by: Florin Sarbu <florin@balena.io>
+              author: Florin Sarbu
+          version: contracts-2.0.143
+          title: ""
+          date: 2026-04-22T07:37:35.352Z
+  version: 7.7.2+rev2
+  title: ""
+  date: 2026-08-04T10:24:27.361Z
+- commits:
     - subject: unpin flowzone, track @master
       hash: cc8519ab250dfe708ecb30aedf41ca1ac3fb0dd4
       body: |
