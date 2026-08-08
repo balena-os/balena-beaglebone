@@ -1,6 +1,55 @@
 Change log
 -----------
 
+# v7.9.3
+## (2026-08-08)
+
+
+<details>
+<summary> Update layers/meta-balena to c806f4ead5c1fb34ed161266c2ed07a7c3b150d6 [balena-renovate[bot]] </summary>
+
+> ## meta-balena-7.9.3
+> ### (2026-08-08)
+> 
+> * balena-extension-runtime: do not duplicate binary [Alex Gonzalez]
+> * balena-extension-runtime: update to v1.2.1 [Alex Gonzalez]
+> 
+> ## meta-balena-7.9.2
+> ### (2026-08-07)
+> 
+> * extra-udev-rules: Disable power management on mlan* wireless network interfaces [Florin Sarbu]
+> 
+> ## meta-balena-7.9.1
+> ### (2026-08-07)
+> 
+> * recipes-containers/balena-extension-runtime: Enable Wrynose builds [Alexandru Costache]
+> 
+> ## meta-balena-7.9.0
+> ### (2026-08-04)
+> 
+> * docs: update hostapp extensions kernel abi compatibility section [Alex Gonzalez]
+> * balena-hostapp-extension: add class [Alex Gonzalez]
+> * kernel-override-hooks: add recipe [Alex Gonzalez]
+> * os-helpers-extensions: use kernel image hash as kernel-abi-id [Alex Gonzalez]
+> * os-helpers-bootenv: leave hup variables to bootloaders hooks [Alex Gonzalez]
+> * rollback-health: use standard os logging [Alex Gonzalez]
+> * initrdscripts(abroot): kernel selection [Alex Gonzalez]
+> * balena-image-bootloader-initramfs: add mount data stage [Alex Gonzalez]
+> * initrdscript: add stage2 data partition mount [Alex Gonzalez]
+> 
+> ## meta-balena-7.8.1
+> ### (2026-08-01)
+> 
+> * initrdscripts: check alignment of data partition in resindataexpander [Michal Toman]
+> 
+> ## meta-balena-7.8.0
+> ### (2026-07-29)
+> 
+> * mobynit: update to v1.1.0 [Alex Gonzalez]
+> 
+
+</details>
+
 # v7.7.2+rev2
 ## (2026-08-04)
 
