@@ -1,6 +1,66 @@
 Change log
 -----------
 
+# v7.9.6+rev2
+## (2026-08-20)
+
+
+<details>
+<summary> Update balena-yocto-scripts to 94f7d206fb6ed31e000b10cd15e8468991707cca [balena-renovate[bot]] </summary>
+
+> ## balena-yocto-scripts-1.42.7
+> ### (2026-08-19)
+> 
+> * Update lodash to v4.18.1 [SECURITY] [balena-renovate[bot]]
+> 
+> ## balena-yocto-scripts-1.42.6
+> ### (2026-08-19)
+> 
+> * Update actions/github-script action to v9 [balena-renovate[bot]]
+> 
+> ## balena-yocto-scripts-1.42.5
+> ### (2026-08-19)
+> 
+> * yocto-build-deploy: Drop container-path license symlinks before upload [Kyle Harding]
+> 
+> ## balena-yocto-scripts-1.42.4
+> ### (2026-08-12)
+> 
+> * Deploy the hostApp with `os-profiles` draft release channel [Christina Ying Wang]
+> 
+> ## balena-yocto-scripts-1.42.3
+> ### (2026-08-12)
+> 
+> * Update GitHub Actions [balena-renovate[bot]]
+> 
+> ## balena-yocto-scripts-1.42.2
+> ### (2026-08-12)
+> 
+> * Add source-mirror-setup dependency to All Jobs [Kyle Harding]
+> 
+> ## balena-yocto-scripts-1.42.1
+> ### (2026-08-11)
+> 
+> * Update Pin ubuntu Docker tag to 3b06811 [balena-renovate[bot]]
+> 
+> ## balena-yocto-scripts-1.42.0
+> ### (2026-08-10)
+> 
+> * yocto-build-deploy: Transport artifacts via lzma-artifact-action [Kyle Harding]
+> * hostapp-deploy: Verify required release assets before finalizing [Kyle Harding]
+> * hostapp-deploy: Group extension release assets by service [Kyle Harding]
+> * hostapp-deploy: Always deploy as draft and finalize after asset upload [Kyle Harding]
+> * hostapp-deploy: Run on ubuntu-24.04 instead of self-hosted [Kyle Harding]
+> * deploy: Create deflates via python script during deploy [Kyle Harding]
+> 
+> ## balena-yocto-scripts-1.41.9
+> ### (2026-07-24)
+> 
+> * Update docker/login-action action to v4 [balena-renovate[bot]]
+> 
+
+</details>
+
 # v7.9.6+rev1
 ## (2026-08-19)
 
