@@ -1,6 +1,197 @@
 Change log
 -----------
 
+# v9.0.2
+## (2026-10-21)
+
+
+<details>
+<summary> Update layers/meta-balena to 16e45e384145977bf3ea1c70947238f41f9e4c7f [balena-renovate[bot]] </summary>
+
+> ## meta-balena-9.0.2
+> ### (2026-10-21)
+> 
+> * extract-balena-ca: Rebuild the CA bundle when its inputs change [Kyle Harding]
+> * ca-certificates: Distrust roots chaining to compromised eMudhra CAs [Kyle Harding]
+> 
+> ## meta-balena-9.0.1
+> ### (2026-10-20)
+> 
+> * redsocks: Fix segfault on startup with 64-bit time_t [guille-vega]
+> 
+> ## meta-balena-9.0.0
+> ### (2026-10-16)
+> 
+> * rollback-health: stop ordering after balena.service [Alex Gonzalez]
+> * kexec: strip every inherited balena_kernel_abi token [Alex Gonzalez]
+> * initrdscripts: reject a malformed kernel override ABI [Alex Gonzalez]
+> * balena-extension-runtime to v2.0.1 [Alex Gonzalez]
+> * Update mobynit to v1.2.0 [Alex Gonzalez]
+> * docs: add host extensions development [Alex Gonzalez]
+> * kernel-override-hooks: move activation into the extension runtime [Alex Gonzalez]
+> * kexec: do not boot an override no extension claims [Alex Gonzalez]
+> * balena-rollback: validate a kernel override armed by an extension [Alex Gonzalez]
+> * balena-rollback: record the ABI a rollback rejected [Alex Gonzalez]
+> * os-helpers-bootenv: withdraw a committed override from every slot [Alex Gonzalez]
+> * balena: order the engine after the boot partition mounts [Alex Gonzalez]
+> * balena-rollback: write the boot environment through os-helpers [Alex Gonzalez]
+> * hostapp-update-hooks: write the bootenv through os-helpers [Alex Gonzalez]
+> * os-helpers-bootloader-config: write the bootenv in place [Alex Gonzalez]
+> * os-helpers-bootenv: serialise the block writers on a lock [Alex Gonzalez]
+> * hostapp-update-hooks: do not let one commit hook cancel the rest [Alex Gonzalez]
+> * balena-tracing-extension: add tracing extension [Alex Gonzalez]
+> * balena-ebpf-extension: add recipe for ebpf hostapp extension [Alex Gonzalez]
+> * classes: add shared hostapp extensions support [Alex Gonzalez]
+> 
+> ## meta-balena-8.0.15
+> ### (2026-10-15)
+> 
+> * classes/balena-bootloader: Don't include SDMA driver [Alexandru Costache]
+> 
+> ## meta-balena-8.0.14
+> ### (2026-10-01)
+> 
+> * os-extra-firmware.service: use bash instead of sh [guille-vega]
+> 
+> ## meta-balena-8.0.13
+> ### (2026-09-25)
+> 
+> * renovate: Use minor change-type for supervisor major updates [Kyle Harding]
+> 
+> ## meta-balena-8.0.12
+> ### (2026-09-23)
+> 
+> * kernel-balena.bbclass: Add aufs patches for 6.18 kernels [Florin Sarbu]
+> 
+> ## meta-balena-8.0.11
+> ### (2026-09-22)
+> 
+> 
+> <details>
+> <summary> Update tests/leviathan digest to bac9173 [balena-renovate[bot]] </summary>
+> 
+>> ### leviathan-2.36.133
+>> #### (2026-09-22)
+>> 
+>> * core/contracts: Update to v2.0.150 [Alexandru Costache]
+>> 
+> 
+> </details>
+> 
+> 
+> ## meta-balena-8.0.10
+> ### (2026-09-11)
+> 
+> 
+> <details>
+> <summary> Update tests/leviathan digest to 466e576 [balena-renovate[bot]] </summary>
+> 
+>> ### leviathan-2.36.132
+>> #### (2026-09-02)
+>> 
+>> * Update Node.js [balena-renovate[bot]]
+>> 
+> 
+> </details>
+> 
+> 
+> ## meta-balena-8.0.9
+> ### (2026-09-07)
+> 
+> * kernel-headers-test: Pin apt to the snapshot archive [Kyle Harding]
+> * kernel-headers-test: Replace deprecated balenalib base with debian:bullseye [Kyle Harding]
+> * .gitmodules: Declare a branch for every submodule [Kyle Harding]
+> 
+> ## meta-balena-8.0.8
+> ### (2026-09-03)
+> 
+> * docs: Fix obsolete link to application update locking documentation [Ken Bannister]
+> 
+> ## meta-balena-8.0.7
+> ### (2026-09-03)
+> 
+> * initrdscripts: more robustness looking for active root [Michal Toman]
+> 
+> ## meta-balena-8.0.6
+> ### (2026-09-02)
+> 
+> 
+> <details>
+> <summary> Update tests/leviathan digest to a0fb22f [balena-renovate[bot]] </summary>
+> 
+>> ### leviathan-2.36.131
+>> #### (2026-09-01)
+>> 
+>> * Update actions/checkout action to v7 [balena-renovate[bot]]
+>> 
+>> ### leviathan-2.36.130
+>> #### (2026-09-01)
+>> 
+>> * Update balena-io/balena-cli to v25.2.6 [balena-renovate[bot]]
+>> 
+>> ### leviathan-2.36.129
+>> #### (2026-09-01)
+>> 
+>> * Update debian:bullseye-slim Docker digest to e5b6442 [balena-renovate[bot]]
+>> 
+>> ### leviathan-2.36.128
+>> #### (2026-09-01)
+>> 
+>> * Update flowzonify to v0.4.2 [balena-renovate[bot]]
+>> 
+>> ### leviathan-2.36.127
+>> #### (2026-09-01)
+>> 
+>> * Update core/contracts digest to 93b3001 [balena-renovate[bot]]
+>> 
+>> ### leviathan-2.36.126
+>> #### (2026-09-01)
+>> 
+>> * Update GitHub Actions [balena-renovate[bot]]
+>> 
+>> ### leviathan-2.36.125
+>> #### (2026-09-01)
+>> 
+>> * Update docker/dockerfile:1 Docker digest to ecfaec9 [balena-renovate[bot]]
+>> 
+> 
+> </details>
+> 
+> 
+> ## meta-balena-8.0.5
+> ### (2026-09-01)
+> 
+> * Update flowzonify to v0.4.2 [balena-renovate[bot]]
+> 
+> ## meta-balena-8.0.4
+> ### (2026-08-26)
+> 
+> * hostapp.yml: Set network_mode none on the hostapp service [Christina Ying Wang]
+> 
+> ## meta-balena-8.0.3
+> ### (2026-08-24)
+> 
+> * balena-bootloader.bbclass: Move common bits from devices to class [Michal Toman]
+> 
+> ## meta-balena-8.0.2
+> ### (2026-08-21)
+> 
+> * distro:balena-os.inc: Remove gobject-introspection-data from DISTRO_FEATURES [Florin Sarbu]
+> 
+> ## meta-balena-8.0.1
+> ### (2026-08-20)
+> 
+> * balena: use AtomicWriteFile to save volume options [Kyle Harding]
+> 
+> ## meta-balena-8.0.0
+> ### (2026-08-17)
+> 
+> * image_types_balena: force 4K block size for resin-state ext4 [guille-vega]
+> * Increase default boot, root and state partition sizes [guille-vega]
+> 
+
+</details>
+
 # v7.9.6+rev4
 ## (2026-08-25)
 
