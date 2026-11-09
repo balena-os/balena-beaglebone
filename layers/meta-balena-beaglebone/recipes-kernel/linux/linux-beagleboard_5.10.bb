@@ -41,6 +41,7 @@ KERNEL_GIT_PROTOCOL = "https"
 SRC_URI += " \
     ${KERNEL_GIT_URI};protocol=${KERNEL_GIT_PROTOCOL};tag=${TAG};nobranch=1 \
     file://0001-PATCH-Add-hm3301-driver-from-Seeed.patch \
+    file://0002-ipv4-free-inet_opt-and-ireq_opt-after-an-RCU-grace-.patch \
     file://defconfig \
     "
 
