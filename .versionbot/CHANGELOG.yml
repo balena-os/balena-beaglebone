@@ -1,4 +1,41 @@
 - commits:
+    - subject: "linux-beagleboard: Backport fix for CVE-2026-98432 for 6.1 kernel"
+      hash: 38341abcc3bdbd56c48b0f11ad0810877cedceb7
+      body: >
+        Backport the stable 6.1.190 fix "ipv4: free inet_opt and ireq_opt after
+
+        an RCU grace period" (upstream e3f33b0a1d89, stable 89b5b1eb7d63) to the
+        BeagleBoard 6.1.80-ti-arm64-r58 kernel used by beaglebone-ai64.
+
+        The BeagleBoard tree stops at 6.1.83-ti-arm64-r74, so there is no tag
+
+        that includes the fix.
+      footer:
+        Changelog-entry: "linux-beagleboard: Backport fix for CVE-2026-98432 for 6.1 kernel"
+        changelog-entry: "linux-beagleboard: Backport fix for CVE-2026-98432 for 6.1 kernel"
+        Signed-off-by: Ryan Cooke <ryan@balena.io>
+        signed-off-by: Ryan Cooke <ryan@balena.io>
+      author: Ryan Cooke
+      nested: []
+    - subject: "linux-beagleboard: Backport fix for CVE-2026-98432"
+      hash: 2683c60923afa71f0c3701d9605a453488692cc8
+      body: >
+        Backport stable commit e3f33b0a1d89d738e2b913dab519226eaf76e15b ("ipv4:
+        free inet_opt and ireq_opt after an RCU grace period") from v5.10.272 to
+        fix a
+
+        remotely triggerable use-after-free in the IPv4 TCP SYN-ACK path.
+      footer:
+        Changelog-entry: "linux-beagleboard: Backport fix for CVE-2026-98432"
+        changelog-entry: "linux-beagleboard: Backport fix for CVE-2026-98432"
+        Signed-off-by: Ryan Cooke <ryan@balena.io>
+        signed-off-by: Ryan Cooke <ryan@balena.io>
+      author: Ryan Cooke
+      nested: []
+  version: 9.0.3+rev1
+  title: ""
+  date: 2026-11-09T23:47:30.277Z
+- commits:
     - subject: Update layers/meta-balena to 7f1a0e5c983a45cea4a4aad23c56134e3a3cea2f
       hash: 360342f17526677098defef9ce8fdff3517719cc
       body: Update layers/meta-balena

@@ -1,6 +1,12 @@
 Change log
 -----------
 
+# v9.0.3+rev1
+## (2026-11-09)
+
+* linux-beagleboard: Backport fix for CVE-2026-98432 for 6.1 kernel [Ryan Cooke]
+* linux-beagleboard: Backport fix for CVE-2026-98432 [Ryan Cooke]
+
 # v9.0.3
 ## (2026-10-22)
 
