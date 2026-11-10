@@ -1,4 +1,23 @@
 - commits:
+    - subject: "linux-beagleboard: Backport fix for CVE-2026-98432"
+      hash: f67d94cd1f50fc4bde783bce7d4bc2b0785cce62
+      body: >
+        Backport stable commit e3f33b0a1d89d738e2b913dab519226eaf76e15b ("ipv4:
+        free inet_opt and ireq_opt after an RCU grace period") from v5.10.272 to
+        fix a
+
+        remotely triggerable use-after-free in the IPv4 TCP SYN-ACK path.
+      footer:
+        Changelog-entry: "linux-beagleboard: Backport fix for CVE-2026-98432"
+        changelog-entry: "linux-beagleboard: Backport fix for CVE-2026-98432"
+        Signed-off-by: Ryan Cooke <ryan@balena.io>
+        signed-off-by: Ryan Cooke <ryan@balena.io>
+      author: Ryan Cooke
+      nested: []
+  version: 2026.10.2
+  title: ""
+  date: 2026-11-10T12:25:41.998Z
+- commits:
     - subject: Update layers/meta-balena to e8d0fd74ed0f4b9348e4f1ed2b904b22fbc9237a
       hash: 8133806c942784d1b913f96b438075ab37ef669b
       body: |

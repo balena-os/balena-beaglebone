@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2026.10.2
+## (2026-11-10)
+
+* linux-beagleboard: Backport fix for CVE-2026-98432 [Ryan Cooke]
+
 # v2026.10.1
 ## (2026-10-22)
 
