@@ -1,6 +1,61 @@
 Change log
 -----------
 
+# v9.1.0
+## (2026-11-14)
+
+
+<details>
+<summary> Update layers/meta-balena to 6ce4cc6078d2f518a7141afc18f1a131d61e9da6 [balena-renovate[bot]] </summary>
+
+> ## meta-balena-9.1.0
+> ### (2026-11-13)
+> 
+> * kirkstone: perf: build without libtraceevent [Alex Gonzalez]
+> * docs: document the kernel recipe split for extension kernels [Alex Gonzalez]
+> * kernel-devsrc: build and test headers for the extension kernel [Alex Gonzalez]
+> * kernel-extension: stage the extension kernel in work-shared [Alex Gonzalez]
+> * kernel-extension: run depmod against the extension System.map [Alex Gonzalez]
+> * kernel-balena-override: append to CONFIG_LSM from a variable [Alex Gonzalez]
+> * mobynit: update to v1.3.0 [Alex Gonzalez]
+> * balena-extension-runtime: update to v2.0.2 [Alex Gonzalez]
+> 
+> ## meta-balena-9.0.7
+> ### (2026-11-12)
+> 
+> * systemd: break unit ordering loop cycle [Alex Gonzalez]
+> * test: add systemd unit ordering check [Alex Gonzalez]
+> 
+> ## meta-balena-9.0.6
+> ### (2026-11-09)
+> 
+> * tests: os: config-json: use the shared journal helper [Alex Gonzalez]
+> * dnsmasq: move the settings to a conf.d drop-in [Alex Gonzalez]
+> 
+> ## meta-balena-9.0.5
+> ### (2026-11-05)
+> 
+> 
+> <details>
+> <summary> Update tests/leviathan digest to 2444d08 [balena-renovate[bot]] </summary>
+> 
+>> ### leviathan-2.36.134
+>> #### (2026-11-05)
+>> 
+>> * core/contracts: Update to v2.0.151 [Alexandru Costache]
+>> 
+> 
+> </details>
+> 
+> 
+> ## meta-balena-9.0.4
+> ### (2026-10-29)
+> 
+> * balena-os.inc: Derive the board VERSION path from COREBASE [Alex Gonzalez]
+> 
+
+</details>
+
 # v9.0.3+rev1
 ## (2026-11-09)
 
