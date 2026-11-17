@@ -1,6 +1,42 @@
 Change log
 -----------
 
+# v9.1.0+rev1
+## (2026-11-17)
+
+
+<details>
+<summary> Update contracts to d3c1db43a35fd33802623d0f30acfb2f0bf095e2 [balena-renovate[bot]] </summary>
+
+> ## contracts-2.0.152
+> ### (2026-11-17)
+> 
+> * Mark revpi-connect-4 and revpi-connect-s as legacy [Nicolai Buchwitz]
+> 
+> ## contracts-2.0.151
+> ### (2026-11-03)
+> 
+> * hw.device-type: Add new device-type - Compulab IOT-GATE-RPI5 [Alexandru Costache]
+> 
+> ## contracts-2.0.150
+> ### (2026-09-16)
+> 
+> * edgeai-orn-nx: Add contract for new public device-type [Alexandru Costache]
+> * hw.device-type: Re-word provisioning instructions for Orin and Thor boards [Alexandru Costache]
+> 
+> ## contracts-2.0.149
+> ### (2026-08-28)
+> 
+> * revpi-connect-4: remove led [Alex Gonzalez]
+> 
+> ## contracts-2.0.148
+> ### (2026-08-24)
+> 
+> * hw.device-type: Update Orin boards L4T version to 39.2.0 [Alexandru Costache]
+> 
+
+</details>
+
 # v9.1.0
 ## (2026-11-14)
 

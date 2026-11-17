@@ -1,4 +1,103 @@
 - commits:
+    - subject: Update contracts to d3c1db43a35fd33802623d0f30acfb2f0bf095e2
+      hash: ab2749447870c6f5aab49816298fc630e9a7cbc9
+      body: Update contracts
+      footer:
+        Changelog-entry: Update contracts to d3c1db43a35fd33802623d0f30acfb2f0bf095e2
+        changelog-entry: Update contracts to d3c1db43a35fd33802623d0f30acfb2f0bf095e2
+      author: balena-renovate[bot]
+      nested:
+        - commits:
+            - subject: Mark revpi-connect-4 and revpi-connect-s as legacy
+              hash: f88d15f5128228e7247c48d6bfcbf5ebbbb9c4b9
+              body: >
+                New RevPi devices will be supported by a single device type
+                based on
+
+                meta-revolutionpi. Signal that these are not meant for new
+                deployments.
+
+                The Connect S device type covers the Connect SE as well.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Nicolai Buchwitz <n.buchwitz@kunbus.com>
+                signed-off-by: Nicolai Buchwitz <n.buchwitz@kunbus.com>
+              author: Nicolai Buchwitz
+          version: contracts-2.0.152
+          title: ""
+          date: 2026-11-17T09:08:39.748Z
+        - commits:
+            - subject: "hw.device-type: Add new device-type - Compulab IOT-GATE-RPI5"
+              hash: 654d03f81ec00d71588a2a023ba0d8b454d8e40e
+              body: >
+                ... and improve instructions in RaspberryPi4 CM4 IOBoard
+                contract.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+          version: contracts-2.0.151
+          title: ""
+          date: 2026-11-03T07:53:38.332Z
+        - commits:
+            - subject: "edgeai-orn-nx: Add contract for new public device-type"
+              hash: 2893c63d4cdee4ddadcc286baa67c6a33aa79d82
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+            - subject: "hw.device-type: Re-word provisioning instructions for Orin and Thor
+                boards"
+              hash: f6dae1c2e78acb448749e187c7b8f697847c0e4e
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+          version: contracts-2.0.150
+          title: ""
+          date: 2026-09-16T08:08:52.752Z
+        - commits:
+            - subject: "revpi-connect-4: remove led"
+              hash: a6cc5e7131ccc62e886d95f16001d98a59ad3303
+              body: |
+                This device type has no LED.
+              footer:
+                Relates-to: https://balena.zulipchat.com/#narrow/channel/345889-balena-io.2Fos/topic/raspberrypi.20pipeline/near/619759972
+                relates-to: https://balena.zulipchat.com/#narrow/channel/345889-balena-io.2Fos/topic/raspberrypi.20pipeline/near/619759972
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+          version: contracts-2.0.149
+          title: ""
+          date: 2026-08-28T11:23:48.697Z
+        - commits:
+            - subject: "hw.device-type: Update Orin boards L4T version to 39.2.0"
+              hash: ebae4da834d1e4efe16b41718189ae26005af527
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+          version: contracts-2.0.148
+          title: ""
+          date: 2026-08-24T18:52:54.835Z
+  version: 9.1.0+rev1
+  title: ""
+  date: 2026-11-17T15:53:14.326Z
+- commits:
     - subject: Update layers/meta-balena to 6ce4cc6078d2f518a7141afc18f1a131d61e9da6
       hash: 208e4ef81032ffeacb6c96a3d87f99655d95fdd6
       body: Update layers/meta-balena
