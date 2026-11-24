@@ -1,6 +1,97 @@
 Change log
 -----------
 
+# v9.1.0+rev2
+## (2026-11-24)
+
+
+<details>
+<summary> Update balena-yocto-scripts to ac62fde95212b8eb2c40b385b530fefbd765846f [balena-renovate[bot]] </summary>
+
+> ## balena-yocto-scripts-1.44.0
+> ### (2026-11-24)
+> 
+> * yocto-build-deploy: Attach all service assets under flat keys [Kyle Harding]
+> 
+> ## balena-yocto-scripts-1.43.2
+> ### (2026-11-20)
+> 
+> * Update aws/aws-cli to v2.41.2 [balena-renovate[bot]]
+> 
+> ## balena-yocto-scripts-1.43.1
+> ### (2026-11-20)
+> 
+> * Update ubuntu:22.04 Docker digest to f64b2ff [balena-renovate[bot]]
+> 
+> ## balena-yocto-scripts-1.43.0
+> ### (2026-11-19)
+> 
+> * yocto-build-deploy: Build hostapp and extensions in one bitbake invocation [Kyle Harding]
+> * yocto-build-deploy: Match built images to services by name [Kyle Harding]
+> 
+> ## balena-yocto-scripts-1.42.20
+> ### (2026-11-18)
+> 
+> * Update Lock file maintenance [balena-renovate[bot]]
+> 
+> ## balena-yocto-scripts-1.42.19
+> ### (2026-11-18)
+> 
+> * hostapp-deploy: Stop depending on s3-deploy [Kyle Harding]
+> 
+> ## balena-yocto-scripts-1.42.18
+> ### (2026-11-13)
+> 
+> * build/barys: Follow symlinks when looking for conf sample files [Florin Sarbu]
+> 
+> ## balena-yocto-scripts-1.42.17
+> ### (2026-10-13)
+> 
+> * hostapp-composition(overlays): extend schema to check for runtime [Alex Gonzalez]
+> 
+> ## balena-yocto-scripts-1.42.16
+> ### (2026-10-02)
+> 
+> * Update ubuntu:22.04 Docker digest to b8b6ee6 [balena-renovate[bot]]
+> 
+> ## balena-yocto-scripts-1.42.15
+> ### (2026-09-15)
+> 
+> * Update actions/download-artifact action to v8 [balena-renovate[bot]]
+> 
+> ## balena-yocto-scripts-1.42.14
+> ### (2026-09-14)
+> 
+> * Fix ESR tagging step [Ryan Cooke]
+> 
+> ## balena-yocto-scripts-1.42.13
+> ### (2026-09-03)
+> 
+> * yocto-build-deploy: Use authenticated user to update submodules [Kyle Harding]
+> 
+> ## balena-yocto-scripts-1.42.12
+> ### (2026-09-02)
+> 
+> * Update actions/upload-artifact action to v7 [balena-renovate[bot]]
+> 
+> ## balena-yocto-scripts-1.42.11
+> ### (Invalid date)
+> 
+> * Update GitHub Actions [balena-renovate[bot]]
+> 
+> ## balena-yocto-scripts-1.42.10
+> ### (2026-08-28)
+> 
+> * Update aws/aws-cli to v2.36.33 [balena-renovate[bot]]
+> 
+> ## balena-yocto-scripts-1.42.9
+> ### (2026-08-28)
+> 
+> * Update flowzonify to v0.4.2 [balena-renovate[bot]]
+> 
+
+</details>
+
 # v9.1.0+rev1
 ## (2026-11-17)
 
